@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            btnKullanicilar = new Button();
-            btnOgunlerKategorilerYemekler = new Button();
             btnKullaniciGunlukRaporu = new Button();
+            btnOgunlerKategorilerYemekler = new Button();
+            btnKullanicilar = new Button();
             btnTalepler = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -42,30 +42,12 @@
             groupBox1.Controls.Add(btnOgunlerKategorilerYemekler);
             groupBox1.Controls.Add(btnKullanicilar);
             groupBox1.Location = new Point(209, 112);
-            groupBox1.Margin = new Padding(4, 4, 4, 4);
+            groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 4, 4, 4);
+            groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(418, 414);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            // 
-            // btnKullanicilar
-            // 
-            btnKullanicilar.Location = new Point(77, 55);
-            btnKullanicilar.Name = "btnKullanicilar";
-            btnKullanicilar.Size = new Size(242, 77);
-            btnKullanicilar.TabIndex = 0;
-            btnKullanicilar.Text = "Kullanıcılar";
-            btnKullanicilar.UseVisualStyleBackColor = true;
-            // 
-            // btnOgunlerKategorilerYemekler
-            // 
-            btnOgunlerKategorilerYemekler.Location = new Point(77, 145);
-            btnOgunlerKategorilerYemekler.Name = "btnOgunlerKategorilerYemekler";
-            btnOgunlerKategorilerYemekler.Size = new Size(242, 118);
-            btnOgunlerKategorilerYemekler.TabIndex = 0;
-            btnOgunlerKategorilerYemekler.Text = "Öğünler\r\nKategoriler \r\nYemekler";
-            btnOgunlerKategorilerYemekler.UseVisualStyleBackColor = true;
             // 
             // btnKullaniciGunlukRaporu
             // 
@@ -75,6 +57,27 @@
             btnKullaniciGunlukRaporu.TabIndex = 0;
             btnKullaniciGunlukRaporu.Text = "Kullanıcı Günlük Raporu";
             btnKullaniciGunlukRaporu.UseVisualStyleBackColor = true;
+            btnKullaniciGunlukRaporu.Click += btnKullaniciGunlukRaporu_Click;
+            // 
+            // btnOgunlerKategorilerYemekler
+            // 
+            btnOgunlerKategorilerYemekler.Location = new Point(77, 145);
+            btnOgunlerKategorilerYemekler.Name = "btnOgunlerKategorilerYemekler";
+            btnOgunlerKategorilerYemekler.Size = new Size(242, 118);
+            btnOgunlerKategorilerYemekler.TabIndex = 0;
+            btnOgunlerKategorilerYemekler.Text = "Öğünler\r\nKategoriler \r\nYemekler";
+            btnOgunlerKategorilerYemekler.UseVisualStyleBackColor = true;
+            btnOgunlerKategorilerYemekler.Click += btnOgunlerKategorilerYemekler_Click;
+            // 
+            // btnKullanicilar
+            // 
+            btnKullanicilar.Location = new Point(77, 55);
+            btnKullanicilar.Name = "btnKullanicilar";
+            btnKullanicilar.Size = new Size(242, 77);
+            btnKullanicilar.TabIndex = 0;
+            btnKullanicilar.Text = "Kullanıcılar";
+            btnKullanicilar.UseVisualStyleBackColor = true;
+            btnKullanicilar.Click += btnKullanicilar_Click;
             // 
             // btnTalepler
             // 
@@ -84,6 +87,7 @@
             btnTalepler.TabIndex = 1;
             btnTalepler.Text = "Talepler";
             btnTalepler.UseVisualStyleBackColor = true;
+            btnTalepler.Click += btnTalepler_Click;
             // 
             // YoneticiEkrani
             // 
@@ -93,7 +97,7 @@
             Controls.Add(btnTalepler);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "YoneticiEkrani";
             Text = "YoneticiEkrani";
             groupBox1.ResumeLayout(false);
