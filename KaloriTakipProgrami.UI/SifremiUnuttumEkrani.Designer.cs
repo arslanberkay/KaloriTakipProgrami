@@ -34,11 +34,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(407, 223);
+            label1.Location = new Point(414, 218);
             label1.Name = "label1";
             label1.Size = new Size(90, 25);
             label1.TabIndex = 0;
             label1.Text = "Yapılacak";
+          
             // 
             // SifremiUnuttumEkrani
             // 
@@ -47,7 +48,7 @@
             ClientSize = new Size(1008, 634);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "SifremiUnuttumEkrani";
             Text = "SifremiUnuttumEkrani";
             ResumeLayout(false);

@@ -65,6 +65,7 @@
             chkSifreGoster.TabIndex = 5;
             chkSifreGoster.Text = "Göster";
             chkSifreGoster.UseVisualStyleBackColor = true;
+            chkSifreGoster.CheckedChanged += chkSifreGoster_CheckedChanged;
             // 
             // lnkKayitOl
             // 
@@ -102,6 +103,7 @@
             // 
             txtSifre.Location = new Point(171, 108);
             txtSifre.Name = "txtSifre";
+            txtSifre.PasswordChar = '*';
             txtSifre.Size = new Size(186, 32);
             txtSifre.TabIndex = 1;
             // 
