@@ -161,8 +161,7 @@ namespace KaloriTakipProgrami.UI
             MessageBox.Show("Kullanıcı Bşarıyla eklendi");
             Temizle();
 
-            KullaniciEkrani kullaniciEkrani = new KullaniciEkrani();
-            kullaniciEkrani.ShowDialog();
+          
 
 
 
