@@ -53,6 +53,7 @@
             btnGunlukRapor = new Button();
             btnGrafikler = new Button();
             button1 = new Button();
+            btnTalepler = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -258,7 +259,7 @@
             // 
             // btnGrafikler
             // 
-            btnGrafikler.Location = new Point(473, 402);
+            btnGrafikler.Location = new Point(473, 401);
             btnGrafikler.Name = "btnGrafikler";
             btnGrafikler.Size = new Size(115, 41);
             btnGrafikler.TabIndex = 15;
@@ -276,12 +277,23 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnRapor_Click;
             // 
+            // btnTalepler
+            // 
+            btnTalepler.Location = new Point(473, 347);
+            btnTalepler.Name = "btnTalepler";
+            btnTalepler.Size = new Size(115, 41);
+            btnTalepler.TabIndex = 15;
+            btnTalepler.Text = "Talepler";
+            btnTalepler.UseVisualStyleBackColor = true;
+            btnTalepler.Click += btnTalepler_Click;
+            // 
             // KullaniciEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 666);
             Controls.Add(button1);
+            Controls.Add(btnTalepler);
             Controls.Add(btnGrafikler);
             Controls.Add(btnGunlukRapor);
             Controls.Add(bnOgunBilgileriGoster);
@@ -343,5 +355,6 @@
         private Button btnGunlukRapor;
         private Button btnGrafikler;
         private Button button1;
+        private Button btnTalepler;
     }
 }

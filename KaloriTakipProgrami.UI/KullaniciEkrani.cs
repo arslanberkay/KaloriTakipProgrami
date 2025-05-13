@@ -44,7 +44,13 @@ namespace KaloriTakipProgrami.UI
         private void btnGrafikler_Click(object sender, EventArgs e)
         {
             KullaniciGrafikEkrani kullaniciGrafikEkrani = new KullaniciGrafikEkrani();
-            kullaniciGrafikEkrani.ShowDialog(); 
+            kullaniciGrafikEkrani.ShowDialog();
+        }
+
+        private void btnTalepler_Click(object sender, EventArgs e)
+        {
+            KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani();
+            kullaniciTaleplerEkrani.ShowDialog();
         }
     }
 }
