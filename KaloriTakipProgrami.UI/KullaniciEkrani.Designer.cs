@@ -39,21 +39,21 @@
             label1 = new Label();
             label10 = new Label();
             pictureBox1 = new PictureBox();
-            txtKullaniciAdi = new TextBox();
-            txtAd = new TextBox();
-            txtSoyad = new TextBox();
-            txtCinsiyet = new TextBox();
-            txtDogumTarihi = new TextBox();
-            txtEposta = new TextBox();
-            txtKilo = new TextBox();
-            txtBoy = new TextBox();
-            txtVKİ = new TextBox();
             btnBilgiGuncelle = new Button();
             bnOgunBilgileriGoster = new Button();
             btnGunlukRapor = new Button();
             btnGrafikler = new Button();
             button1 = new Button();
             btnTalepler = new Button();
+            lblKullaniciAdi = new Label();
+            lblAd = new Label();
+            lblSoyad = new Label();
+            lblCinsiyet = new Label();
+            lblDogumTarihi = new Label();
+            lblEposta = new Label();
+            lblKilo = new Label();
+            lblBoy = new Label();
+            lblVKİ = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -164,69 +164,6 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // txtKullaniciAdi
-            // 
-            txtKullaniciAdi.Location = new Point(209, 164);
-            txtKullaniciAdi.Name = "txtKullaniciAdi";
-            txtKullaniciAdi.Size = new Size(199, 32);
-            txtKullaniciAdi.TabIndex = 4;
-            // 
-            // txtAd
-            // 
-            txtAd.Location = new Point(209, 213);
-            txtAd.Name = "txtAd";
-            txtAd.Size = new Size(199, 32);
-            txtAd.TabIndex = 5;
-            // 
-            // txtSoyad
-            // 
-            txtSoyad.Location = new Point(209, 265);
-            txtSoyad.Name = "txtSoyad";
-            txtSoyad.Size = new Size(199, 32);
-            txtSoyad.TabIndex = 6;
-            // 
-            // txtCinsiyet
-            // 
-            txtCinsiyet.Location = new Point(209, 316);
-            txtCinsiyet.Name = "txtCinsiyet";
-            txtCinsiyet.Size = new Size(199, 32);
-            txtCinsiyet.TabIndex = 7;
-            // 
-            // txtDogumTarihi
-            // 
-            txtDogumTarihi.Location = new Point(209, 359);
-            txtDogumTarihi.Name = "txtDogumTarihi";
-            txtDogumTarihi.Size = new Size(199, 32);
-            txtDogumTarihi.TabIndex = 8;
-            // 
-            // txtEposta
-            // 
-            txtEposta.Location = new Point(209, 402);
-            txtEposta.Name = "txtEposta";
-            txtEposta.Size = new Size(199, 32);
-            txtEposta.TabIndex = 9;
-            // 
-            // txtKilo
-            // 
-            txtKilo.Location = new Point(209, 448);
-            txtKilo.Name = "txtKilo";
-            txtKilo.Size = new Size(199, 32);
-            txtKilo.TabIndex = 10;
-            // 
-            // txtBoy
-            // 
-            txtBoy.Location = new Point(209, 495);
-            txtBoy.Name = "txtBoy";
-            txtBoy.Size = new Size(199, 32);
-            txtBoy.TabIndex = 11;
-            // 
-            // txtVKİ
-            // 
-            txtVKİ.Location = new Point(209, 547);
-            txtVKİ.Name = "txtVKİ";
-            txtVKİ.Size = new Size(199, 32);
-            txtVKİ.TabIndex = 12;
-            // 
             // btnBilgiGuncelle
             // 
             btnBilgiGuncelle.Location = new Point(246, 598);
@@ -287,26 +224,107 @@
             btnTalepler.UseVisualStyleBackColor = true;
             btnTalepler.Click += btnTalepler_Click;
             // 
+            // lblKullaniciAdi
+            // 
+            lblKullaniciAdi.AutoSize = true;
+            lblKullaniciAdi.Location = new Point(199, 167);
+            lblKullaniciAdi.Name = "lblKullaniciAdi";
+            lblKullaniciAdi.Size = new Size(73, 25);
+            lblKullaniciAdi.TabIndex = 16;
+            lblKullaniciAdi.Text = "label11";
+            // 
+            // lblAd
+            // 
+            lblAd.AutoSize = true;
+            lblAd.Location = new Point(199, 213);
+            lblAd.Name = "lblAd";
+            lblAd.Size = new Size(73, 25);
+            lblAd.TabIndex = 17;
+            lblAd.Text = "label12";
+            // 
+            // lblSoyad
+            // 
+            lblSoyad.AutoSize = true;
+            lblSoyad.Location = new Point(199, 265);
+            lblSoyad.Name = "lblSoyad";
+            lblSoyad.Size = new Size(73, 25);
+            lblSoyad.TabIndex = 18;
+            lblSoyad.Text = "label13";
+            // 
+            // lblCinsiyet
+            // 
+            lblCinsiyet.AutoSize = true;
+            lblCinsiyet.Location = new Point(199, 316);
+            lblCinsiyet.Name = "lblCinsiyet";
+            lblCinsiyet.Size = new Size(73, 25);
+            lblCinsiyet.TabIndex = 19;
+            lblCinsiyet.Text = "label14";
+            // 
+            // lblDogumTarihi
+            // 
+            lblDogumTarihi.AutoSize = true;
+            lblDogumTarihi.Location = new Point(199, 355);
+            lblDogumTarihi.Name = "lblDogumTarihi";
+            lblDogumTarihi.Size = new Size(73, 25);
+            lblDogumTarihi.TabIndex = 20;
+            lblDogumTarihi.Text = "label15";
+            // 
+            // lblEposta
+            // 
+            lblEposta.AutoSize = true;
+            lblEposta.Location = new Point(199, 402);
+            lblEposta.Name = "lblEposta";
+            lblEposta.Size = new Size(73, 25);
+            lblEposta.TabIndex = 21;
+            lblEposta.Text = "label16";
+            // 
+            // lblKilo
+            // 
+            lblKilo.AutoSize = true;
+            lblKilo.Location = new Point(199, 448);
+            lblKilo.Name = "lblKilo";
+            lblKilo.Size = new Size(73, 25);
+            lblKilo.TabIndex = 22;
+            lblKilo.Text = "label17";
+            // 
+            // lblBoy
+            // 
+            lblBoy.AutoSize = true;
+            lblBoy.Location = new Point(199, 495);
+            lblBoy.Name = "lblBoy";
+            lblBoy.Size = new Size(73, 25);
+            lblBoy.TabIndex = 23;
+            lblBoy.Text = "label18";
+            // 
+            // lblVKİ
+            // 
+            lblVKİ.AutoSize = true;
+            lblVKİ.Location = new Point(199, 547);
+            lblVKİ.Name = "lblVKİ";
+            lblVKİ.Size = new Size(73, 25);
+            lblVKİ.TabIndex = 24;
+            lblVKİ.Text = "label19";
+            // 
             // KullaniciEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 666);
+            Controls.Add(lblVKİ);
+            Controls.Add(lblBoy);
+            Controls.Add(lblKilo);
+            Controls.Add(lblEposta);
+            Controls.Add(lblDogumTarihi);
+            Controls.Add(lblCinsiyet);
+            Controls.Add(lblSoyad);
+            Controls.Add(lblAd);
+            Controls.Add(lblKullaniciAdi);
             Controls.Add(button1);
             Controls.Add(btnTalepler);
             Controls.Add(btnGrafikler);
             Controls.Add(btnGunlukRapor);
             Controls.Add(bnOgunBilgileriGoster);
             Controls.Add(btnBilgiGuncelle);
-            Controls.Add(txtVKİ);
-            Controls.Add(txtBoy);
-            Controls.Add(txtKilo);
-            Controls.Add(txtEposta);
-            Controls.Add(txtDogumTarihi);
-            Controls.Add(txtCinsiyet);
-            Controls.Add(txtSoyad);
-            Controls.Add(txtAd);
-            Controls.Add(txtKullaniciAdi);
             Controls.Add(pictureBox1);
             Controls.Add(label10);
             Controls.Add(label1);
@@ -341,20 +359,20 @@
         private Label label1;
         private Label label10;
         private PictureBox pictureBox1;
-        private TextBox txtKullaniciAdi;
-        private TextBox txtAd;
-        private TextBox txtSoyad;
-        private TextBox txtCinsiyet;
-        private TextBox txtDogumTarihi;
-        private TextBox txtEposta;
-        private TextBox txtKilo;
-        private TextBox txtBoy;
-        private TextBox txtVKİ;
         private Button btnBilgiGuncelle;
         private Button bnOgunBilgileriGoster;
         private Button btnGunlukRapor;
         private Button btnGrafikler;
         private Button button1;
         private Button btnTalepler;
+        private Label lblKullaniciAdi;
+        private Label lblAd;
+        private Label lblSoyad;
+        private Label lblCinsiyet;
+        private Label lblDogumTarihi;
+        private Label lblEposta;
+        private Label lblKilo;
+        private Label lblBoy;
+        private Label lblVKİ;
     }
 }
