@@ -54,6 +54,7 @@
             dtpDogumTarihi = new DateTimePicker();
             btnBilgilendirme = new Button();
             cbSifre = new CheckBox();
+            cbSifreKontrol = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             SuspendLayout();
             // 
@@ -135,6 +136,7 @@
             btnHesapDondur.TabIndex = 7;
             btnHesapDondur.Text = "Hesabımı Dondur";
             btnHesapDondur.UseVisualStyleBackColor = true;
+            btnHesapDondur.Click += btnHesapDondur_Click;
             // 
             // btnBilgileriGuncelle
             // 
@@ -300,11 +302,23 @@
             cbSifre.UseVisualStyleBackColor = true;
             cbSifre.CheckedChanged += cbSifre_CheckedChanged;
             // 
+            // cbSifreKontrol
+            // 
+            cbSifreKontrol.AutoSize = true;
+            cbSifreKontrol.Location = new Point(309, 341);
+            cbSifreKontrol.Name = "cbSifreKontrol";
+            cbSifreKontrol.Size = new Size(35, 19);
+            cbSifreKontrol.TabIndex = 24;
+            cbSifreKontrol.Text = "...";
+            cbSifreKontrol.UseVisualStyleBackColor = true;
+            cbSifreKontrol.CheckedChanged += cbSifreKontrol_CheckedChanged;
+            // 
             // KullaniciBilgiGuncelleEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(456, 502);
+            Controls.Add(cbSifreKontrol);
             Controls.Add(cbSifre);
             Controls.Add(btnBilgilendirme);
             Controls.Add(dtpDogumTarihi);
@@ -369,5 +383,6 @@
         private DateTimePicker dtpDogumTarihi;
         private Button btnBilgilendirme;
         private CheckBox cbSifre;
+        private CheckBox cbSifreKontrol;
     }
 }
