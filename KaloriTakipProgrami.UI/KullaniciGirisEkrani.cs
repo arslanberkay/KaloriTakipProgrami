@@ -46,7 +46,8 @@ namespace KaloriTakipProgrami.UI
             }
             else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
-                KullaniciEkrani kullaniciEkrani = new KullaniciEkrani();
+                var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
+                KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
             Hata();
