@@ -166,18 +166,6 @@ namespace KaloriTakipProgrami.UI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
         private void btnFotografSec_Click(object sender, EventArgs e)
@@ -202,8 +190,6 @@ namespace KaloriTakipProgrami.UI
         {
             txtAd.Text = txtFotograf.Text = txtKullaniciAdi.Text = txtMail.Text =
                 txtSifre.Text = txtSifreTekrar.Text = txtSoyad.Text = string.Empty;
-
-
 
 
         }
