@@ -34,5 +34,17 @@ namespace KaloriTakipProgrami.UI
             KullaniciGunlukRaporEkrani kullaniciGunlukRaporEkrani = new KullaniciGunlukRaporEkrani();
             kullaniciGunlukRaporEkrani.ShowDialog();
         }
+
+        private void btnRapor_Click(object sender, EventArgs e)
+        {
+            KullaniciRaporEkrani kullaniciRaporEkrani = new KullaniciRaporEkrani();
+            kullaniciRaporEkrani.ShowDialog();
+        }
+
+        private void btnGrafikler_Click(object sender, EventArgs e)
+        {
+            KullaniciGrafikEkrani kullaniciGrafikEkrani = new KullaniciGrafikEkrani();
+            kullaniciGrafikEkrani.ShowDialog(); 
+        }
     }
 }
