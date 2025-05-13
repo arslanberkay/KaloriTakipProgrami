@@ -24,13 +24,9 @@ namespace KaloriTakipProgrami.UI.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
+
+
             optionsBuilder.UseSqlServer("Server=LAPTOP-C3QHSI5J\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
-
-
-           
-            
-
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
