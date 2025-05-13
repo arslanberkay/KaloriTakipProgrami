@@ -68,6 +68,7 @@
             chkSifreGoster.TabIndex = 5;
             chkSifreGoster.Text = "Şifreyi Göster";
             chkSifreGoster.UseVisualStyleBackColor = true;
+            chkSifreGoster.CheckedChanged += chkSifreGoster_CheckedChanged;
             // 
             // lnkKayitOl
             // 
@@ -115,6 +116,7 @@
             // 
             txtSifre.Location = new Point(127, 197);
             txtSifre.Name = "txtSifre";
+            txtSifre.PasswordChar = '*';
             txtSifre.Size = new Size(186, 32);
             txtSifre.TabIndex = 1;
             // 

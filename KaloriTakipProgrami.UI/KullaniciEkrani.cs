@@ -15,9 +15,12 @@ namespace KaloriTakipProgrami.UI
     {
         private Kullanici _girisYapanKullanici;
 
+
+       
         public KullaniciEkrani()
         {
-            
+                
+
         }
         public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
@@ -76,7 +79,8 @@ namespace KaloriTakipProgrami.UI
 
         private void btnTalepler_Click(object sender, EventArgs e)
         {
-            KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani();
+            
+           KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
             kullaniciTaleplerEkrani.ShowDialog();
         }
     }

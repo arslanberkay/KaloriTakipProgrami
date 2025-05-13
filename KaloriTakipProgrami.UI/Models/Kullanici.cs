@@ -16,8 +16,9 @@ namespace KaloriTakipProgrami.UI.Models
         public DateTime DogumTarihi { get; set; }
         public string Email { get; set; }
         public string Cinsiyet { get; set; }
-        public string FotografYolu { get; set; } //String olarak tutucaz (picturebox'da göstericez)
-        public bool Durum { get; set; } //Hesap dondurulmuş mu bilgisi (Aktif / Pasif)
+        public string? FotografYolu { get; set; } //String olarak tutucaz (picturebox'da göstericez)
+        public bool Durum { get; set; } = true; //Hesap dondurulmuş mu bilgisi (Aktif / Pasif)
+
         public DateTime KayitTarihi { get; set; } = DateTime.Now; //Otomatik o anın tarihini alır
 
         public List<KullaniciDetay> KulllaniciDetaylari { get; set; } //1 kullanıcının BİRDEN FAZLA kullanıcıdetayi olabilir (Değişen boy kilo yeni bir kullanıcıdetay olarak kabul edilir.)
