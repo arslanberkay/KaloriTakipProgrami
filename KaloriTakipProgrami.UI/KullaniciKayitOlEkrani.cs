@@ -142,6 +142,18 @@ namespace KaloriTakipProgrami.UI
               Cinsiyet=cbCinsiyet.SelectedItem.ToString(),
               FotografYolu=txtFotograf.Text,                                             
             };
+            bool emailvarMi = _db.Kullanicilar.Any(k => k.Email == txtMail.Text);
+
+            if (emailvarMi)
+            {
+                MessageBox.Show("Bu E-mail kullanılıyor");
+                txtMail.Text = "";
+                return;
+            }
+
+
+
+
             _db.Add(kullanici);
             _db.SaveChanges();
             MessageBox.Show("Kullanıcı Bşarıyla eklendi");
