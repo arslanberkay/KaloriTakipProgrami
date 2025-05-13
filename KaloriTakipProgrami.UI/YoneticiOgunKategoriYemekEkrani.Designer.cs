@@ -1,0 +1,383 @@
+﻿namespace KaloriTakipProgrami.UI
+{
+    partial class YoneticiOgunKategoriYemekEkrani
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            grpOgunler = new GroupBox();
+            txtOgunAdi = new TextBox();
+            dgvOgunler = new DataGridView();
+            btnOgunGuncelle = new Button();
+            btnOgunSil = new Button();
+            btnOgunEkle = new Button();
+            label1 = new Label();
+            grpKategoriler = new GroupBox();
+            txtKategoriAdi = new TextBox();
+            dgvKategoriler = new DataGridView();
+            btnKategoriGuncelle = new Button();
+            btnKategoriSil = new Button();
+            btnKategoriEkle = new Button();
+            label2 = new Label();
+            grpYemekler = new GroupBox();
+            cbKategori = new ComboBox();
+            nudKalori = new NumericUpDown();
+            label5 = new Label();
+            label4 = new Label();
+            txtYemekAdi = new TextBox();
+            dgvYemekler = new DataGridView();
+            btnYemekGuncelle = new Button();
+            btnYemekSil = new Button();
+            btnYemekEkle = new Button();
+            label3 = new Label();
+            grpOgunler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvOgunler).BeginInit();
+            grpKategoriler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKategoriler).BeginInit();
+            grpYemekler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudKalori).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvYemekler).BeginInit();
+            SuspendLayout();
+            // 
+            // grpOgunler
+            // 
+            grpOgunler.Controls.Add(txtOgunAdi);
+            grpOgunler.Controls.Add(dgvOgunler);
+            grpOgunler.Controls.Add(btnOgunGuncelle);
+            grpOgunler.Controls.Add(btnOgunSil);
+            grpOgunler.Controls.Add(btnOgunEkle);
+            grpOgunler.Controls.Add(label1);
+            grpOgunler.Location = new Point(54, 36);
+            grpOgunler.Margin = new Padding(4);
+            grpOgunler.Name = "grpOgunler";
+            grpOgunler.Padding = new Padding(4);
+            grpOgunler.Size = new Size(420, 315);
+            grpOgunler.TabIndex = 0;
+            grpOgunler.TabStop = false;
+            grpOgunler.Text = "Öğün İşlemler";
+            // 
+            // txtOgunAdi
+            // 
+            txtOgunAdi.Location = new Point(142, 47);
+            txtOgunAdi.Name = "txtOgunAdi";
+            txtOgunAdi.Size = new Size(162, 32);
+            txtOgunAdi.TabIndex = 3;
+            // 
+            // dgvOgunler
+            // 
+            dgvOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOgunler.Location = new Point(25, 141);
+            dgvOgunler.Name = "dgvOgunler";
+            dgvOgunler.ReadOnly = true;
+            dgvOgunler.RowHeadersWidth = 51;
+            dgvOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvOgunler.Size = new Size(345, 149);
+            dgvOgunler.TabIndex = 2;
+            dgvOgunler.CellClick += dgvOgunler_CellClick;
+            // 
+            // btnOgunGuncelle
+            // 
+            btnOgunGuncelle.Location = new Point(259, 94);
+            btnOgunGuncelle.Name = "btnOgunGuncelle";
+            btnOgunGuncelle.Size = new Size(111, 35);
+            btnOgunGuncelle.TabIndex = 1;
+            btnOgunGuncelle.Text = "Güncelle";
+            btnOgunGuncelle.UseVisualStyleBackColor = true;
+            btnOgunGuncelle.Click += btnOgunGuncelle_Click;
+            // 
+            // btnOgunSil
+            // 
+            btnOgunSil.Location = new Point(142, 94);
+            btnOgunSil.Name = "btnOgunSil";
+            btnOgunSil.Size = new Size(111, 35);
+            btnOgunSil.TabIndex = 1;
+            btnOgunSil.Text = "Sil";
+            btnOgunSil.UseVisualStyleBackColor = true;
+            btnOgunSil.Click += btnOgunSil_Click;
+            // 
+            // btnOgunEkle
+            // 
+            btnOgunEkle.Location = new Point(25, 94);
+            btnOgunEkle.Name = "btnOgunEkle";
+            btnOgunEkle.Size = new Size(111, 35);
+            btnOgunEkle.TabIndex = 1;
+            btnOgunEkle.Text = "Ekle";
+            btnOgunEkle.UseVisualStyleBackColor = true;
+            btnOgunEkle.Click += btnOgunEkle_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(92, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Öğün Adı";
+            // 
+            // grpKategoriler
+            // 
+            grpKategoriler.Controls.Add(txtKategoriAdi);
+            grpKategoriler.Controls.Add(dgvKategoriler);
+            grpKategoriler.Controls.Add(btnKategoriGuncelle);
+            grpKategoriler.Controls.Add(btnKategoriSil);
+            grpKategoriler.Controls.Add(btnKategoriEkle);
+            grpKategoriler.Controls.Add(label2);
+            grpKategoriler.Location = new Point(724, 50);
+            grpKategoriler.Margin = new Padding(4);
+            grpKategoriler.Name = "grpKategoriler";
+            grpKategoriler.Padding = new Padding(4);
+            grpKategoriler.Size = new Size(420, 315);
+            grpKategoriler.TabIndex = 0;
+            grpKategoriler.TabStop = false;
+            grpKategoriler.Text = "Kategori İşlemleri";
+            // 
+            // txtKategoriAdi
+            // 
+            txtKategoriAdi.Location = new Point(160, 47);
+            txtKategoriAdi.Name = "txtKategoriAdi";
+            txtKategoriAdi.Size = new Size(162, 32);
+            txtKategoriAdi.TabIndex = 3;
+            // 
+            // dgvKategoriler
+            // 
+            dgvKategoriler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKategoriler.Location = new Point(25, 141);
+            dgvKategoriler.Name = "dgvKategoriler";
+            dgvKategoriler.ReadOnly = true;
+            dgvKategoriler.RowHeadersWidth = 51;
+            dgvKategoriler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvKategoriler.Size = new Size(345, 149);
+            dgvKategoriler.TabIndex = 2;
+            dgvKategoriler.CellClick += dgvKategoriler_CellClick;
+            // 
+            // btnKategoriGuncelle
+            // 
+            btnKategoriGuncelle.Location = new Point(259, 94);
+            btnKategoriGuncelle.Name = "btnKategoriGuncelle";
+            btnKategoriGuncelle.Size = new Size(111, 35);
+            btnKategoriGuncelle.TabIndex = 1;
+            btnKategoriGuncelle.Text = "Güncelle";
+            btnKategoriGuncelle.UseVisualStyleBackColor = true;
+            btnKategoriGuncelle.Click += btnKategoriGuncelle_Click;
+            // 
+            // btnKategoriSil
+            // 
+            btnKategoriSil.Location = new Point(142, 94);
+            btnKategoriSil.Name = "btnKategoriSil";
+            btnKategoriSil.Size = new Size(111, 35);
+            btnKategoriSil.TabIndex = 1;
+            btnKategoriSil.Text = "Sil";
+            btnKategoriSil.UseVisualStyleBackColor = true;
+            btnKategoriSil.Click += btnKategoriSil_Click;
+            // 
+            // btnKategoriEkle
+            // 
+            btnKategoriEkle.Location = new Point(25, 94);
+            btnKategoriEkle.Name = "btnKategoriEkle";
+            btnKategoriEkle.Size = new Size(111, 35);
+            btnKategoriEkle.TabIndex = 1;
+            btnKategoriEkle.Text = "Ekle";
+            btnKategoriEkle.UseVisualStyleBackColor = true;
+            btnKategoriEkle.Click += btnKategoriEkle_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(38, 50);
+            label2.Name = "label2";
+            label2.Size = new Size(116, 25);
+            label2.TabIndex = 0;
+            label2.Text = "Kategori Adı";
+            // 
+            // grpYemekler
+            // 
+            grpYemekler.Controls.Add(cbKategori);
+            grpYemekler.Controls.Add(nudKalori);
+            grpYemekler.Controls.Add(label5);
+            grpYemekler.Controls.Add(label4);
+            grpYemekler.Controls.Add(txtYemekAdi);
+            grpYemekler.Controls.Add(dgvYemekler);
+            grpYemekler.Controls.Add(btnYemekGuncelle);
+            grpYemekler.Controls.Add(btnYemekSil);
+            grpYemekler.Controls.Add(btnYemekEkle);
+            grpYemekler.Controls.Add(label3);
+            grpYemekler.Location = new Point(79, 389);
+            grpYemekler.Margin = new Padding(4);
+            grpYemekler.Name = "grpYemekler";
+            grpYemekler.Padding = new Padding(4);
+            grpYemekler.Size = new Size(755, 365);
+            grpYemekler.TabIndex = 0;
+            grpYemekler.TabStop = false;
+            grpYemekler.Text = "Yemek İşlemleri";
+            // 
+            // cbKategori
+            // 
+            cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbKategori.FormattingEnabled = true;
+            cbKategori.Location = new Point(132, 69);
+            cbKategori.Name = "cbKategori";
+            cbKategori.Size = new Size(79, 33);
+            cbKategori.TabIndex = 6;
+            // 
+            // nudKalori
+            // 
+            nudKalori.Location = new Point(132, 108);
+            nudKalori.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
+            nudKalori.Name = "nudKalori";
+            nudKalori.Size = new Size(133, 32);
+            nudKalori.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(27, 110);
+            label5.Name = "label5";
+            label5.Size = new Size(61, 25);
+            label5.TabIndex = 4;
+            label5.Text = "Kalori";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(25, 63);
+            label4.Name = "label4";
+            label4.Size = new Size(88, 25);
+            label4.TabIndex = 4;
+            label4.Text = "Kategori ";
+            // 
+            // txtYemekAdi
+            // 
+            txtYemekAdi.Location = new Point(132, 35);
+            txtYemekAdi.Name = "txtYemekAdi";
+            txtYemekAdi.Size = new Size(162, 32);
+            txtYemekAdi.TabIndex = 3;
+            // 
+            // dgvYemekler
+            // 
+            dgvYemekler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvYemekler.Location = new Point(27, 209);
+            dgvYemekler.Name = "dgvYemekler";
+            dgvYemekler.ReadOnly = true;
+            dgvYemekler.RowHeadersWidth = 51;
+            dgvYemekler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvYemekler.Size = new Size(661, 149);
+            dgvYemekler.TabIndex = 2;
+            dgvYemekler.CellClick += dgvYemekler_CellClick;
+            // 
+            // btnYemekGuncelle
+            // 
+            btnYemekGuncelle.Location = new Point(261, 148);
+            btnYemekGuncelle.Name = "btnYemekGuncelle";
+            btnYemekGuncelle.Size = new Size(111, 35);
+            btnYemekGuncelle.TabIndex = 1;
+            btnYemekGuncelle.Text = "Güncelle";
+            btnYemekGuncelle.UseVisualStyleBackColor = true;
+            btnYemekGuncelle.Click += btnYemekGuncelle_Click;
+            // 
+            // btnYemekSil
+            // 
+            btnYemekSil.Location = new Point(144, 148);
+            btnYemekSil.Name = "btnYemekSil";
+            btnYemekSil.Size = new Size(111, 35);
+            btnYemekSil.TabIndex = 1;
+            btnYemekSil.Text = "Sil";
+            btnYemekSil.UseVisualStyleBackColor = true;
+            btnYemekSil.Click += btnYemekSil_Click;
+            // 
+            // btnYemekEkle
+            // 
+            btnYemekEkle.Location = new Point(27, 148);
+            btnYemekEkle.Name = "btnYemekEkle";
+            btnYemekEkle.Size = new Size(111, 35);
+            btnYemekEkle.TabIndex = 1;
+            btnYemekEkle.Text = "Ekle";
+            btnYemekEkle.UseVisualStyleBackColor = true;
+            btnYemekEkle.Click += btnYemekEkle_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(27, 38);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 25);
+            label3.TabIndex = 0;
+            label3.Text = "Yemek Adı";
+            // 
+            // YoneticiOgunKategoriYemekEkrani
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1345, 789);
+            Controls.Add(grpKategoriler);
+            Controls.Add(grpYemekler);
+            Controls.Add(grpOgunler);
+            Font = new Font("Segoe UI", 11F);
+            Margin = new Padding(4);
+            Name = "YoneticiOgunKategoriYemekEkrani";
+            Text = "YoneticiOgunKategoriYemekEkrani";
+            Load += YoneticiOgunKategoriYemekEkrani_Load;
+            grpOgunler.ResumeLayout(false);
+            grpOgunler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvOgunler).EndInit();
+            grpKategoriler.ResumeLayout(false);
+            grpKategoriler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvKategoriler).EndInit();
+            grpYemekler.ResumeLayout(false);
+            grpYemekler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudKalori).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvYemekler).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private GroupBox grpOgunler;
+        private TextBox txtOgunAdi;
+        private DataGridView dgvOgunler;
+        private Button btnOgunGuncelle;
+        private Button btnOgunSil;
+        private Button btnOgunEkle;
+        private Label label1;
+        private GroupBox grpKategoriler;
+        private TextBox txtKategoriAdi;
+        private DataGridView dgvKategoriler;
+        private Button btnKategoriGuncelle;
+        private Button btnKategoriSil;
+        private Button btnKategoriEkle;
+        private Label label2;
+        private GroupBox grpYemekler;
+        private Label label5;
+        private Label label4;
+        private TextBox txtYemekAdi;
+        private DataGridView dgvYemekler;
+        private Button btnYemekGuncelle;
+        private Button btnYemekSil;
+        private Button btnYemekEkle;
+        private Label label3;
+        private ComboBox cbKategori;
+        private NumericUpDown nudKalori;
+    }
+}

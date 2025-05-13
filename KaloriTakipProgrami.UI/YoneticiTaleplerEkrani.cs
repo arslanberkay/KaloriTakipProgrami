@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace KaloriTakipProgrami.UI
 {
-    public partial class SifremiUnuttumEkrani : Form
+    public partial class YoneticiTaleplerEkrani : Form
     {
-        public SifremiUnuttumEkrani()
+        public YoneticiTaleplerEkrani()
         {
             InitializeComponent();
         }
-
-       
     }
 }

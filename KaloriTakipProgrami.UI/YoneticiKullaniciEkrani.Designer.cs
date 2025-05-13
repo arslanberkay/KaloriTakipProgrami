@@ -1,6 +1,6 @@
 ﻿namespace KaloriTakipProgrami.UI
 {
-    partial class SifremiUnuttumEkrani
+    partial class YoneticiKullaniciEkrani
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            dgvKullanicilar = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // dgvKullanicilar
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(414, 218);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Yapılacak";
-          
+            dgvKullanicilar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKullanicilar.Location = new Point(46, 63);
+            dgvKullanicilar.Name = "dgvKullanicilar";
+            dgvKullanicilar.RowHeadersWidth = 51;
+            dgvKullanicilar.Size = new Size(686, 330);
+            dgvKullanicilar.TabIndex = 0;
             // 
-            // SifremiUnuttumEkrani
+            // YoneticiKullaniciEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1008, 634);
-            Controls.Add(label1);
-            Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4);
-            Name = "SifremiUnuttumEkrani";
-            Text = "SifremiUnuttumEkrani";
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgvKullanicilar);
+            Name = "YoneticiKullaniciEkrani";
+            Text = "YoneticiKullaniciEkrani";
+            Load += YoneticiKullaniciEkrani_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private DataGridView dgvKullanicilar;
     }
 }

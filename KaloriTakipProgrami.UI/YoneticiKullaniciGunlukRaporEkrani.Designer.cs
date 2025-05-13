@@ -1,6 +1,6 @@
 ﻿namespace KaloriTakipProgrami.UI
 {
-    partial class SifremiUnuttumEkrani
+    partial class YoneticiKullaniciGunlukRaporEkrani
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(414, 218);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Yapılacak";
-          
-            // 
-            // SifremiUnuttumEkrani
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1008, 634);
-            Controls.Add(label1);
-            Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4);
-            Name = "SifremiUnuttumEkrani";
-            Text = "SifremiUnuttumEkrani";
-            ResumeLayout(false);
-            PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "YoneticiKullaniciGunlukRaporEkrani";
         }
 
         #endregion
-
-        private Label label1;
     }
 }
