@@ -26,7 +26,7 @@ namespace KaloriTakipProgrami.UI.Context
 
 
 
-            optionsBuilder.UseSqlServer("server=AYGÜN\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-N6IFDCR\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
 
 
 
