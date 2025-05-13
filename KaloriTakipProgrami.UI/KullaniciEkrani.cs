@@ -19,8 +19,14 @@ namespace KaloriTakipProgrami.UI
 
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
         {
-            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani= new KullaniciBilgiGuncelleEkrani();
+            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani();
             kullaniciBilgiGuncelleEkrani.ShowDialog();
+        }
+
+        private void bnOgunBilgileriGoster_Click(object sender, EventArgs e)
+        {
+            KullaniciOgunBilgiEkrani kullaniciOgunBilgiEkrani= new KullaniciOgunBilgiEkrani();
+            kullaniciOgunBilgiEkrani.ShowDialog();
         }
     }
 }
