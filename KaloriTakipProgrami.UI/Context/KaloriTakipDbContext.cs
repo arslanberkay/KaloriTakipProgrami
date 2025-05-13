@@ -1,4 +1,4 @@
-﻿using KaloriTakipProgrami.UI.Models;
+using KaloriTakipProgrami.UI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
@@ -24,9 +24,14 @@ namespace KaloriTakipProgrami.UI.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
+
             optionsBuilder.UseSqlServer("server=AYGÜN\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
 
+
+
+           
             
+
 
         }
 
