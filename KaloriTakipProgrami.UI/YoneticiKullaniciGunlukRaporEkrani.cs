@@ -1,5 +1,6 @@
 ﻿using KaloriTakipProgrami.UI.Context;
 using KaloriTakipProgrami.UI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,12 +26,13 @@ namespace KaloriTakipProgrami.UI
         {
             cbKullaniciAdlari.DisplayMember = "KullaniciAdi";
             cbKullaniciAdlari.ValueMember = "Id";
-            cbKullaniciAdlari.DataSource = _db.Kullanicilar.Select(k => new
-            {
-                k.Id,
-                k.KullaniciAdi
-            }).ToList();
-           
+            cbKullaniciAdlari.DataSource = _db.Kullanicilar.
+                Select(k => new
+                {
+                    k.Id,
+                    k.KullaniciAdi
+                }).ToList();
+
             cbKullaniciAdlari.SelectedIndex = -1;
         }
 
@@ -68,24 +70,26 @@ namespace KaloriTakipProgrami.UI
         {
             if (!ValidateInputs())
             {
-                return;    
+                return;
             }
 
             var raporlanacakKullanici = _db.Kullanicilar.FirstOrDefault(k => k.Id == (int)cbKullaniciAdlari.SelectedValue);
 
-            var raporlanacakKullaniciGuneGoreOgunYemekleri = _db.OgunYemekler.Where(oy => oy.KullaniciId == raporlanacakKullanici.Id && oy.Tarih == dtpTarih.Value).ToList();
+            var raporlanacakKullaniciGuneGoreOgunYemekleri = _db.OgunYemekler
+                .Include(oy => oy.Yemek)
+                .Include(oy => oy.Ogun)
+                .Where(oy => oy.KullaniciId == raporlanacakKullanici.Id && oy.Tarih.Date == dtpTarih.Value.Date).ToList();
+
+            lstvKullaniciGunlukRapor.Items.Clear();
 
             foreach (var raporlanacakKullaniciGuneGoreOgunYemegi in raporlanacakKullaniciGuneGoreOgunYemekleri)
             {
                 ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.ToString();
-                listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Ogun.ToString());
+                listViewItem.Text = raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.YemekAdi.ToString();
+                listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Ogun.OgunAdi.ToString());
 
                 lstvKullaniciGunlukRapor.Items.Add(listViewItem);
             }
-
-
-
 
         }
 
