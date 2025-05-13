@@ -37,12 +37,12 @@
             label7 = new Label();
             btnHesapDondur = new Button();
             btnBilgileriGuncelle = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtAd = new TextBox();
+            txtSoyad = new TextBox();
+            txtSifre = new TextBox();
+            txtSifreTekrar = new TextBox();
+            txtEposta = new TextBox();
+            cmbCinsiyet = new ComboBox();
             pictureBox1 = new PictureBox();
             label8 = new Label();
             label9 = new Label();
@@ -140,48 +140,48 @@
             btnBilgileriGuncelle.Text = "Güncelle";
             btnBilgileriGuncelle.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtAd
             // 
-            textBox1.Location = new Point(187, 270);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 27);
-            textBox1.TabIndex = 9;
+            txtAd.Location = new Point(187, 270);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(151, 27);
+            txtAd.TabIndex = 9;
             // 
-            // textBox2
+            // txtSoyad
             // 
-            textBox2.Location = new Point(187, 314);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 27);
-            textBox2.TabIndex = 10;
+            txtSoyad.Location = new Point(187, 314);
+            txtSoyad.Name = "txtSoyad";
+            txtSoyad.Size = new Size(151, 27);
+            txtSoyad.TabIndex = 10;
             // 
-            // textBox3
+            // txtSifre
             // 
-            textBox3.Location = new Point(187, 356);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(151, 27);
-            textBox3.TabIndex = 11;
+            txtSifre.Location = new Point(187, 356);
+            txtSifre.Name = "txtSifre";
+            txtSifre.Size = new Size(151, 27);
+            txtSifre.TabIndex = 11;
             // 
-            // textBox4
+            // txtSifreTekrar
             // 
-            textBox4.Location = new Point(187, 400);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(151, 27);
-            textBox4.TabIndex = 12;
+            txtSifreTekrar.Location = new Point(187, 400);
+            txtSifreTekrar.Name = "txtSifreTekrar";
+            txtSifreTekrar.Size = new Size(151, 27);
+            txtSifreTekrar.TabIndex = 12;
             // 
-            // textBox5
+            // txtEposta
             // 
-            textBox5.Location = new Point(187, 443);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(151, 27);
-            textBox5.TabIndex = 13;
+            txtEposta.Location = new Point(187, 443);
+            txtEposta.Name = "txtEposta";
+            txtEposta.Size = new Size(151, 27);
+            txtEposta.TabIndex = 13;
             // 
-            // comboBox1
+            // cmbCinsiyet
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(187, 488);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 14;
+            cmbCinsiyet.FormattingEnabled = true;
+            cmbCinsiyet.Location = new Point(187, 488);
+            cmbCinsiyet.Name = "cmbCinsiyet";
+            cmbCinsiyet.Size = new Size(151, 28);
+            cmbCinsiyet.TabIndex = 14;
             // 
             // pictureBox1
             // 
@@ -257,12 +257,12 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(pictureBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cmbCinsiyet);
+            Controls.Add(txtEposta);
+            Controls.Add(txtSifreTekrar);
+            Controls.Add(txtSifre);
+            Controls.Add(txtSoyad);
+            Controls.Add(txtAd);
             Controls.Add(btnBilgileriGuncelle);
             Controls.Add(btnHesapDondur);
             Controls.Add(label7);
@@ -294,12 +294,12 @@
         private Label label7;
         private Button btnHesapDondur;
         private Button btnBilgileriGuncelle;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private ComboBox comboBox1;
+        private TextBox txtAd;
+        private TextBox txtSoyad;
+        private TextBox txtSifre;
+        private TextBox txtSifreTekrar;
+        private TextBox txtEposta;
+        private ComboBox cmbCinsiyet;
         private PictureBox pictureBox1;
         private Label label8;
         private Label label9;
