@@ -12,7 +12,8 @@ namespace KaloriTakipProgrami.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new YoneticiEkrani());
+
+            Application.Run(new KullaniciBilgiGuncelleEkrani());
 
         }
     }

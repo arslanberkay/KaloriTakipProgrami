@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KaloriTakipProgrami.UI
 {
@@ -34,6 +36,9 @@ namespace KaloriTakipProgrami.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
+
+
+
             if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
@@ -41,11 +46,59 @@ namespace KaloriTakipProgrami.UI
             }
             else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
-                KullaniciEkrani kullaniciEkrani = new KullaniciEkrani();
+                var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
+                KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
+            }
+            Hata();
+
+        }
+        public void Hata()
+        {
+            if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            {
+                MessageBox.Show("Lütfen boş alanları doldurunuz");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
+                return;
+
+
+
+            }
+            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
+            {
+                MessageBox.Show("Yanlış kullanıcı adı veya şifre lütfen tekrar deneyiniz.");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
+                return;
+            }
+            else if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+            {
+                MessageBox.Show("Yanlış kullanıcı adı veya şifre girdiniz");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
+                return;
             }
 
 
         }
+
+        private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSifreGoster.Checked)
+            {
+                // Şifreyi göster
+                txtSifre.PasswordChar = '\0';
+            }
+            else
+            {
+                // Şifreyi gizle
+                txtSifre.PasswordChar = '*'; // veya istediğin başka bir karakter
+            }
+        }
     }
+
+
+
+
 }

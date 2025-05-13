@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtKonu = new TextBox();
+            txtMesaj = new TextBox();
             label2 = new Label();
             btnGönder = new Button();
             SuspendLayout();
@@ -45,20 +45,20 @@
             label1.TabIndex = 0;
             label1.Text = "Mesaj :";
             // 
-            // textBox1
+            // txtKonu
             // 
-            textBox1.Location = new Point(121, 89);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(247, 27);
-            textBox1.TabIndex = 1;
+            txtKonu.Location = new Point(121, 89);
+            txtKonu.Name = "txtKonu";
+            txtKonu.Size = new Size(247, 27);
+            txtKonu.TabIndex = 1;
             // 
-            // textBox2
+            // txtMesaj
             // 
-            textBox2.Location = new Point(126, 145);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(242, 201);
-            textBox2.TabIndex = 2;
+            txtMesaj.Location = new Point(126, 145);
+            txtMesaj.Multiline = true;
+            txtMesaj.Name = "txtMesaj";
+            txtMesaj.Size = new Size(242, 201);
+            txtMesaj.TabIndex = 2;
             // 
             // label2
             // 
@@ -78,6 +78,7 @@
             btnGönder.TabIndex = 3;
             btnGönder.Text = "Gönder";
             btnGönder.UseVisualStyleBackColor = true;
+            btnGönder.Click += btnGönder_Click;
             // 
             // KullaniciTaleplerEkrani
             // 
@@ -85,8 +86,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(434, 429);
             Controls.Add(btnGönder);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtMesaj);
+            Controls.Add(txtKonu);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "KullaniciTaleplerEkrani";
@@ -99,8 +100,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtKonu;
+        private TextBox txtMesaj;
         private Label label2;
         private Button btnGönder;
     }

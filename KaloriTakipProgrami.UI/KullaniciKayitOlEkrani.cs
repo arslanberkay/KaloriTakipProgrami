@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KaloriTakipProgrami.UI
 {
@@ -133,14 +134,15 @@ namespace KaloriTakipProgrami.UI
             }
             /////fotoğraf kısmı/////
             Kullanici kullanici = new Kullanici()
-            { KullaniciAdi=txtKullaniciAdi.Text,
-              Sifre=txtSifre.Text,  
-              Isim=txtAd.Text,
-              Soyisim=txtSoyad.Text,    
-              DogumTarihi=dtpDogumTarihi.Value,
-              Email=txtMail.Text,
-              Cinsiyet=cbCinsiyet.SelectedItem.ToString(),
-              FotografYolu=txtFotograf.Text,                                             
+            {
+                KullaniciAdi = txtKullaniciAdi.Text,
+                Sifre = txtSifre.Text,
+                Isim = txtAd.Text,
+                Soyisim = txtSoyad.Text,
+                DogumTarihi = dtpDogumTarihi.Value,
+                Email = txtMail.Text,
+                Cinsiyet = cbCinsiyet.SelectedItem.ToString(),
+                FotografYolu = txtFotograf.Text,
             };
             bool emailvarMi = _db.Kullanicilar.Any(k => k.Email == txtMail.Text);
 
@@ -159,20 +161,7 @@ namespace KaloriTakipProgrami.UI
             MessageBox.Show("Kullanıcı Bşarıyla eklendi");
             Temizle();
 
-            KullaniciEkrani kullaniciEkrani = new KullaniciEkrani();
-            kullaniciEkrani.ShowDialog();   
-                
-
-
-
-
-
-
-
-
-
-
-
+          
 
 
 
@@ -198,12 +187,27 @@ namespace KaloriTakipProgrami.UI
         }
         private void Temizle()
         {
-            txtAd.Text = txtFotograf.Text= txtKullaniciAdi.Text=txtMail.Text=
-                txtSifre.Text=txtSifreTekrar.Text=txtSoyad.Text=string.Empty;
-           
+            txtAd.Text = txtFotograf.Text = txtKullaniciAdi.Text = txtMail.Text =
+                txtSifre.Text = txtSifreTekrar.Text = txtSoyad.Text = string.Empty;
 
 
+        }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // Şifreyi göster
+                txtSifre.PasswordChar = '\0';
+                txtSifreTekrar.PasswordChar = '\0';
+
+            }
+            else
+            {
+                // Şifreyi gizle
+                txtSifre.PasswordChar = '*';
+                txtSifreTekrar.PasswordChar = '*'; // veya istediğin başka bir karakter
+            }
         }
     }
 }
