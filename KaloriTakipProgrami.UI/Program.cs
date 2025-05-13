@@ -12,6 +12,7 @@ namespace KaloriTakipProgrami.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+
             Application.Run(new KullaniciGirisEkrani());
 
         }

@@ -32,10 +32,11 @@ namespace KaloriTakipProgrami.UI
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
             txtSifre.PasswordChar = '•';
+            txtSifreTekrar.PasswordChar = '•';
             lblKullaniciAdi.Text = GirisYapanKullanici.KullaniciAdi;
-            lblKilo.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo.ToString();
-            lblBoy.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy.ToString();
-            lblVki.Text = Vki().ToString();
+            //lblKilo.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo.ToString();
+            // lblBoy.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy.ToString();
+            //lblVki.Text = Vki().ToString();
             //fotoğraf yükleme ?
         }
 
@@ -116,8 +117,8 @@ namespace KaloriTakipProgrami.UI
             GirisYapanKullanici.DogumTarihi = dtpDogumTarihi.Value;
             GirisYapanKullanici.Sifre = txtSifre.Text;
             GirisYapanKullanici.Durum = true;
-            GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo = Convert.ToInt32(lblKilo.Text);
-            GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy = Convert.ToInt32(lblBoy.Text);
+            //GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo = Convert.ToInt32(lblKilo.Text);
+            //GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy = Convert.ToInt32(lblBoy.Text);
 
             try
             {
@@ -132,7 +133,7 @@ namespace KaloriTakipProgrami.UI
             KullaniciBilgileri();
 
         }
-     
+
         private void cbSifre_CheckedChanged(object sender, EventArgs e)
         {
             if (cbSifre.Checked)
@@ -142,6 +143,35 @@ namespace KaloriTakipProgrami.UI
             else
             {
                 txtSifre.PasswordChar = '•';  // Şifreyi tekrar gizler
+            }
+        }
+
+        private void btnHesapDondur_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                GirisYapanKullanici.Durum = false;
+                _context.Kullanicilar.Update(GirisYapanKullanici);
+                _context.SaveChanges();
+                MessageBox.Show("Hesabınız donduruldu", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbSifreKontrol_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSifreKontrol.Checked)
+            {
+                txtSifreTekrar.PasswordChar = '\0';  // Şifreyi görünür yapar
+            }
+            else
+            {
+                txtSifreTekrar.PasswordChar = '•';  // Şifreyi tekrar gizler
             }
         }
     }
