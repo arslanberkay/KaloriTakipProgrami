@@ -25,12 +25,14 @@ namespace KaloriTakipProgrami.UI.Context
         {
 
 
+
             optionsBuilder.UseSqlServer("server=AYGÜN\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
 
 
 
            
             
+
 
 
         }
@@ -43,6 +45,7 @@ namespace KaloriTakipProgrami.UI.Context
                 entity.HasIndex(k => k.KullaniciAdi).IsUnique();
                 entity.HasIndex(k => k.Email).IsUnique();
             });
+
 
 
 
