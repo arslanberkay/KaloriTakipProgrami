@@ -14,7 +14,10 @@ namespace KaloriTakipProgrami.UI
     public partial class KullaniciEkrani : Form
     {
         private Kullanici _girisYapanKullanici;
-
+        public KullaniciEkrani()
+        {
+                
+        }
         public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();

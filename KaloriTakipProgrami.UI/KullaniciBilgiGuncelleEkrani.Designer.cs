@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblKilo = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -47,25 +46,16 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            lblBoy = new Label();
             lblKullaniciAdi = new Label();
             lblVki = new Label();
             label14 = new Label();
             dtpDogumTarihi = new DateTimePicker();
             btnBilgilendirme = new Button();
             cbSifre = new CheckBox();
-            cbSifreKontrol = new CheckBox();
+            txtKilo = new TextBox();
+            txtBoy = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             SuspendLayout();
-            // 
-            // lblKilo
-            // 
-            lblKilo.AutoSize = true;
-            lblKilo.Location = new Point(101, 152);
-            lblKilo.Name = "lblKilo";
-            lblKilo.Size = new Size(38, 15);
-            lblKilo.TabIndex = 0;
-            lblKilo.Text = "label1";
             // 
             // label2
             // 
@@ -197,6 +187,7 @@
             cmbCinsiyet.Name = "cmbCinsiyet";
             cmbCinsiyet.Size = new Size(133, 23);
             cmbCinsiyet.TabIndex = 14;
+            cmbCinsiyet.Click += cmbCinsiyet_Click;
             // 
             // pbFoto
             // 
@@ -221,7 +212,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label9.Location = new Point(200, 130);
+            label9.Location = new Point(203, 130);
             label9.Name = "label9";
             label9.Size = new Size(38, 21);
             label9.TabIndex = 17;
@@ -237,15 +228,6 @@
             label10.TabIndex = 18;
             label10.Text = "Kilo";
             // 
-            // lblBoy
-            // 
-            lblBoy.AutoSize = true;
-            lblBoy.Location = new Point(197, 152);
-            lblBoy.Name = "lblBoy";
-            lblBoy.Size = new Size(38, 15);
-            lblBoy.TabIndex = 0;
-            lblBoy.Text = "label1";
-            // 
             // lblKullaniciAdi
             // 
             lblKullaniciAdi.AutoSize = true;
@@ -258,7 +240,7 @@
             // lblVki
             // 
             lblVki.AutoSize = true;
-            lblVki.Location = new Point(289, 152);
+            lblVki.Location = new Point(292, 157);
             lblVki.Name = "lblVki";
             lblVki.Size = new Size(38, 15);
             lblVki.TabIndex = 0;
@@ -282,7 +264,7 @@
             // 
             // btnBilgilendirme
             // 
-            btnBilgilendirme.Location = new Point(336, 130);
+            btnBilgilendirme.Location = new Point(350, 128);
             btnBilgilendirme.Name = "btnBilgilendirme";
             btnBilgilendirme.Size = new Size(28, 28);
             btnBilgilendirme.TabIndex = 22;
@@ -302,23 +284,27 @@
             cbSifre.UseVisualStyleBackColor = true;
             cbSifre.CheckedChanged += cbSifre_CheckedChanged;
             // 
-            // cbSifreKontrol
+            // txtKilo
             // 
-            cbSifreKontrol.AutoSize = true;
-            cbSifreKontrol.Location = new Point(309, 341);
-            cbSifreKontrol.Name = "cbSifreKontrol";
-            cbSifreKontrol.Size = new Size(35, 19);
-            cbSifreKontrol.TabIndex = 24;
-            cbSifreKontrol.Text = "...";
-            cbSifreKontrol.UseVisualStyleBackColor = true;
-            cbSifreKontrol.CheckedChanged += cbSifreKontrol_CheckedChanged;
+            txtKilo.Location = new Point(89, 154);
+            txtKilo.Name = "txtKilo";
+            txtKilo.Size = new Size(55, 23);
+            txtKilo.TabIndex = 25;
+            // 
+            // txtBoy
+            // 
+            txtBoy.Location = new Point(198, 154);
+            txtBoy.Name = "txtBoy";
+            txtBoy.Size = new Size(55, 23);
+            txtBoy.TabIndex = 26;
             // 
             // KullaniciBilgiGuncelleEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(456, 502);
-            Controls.Add(cbSifreKontrol);
+            Controls.Add(txtBoy);
+            Controls.Add(txtKilo);
             Controls.Add(cbSifre);
             Controls.Add(btnBilgilendirme);
             Controls.Add(dtpDogumTarihi);
@@ -343,8 +329,6 @@
             Controls.Add(label2);
             Controls.Add(lblVki);
             Controls.Add(lblKullaniciAdi);
-            Controls.Add(lblBoy);
-            Controls.Add(lblKilo);
             Margin = new Padding(3, 2, 3, 2);
             Name = "KullaniciBilgiGuncelleEkrani";
             StartPosition = FormStartPosition.CenterScreen;
@@ -356,8 +340,6 @@
         }
 
         #endregion
-
-        private Label lblKilo;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -376,13 +358,13 @@
         private Label label8;
         private Label label9;
         private Label label10;
-        private Label lblBoy;
         private Label lblKullaniciAdi;
         private Label lblVki;
         private Label label14;
         private DateTimePicker dtpDogumTarihi;
         private Button btnBilgilendirme;
         private CheckBox cbSifre;
-        private CheckBox cbSifreKontrol;
+        private TextBox txtKilo;
+        private TextBox txtBoy;
     }
 }

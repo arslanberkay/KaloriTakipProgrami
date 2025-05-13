@@ -17,12 +17,11 @@ namespace KaloriTakipProgrami.UI
     {
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
-
+        public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
         public KullaniciBilgiGuncelleEkrani()
         {
             InitializeComponent();
             _context = new KaloriTakipDbContext();
-
         }
         private void KullaniciBilgileri()
         {
@@ -31,19 +30,19 @@ namespace KaloriTakipProgrami.UI
             txtEposta.Text = GirisYapanKullanici.Email;
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
-            txtSifre.PasswordChar = '•';
-            txtSifreTekrar.PasswordChar = '•';
+            txtSifre.Text = GirisYapanKullanici.Sifre;
+            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
             lblKullaniciAdi.Text = GirisYapanKullanici.KullaniciAdi;
-            //lblKilo.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo.ToString();
-            // lblBoy.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy.ToString();
+            //txtKilo.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo.ToString();
+            //txtBoy.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy.ToString();
             //lblVki.Text = Vki().ToString();
             //fotoğraf yükleme ?
         }
 
         private float Vki()
         {
-            float.TryParse(lblKilo.Text, out float kilo);  //kg cinsinden
-            float.TryParse(lblBoy.Text, out float boy);  //m cinsinden
+            float.TryParse(txtKilo.Text, out float kilo);  //kg cinsinden
+            float.TryParse(txtBoy.Text, out float boy);  //m cinsinden
 
             return kilo / (boy * boy);
         }
@@ -53,13 +52,10 @@ namespace KaloriTakipProgrami.UI
             KullaniciBilgileri();
         }
 
-        /// <summary>
-        /// butonun üstüne geldiğinde orada vki ile ilgili bilgilendirme mesajı çıkacak
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btnBilgilendirme_MouseEnter(object sender, EventArgs e)
         {
+            // butonun üstüne geldiğinde orada vki ile ilgili bilgilendirme mesajı çıkacak
             MessageBox.Show("18.5 kg/m2 'nin altında ise\t\tZayıf\r\n18.5 - 24.9 kg/m2 'nin arasında ise\tNormal Kilolu\r\n25 - 29.9 kg/m2 'nin arasında ise\tHafif şişman (fazla kilolu)\r\n30 - 34.9 kg/m2 'nin arasında ise\tOrta derecede şişman (I. Derece)\r\n35 - 39.9 kg/m2 'nin arasında ise\tAğır derecede şişman (II. Derece)\r\n40 kg/m2 'nin üzerinde ise\tÇok ağır derecede şişman (III.Derece)");
         }
         private bool ValidateInputs()
@@ -90,7 +86,7 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Cinsiyetiniz boş olamaz", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (dtpDogumTarihi.Value >= DateTime.Now)
+            if (dtpDogumTarihi.Value.Date >= DateTime.Now.Date)
             {
                 MessageBox.Show("Doğum tarihiniz geçerli değil", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -98,6 +94,27 @@ namespace KaloriTakipProgrami.UI
             if (txtSifre.Text != txtSifreTekrar.Text)
             {
                 MessageBox.Show("Şifreler eşleşmiyor", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtSifre.Text.Length < 4 || txtSifre.Text.Length > 12)
+            {
+                MessageBox.Show("Şifre 4-12 karakter arasında olmalıdır", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <=0)
+            {
+                MessageBox.Show("Kilo geçersiz, kilogram cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!float.TryParse(txtBoy.Text, out float boy) && boy <= 0 && boy > 3)
+            {
+                MessageBox.Show("Noy geçersiz,metre cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if((!GirisYapanKullanici.Email.EndsWith("@hotmail.com")) || (!GirisYapanKullanici.Email.EndsWith("@gmail.com")))
+            {
+                MessageBox.Show("Lütfen geçerli bir e-posta adresi girin", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -122,7 +139,7 @@ namespace KaloriTakipProgrami.UI
 
             try
             {
-                _context.Kullanicilar.Add(GirisYapanKullanici);
+                _context.Kullanicilar.Update(GirisYapanKullanici);
                 _context.SaveChanges();
                 MessageBox.Show("Bilgileriniz güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -139,13 +156,14 @@ namespace KaloriTakipProgrami.UI
             if (cbSifre.Checked)
             {
                 txtSifre.PasswordChar = '\0';  // Şifreyi görünür yapar
+                txtSifreTekrar.PasswordChar = '\0';  // Şifreyi görünür yapar
             }
             else
             {
                 txtSifre.PasswordChar = '•';  // Şifreyi tekrar gizler
+                txtSifreTekrar.PasswordChar = '•';  // Şifreyi tekrar gizler
             }
         }
-
         private void btnHesapDondur_Click(object sender, EventArgs e)
         {
 
@@ -162,17 +180,9 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void cbSifreKontrol_CheckedChanged(object sender, EventArgs e)
+        private void cmbCinsiyet_Click(object sender, EventArgs e)
         {
-            if (cbSifreKontrol.Checked)
-            {
-                txtSifreTekrar.PasswordChar = '\0';  // Şifreyi görünür yapar
-            }
-            else
-            {
-                txtSifreTekrar.PasswordChar = '•';  // Şifreyi tekrar gizler
-            }
+            cmbCinsiyet.DataSource = Cinsiyetler;
         }
     }
 }
