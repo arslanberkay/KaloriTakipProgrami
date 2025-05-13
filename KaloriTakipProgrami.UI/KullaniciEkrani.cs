@@ -7,14 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KaloriTakipProgrami.UI.Models;
 
 namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciEkrani : Form
     {
-        public KullaniciEkrani()
+        private Kullanici _girisYapanKullanici;
+
+        public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();
+            // giriş yapan kullanıcın tüm bilgileri 
+            _girisYapanKullanici = girisYapanKullanici;
+            BilgileriYukle();
+        }
+        private void BilgileriYukle()
+        {
+            //kayıt olan kullanıcının bilgilerini profilde göstermek için
+
+            if (_girisYapanKullanici != null)
+            {
+                lblKullaniciAdi.Text = _girisYapanKullanici.KullaniciAdi;
+                lblAd.Text = _girisYapanKullanici.Isim;
+                lblSoyad.Text = _girisYapanKullanici.Soyisim;
+                lblCinsiyet.Text = _girisYapanKullanici.Cinsiyet;
+                lblDogumTarihi.Text = _girisYapanKullanici.DogumTarihi.ToString();
+                lblEposta.Text = _girisYapanKullanici.Email;
+                lblKilo.Text = "--";
+                lblBoy.Text = "--";
+                lblVKİ.Text = "--";
+            }
         }
 
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
