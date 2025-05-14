@@ -110,6 +110,7 @@
             btnOk.TabIndex = 2;
             btnOk.Text = "OK";
             btnOk.UseVisualStyleBackColor = true;
+            btnOk.Click += btnOk_Click;
             // 
             // label1
             // 
@@ -141,6 +142,7 @@
             btnSifreyiGuncelle.TabIndex = 2;
             btnSifreyiGuncelle.Text = "Şifreyi Güncelle";
             btnSifreyiGuncelle.UseVisualStyleBackColor = true;
+            btnSifreyiGuncelle.Click += btnSifreyiGuncelle_Click;
             // 
             // txtYeniSifreTekrar
             // 
@@ -186,6 +188,7 @@
             Margin = new Padding(4);
             Name = "SifremiUnuttumEkrani";
             Text = "SifremiUnuttumEkrani";
+            Load += SifremiUnuttumEkrani_Load;
             grpSifirlamaKoduGonder.ResumeLayout(false);
             grpSifirlamaKoduGonder.PerformLayout();
             grpSifirlamaKodu.ResumeLayout(false);
