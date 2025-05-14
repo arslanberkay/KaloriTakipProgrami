@@ -65,14 +65,15 @@ namespace KaloriTakipProgrami.UI
 
 
             }
-            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
+            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text))
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre lütfen tekrar deneyiniz.");
                 txtKullaniciAdi.Text = "";
                 txtSifre.Text = "";
                 return;
             }
-             if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+
+            if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text))
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre girdiniz");
                 txtKullaniciAdi.Text = "";

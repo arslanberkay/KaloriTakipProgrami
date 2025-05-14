@@ -743,6 +743,1439 @@ namespace KaloriTakipProgrami.UI.Migrations
                     b.HasIndex("YemekId");
 
                     b.ToTable("OgunYemekler");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            KullaniciId = 23,
+                            Miktar = 192m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 142
+                        },
+                        new
+                        {
+                            Id = 2,
+                            KullaniciId = 24,
+                            Miktar = 193m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 143
+                        },
+                        new
+                        {
+                            Id = 3,
+                            KullaniciId = 25,
+                            Miktar = 194m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 144
+                        },
+                        new
+                        {
+                            Id = 4,
+                            KullaniciId = 26,
+                            Miktar = 195m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 145
+                        },
+                        new
+                        {
+                            Id = 5,
+                            KullaniciId = 27,
+                            Miktar = 196m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 146
+                        },
+                        new
+                        {
+                            Id = 6,
+                            KullaniciId = 28,
+                            Miktar = 197m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 147
+                        },
+                        new
+                        {
+                            Id = 7,
+                            KullaniciId = 29,
+                            Miktar = 198m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 148
+                        },
+                        new
+                        {
+                            Id = 8,
+                            KullaniciId = 30,
+                            Miktar = 199m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 149
+                        },
+                        new
+                        {
+                            Id = 9,
+                            KullaniciId = 1,
+                            Miktar = 50m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 150
+                        },
+                        new
+                        {
+                            Id = 10,
+                            KullaniciId = 2,
+                            Miktar = 51m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 151
+                        },
+                        new
+                        {
+                            Id = 11,
+                            KullaniciId = 3,
+                            Miktar = 52m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 152
+                        },
+                        new
+                        {
+                            Id = 12,
+                            KullaniciId = 4,
+                            Miktar = 53m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 153
+                        },
+                        new
+                        {
+                            Id = 13,
+                            KullaniciId = 5,
+                            Miktar = 54m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 154
+                        },
+                        new
+                        {
+                            Id = 14,
+                            KullaniciId = 6,
+                            Miktar = 55m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 155
+                        },
+                        new
+                        {
+                            Id = 15,
+                            KullaniciId = 7,
+                            Miktar = 56m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 156
+                        },
+                        new
+                        {
+                            Id = 16,
+                            KullaniciId = 8,
+                            Miktar = 57m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 157
+                        },
+                        new
+                        {
+                            Id = 17,
+                            KullaniciId = 9,
+                            Miktar = 58m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 158
+                        },
+                        new
+                        {
+                            Id = 18,
+                            KullaniciId = 10,
+                            Miktar = 59m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 159
+                        },
+                        new
+                        {
+                            Id = 19,
+                            KullaniciId = 11,
+                            Miktar = 60m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 160
+                        },
+                        new
+                        {
+                            Id = 20,
+                            KullaniciId = 12,
+                            Miktar = 61m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 161
+                        },
+                        new
+                        {
+                            Id = 21,
+                            KullaniciId = 13,
+                            Miktar = 62m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 162
+                        },
+                        new
+                        {
+                            Id = 22,
+                            KullaniciId = 14,
+                            Miktar = 63m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 163
+                        },
+                        new
+                        {
+                            Id = 23,
+                            KullaniciId = 15,
+                            Miktar = 64m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 164
+                        },
+                        new
+                        {
+                            Id = 24,
+                            KullaniciId = 16,
+                            Miktar = 65m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 165
+                        },
+                        new
+                        {
+                            Id = 25,
+                            KullaniciId = 17,
+                            Miktar = 66m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 166
+                        },
+                        new
+                        {
+                            Id = 26,
+                            KullaniciId = 18,
+                            Miktar = 67m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 167
+                        },
+                        new
+                        {
+                            Id = 27,
+                            KullaniciId = 19,
+                            Miktar = 68m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 168
+                        },
+                        new
+                        {
+                            Id = 28,
+                            KullaniciId = 20,
+                            Miktar = 69m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 169
+                        },
+                        new
+                        {
+                            Id = 29,
+                            KullaniciId = 21,
+                            Miktar = 70m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 170
+                        },
+                        new
+                        {
+                            Id = 30,
+                            KullaniciId = 22,
+                            Miktar = 71m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 171
+                        },
+                        new
+                        {
+                            Id = 31,
+                            KullaniciId = 23,
+                            Miktar = 72m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 172
+                        },
+                        new
+                        {
+                            Id = 32,
+                            KullaniciId = 24,
+                            Miktar = 73m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 173
+                        },
+                        new
+                        {
+                            Id = 33,
+                            KullaniciId = 25,
+                            Miktar = 74m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 174
+                        },
+                        new
+                        {
+                            Id = 34,
+                            KullaniciId = 26,
+                            Miktar = 75m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 175
+                        },
+                        new
+                        {
+                            Id = 35,
+                            KullaniciId = 27,
+                            Miktar = 76m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 176
+                        },
+                        new
+                        {
+                            Id = 36,
+                            KullaniciId = 28,
+                            Miktar = 77m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 177
+                        },
+                        new
+                        {
+                            Id = 37,
+                            KullaniciId = 29,
+                            Miktar = 78m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 178
+                        },
+                        new
+                        {
+                            Id = 38,
+                            KullaniciId = 30,
+                            Miktar = 79m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 179
+                        },
+                        new
+                        {
+                            Id = 39,
+                            KullaniciId = 1,
+                            Miktar = 80m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 180
+                        },
+                        new
+                        {
+                            Id = 40,
+                            KullaniciId = 2,
+                            Miktar = 81m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 181
+                        },
+                        new
+                        {
+                            Id = 41,
+                            KullaniciId = 3,
+                            Miktar = 82m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 182
+                        },
+                        new
+                        {
+                            Id = 42,
+                            KullaniciId = 4,
+                            Miktar = 83m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 183
+                        },
+                        new
+                        {
+                            Id = 43,
+                            KullaniciId = 5,
+                            Miktar = 84m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 184
+                        },
+                        new
+                        {
+                            Id = 44,
+                            KullaniciId = 6,
+                            Miktar = 85m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 185
+                        },
+                        new
+                        {
+                            Id = 45,
+                            KullaniciId = 7,
+                            Miktar = 86m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 186
+                        },
+                        new
+                        {
+                            Id = 46,
+                            KullaniciId = 8,
+                            Miktar = 87m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 187
+                        },
+                        new
+                        {
+                            Id = 47,
+                            KullaniciId = 9,
+                            Miktar = 88m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 188
+                        },
+                        new
+                        {
+                            Id = 48,
+                            KullaniciId = 10,
+                            Miktar = 89m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 189
+                        },
+                        new
+                        {
+                            Id = 49,
+                            KullaniciId = 11,
+                            Miktar = 90m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 190
+                        },
+                        new
+                        {
+                            Id = 50,
+                            KullaniciId = 12,
+                            Miktar = 91m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 191
+                        },
+                        new
+                        {
+                            Id = 51,
+                            KullaniciId = 13,
+                            Miktar = 92m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 192
+                        },
+                        new
+                        {
+                            Id = 52,
+                            KullaniciId = 14,
+                            Miktar = 93m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 193
+                        },
+                        new
+                        {
+                            Id = 53,
+                            KullaniciId = 15,
+                            Miktar = 94m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 194
+                        },
+                        new
+                        {
+                            Id = 54,
+                            KullaniciId = 16,
+                            Miktar = 95m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 195
+                        },
+                        new
+                        {
+                            Id = 55,
+                            KullaniciId = 17,
+                            Miktar = 96m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 196
+                        },
+                        new
+                        {
+                            Id = 56,
+                            KullaniciId = 18,
+                            Miktar = 97m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 197
+                        },
+                        new
+                        {
+                            Id = 57,
+                            KullaniciId = 19,
+                            Miktar = 98m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 198
+                        },
+                        new
+                        {
+                            Id = 58,
+                            KullaniciId = 20,
+                            Miktar = 99m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 199
+                        },
+                        new
+                        {
+                            Id = 59,
+                            KullaniciId = 21,
+                            Miktar = 100m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 200
+                        },
+                        new
+                        {
+                            Id = 60,
+                            KullaniciId = 22,
+                            Miktar = 101m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 201
+                        },
+                        new
+                        {
+                            Id = 61,
+                            KullaniciId = 23,
+                            Miktar = 102m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 202
+                        },
+                        new
+                        {
+                            Id = 62,
+                            KullaniciId = 24,
+                            Miktar = 103m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 203
+                        },
+                        new
+                        {
+                            Id = 63,
+                            KullaniciId = 25,
+                            Miktar = 104m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 204
+                        },
+                        new
+                        {
+                            Id = 64,
+                            KullaniciId = 26,
+                            Miktar = 105m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 205
+                        },
+                        new
+                        {
+                            Id = 65,
+                            KullaniciId = 27,
+                            Miktar = 106m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 206
+                        },
+                        new
+                        {
+                            Id = 66,
+                            KullaniciId = 28,
+                            Miktar = 107m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 207
+                        },
+                        new
+                        {
+                            Id = 67,
+                            KullaniciId = 29,
+                            Miktar = 108m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 208
+                        },
+                        new
+                        {
+                            Id = 68,
+                            KullaniciId = 30,
+                            Miktar = 109m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 209
+                        },
+                        new
+                        {
+                            Id = 69,
+                            KullaniciId = 1,
+                            Miktar = 110m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 210
+                        },
+                        new
+                        {
+                            Id = 70,
+                            KullaniciId = 2,
+                            Miktar = 111m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 211
+                        },
+                        new
+                        {
+                            Id = 71,
+                            KullaniciId = 3,
+                            Miktar = 112m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 212
+                        },
+                        new
+                        {
+                            Id = 72,
+                            KullaniciId = 4,
+                            Miktar = 113m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 213
+                        },
+                        new
+                        {
+                            Id = 73,
+                            KullaniciId = 5,
+                            Miktar = 114m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 214
+                        },
+                        new
+                        {
+                            Id = 74,
+                            KullaniciId = 6,
+                            Miktar = 115m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 215
+                        },
+                        new
+                        {
+                            Id = 75,
+                            KullaniciId = 7,
+                            Miktar = 116m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 216
+                        },
+                        new
+                        {
+                            Id = 76,
+                            KullaniciId = 8,
+                            Miktar = 117m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 217
+                        },
+                        new
+                        {
+                            Id = 77,
+                            KullaniciId = 9,
+                            Miktar = 118m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 218
+                        },
+                        new
+                        {
+                            Id = 78,
+                            KullaniciId = 10,
+                            Miktar = 119m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 219
+                        },
+                        new
+                        {
+                            Id = 79,
+                            KullaniciId = 11,
+                            Miktar = 120m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 220
+                        },
+                        new
+                        {
+                            Id = 80,
+                            KullaniciId = 12,
+                            Miktar = 121m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 221
+                        },
+                        new
+                        {
+                            Id = 81,
+                            KullaniciId = 13,
+                            Miktar = 122m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 222
+                        },
+                        new
+                        {
+                            Id = 82,
+                            KullaniciId = 14,
+                            Miktar = 123m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 223
+                        },
+                        new
+                        {
+                            Id = 83,
+                            KullaniciId = 15,
+                            Miktar = 124m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 224
+                        },
+                        new
+                        {
+                            Id = 84,
+                            KullaniciId = 16,
+                            Miktar = 125m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 225
+                        },
+                        new
+                        {
+                            Id = 85,
+                            KullaniciId = 17,
+                            Miktar = 126m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 226
+                        },
+                        new
+                        {
+                            Id = 86,
+                            KullaniciId = 18,
+                            Miktar = 127m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 227
+                        },
+                        new
+                        {
+                            Id = 87,
+                            KullaniciId = 19,
+                            Miktar = 128m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 228
+                        },
+                        new
+                        {
+                            Id = 88,
+                            KullaniciId = 20,
+                            Miktar = 129m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 229
+                        },
+                        new
+                        {
+                            Id = 89,
+                            KullaniciId = 21,
+                            Miktar = 130m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 230
+                        },
+                        new
+                        {
+                            Id = 90,
+                            KullaniciId = 22,
+                            Miktar = 131m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 231
+                        },
+                        new
+                        {
+                            Id = 91,
+                            KullaniciId = 23,
+                            Miktar = 132m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 232
+                        },
+                        new
+                        {
+                            Id = 92,
+                            KullaniciId = 24,
+                            Miktar = 133m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 233
+                        },
+                        new
+                        {
+                            Id = 93,
+                            KullaniciId = 25,
+                            Miktar = 134m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 234
+                        },
+                        new
+                        {
+                            Id = 94,
+                            KullaniciId = 26,
+                            Miktar = 135m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 235
+                        },
+                        new
+                        {
+                            Id = 95,
+                            KullaniciId = 27,
+                            Miktar = 136m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 236
+                        },
+                        new
+                        {
+                            Id = 96,
+                            KullaniciId = 28,
+                            Miktar = 137m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 237
+                        },
+                        new
+                        {
+                            Id = 97,
+                            KullaniciId = 29,
+                            Miktar = 138m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 238
+                        },
+                        new
+                        {
+                            Id = 98,
+                            KullaniciId = 30,
+                            Miktar = 139m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 239
+                        },
+                        new
+                        {
+                            Id = 99,
+                            KullaniciId = 1,
+                            Miktar = 140m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 240
+                        },
+                        new
+                        {
+                            Id = 100,
+                            KullaniciId = 2,
+                            Miktar = 141m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 241
+                        },
+                        new
+                        {
+                            Id = 101,
+                            KullaniciId = 3,
+                            Miktar = 142m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 242
+                        },
+                        new
+                        {
+                            Id = 102,
+                            KullaniciId = 4,
+                            Miktar = 143m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 243
+                        },
+                        new
+                        {
+                            Id = 103,
+                            KullaniciId = 5,
+                            Miktar = 144m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 244
+                        },
+                        new
+                        {
+                            Id = 104,
+                            KullaniciId = 6,
+                            Miktar = 145m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 245
+                        },
+                        new
+                        {
+                            Id = 105,
+                            KullaniciId = 7,
+                            Miktar = 146m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 246
+                        },
+                        new
+                        {
+                            Id = 106,
+                            KullaniciId = 8,
+                            Miktar = 147m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 247
+                        },
+                        new
+                        {
+                            Id = 107,
+                            KullaniciId = 9,
+                            Miktar = 148m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 248
+                        },
+                        new
+                        {
+                            Id = 108,
+                            KullaniciId = 10,
+                            Miktar = 149m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 249
+                        },
+                        new
+                        {
+                            Id = 109,
+                            KullaniciId = 11,
+                            Miktar = 150m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 250
+                        },
+                        new
+                        {
+                            Id = 110,
+                            KullaniciId = 12,
+                            Miktar = 51m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 1
+                        },
+                        new
+                        {
+                            Id = 111,
+                            KullaniciId = 13,
+                            Miktar = 52m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 2
+                        },
+                        new
+                        {
+                            Id = 112,
+                            KullaniciId = 14,
+                            Miktar = 53m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 3
+                        },
+                        new
+                        {
+                            Id = 113,
+                            KullaniciId = 15,
+                            Miktar = 54m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 4
+                        },
+                        new
+                        {
+                            Id = 114,
+                            KullaniciId = 16,
+                            Miktar = 55m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 5
+                        },
+                        new
+                        {
+                            Id = 115,
+                            KullaniciId = 17,
+                            Miktar = 56m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 6
+                        },
+                        new
+                        {
+                            Id = 116,
+                            KullaniciId = 18,
+                            Miktar = 57m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 7
+                        },
+                        new
+                        {
+                            Id = 117,
+                            KullaniciId = 19,
+                            Miktar = 58m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 8
+                        },
+                        new
+                        {
+                            Id = 118,
+                            KullaniciId = 20,
+                            Miktar = 59m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 9
+                        },
+                        new
+                        {
+                            Id = 119,
+                            KullaniciId = 21,
+                            Miktar = 60m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 10
+                        },
+                        new
+                        {
+                            Id = 120,
+                            KullaniciId = 22,
+                            Miktar = 61m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 11
+                        },
+                        new
+                        {
+                            Id = 121,
+                            KullaniciId = 23,
+                            Miktar = 62m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 12
+                        },
+                        new
+                        {
+                            Id = 122,
+                            KullaniciId = 24,
+                            Miktar = 63m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 13
+                        },
+                        new
+                        {
+                            Id = 123,
+                            KullaniciId = 25,
+                            Miktar = 64m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 14
+                        },
+                        new
+                        {
+                            Id = 124,
+                            KullaniciId = 26,
+                            Miktar = 65m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 15
+                        },
+                        new
+                        {
+                            Id = 125,
+                            KullaniciId = 27,
+                            Miktar = 66m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 16
+                        },
+                        new
+                        {
+                            Id = 126,
+                            KullaniciId = 28,
+                            Miktar = 67m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 17
+                        },
+                        new
+                        {
+                            Id = 127,
+                            KullaniciId = 29,
+                            Miktar = 68m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 18
+                        },
+                        new
+                        {
+                            Id = 128,
+                            KullaniciId = 30,
+                            Miktar = 69m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 19
+                        },
+                        new
+                        {
+                            Id = 129,
+                            KullaniciId = 1,
+                            Miktar = 70m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 20
+                        },
+                        new
+                        {
+                            Id = 130,
+                            KullaniciId = 2,
+                            Miktar = 71m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 21
+                        },
+                        new
+                        {
+                            Id = 131,
+                            KullaniciId = 3,
+                            Miktar = 72m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 22
+                        },
+                        new
+                        {
+                            Id = 132,
+                            KullaniciId = 4,
+                            Miktar = 73m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 23
+                        },
+                        new
+                        {
+                            Id = 133,
+                            KullaniciId = 5,
+                            Miktar = 74m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 24
+                        },
+                        new
+                        {
+                            Id = 134,
+                            KullaniciId = 6,
+                            Miktar = 75m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 25
+                        },
+                        new
+                        {
+                            Id = 135,
+                            KullaniciId = 7,
+                            Miktar = 76m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 26
+                        },
+                        new
+                        {
+                            Id = 136,
+                            KullaniciId = 8,
+                            Miktar = 77m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 27
+                        },
+                        new
+                        {
+                            Id = 137,
+                            KullaniciId = 9,
+                            Miktar = 78m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 28
+                        },
+                        new
+                        {
+                            Id = 138,
+                            KullaniciId = 10,
+                            Miktar = 79m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 29
+                        },
+                        new
+                        {
+                            Id = 139,
+                            KullaniciId = 11,
+                            Miktar = 80m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 30
+                        },
+                        new
+                        {
+                            Id = 140,
+                            KullaniciId = 12,
+                            Miktar = 81m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 31
+                        },
+                        new
+                        {
+                            Id = 141,
+                            KullaniciId = 13,
+                            Miktar = 82m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 32
+                        },
+                        new
+                        {
+                            Id = 142,
+                            KullaniciId = 14,
+                            Miktar = 83m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 33
+                        },
+                        new
+                        {
+                            Id = 143,
+                            KullaniciId = 15,
+                            Miktar = 84m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 34
+                        },
+                        new
+                        {
+                            Id = 144,
+                            KullaniciId = 16,
+                            Miktar = 85m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 35
+                        },
+                        new
+                        {
+                            Id = 145,
+                            KullaniciId = 17,
+                            Miktar = 86m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 36
+                        },
+                        new
+                        {
+                            Id = 146,
+                            KullaniciId = 18,
+                            Miktar = 87m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 37
+                        },
+                        new
+                        {
+                            Id = 147,
+                            KullaniciId = 19,
+                            Miktar = 88m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 38
+                        },
+                        new
+                        {
+                            Id = 148,
+                            KullaniciId = 20,
+                            Miktar = 89m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 39
+                        },
+                        new
+                        {
+                            Id = 149,
+                            KullaniciId = 21,
+                            Miktar = 90m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 40
+                        },
+                        new
+                        {
+                            Id = 150,
+                            KullaniciId = 22,
+                            Miktar = 91m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 41
+                        },
+                        new
+                        {
+                            Id = 151,
+                            KullaniciId = 23,
+                            Miktar = 92m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 42
+                        },
+                        new
+                        {
+                            Id = 152,
+                            KullaniciId = 24,
+                            Miktar = 93m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 43
+                        },
+                        new
+                        {
+                            Id = 153,
+                            KullaniciId = 25,
+                            Miktar = 94m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 44
+                        },
+                        new
+                        {
+                            Id = 154,
+                            KullaniciId = 26,
+                            Miktar = 95m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 45
+                        },
+                        new
+                        {
+                            Id = 155,
+                            KullaniciId = 27,
+                            Miktar = 96m,
+                            OgunId = 1,
+                            Tarih = new DateTime(2025, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 46
+                        },
+                        new
+                        {
+                            Id = 156,
+                            KullaniciId = 28,
+                            Miktar = 97m,
+                            OgunId = 2,
+                            Tarih = new DateTime(2025, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 47
+                        },
+                        new
+                        {
+                            Id = 157,
+                            KullaniciId = 29,
+                            Miktar = 98m,
+                            OgunId = 3,
+                            Tarih = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 48
+                        },
+                        new
+                        {
+                            Id = 158,
+                            KullaniciId = 30,
+                            Miktar = 99m,
+                            OgunId = 4,
+                            Tarih = new DateTime(2025, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 49
+                        },
+                        new
+                        {
+                            Id = 159,
+                            KullaniciId = 1,
+                            Miktar = 100m,
+                            OgunId = 5,
+                            Tarih = new DateTime(2025, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            YemekId = 50
+                        });
                 });
 
             modelBuilder.Entity("KaloriTakipProgrami.UI.Models.Talep", b =>

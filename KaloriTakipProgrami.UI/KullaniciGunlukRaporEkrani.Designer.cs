@@ -32,10 +32,10 @@
             label2 = new Label();
             dtpTarih = new DateTimePicker();
             cmbOgunler = new ComboBox();
-            dataGridView1 = new DataGridView();
-            label3 = new Label();
+            dgvYemekTablo = new DataGridView();
+            lblKalori = new Label();
             lblToplamKalori = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvYemekTablo).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -73,23 +73,22 @@
             cmbOgunler.Size = new Size(250, 28);
             cmbOgunler.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvYemekTablo
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 166);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(516, 188);
-            dataGridView1.TabIndex = 3;
+            dgvYemekTablo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvYemekTablo.Location = new Point(19, 166);
+            dgvYemekTablo.Name = "dgvYemekTablo";
+            dgvYemekTablo.RowHeadersWidth = 51;
+            dgvYemekTablo.Size = new Size(516, 188);
+            dgvYemekTablo.TabIndex = 3;
             // 
-            // label3
+            // lblKalori
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(475, 383);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            lblKalori.AutoSize = true;
+            lblKalori.Location = new Point(475, 383);
+            lblKalori.Name = "lblKalori";
+            lblKalori.Size = new Size(0, 20);
+            lblKalori.TabIndex = 4;
             // 
             // lblToplamKalori
             // 
@@ -97,9 +96,9 @@
             lblToplamKalori.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblToplamKalori.Location = new Point(313, 383);
             lblToplamKalori.Name = "lblToplamKalori";
-            lblToplamKalori.Size = new Size(156, 20);
+            lblToplamKalori.Size = new Size(170, 20);
             lblToplamKalori.TabIndex = 5;
-            lblToplamKalori.Text = "Toplam Kalori Miktarı";
+            lblToplamKalori.Text = "Toplam Kalori Miktarı =";
             // 
             // KullaniciGunlukRaporEkrani
             // 
@@ -107,8 +106,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(558, 450);
             Controls.Add(lblToplamKalori);
-            Controls.Add(label3);
-            Controls.Add(dataGridView1);
+            Controls.Add(lblKalori);
+            Controls.Add(dgvYemekTablo);
             Controls.Add(cmbOgunler);
             Controls.Add(dtpTarih);
             Controls.Add(label2);
@@ -116,7 +115,8 @@
             Name = "KullaniciGunlukRaporEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGunlukRaporEkrani";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+           
+            ((System.ComponentModel.ISupportInitialize)dgvYemekTablo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,8 +127,8 @@
         private Label label2;
         private DateTimePicker dtpTarih;
         private ComboBox cmbOgunler;
-        private DataGridView dataGridView1;
-        private Label label3;
+        private DataGridView dgvYemekTablo;
+        private Label lblKalori;
         private Label lblToplamKalori;
     }
 }

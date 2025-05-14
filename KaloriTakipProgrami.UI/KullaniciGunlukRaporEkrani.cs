@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KaloriTakipProgrami.UI.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,17 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciGunlukRaporEkrani : Form
     {
+        
+
+
         public KullaniciGunlukRaporEkrani()
         {
             InitializeComponent();
+            
+
         }
+
+       
     }
 }
+
