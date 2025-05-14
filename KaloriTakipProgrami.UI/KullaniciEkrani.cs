@@ -16,10 +16,10 @@ namespace KaloriTakipProgrami.UI
         private Kullanici _girisYapanKullanici;
 
 
-       
+
         public KullaniciEkrani()
         {
-                
+
 
         }
         public KullaniciEkrani(Kullanici girisYapanKullanici)
@@ -80,9 +80,32 @@ namespace KaloriTakipProgrami.UI
 
         private void btnTalepler_Click(object sender, EventArgs e)
         {
-            
-           KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
+
+            KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
             kullaniciTaleplerEkrani.ShowDialog();
+        }
+        private bool menuAcikMi = true;
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            menuAcikMi = !menuAcikMi;
+
+            // Diğer butonları göster/gizle
+            btnBilgiGuncelle.Visible = menuAcikMi;
+            btnTalepler.Visible = menuAcikMi;
+            btnGrafikler.Visible = menuAcikMi;
+            btnGunlukRapor.Visible = menuAcikMi;
+            bnOgunBilgileriGoster.Visible = menuAcikMi;
+            btnRapor.Visible = menuAcikMi;
+        }
+
+        private void KullaniciEkrani_Load(object sender, EventArgs e)
+        {
+            btnBilgiGuncelle.Visible = true;
+            btnTalepler.Visible = true;
+            btnGrafikler.Visible = true;
+            btnGunlukRapor.Visible = true;
+            bnOgunBilgileriGoster.Visible = true;
+            btnRapor.Visible = true;
         }
     }
 }

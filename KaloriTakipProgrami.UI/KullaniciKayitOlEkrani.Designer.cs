@@ -79,7 +79,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
-            groupBox1.Location = new Point(111, 81);
+            groupBox1.Location = new Point(50, 55);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(541, 462);
             groupBox1.TabIndex = 0;
@@ -102,19 +102,20 @@
             // 
             txtMail.Location = new Point(157, 314);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(249, 31);
+            txtMail.Size = new Size(246, 31);
             txtMail.TabIndex = 6;
             // 
             // dtpDogumTarihi
             // 
             dtpDogumTarihi.Location = new Point(157, 272);
             dtpDogumTarihi.Name = "dtpDogumTarihi";
-            dtpDogumTarihi.Size = new Size(250, 31);
+            dtpDogumTarihi.Size = new Size(246, 31);
             dtpDogumTarihi.TabIndex = 5;
             // 
             // btnFotografSec
             // 
             btnFotografSec.BackColor = Color.FromArgb(164, 172, 134);
+            btnFotografSec.FlatStyle = FlatStyle.Popup;
             btnFotografSec.ForeColor = SystemColors.ActiveCaptionText;
             btnFotografSec.Location = new Point(425, 396);
             btnFotografSec.Name = "btnFotografSec";
@@ -129,7 +130,7 @@
             cbCinsiyet.FormattingEnabled = true;
             cbCinsiyet.Location = new Point(157, 356);
             cbCinsiyet.Name = "cbCinsiyet";
-            cbCinsiyet.Size = new Size(247, 33);
+            cbCinsiyet.Size = new Size(246, 33);
             cbCinsiyet.TabIndex = 3;
             // 
             // txtAd
@@ -181,7 +182,7 @@
             // 
             txtFotograf.Location = new Point(157, 400);
             txtFotograf.Name = "txtFotograf";
-            txtFotograf.Size = new Size(247, 31);
+            txtFotograf.Size = new Size(246, 31);
             txtFotograf.TabIndex = 1;
             // 
             // label8
@@ -269,11 +270,12 @@
             // btnKayitOl
             // 
             btnKayitOl.BackColor = Color.FromArgb(164, 172, 134);
+            btnKayitOl.FlatStyle = FlatStyle.Popup;
             btnKayitOl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnKayitOl.ForeColor = SystemColors.ActiveCaptionText;
-            btnKayitOl.Location = new Point(268, 549);
+            btnKayitOl.Location = new Point(207, 551);
             btnKayitOl.Name = "btnKayitOl";
-            btnKayitOl.Size = new Size(250, 67);
+            btnKayitOl.Size = new Size(250, 48);
             btnKayitOl.TabIndex = 5;
             btnKayitOl.Text = "Kayıt Ol";
             btnKayitOl.UseVisualStyleBackColor = false;
@@ -281,7 +283,7 @@
             // 
             // pbFotograf
             // 
-            pbFotograf.Location = new Point(699, 92);
+            pbFotograf.Location = new Point(627, 67);
             pbFotograf.Name = "pbFotograf";
             pbFotograf.Size = new Size(366, 277);
             pbFotograf.TabIndex = 6;
@@ -292,15 +294,16 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1159, 734);
+            ClientSize = new Size(1048, 646);
             Controls.Add(pbFotograf);
             Controls.Add(btnKayitOl);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "KullaniciKayitOlEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciKayitOlEkrani";
-            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbFotograf).EndInit();

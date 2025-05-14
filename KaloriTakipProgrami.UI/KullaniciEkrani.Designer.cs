@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciEkrani));
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -43,7 +43,7 @@
             bnOgunBilgileriGoster = new Button();
             btnGunlukRapor = new Button();
             btnGrafikler = new Button();
-            button1 = new Button();
+            btnRapor = new Button();
             btnTalepler = new Button();
             lblKullaniciAdi = new Label();
             lblAd = new Label();
@@ -55,6 +55,7 @@
             lblBoy = new Label();
             lblVKİ = new Label();
             groupBox1 = new GroupBox();
+            btnMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -64,21 +65,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(44, 24);
+            label2.Location = new Point(44, 27);
             label2.Name = "label2";
             label2.Size = new Size(115, 25);
             label2.TabIndex = 1;
             label2.Text = "Kullanıcı Adı";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(96, 155);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 25);
-            label3.TabIndex = 1;
             // 
             // label4
             // 
@@ -170,7 +161,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(225, 71);
+            pictureBox1.Location = new Point(389, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(229, 185);
             pictureBox1.TabIndex = 2;
@@ -179,8 +170,9 @@
             // btnBilgiGuncelle
             // 
             btnBilgiGuncelle.BackColor = Color.FromArgb(164, 172, 134);
+            btnBilgiGuncelle.FlatStyle = FlatStyle.Popup;
             btnBilgiGuncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnBilgiGuncelle.Location = new Point(698, 463);
+            btnBilgiGuncelle.Location = new Point(12, 158);
             btnBilgiGuncelle.Name = "btnBilgiGuncelle";
             btnBilgiGuncelle.Size = new Size(225, 50);
             btnBilgiGuncelle.TabIndex = 13;
@@ -191,8 +183,9 @@
             // bnOgunBilgileriGoster
             // 
             bnOgunBilgileriGoster.BackColor = Color.FromArgb(164, 172, 134);
+            bnOgunBilgileriGoster.FlatStyle = FlatStyle.Popup;
             bnOgunBilgileriGoster.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            bnOgunBilgileriGoster.Location = new Point(698, 788);
+            bnOgunBilgileriGoster.Location = new Point(12, 504);
             bnOgunBilgileriGoster.Name = "bnOgunBilgileriGoster";
             bnOgunBilgileriGoster.Size = new Size(225, 50);
             bnOgunBilgileriGoster.TabIndex = 13;
@@ -203,8 +196,9 @@
             // btnGunlukRapor
             // 
             btnGunlukRapor.BackColor = Color.FromArgb(164, 172, 134);
+            btnGunlukRapor.FlatStyle = FlatStyle.Popup;
             btnGunlukRapor.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGunlukRapor.Location = new Point(698, 723);
+            btnGunlukRapor.Location = new Point(12, 436);
             btnGunlukRapor.Name = "btnGunlukRapor";
             btnGunlukRapor.Size = new Size(225, 50);
             btnGunlukRapor.TabIndex = 14;
@@ -215,8 +209,9 @@
             // btnGrafikler
             // 
             btnGrafikler.BackColor = Color.FromArgb(164, 172, 134);
+            btnGrafikler.FlatStyle = FlatStyle.Popup;
             btnGrafikler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGrafikler.Location = new Point(698, 593);
+            btnGrafikler.Location = new Point(12, 294);
             btnGrafikler.Name = "btnGrafikler";
             btnGrafikler.Size = new Size(225, 50);
             btnGrafikler.TabIndex = 15;
@@ -224,23 +219,25 @@
             btnGrafikler.UseVisualStyleBackColor = false;
             btnGrafikler.Click += btnGrafikler_Click;
             // 
-            // button1
+            // btnRapor
             // 
-            button1.BackColor = Color.FromArgb(164, 172, 134);
-            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            button1.Location = new Point(698, 658);
-            button1.Name = "button1";
-            button1.Size = new Size(225, 50);
-            button1.TabIndex = 15;
-            button1.Text = "Rapor";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btnRapor_Click;
+            btnRapor.BackColor = Color.FromArgb(164, 172, 134);
+            btnRapor.FlatStyle = FlatStyle.Popup;
+            btnRapor.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnRapor.Location = new Point(12, 367);
+            btnRapor.Name = "btnRapor";
+            btnRapor.Size = new Size(225, 50);
+            btnRapor.TabIndex = 15;
+            btnRapor.Text = "Rapor";
+            btnRapor.UseVisualStyleBackColor = false;
+            btnRapor.Click += btnRapor_Click;
             // 
             // btnTalepler
             // 
             btnTalepler.BackColor = Color.FromArgb(164, 172, 134);
+            btnTalepler.FlatStyle = FlatStyle.Popup;
             btnTalepler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnTalepler.Location = new Point(698, 528);
+            btnTalepler.Location = new Point(12, 224);
             btnTalepler.Name = "btnTalepler";
             btnTalepler.Size = new Size(225, 50);
             btnTalepler.TabIndex = 15;
@@ -367,44 +364,55 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(171, 271);
+            groupBox1.Location = new Point(331, 203);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(351, 454);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            btnMenu.BackgroundImage = (Image)resources.GetObject("btnMenu.BackgroundImage");
+            btnMenu.BackgroundImageLayout = ImageLayout.Stretch;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+            btnMenu.Location = new Point(12, 37);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(72, 64);
+            btnMenu.TabIndex = 0;
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
             // 
             // KullaniciEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(955, 840);
+            ClientSize = new Size(874, 686);
+            Controls.Add(btnMenu);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
+            Controls.Add(btnRapor);
             Controls.Add(btnTalepler);
             Controls.Add(btnGrafikler);
             Controls.Add(btnGunlukRapor);
             Controls.Add(bnOgunBilgileriGoster);
             Controls.Add(btnBilgiGuncelle);
             Controls.Add(pictureBox1);
-            Controls.Add(label3);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "KullaniciEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciEkrani";
-            WindowState = FormWindowState.Maximized;
+            Load += KullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label label2;
-        private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -418,7 +426,7 @@
         private Button bnOgunBilgileriGoster;
         private Button btnGunlukRapor;
         private Button btnGrafikler;
-        private Button button1;
+        private Button btnRapor;
         private Button btnTalepler;
         private Label lblKullaniciAdi;
         private Label lblAd;
@@ -430,5 +438,6 @@
         private Label lblBoy;
         private Label lblVKİ;
         private GroupBox groupBox1;
+        private Button btnMenu;
     }
 }

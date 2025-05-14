@@ -36,9 +36,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1266, 738);
+            MaximizeBox = false;
             Name = "YoneticiTaleplerEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiTaleplerEkrani";
-            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
         }
 

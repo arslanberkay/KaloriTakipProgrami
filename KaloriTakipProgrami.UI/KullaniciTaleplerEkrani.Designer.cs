@@ -40,7 +40,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(105, 151);
+            label1.Location = new Point(44, 144);
             label1.Name = "label1";
             label1.Size = new Size(61, 25);
             label1.TabIndex = 0;
@@ -49,18 +49,18 @@
             // txtKonu
             // 
             txtKonu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            txtKonu.Location = new Point(198, 95);
+            txtKonu.Location = new Point(137, 88);
             txtKonu.Name = "txtKonu";
-            txtKonu.Size = new Size(822, 31);
+            txtKonu.Size = new Size(526, 31);
             txtKonu.TabIndex = 1;
             // 
             // txtMesaj
             // 
             txtMesaj.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            txtMesaj.Location = new Point(203, 151);
+            txtMesaj.Location = new Point(142, 144);
             txtMesaj.Multiline = true;
             txtMesaj.Name = "txtMesaj";
-            txtMesaj.Size = new Size(817, 483);
+            txtMesaj.Size = new Size(521, 363);
             txtMesaj.TabIndex = 2;
             // 
             // label2
@@ -68,7 +68,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(105, 96);
+            label2.Location = new Point(44, 89);
             label2.Name = "label2";
             label2.Size = new Size(56, 25);
             label2.TabIndex = 0;
@@ -77,8 +77,9 @@
             // btnGönder
             // 
             btnGönder.BackColor = Color.FromArgb(164, 172, 134);
+            btnGönder.FlatStyle = FlatStyle.Popup;
             btnGönder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGönder.Location = new Point(827, 661);
+            btnGönder.Location = new Point(470, 543);
             btnGönder.Name = "btnGönder";
             btnGönder.Size = new Size(193, 46);
             btnGönder.TabIndex = 3;
@@ -91,16 +92,16 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1224, 770);
+            ClientSize = new Size(754, 640);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
             Controls.Add(txtKonu);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "KullaniciTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciTaleplerEkrani";
-            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -42,7 +42,7 @@
             // 
             cbKullaniciAdlari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             cbKullaniciAdlari.FormattingEnabled = true;
-            cbKullaniciAdlari.Location = new Point(257, 63);
+            cbKullaniciAdlari.Location = new Point(191, 61);
             cbKullaniciAdlari.Margin = new Padding(4);
             cbKullaniciAdlari.Name = "cbKullaniciAdlari";
             cbKullaniciAdlari.Size = new Size(284, 33);
@@ -53,7 +53,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(115, 63);
+            label1.Location = new Point(49, 61);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(115, 25);
@@ -63,7 +63,7 @@
             // dtpTarih
             // 
             dtpTarih.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dtpTarih.Location = new Point(257, 117);
+            dtpTarih.Location = new Point(191, 115);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
             dtpTarih.Size = new Size(284, 31);
@@ -74,7 +74,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(115, 117);
+            label2.Location = new Point(49, 115);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(51, 25);
@@ -85,18 +85,19 @@
             // 
             lstvKullaniciGunlukRapor.BackColor = Color.FromArgb(202, 210, 197);
             lstvKullaniciGunlukRapor.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            lstvKullaniciGunlukRapor.Location = new Point(115, 244);
+            lstvKullaniciGunlukRapor.Location = new Point(49, 242);
             lstvKullaniciGunlukRapor.Margin = new Padding(4);
             lstvKullaniciGunlukRapor.Name = "lstvKullaniciGunlukRapor";
-            lstvKullaniciGunlukRapor.Size = new Size(1148, 424);
+            lstvKullaniciGunlukRapor.Size = new Size(861, 356);
             lstvKullaniciGunlukRapor.TabIndex = 3;
             lstvKullaniciGunlukRapor.UseCompatibleStateImageBehavior = false;
             // 
             // btnPdf
             // 
             btnPdf.BackColor = Color.FromArgb(164, 172, 134);
+            btnPdf.FlatStyle = FlatStyle.Popup;
             btnPdf.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnPdf.Location = new Point(1029, 704);
+            btnPdf.Location = new Point(676, 606);
             btnPdf.Margin = new Padding(4);
             btnPdf.Name = "btnPdf";
             btnPdf.Size = new Size(106, 46);
@@ -108,8 +109,9 @@
             // btnExcel
             // 
             btnExcel.BackColor = Color.FromArgb(164, 172, 134);
+            btnExcel.FlatStyle = FlatStyle.Popup;
             btnExcel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnExcel.Location = new Point(1157, 704);
+            btnExcel.Location = new Point(804, 606);
             btnExcel.Margin = new Padding(4);
             btnExcel.Name = "btnExcel";
             btnExcel.Size = new Size(106, 46);
@@ -121,8 +123,9 @@
             // btnRaporGoruntule
             // 
             btnRaporGoruntule.BackColor = Color.FromArgb(164, 172, 134);
+            btnRaporGoruntule.FlatStyle = FlatStyle.Popup;
             btnRaporGoruntule.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnRaporGoruntule.Location = new Point(257, 167);
+            btnRaporGoruntule.Location = new Point(191, 165);
             btnRaporGoruntule.Name = "btnRaporGoruntule";
             btnRaporGoruntule.Size = new Size(284, 50);
             btnRaporGoruntule.TabIndex = 5;
@@ -135,7 +138,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1326, 793);
+            ClientSize = new Size(958, 691);
             Controls.Add(btnRaporGoruntule);
             Controls.Add(btnExcel);
             Controls.Add(btnPdf);
@@ -146,9 +149,10 @@
             Controls.Add(cbKullaniciAdlari);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "YoneticiKullaniciGunlukRaporEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiKullaniciGunlukRaporEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += YoneticiKullaniciGunlukRaporEkrani_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -43,7 +43,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(828, 72);
+            label1.Location = new Point(642, 45);
             label1.Name = "label1";
             label1.Size = new Size(97, 25);
             label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(88, 72);
+            label2.Location = new Point(180, 45);
             label2.Name = "label2";
             label2.Size = new Size(138, 25);
             label2.TabIndex = 1;
@@ -63,7 +63,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dateTimePicker1.Location = new Point(88, 109);
+            dateTimePicker1.Location = new Point(180, 82);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(406, 31);
             dateTimePicker1.TabIndex = 2;
@@ -71,7 +71,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dateTimePicker2.Location = new Point(828, 109);
+            dateTimePicker2.Location = new Point(642, 82);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(415, 31);
             dateTimePicker2.TabIndex = 3;
@@ -79,10 +79,11 @@
             // btnEnCokYenilen
             // 
             btnEnCokYenilen.BackColor = Color.FromArgb(164, 172, 134);
+            btnEnCokYenilen.FlatStyle = FlatStyle.Popup;
             btnEnCokYenilen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnEnCokYenilen.Location = new Point(379, 263);
+            btnEnCokYenilen.Location = new Point(734, 149);
             btnEnCokYenilen.Name = "btnEnCokYenilen";
-            btnEnCokYenilen.Size = new Size(260, 59);
+            btnEnCokYenilen.Size = new Size(240, 47);
             btnEnCokYenilen.TabIndex = 4;
             btnEnCokYenilen.Text = "En Çok Yenilen Yemekler";
             btnEnCokYenilen.UseVisualStyleBackColor = false;
@@ -90,10 +91,11 @@
             // btnAzYenilenler
             // 
             btnAzYenilenler.BackColor = Color.FromArgb(164, 172, 134);
+            btnAzYenilenler.FlatStyle = FlatStyle.Popup;
             btnAzYenilenler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnAzYenilenler.Location = new Point(88, 263);
+            btnAzYenilenler.Location = new Point(267, 149);
             btnAzYenilenler.Name = "btnAzYenilenler";
-            btnAzYenilenler.Size = new Size(271, 59);
+            btnAzYenilenler.Size = new Size(240, 47);
             btnAzYenilenler.TabIndex = 5;
             btnAzYenilenler.Text = "En az Yenilen Yemekler";
             btnAzYenilenler.UseVisualStyleBackColor = false;
@@ -102,7 +104,7 @@
             // 
             dgvYemekIstatistikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvYemekIstatistikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvYemekIstatistikleri.Location = new Point(88, 361);
+            dgvYemekIstatistikleri.Location = new Point(47, 233);
             dgvYemekIstatistikleri.Name = "dgvYemekIstatistikleri";
             dgvYemekIstatistikleri.RowHeadersWidth = 51;
             dgvYemekIstatistikleri.Size = new Size(1155, 351);
@@ -113,7 +115,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1327, 767);
+            ClientSize = new Size(1258, 629);
             Controls.Add(dgvYemekIstatistikleri);
             Controls.Add(btnAzYenilenler);
             Controls.Add(btnEnCokYenilen);
@@ -121,10 +123,10 @@
             Controls.Add(dateTimePicker1);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "KullaniciRaporEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciRaporEkrani";
-            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvYemekIstatistikleri).EndInit();
             ResumeLayout(false);
             PerformLayout();

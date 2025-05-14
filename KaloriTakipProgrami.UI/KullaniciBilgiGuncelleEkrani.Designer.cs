@@ -135,11 +135,12 @@
             // btnHesapDondur
             // 
             btnHesapDondur.BackColor = Color.FromArgb(164, 172, 134);
+            btnHesapDondur.FlatStyle = FlatStyle.Popup;
             btnHesapDondur.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnHesapDondur.Location = new Point(740, 887);
-            btnHesapDondur.Margin = new Padding(4, 4, 4, 4);
+            btnHesapDondur.Location = new Point(298, 839);
+            btnHesapDondur.Margin = new Padding(4);
             btnHesapDondur.Name = "btnHesapDondur";
-            btnHesapDondur.Size = new Size(216, 34);
+            btnHesapDondur.Size = new Size(268, 41);
             btnHesapDondur.TabIndex = 7;
             btnHesapDondur.Text = "Hesabımı Dondur";
             btnHesapDondur.UseVisualStyleBackColor = false;
@@ -148,11 +149,12 @@
             // btnBilgileriGuncelle
             // 
             btnBilgileriGuncelle.BackColor = Color.FromArgb(164, 172, 134);
+            btnBilgileriGuncelle.FlatStyle = FlatStyle.Popup;
             btnBilgileriGuncelle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnBilgileriGuncelle.Location = new Point(358, 780);
-            btnBilgileriGuncelle.Margin = new Padding(4, 4, 4, 4);
+            btnBilgileriGuncelle.Location = new Point(298, 790);
+            btnBilgileriGuncelle.Margin = new Padding(4);
             btnBilgileriGuncelle.Name = "btnBilgileriGuncelle";
-            btnBilgileriGuncelle.Size = new Size(268, 61);
+            btnBilgileriGuncelle.Size = new Size(268, 41);
             btnBilgileriGuncelle.TabIndex = 8;
             btnBilgileriGuncelle.Text = "Güncelle";
             btnBilgileriGuncelle.UseVisualStyleBackColor = false;
@@ -162,7 +164,7 @@
             // 
             txtAd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             txtAd.Location = new Point(163, 336);
-            txtAd.Margin = new Padding(4, 4, 4, 4);
+            txtAd.Margin = new Padding(4);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(268, 31);
             txtAd.TabIndex = 9;
@@ -171,7 +173,7 @@
             // 
             txtSoyad.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             txtSoyad.Location = new Point(163, 389);
-            txtSoyad.Margin = new Padding(4, 4, 4, 4);
+            txtSoyad.Margin = new Padding(4);
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Size = new Size(268, 31);
             txtSoyad.TabIndex = 10;
@@ -180,7 +182,7 @@
             // 
             txtSifre.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             txtSifre.Location = new Point(163, 495);
-            txtSifre.Margin = new Padding(4, 4, 4, 4);
+            txtSifre.Margin = new Padding(4);
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(268, 31);
             txtSifre.TabIndex = 11;
@@ -189,7 +191,7 @@
             // 
             txtSifreTekrar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             txtSifreTekrar.Location = new Point(163, 548);
-            txtSifreTekrar.Margin = new Padding(4, 4, 4, 4);
+            txtSifreTekrar.Margin = new Padding(4);
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(268, 31);
             txtSifreTekrar.TabIndex = 12;
@@ -198,7 +200,7 @@
             // 
             txtEposta.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             txtEposta.Location = new Point(163, 601);
-            txtEposta.Margin = new Padding(4, 4, 4, 4);
+            txtEposta.Margin = new Padding(4);
             txtEposta.Name = "txtEposta";
             txtEposta.Size = new Size(268, 31);
             txtEposta.TabIndex = 13;
@@ -208,7 +210,7 @@
             cmbCinsiyet.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             cmbCinsiyet.FormattingEnabled = true;
             cmbCinsiyet.Location = new Point(163, 654);
-            cmbCinsiyet.Margin = new Padding(4, 4, 4, 4);
+            cmbCinsiyet.Margin = new Padding(4);
             cmbCinsiyet.Name = "cmbCinsiyet";
             cmbCinsiyet.Size = new Size(268, 33);
             cmbCinsiyet.TabIndex = 14;
@@ -217,7 +219,7 @@
             // pbFoto
             // 
             pbFoto.Location = new Point(172, 28);
-            pbFoto.Margin = new Padding(4, 4, 4, 4);
+            pbFoto.Margin = new Padding(4);
             pbFoto.Name = "pbFoto";
             pbFoto.Size = new Size(210, 126);
             pbFoto.TabIndex = 15;
@@ -307,6 +309,7 @@
             // btnBilgilendirme
             // 
             btnBilgilendirme.BackColor = Color.FromArgb(164, 172, 134);
+            btnBilgilendirme.FlatStyle = FlatStyle.Popup;
             btnBilgilendirme.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnBilgilendirme.Location = new Point(485, 224);
             btnBilgilendirme.Margin = new Padding(4, 5, 4, 5);
@@ -322,7 +325,7 @@
             cbSifre.AutoSize = true;
             cbSifre.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             cbSifre.ForeColor = SystemColors.ButtonHighlight;
-            cbSifre.Location = new Point(450, 514);
+            cbSifre.Location = new Point(439, 497);
             cbSifre.Margin = new Padding(4, 5, 4, 5);
             cbSifre.Name = "cbSifre";
             cbSifre.Size = new Size(154, 29);
@@ -353,13 +356,14 @@
             // btnGeri
             // 
             btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnGeri.Location = new Point(18, 20);
             btnGeri.Margin = new Padding(4, 5, 4, 5);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(140, 39);
+            btnGeri.Size = new Size(110, 39);
             btnGeri.TabIndex = 27;
-            btnGeri.Text = "<<< GERİ";
+            btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
@@ -389,7 +393,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(lblVki);
             groupBox1.Controls.Add(lblKullaniciAdi);
-            groupBox1.Location = new Point(195, 53);
+            groupBox1.Location = new Point(135, 67);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(609, 711);
             groupBox1.TabIndex = 28;
@@ -400,17 +404,17 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(984, 944);
+            ClientSize = new Size(921, 903);
             Controls.Add(groupBox1);
             Controls.Add(btnGeri);
             Controls.Add(btnHesapDondur);
             Controls.Add(btnBilgileriGuncelle);
             Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "KullaniciBilgiGuncelleEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciBilgiGuncelleEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += KullaniciBilgiGuncelleEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)pbFoto).EndInit();
             groupBox1.ResumeLayout(false);

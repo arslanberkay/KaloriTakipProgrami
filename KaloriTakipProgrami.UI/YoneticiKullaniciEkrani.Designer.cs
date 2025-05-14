@@ -49,9 +49,10 @@
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1316, 734);
             Controls.Add(dgvKullanicilar);
+            MaximizeBox = false;
             Name = "YoneticiKullaniciEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiKullaniciEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += YoneticiKullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).EndInit();
             ResumeLayout(false);
