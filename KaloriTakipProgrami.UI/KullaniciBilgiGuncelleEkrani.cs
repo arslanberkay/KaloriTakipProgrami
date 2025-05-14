@@ -33,8 +33,8 @@ namespace KaloriTakipProgrami.UI
             txtSifre.Text = GirisYapanKullanici.Sifre;
             txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
             lblKullaniciAdi.Text = GirisYapanKullanici.KullaniciAdi;
-            //txtKilo.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo.ToString();
-            //txtBoy.Text = GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy.ToString();
+            //txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Kilo.ToString();
+            //txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Boy.ToString();
             //lblVki.Text = Vki().ToString();
             //fotoğraf yükleme ?
         }
