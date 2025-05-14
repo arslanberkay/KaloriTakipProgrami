@@ -36,6 +36,7 @@
             lblKaloriBilgilendirme = new Label();
             btnGoruntule = new Button();
             lstvOgunYemekDetayliRapor = new ListView();
+            btnGeri = new Button();
             SuspendLayout();
             // 
             // label1
@@ -46,7 +47,7 @@
             label1.Location = new Point(40, 38);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(37, 20);
+            label1.Size = new Size(29, 15);
             label1.TabIndex = 0;
             label1.Text = "Gün";
             // 
@@ -58,7 +59,7 @@
             label2.Location = new Point(24, 109);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(65, 20);
+            label2.Size = new Size(50, 15);
             label2.TabIndex = 0;
             label2.Text = "Öğünler";
             // 
@@ -67,7 +68,7 @@
             dtpTarih.Location = new Point(122, 31);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(312, 32);
+            dtpTarih.Size = new Size(312, 27);
             dtpTarih.TabIndex = 1;
             // 
             // cmbOgunler
@@ -77,7 +78,7 @@
             cmbOgunler.Location = new Point(122, 109);
             cmbOgunler.Margin = new Padding(4);
             cmbOgunler.Name = "cmbOgunler";
-            cmbOgunler.Size = new Size(312, 33);
+            cmbOgunler.Size = new Size(312, 28);
             cmbOgunler.TabIndex = 2;
             // 
             // lblToplamKaloriMiktari
@@ -87,7 +88,7 @@
             lblToplamKaloriMiktari.Location = new Point(594, 482);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
-            lblToplamKaloriMiktari.Size = new Size(63, 25);
+            lblToplamKaloriMiktari.Size = new Size(50, 20);
             lblToplamKaloriMiktari.TabIndex = 4;
             lblToplamKaloriMiktari.Text = "label3";
             // 
@@ -99,7 +100,7 @@
             lblKaloriBilgilendirme.Location = new Point(346, 486);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
-            lblKaloriBilgilendirme.Size = new Size(100, 20);
+            lblKaloriBilgilendirme.Size = new Size(77, 15);
             lblKaloriBilgilendirme.TabIndex = 5;
             lblKaloriBilgilendirme.Text = "bilgilendirme";
             // 
@@ -123,12 +124,25 @@
             lstvOgunYemekDetayliRapor.TabIndex = 7;
             lstvOgunYemekDetayliRapor.UseCompatibleStateImageBehavior = false;
             // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(649, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 30;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // KullaniciGunlukRaporEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(736, 565);
+            Controls.Add(btnGeri);
             Controls.Add(lstvOgunYemekDetayliRapor);
             Controls.Add(btnGoruntule);
             Controls.Add(lblKaloriBilgilendirme);
@@ -158,5 +172,6 @@
         private Label lblKaloriBilgilendirme;
         private Button btnGoruntule;
         private ListView lstvOgunYemekDetayliRapor;
+        private Button btnGeri;
     }
 }

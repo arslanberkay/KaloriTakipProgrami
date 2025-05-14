@@ -53,8 +53,8 @@ namespace KaloriTakipProgrami.UI
                     y.YemekAdi,
                     y.Kalori,
                     y.Kategori.KategoriAdi,
-                    
-                   
+
+
                 })
                 .ToList();
 
@@ -358,6 +358,9 @@ namespace KaloriTakipProgrami.UI
             YemekBilgileriTemizle();
         }
 
-      
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
     }
 }

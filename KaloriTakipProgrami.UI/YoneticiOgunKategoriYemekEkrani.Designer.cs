@@ -53,6 +53,7 @@
             btnYemekSil = new Button();
             btnYemekEkle = new Button();
             label3 = new Label();
+            btnGeri = new Button();
             grpOgunler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvOgunler).BeginInit();
             grpKategoriler.SuspendLayout();
@@ -70,7 +71,7 @@
             grpOgunler.Controls.Add(btnOgunSil);
             grpOgunler.Controls.Add(btnOgunEkle);
             grpOgunler.Controls.Add(label1);
-            grpOgunler.Location = new Point(54, 36);
+            grpOgunler.Location = new Point(95, 38);
             grpOgunler.Margin = new Padding(4);
             grpOgunler.Name = "grpOgunler";
             grpOgunler.Padding = new Padding(4);
@@ -83,7 +84,7 @@
             // 
             txtOgunAdi.Location = new Point(142, 47);
             txtOgunAdi.Name = "txtOgunAdi";
-            txtOgunAdi.Size = new Size(162, 32);
+            txtOgunAdi.Size = new Size(162, 27);
             txtOgunAdi.TabIndex = 3;
             // 
             // dgvOgunler
@@ -138,7 +139,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(38, 50);
             label1.Name = "label1";
-            label1.Size = new Size(92, 25);
+            label1.Size = new Size(72, 20);
             label1.TabIndex = 0;
             label1.Text = "Öğün Adı";
             // 
@@ -150,7 +151,7 @@
             grpKategoriler.Controls.Add(btnKategoriSil);
             grpKategoriler.Controls.Add(btnKategoriEkle);
             grpKategoriler.Controls.Add(label2);
-            grpKategoriler.Location = new Point(724, 50);
+            grpKategoriler.Location = new Point(704, 38);
             grpKategoriler.Margin = new Padding(4);
             grpKategoriler.Name = "grpKategoriler";
             grpKategoriler.Padding = new Padding(4);
@@ -163,7 +164,7 @@
             // 
             txtKategoriAdi.Location = new Point(160, 47);
             txtKategoriAdi.Name = "txtKategoriAdi";
-            txtKategoriAdi.Size = new Size(162, 32);
+            txtKategoriAdi.Size = new Size(162, 27);
             txtKategoriAdi.TabIndex = 3;
             // 
             // dgvKategoriler
@@ -218,7 +219,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(38, 50);
             label2.Name = "label2";
-            label2.Size = new Size(116, 25);
+            label2.Size = new Size(93, 20);
             label2.TabIndex = 0;
             label2.Text = "Kategori Adı";
             // 
@@ -234,7 +235,7 @@
             grpYemekler.Controls.Add(btnYemekSil);
             grpYemekler.Controls.Add(btnYemekEkle);
             grpYemekler.Controls.Add(label3);
-            grpYemekler.Location = new Point(79, 389);
+            grpYemekler.Location = new Point(133, 382);
             grpYemekler.Margin = new Padding(4);
             grpYemekler.Name = "grpYemekler";
             grpYemekler.Padding = new Padding(4);
@@ -249,7 +250,7 @@
             cbKategori.FormattingEnabled = true;
             cbKategori.Location = new Point(132, 69);
             cbKategori.Name = "cbKategori";
-            cbKategori.Size = new Size(79, 33);
+            cbKategori.Size = new Size(79, 28);
             cbKategori.TabIndex = 6;
             // 
             // nudKalori
@@ -257,7 +258,7 @@
             nudKalori.Location = new Point(132, 108);
             nudKalori.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
             nudKalori.Name = "nudKalori";
-            nudKalori.Size = new Size(133, 32);
+            nudKalori.Size = new Size(133, 27);
             nudKalori.TabIndex = 5;
             // 
             // label5
@@ -266,7 +267,7 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(27, 110);
             label5.Name = "label5";
-            label5.Size = new Size(61, 25);
+            label5.Size = new Size(48, 20);
             label5.TabIndex = 4;
             label5.Text = "Kalori";
             // 
@@ -276,7 +277,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(25, 63);
             label4.Name = "label4";
-            label4.Size = new Size(88, 25);
+            label4.Size = new Size(70, 20);
             label4.TabIndex = 4;
             label4.Text = "Kategori ";
             // 
@@ -284,7 +285,7 @@
             // 
             txtYemekAdi.Location = new Point(132, 35);
             txtYemekAdi.Name = "txtYemekAdi";
-            txtYemekAdi.Size = new Size(162, 32);
+            txtYemekAdi.Size = new Size(162, 27);
             txtYemekAdi.TabIndex = 3;
             // 
             // dgvYemekler
@@ -339,16 +340,29 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(27, 38);
             label3.Name = "label3";
-            label3.Size = new Size(99, 25);
+            label3.Size = new Size(79, 20);
             label3.TabIndex = 0;
             label3.Text = "Yemek Adı";
             // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 30;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // YoneticiOgunKategoriYemekEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1345, 789);
+            Controls.Add(btnGeri);
             Controls.Add(grpKategoriler);
             Controls.Add(grpYemekler);
             Controls.Add(grpOgunler);
@@ -398,5 +412,6 @@
         private Label label3;
         private ComboBox cbKategori;
         private NumericUpDown nudKalori;
+        private Button btnGeri;
     }
 }

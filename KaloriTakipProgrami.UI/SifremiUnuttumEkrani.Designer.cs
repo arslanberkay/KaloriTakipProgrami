@@ -42,6 +42,7 @@
             label4 = new Label();
             txtYeniSifre = new TextBox();
             label3 = new Label();
+            btnGeri = new Button();
             grpSifirlamaKoduGonder.SuspendLayout();
             grpSifirlamaKodu.SuspendLayout();
             grpSifreGuncelleme.SuspendLayout();
@@ -73,7 +74,7 @@
             // 
             txtEmail.Location = new Point(121, 47);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(166, 32);
+            txtEmail.Size = new Size(166, 27);
             txtEmail.TabIndex = 1;
             // 
             // label2
@@ -82,7 +83,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(31, 47);
             label2.Name = "label2";
-            label2.Size = new Size(58, 25);
+            label2.Size = new Size(46, 20);
             label2.TabIndex = 0;
             label2.Text = "Email";
             // 
@@ -101,7 +102,7 @@
             // 
             mtxtSifirlamaKodu.Location = new Point(182, 44);
             mtxtSifirlamaKodu.Name = "mtxtSifirlamaKodu";
-            mtxtSifirlamaKodu.Size = new Size(121, 32);
+            mtxtSifirlamaKodu.Size = new Size(121, 27);
             mtxtSifirlamaKodu.TabIndex = 3;
             // 
             // btnOk
@@ -121,7 +122,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(31, 47);
             label1.Name = "label1";
-            label1.Size = new Size(135, 25);
+            label1.Size = new Size(107, 20);
             label1.TabIndex = 0;
             label1.Text = "Sıfırlama Kodu";
             // 
@@ -153,7 +154,7 @@
             // 
             txtYeniSifreTekrar.Location = new Point(195, 82);
             txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
-            txtYeniSifreTekrar.Size = new Size(166, 32);
+            txtYeniSifreTekrar.Size = new Size(166, 27);
             txtYeniSifreTekrar.TabIndex = 1;
             // 
             // label4
@@ -162,7 +163,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(31, 85);
             label4.Name = "label4";
-            label4.Size = new Size(158, 25);
+            label4.Size = new Size(124, 20);
             label4.TabIndex = 0;
             label4.Text = "Yeni Şifre (Tekrar)";
             // 
@@ -170,7 +171,7 @@
             // 
             txtYeniSifre.Location = new Point(195, 44);
             txtYeniSifre.Name = "txtYeniSifre";
-            txtYeniSifre.Size = new Size(166, 32);
+            txtYeniSifre.Size = new Size(166, 27);
             txtYeniSifre.TabIndex = 1;
             // 
             // label3
@@ -179,16 +180,29 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(31, 47);
             label3.Name = "label3";
-            label3.Size = new Size(90, 25);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 0;
             label3.Text = "Yeni Şifre";
             // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 30;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // SifremiUnuttumEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1008, 634);
+            Controls.Add(btnGeri);
             Controls.Add(grpSifirlamaKodu);
             Controls.Add(grpSifreGuncelleme);
             Controls.Add(grpSifirlamaKoduGonder);
@@ -223,5 +237,6 @@
         private Label label4;
         private TextBox txtYeniSifre;
         private Label label3;
+        private Button btnGeri;
     }
 }

@@ -54,6 +54,7 @@
             lblKilo = new Label();
             lblBoy = new Label();
             lblVKİ = new Label();
+            btnCikis = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(96, 167);
             label2.Name = "label2";
-            label2.Size = new Size(96, 20);
+            label2.Size = new Size(74, 15);
             label2.TabIndex = 1;
             label2.Text = "Kullanıcı Adı";
             // 
@@ -75,7 +76,7 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(96, 155);
             label3.Name = "label3";
-            label3.Size = new Size(0, 20);
+            label3.Size = new Size(0, 15);
             label3.TabIndex = 1;
             // 
             // label4
@@ -85,7 +86,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(154, 213);
             label4.Name = "label4";
-            label4.Size = new Size(29, 20);
+            label4.Size = new Size(22, 15);
             label4.TabIndex = 1;
             label4.Text = "Ad";
             // 
@@ -96,7 +97,7 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(139, 265);
             label5.Name = "label5";
-            label5.Size = new Size(51, 20);
+            label5.Size = new Size(40, 15);
             label5.TabIndex = 1;
             label5.Text = "Soyad";
             // 
@@ -107,7 +108,7 @@
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(124, 316);
             label6.Name = "label6";
-            label6.Size = new Size(64, 20);
+            label6.Size = new Size(50, 15);
             label6.TabIndex = 1;
             label6.Text = "Cinsiyet";
             // 
@@ -118,7 +119,7 @@
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(88, 359);
             label7.Name = "label7";
-            label7.Size = new Size(104, 20);
+            label7.Size = new Size(81, 15);
             label7.TabIndex = 1;
             label7.Text = "Doğum Tarihi";
             // 
@@ -129,7 +130,7 @@
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(124, 402);
             label8.Name = "label8";
-            label8.Size = new Size(62, 20);
+            label8.Size = new Size(48, 15);
             label8.TabIndex = 1;
             label8.Text = "E-Posta";
             // 
@@ -140,7 +141,7 @@
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(145, 448);
             label9.Name = "label9";
-            label9.Size = new Size(36, 20);
+            label9.Size = new Size(28, 15);
             label9.TabIndex = 1;
             label9.Text = "Kilo";
             // 
@@ -151,7 +152,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(145, 495);
             label1.Name = "label1";
-            label1.Size = new Size(36, 20);
+            label1.Size = new Size(28, 15);
             label1.TabIndex = 1;
             label1.Text = "Boy";
             // 
@@ -162,7 +163,7 @@
             label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(145, 547);
             label10.Name = "label10";
-            label10.Size = new Size(34, 20);
+            label10.Size = new Size(27, 15);
             label10.TabIndex = 1;
             label10.Text = "VKİ";
             // 
@@ -246,7 +247,7 @@
             lblKullaniciAdi.ForeColor = SystemColors.ButtonHighlight;
             lblKullaniciAdi.Location = new Point(199, 167);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
-            lblKullaniciAdi.Size = new Size(73, 25);
+            lblKullaniciAdi.Size = new Size(58, 20);
             lblKullaniciAdi.TabIndex = 16;
             lblKullaniciAdi.Text = "label11";
             // 
@@ -256,7 +257,7 @@
             lblAd.ForeColor = SystemColors.ButtonHighlight;
             lblAd.Location = new Point(199, 213);
             lblAd.Name = "lblAd";
-            lblAd.Size = new Size(73, 25);
+            lblAd.Size = new Size(58, 20);
             lblAd.TabIndex = 17;
             lblAd.Text = "label12";
             // 
@@ -266,7 +267,7 @@
             lblSoyad.ForeColor = SystemColors.ButtonHighlight;
             lblSoyad.Location = new Point(199, 265);
             lblSoyad.Name = "lblSoyad";
-            lblSoyad.Size = new Size(73, 25);
+            lblSoyad.Size = new Size(58, 20);
             lblSoyad.TabIndex = 18;
             lblSoyad.Text = "label13";
             // 
@@ -276,7 +277,7 @@
             lblCinsiyet.ForeColor = SystemColors.ButtonHighlight;
             lblCinsiyet.Location = new Point(199, 316);
             lblCinsiyet.Name = "lblCinsiyet";
-            lblCinsiyet.Size = new Size(73, 25);
+            lblCinsiyet.Size = new Size(58, 20);
             lblCinsiyet.TabIndex = 19;
             lblCinsiyet.Text = "label14";
             // 
@@ -286,7 +287,7 @@
             lblDogumTarihi.ForeColor = SystemColors.ButtonHighlight;
             lblDogumTarihi.Location = new Point(199, 355);
             lblDogumTarihi.Name = "lblDogumTarihi";
-            lblDogumTarihi.Size = new Size(73, 25);
+            lblDogumTarihi.Size = new Size(58, 20);
             lblDogumTarihi.TabIndex = 20;
             lblDogumTarihi.Text = "label15";
             // 
@@ -296,7 +297,7 @@
             lblEposta.ForeColor = SystemColors.ButtonHighlight;
             lblEposta.Location = new Point(199, 402);
             lblEposta.Name = "lblEposta";
-            lblEposta.Size = new Size(73, 25);
+            lblEposta.Size = new Size(58, 20);
             lblEposta.TabIndex = 21;
             lblEposta.Text = "label16";
             // 
@@ -306,7 +307,7 @@
             lblKilo.ForeColor = SystemColors.ButtonHighlight;
             lblKilo.Location = new Point(199, 448);
             lblKilo.Name = "lblKilo";
-            lblKilo.Size = new Size(73, 25);
+            lblKilo.Size = new Size(58, 20);
             lblKilo.TabIndex = 22;
             lblKilo.Text = "label17";
             // 
@@ -316,7 +317,7 @@
             lblBoy.ForeColor = SystemColors.ButtonHighlight;
             lblBoy.Location = new Point(199, 495);
             lblBoy.Name = "lblBoy";
-            lblBoy.Size = new Size(73, 25);
+            lblBoy.Size = new Size(58, 20);
             lblBoy.TabIndex = 23;
             lblBoy.Text = "label18";
             // 
@@ -326,16 +327,29 @@
             lblVKİ.ForeColor = SystemColors.ButtonHighlight;
             lblVKİ.Location = new Point(199, 547);
             lblVKİ.Name = "lblVKİ";
-            lblVKİ.Size = new Size(73, 25);
+            lblVKİ.Size = new Size(58, 20);
             lblVKİ.TabIndex = 24;
             lblVKİ.Text = "label19";
             // 
+            // btnCikis
+            // 
+            btnCikis.BackColor = Color.FromArgb(164, 172, 134);
+            btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCikis.Location = new Point(12, 17);
+            btnCikis.Name = "btnCikis";
+            btnCikis.Size = new Size(75, 23);
+            btnCikis.TabIndex = 31;
+            btnCikis.Text = "Çıkış Yap";
+            btnCikis.UseVisualStyleBackColor = false;
+            btnCikis.Click += btnCikis_Click;
+            // 
             // KullaniciEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(600, 666);
+            Controls.Add(btnCikis);
             Controls.Add(lblVKİ);
             Controls.Add(lblBoy);
             Controls.Add(lblKilo);
@@ -401,5 +415,6 @@
         private Label lblKilo;
         private Label lblBoy;
         private Label lblVKİ;
+        private Button btnCikis;
     }
 }

@@ -25,7 +25,7 @@ namespace KaloriTakipProgrami.UI
         {
             _context = new KaloriTakipDbContext();
             InitializeComponent();
-            
+
             girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici;
         }
@@ -37,7 +37,7 @@ namespace KaloriTakipProgrami.UI
         }
         private void KiloGrafigi()
         {
-            
+
             string query = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
 
             DataTable dt = new DataTable();
@@ -144,6 +144,10 @@ namespace KaloriTakipProgrami.UI
             axisY.Maximum = 2.10;    // Boyun maksimum değeri (2.1 m örneği)
             axisY.Interval = 0.05;   // Boy aralığı 5 cm
         }
-   
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
     }
 }

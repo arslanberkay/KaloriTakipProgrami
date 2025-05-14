@@ -36,6 +36,7 @@
             btnPdf = new Button();
             btnExcel = new Button();
             btnRaporGoruntule = new Button();
+            btnGeri = new Button();
             SuspendLayout();
             // 
             // cbKullaniciAdlari
@@ -44,7 +45,7 @@
             cbKullaniciAdlari.Location = new Point(322, 42);
             cbKullaniciAdlari.Margin = new Padding(4);
             cbKullaniciAdlari.Name = "cbKullaniciAdlari";
-            cbKullaniciAdlari.Size = new Size(220, 33);
+            cbKullaniciAdlari.Size = new Size(220, 28);
             cbKullaniciAdlari.TabIndex = 0;
             // 
             // label1
@@ -54,7 +55,7 @@
             label1.Location = new Point(188, 46);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(117, 25);
+            label1.Size = new Size(92, 20);
             label1.TabIndex = 1;
             label1.Text = "Kullanıcı Adı";
             // 
@@ -63,7 +64,7 @@
             dtpTarih.Location = new Point(322, 100);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(220, 32);
+            dtpTarih.Size = new Size(220, 27);
             dtpTarih.TabIndex = 2;
             // 
             // label2
@@ -73,7 +74,7 @@
             label2.Location = new Point(188, 100);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(53, 25);
+            label2.Size = new Size(40, 20);
             label2.TabIndex = 1;
             label2.Text = "Tarih";
             // 
@@ -122,12 +123,25 @@
             btnRaporGoruntule.UseVisualStyleBackColor = false;
             btnRaporGoruntule.Click += btnRaporGoruntule_Click;
             // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 30;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // YoneticiKullaniciGunlukRaporEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1000, 562);
+            Controls.Add(btnGeri);
             Controls.Add(btnRaporGoruntule);
             Controls.Add(btnExcel);
             Controls.Add(btnPdf);
@@ -156,5 +170,6 @@
         private Button btnPdf;
         private Button btnExcel;
         private Button btnRaporGoruntule;
+        private Button btnGeri;
     }
 }
