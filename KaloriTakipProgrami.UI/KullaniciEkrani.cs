@@ -62,7 +62,7 @@ namespace KaloriTakipProgrami.UI
 
         private void btnGunlukRapor_Click(object sender, EventArgs e)
         {
-            KullaniciGunlukRaporEkrani kullaniciGunlukRaporEkrani = new KullaniciGunlukRaporEkrani();
+            KullaniciGunlukRaporEkrani kullaniciGunlukRaporEkrani = new KullaniciGunlukRaporEkrani(_girisYapanKullanici);
             kullaniciGunlukRaporEkrani.ShowDialog();
         }
 
