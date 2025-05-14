@@ -35,8 +35,6 @@
             cmbYemekler = new ComboBox();
             cmbKategoriler = new ComboBox();
             cmbOgunler = new ComboBox();
-            txtTarih = new TextBox();
-            txtMiktar = new TextBox();
             btnSil = new Button();
             btnGüncelle = new Button();
             btnPdfOlustur = new Button();
@@ -44,6 +42,9 @@
             btnEkle = new Button();
             label1 = new Label();
             lsvOgunBilgileri = new ListView();
+            dtpTarih = new DateTimePicker();
+            nudMiktar = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)nudMiktar).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -111,20 +112,6 @@
             cmbOgunler.Size = new Size(151, 28);
             cmbOgunler.TabIndex = 7;
             // 
-            // txtTarih
-            // 
-            txtTarih.Location = new Point(105, 145);
-            txtTarih.Name = "txtTarih";
-            txtTarih.Size = new Size(151, 27);
-            txtTarih.TabIndex = 8;
-            // 
-            // txtMiktar
-            // 
-            txtMiktar.Location = new Point(105, 181);
-            txtMiktar.Name = "txtMiktar";
-            txtMiktar.Size = new Size(151, 27);
-            txtMiktar.TabIndex = 9;
-            // 
             // btnSil
             // 
             btnSil.Location = new Point(213, 245);
@@ -133,6 +120,7 @@
             btnSil.TabIndex = 10;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnGüncelle
             // 
@@ -142,6 +130,7 @@
             btnGüncelle.TabIndex = 11;
             btnGüncelle.Text = "Güncelle";
             btnGüncelle.UseVisualStyleBackColor = true;
+            btnGüncelle.Click += btnGüncelle_Click;
             // 
             // btnPdfOlustur
             // 
@@ -173,6 +162,7 @@
             btnEkle.TabIndex = 14;
             btnEkle.Text = "Ekle";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // label1
             // 
@@ -191,20 +181,35 @@
             lsvOgunBilgileri.Size = new Size(517, 200);
             lsvOgunBilgileri.TabIndex = 15;
             lsvOgunBilgileri.UseCompatibleStateImageBehavior = false;
+            lsvOgunBilgileri.DoubleClick += lsvOgunBilgileri_DoubleClick;
+            // 
+            // dtpTarih
+            // 
+            dtpTarih.Location = new Point(105, 147);
+            dtpTarih.Name = "dtpTarih";
+            dtpTarih.Size = new Size(250, 27);
+            dtpTarih.TabIndex = 16;
+            // 
+            // nudMiktar
+            // 
+            nudMiktar.Location = new Point(106, 188);
+            nudMiktar.Name = "nudMiktar";
+            nudMiktar.Size = new Size(150, 27);
+            nudMiktar.TabIndex = 17;
             // 
             // KullaniciOgunBilgiEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(541, 525);
+            Controls.Add(nudMiktar);
+            Controls.Add(dtpTarih);
             Controls.Add(lsvOgunBilgileri);
             Controls.Add(btnEkle);
             Controls.Add(btnExcelOlustur);
             Controls.Add(btnPdfOlustur);
             Controls.Add(btnGüncelle);
             Controls.Add(btnSil);
-            Controls.Add(txtMiktar);
-            Controls.Add(txtTarih);
             Controls.Add(cmbOgunler);
             Controls.Add(cmbKategoriler);
             Controls.Add(cmbYemekler);
@@ -217,6 +222,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
             Load += KullaniciOgunBilgiEkrani_Load;
+            ((System.ComponentModel.ISupportInitialize)nudMiktar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,8 +236,6 @@
         private ComboBox cmbYemekler;
         private ComboBox cmbKategoriler;
         private ComboBox cmbOgunler;
-        private TextBox txtTarih;
-        private TextBox txtMiktar;
         private Button btnSil;
         private Button btnGüncelle;
         private Button btnPdfOlustur;
@@ -239,5 +243,7 @@
         private Button btnEkle;
         private Label label1;
         private ListView lsvOgunBilgileri;
+        private DateTimePicker dtpTarih;
+        private NumericUpDown nudMiktar;
     }
 }

@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.InkML;
 using KaloriTakipProgrami.UI.Context;
 using KaloriTakipProgrami.UI.Models;
 using Microsoft.EntityFrameworkCore;
@@ -15,28 +17,36 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciBilgiGuncelleEkrani : Form
     {
+
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
         public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
-        public KullaniciBilgiGuncelleEkrani()
+        public KullaniciBilgiGuncelleEkrani(Kullanici girisYapanKullanici)
         {
-            InitializeComponent();
             _context = new KaloriTakipDbContext();
+            girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
+            GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
+            InitializeComponent();
+            var kullanici = _context.Kullanicilar
+    .Include(k => k.KullaniciDetaylari)
+    .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.
         }
         private void KullaniciBilgileri()
         {
-            txtAd.Text = GirisYapanKullanici.Isim;
-            txtSoyad.Text = GirisYapanKullanici.Soyisim;
+            var SifreUzunluğu = GirisYapanKullanici.Sifre.Length;
+            txtAd.Text = GirisYapanKullanici.Isim.ToUpper();
+            txtSoyad.Text = GirisYapanKullanici.Soyisim.ToUpper();
             txtEposta.Text = GirisYapanKullanici.Email;
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
-            txtSifre.Text = GirisYapanKullanici.Sifre;
-            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
-            lblKullaniciAdi.Text = GirisYapanKullanici.KullaniciAdi;
-            //txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Kilo.ToString();
-            //txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Boy.ToString();
-            //lblVki.Text = Vki().ToString();
-            //fotoğraf yükleme ?
+            txtSifre.Text = new string('•', SifreUzunluğu);
+            txtSifreTekrar.Text = new string('•', SifreUzunluğu);
+            lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
+            txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Kilo.ToString();
+            txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Boy.ToString();
+            lblVki.Text = Vki().ToString();
+            pbFoto.Text = GirisYapanKullanici.FotografYolu; //fotograf yolu string olarak tutulacak
+
         }
 
         private float Vki()
@@ -48,7 +58,6 @@ namespace KaloriTakipProgrami.UI
         }
         private void KullaniciBilgiGuncelleEkrani_Load(object sender, EventArgs e)
         {
-            GirisYapanKullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == 1);  //kullanıcı eşlemesi yapacak
             KullaniciBilgileri();
         }
 
@@ -102,21 +111,22 @@ namespace KaloriTakipProgrami.UI
                 return false;
             }
 
-            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <=0)
+            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <= 0)
             {
                 MessageBox.Show("Kilo geçersiz, kilogram cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!float.TryParse(txtBoy.Text, out float boy) && boy <= 0 && boy > 3)
             {
-                MessageBox.Show("Noy geçersiz,metre cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Boy geçersiz,metre cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if((!GirisYapanKullanici.Email.EndsWith("@hotmail.com")) || (!GirisYapanKullanici.Email.EndsWith("@gmail.com")))
+            if (!(txtEposta.Text.EndsWith("@gmail.com") || txtEposta.Text.EndsWith("@hotmail.com")))
             {
-                MessageBox.Show("Lütfen geçerli bir e-posta adresi girin", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(" E-posta adresinizi kontrol ediniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
 
             return true;
         }
@@ -134,8 +144,8 @@ namespace KaloriTakipProgrami.UI
             GirisYapanKullanici.DogumTarihi = dtpDogumTarihi.Value;
             GirisYapanKullanici.Sifre = txtSifre.Text;
             GirisYapanKullanici.Durum = true;
-            //GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Kilo = Convert.ToInt32(lblKilo.Text);
-            //GirisYapanKullanici.KulllaniciDetaylari.LastOrDefault().Boy = Convert.ToInt32(lblBoy.Text);
+            GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Kilo = Convert.ToDecimal(txtKilo.Text);
+            GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Boy = Convert.ToDecimal(txtBoy.Text);
 
             try
             {
@@ -155,6 +165,8 @@ namespace KaloriTakipProgrami.UI
         {
             if (cbSifre.Checked)
             {
+                txtSifre.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
+                txtSifreTekrar.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
                 txtSifre.PasswordChar = '\0';  // Şifreyi görünür yapar
                 txtSifreTekrar.PasswordChar = '\0';  // Şifreyi görünür yapar
             }
@@ -169,11 +181,27 @@ namespace KaloriTakipProgrami.UI
 
             try
             {
-                GirisYapanKullanici.Durum = false;
-                _context.Kullanicilar.Update(GirisYapanKullanici);
-                _context.SaveChanges();
-                MessageBox.Show("Hesabınız donduruldu", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                DialogResult result = MessageBox.Show(
+        "Hesabınızı dondurmak istediğinize emin misiniz?",  // Mesaj
+        "Onay",                                            // Başlık
+        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
+        MessageBoxIcon.Question);                          // Soru simgesi
+
+                if (result == DialogResult.Yes)
+                {
+                    GirisYapanKullanici.Durum = false;
+                    _context.Kullanicilar.Update(GirisYapanKullanici);
+                    _context.SaveChanges();
+                    MessageBox.Show("Hesabınız donduruldu,Tekrar giriş yaptığınızda hesabınız aktif hale gelecektir.Tekrar Beklerizz :)", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+
+                }
+                else
+                {
+                    // Kullanıcı 'No' tıkladıysa, işlem iptal edilir
+                    MessageBox.Show("İşlem iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+              
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -183,6 +211,10 @@ namespace KaloriTakipProgrami.UI
         private void cmbCinsiyet_Click(object sender, EventArgs e)
         {
             cmbCinsiyet.DataSource = Cinsiyetler;
+        }
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }

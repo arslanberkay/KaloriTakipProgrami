@@ -36,24 +36,47 @@ namespace KaloriTakipProgrami.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-
-
-
             if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
+                HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
                 yoneticiEkrani.Show();
+               
             }
             else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
+                if(girisYapanKullanici.Durum==false)
+                {
+                    girisYapanKullanici.Durum = true; //Hesap aktif hale getirildi
+                    _db.SaveChanges(); //Değişiklikleri kaydet
+                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)");
+                }
+                HataUye();
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
-            Hata();
-
         }
-        public void Hata()
+        public void HataYonetici()
+        {
+            if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            {
+                MessageBox.Show("Lütfen boş alanları doldurunuz");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
+                return;
+
+            }
+            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
+            {
+                MessageBox.Show("Yanlış kullanıcı adı veya şifre lütfen tekrar deneyiniz.");
+                txtKullaniciAdi.Text = "";
+                txtSifre.Text = "";
+                return;
+            }
+           
+        }
+        public void HataUye()
         {
             if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
             {
@@ -65,14 +88,7 @@ namespace KaloriTakipProgrami.UI
 
 
             }
-            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
-            {
-                MessageBox.Show("Yanlış kullanıcı adı veya şifre lütfen tekrar deneyiniz.");
-                txtKullaniciAdi.Text = "";
-                txtSifre.Text = "";
-                return;
-            }
-            else if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+            if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre girdiniz");
                 txtKullaniciAdi.Text = "";

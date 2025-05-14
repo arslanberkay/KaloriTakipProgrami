@@ -49,7 +49,8 @@ namespace KaloriTakipProgrami.UI
 
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
         {
-            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani();
+            //bilgi büncellemeye parametre atadık
+            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani(_girisYapanKullanici);
             kullaniciBilgiGuncelleEkrani.ShowDialog();
         }
 
