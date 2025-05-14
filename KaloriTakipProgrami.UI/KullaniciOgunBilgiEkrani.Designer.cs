@@ -153,6 +153,7 @@
             btnPdfOlustur.TabIndex = 12;
             btnPdfOlustur.Text = "PDF";
             btnPdfOlustur.UseVisualStyleBackColor = true;
+            btnPdfOlustur.Click += btnPdfOlustur_Click;
             // 
             // btnExcelOlustur
             // 
