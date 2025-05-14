@@ -98,6 +98,7 @@ namespace KaloriTakipProgrami.UI.Context
 
             modelBuilder.Entity<KullaniciDetay>().HasData(
     new KullaniciDetay { Id = 1, Boy = 1.98m, Kilo = 78.2m, Tarih = new DateTime(2022, 7, 14), KullaniciId = 1 },
+    new KullaniciDetay { Id = 16, Boy = 1.78m, Kilo = 90.2m, Tarih = new DateTime(2022, 7, 20), KullaniciId = 1 },
     new KullaniciDetay { Id = 2, Boy = 1.78m, Kilo = 56.5m, Tarih = new DateTime(2024, 10, 26), KullaniciId = 2 },
     new KullaniciDetay { Id = 3, Boy = 1.91m, Kilo = 70.5m, Tarih = new DateTime(2024, 7, 2), KullaniciId = 3 },
     new KullaniciDetay { Id = 4, Boy = 1.73m, Kilo = 54.2m, Tarih = new DateTime(2025, 3, 6), KullaniciId = 4 },
