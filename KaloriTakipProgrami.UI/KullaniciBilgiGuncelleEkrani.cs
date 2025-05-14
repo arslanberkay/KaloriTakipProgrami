@@ -15,11 +15,13 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciBilgiGuncelleEkrani : Form
     {
+     
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
         public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
-        public KullaniciBilgiGuncelleEkrani()
+        public KullaniciBilgiGuncelleEkrani(Kullanici girisYapanKullanici)
         {
+            GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
             _context = new KaloriTakipDbContext();
         }
@@ -48,7 +50,7 @@ namespace KaloriTakipProgrami.UI
         }
         private void KullaniciBilgiGuncelleEkrani_Load(object sender, EventArgs e)
         {
-            GirisYapanKullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == 1);  //kullanıcı eşlemesi yapacak
+          
             KullaniciBilgileri();
         }
 
