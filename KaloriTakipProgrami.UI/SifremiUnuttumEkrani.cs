@@ -24,13 +24,14 @@ namespace KaloriTakipProgrami.UI
         }
 
         Random rnd = new Random();
+        int sifirlamaKodu;
 
         private void btnSifirlamaKoduGonder_Click(object sender, EventArgs e)
         {
             if (_db.Kullanicilar.Any(k => k.Email == txtEmail.Text))
             {
-                int kod = rnd.Next(1000, 9999);
-                MailGonder(kod);
+                sifirlamaKodu = rnd.Next(1000, 9999);
+                MailGonder(sifirlamaKodu);
             }
         }
 
@@ -56,7 +57,6 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show(ex.Message);
             }
-
 
         }
     }

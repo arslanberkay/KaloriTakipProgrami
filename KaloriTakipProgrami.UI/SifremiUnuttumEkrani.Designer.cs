@@ -28,51 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            label2 = new Label();
-            txtEmail = new TextBox();
+            grpSifirlamaKoduGonder = new GroupBox();
             btnSifirlamaKoduGonder = new Button();
-            groupBox2 = new GroupBox();
+            txtEmail = new TextBox();
+            label2 = new Label();
+            grpSifirlamaKodu = new GroupBox();
+            mtxtSifirlamaKodu = new MaskedTextBox();
             btnOk = new Button();
             label1 = new Label();
-            mtxtSifirlamaKodu = new MaskedTextBox();
-            groupBox3 = new GroupBox();
+            grpSifreGuncelleme = new GroupBox();
             btnSifreyiGuncelle = new Button();
+            txtYeniSifreTekrar = new TextBox();
+            label4 = new Label();
             txtYeniSifre = new TextBox();
             label3 = new Label();
-            label4 = new Label();
-            txtYeniSifreTekrar = new TextBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            grpSifirlamaKoduGonder.SuspendLayout();
+            grpSifirlamaKodu.SuspendLayout();
+            grpSifreGuncelleme.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // grpSifirlamaKoduGonder
             // 
-            groupBox1.Controls.Add(btnSifirlamaKoduGonder);
-            groupBox1.Controls.Add(txtEmail);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(241, 30);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(346, 145);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(31, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 25);
-            label2.TabIndex = 0;
-            label2.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(121, 47);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(166, 32);
-            txtEmail.TabIndex = 1;
+            grpSifirlamaKoduGonder.Controls.Add(btnSifirlamaKoduGonder);
+            grpSifirlamaKoduGonder.Controls.Add(txtEmail);
+            grpSifirlamaKoduGonder.Controls.Add(label2);
+            grpSifirlamaKoduGonder.Location = new Point(241, 30);
+            grpSifirlamaKoduGonder.Name = "grpSifirlamaKoduGonder";
+            grpSifirlamaKoduGonder.Size = new Size(346, 145);
+            grpSifirlamaKoduGonder.TabIndex = 0;
+            grpSifirlamaKoduGonder.TabStop = false;
             // 
             // btnSifirlamaKoduGonder
             // 
@@ -84,16 +68,39 @@
             btnSifirlamaKoduGonder.UseVisualStyleBackColor = true;
             btnSifirlamaKoduGonder.Click += btnSifirlamaKoduGonder_Click;
             // 
-            // groupBox2
+            // txtEmail
             // 
-            groupBox2.Controls.Add(mtxtSifirlamaKodu);
-            groupBox2.Controls.Add(btnOk);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Location = new Point(241, 181);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(409, 107);
-            groupBox2.TabIndex = 0;
-            groupBox2.TabStop = false;
+            txtEmail.Location = new Point(121, 47);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(166, 32);
+            txtEmail.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(31, 47);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 25);
+            label2.TabIndex = 0;
+            label2.Text = "Email";
+            // 
+            // grpSifirlamaKodu
+            // 
+            grpSifirlamaKodu.Controls.Add(mtxtSifirlamaKodu);
+            grpSifirlamaKodu.Controls.Add(btnOk);
+            grpSifirlamaKodu.Controls.Add(label1);
+            grpSifirlamaKodu.Location = new Point(241, 181);
+            grpSifirlamaKodu.Name = "grpSifirlamaKodu";
+            grpSifirlamaKodu.Size = new Size(409, 107);
+            grpSifirlamaKodu.TabIndex = 0;
+            grpSifirlamaKodu.TabStop = false;
+            // 
+            // mtxtSifirlamaKodu
+            // 
+            mtxtSifirlamaKodu.Location = new Point(182, 44);
+            mtxtSifirlamaKodu.Name = "mtxtSifirlamaKodu";
+            mtxtSifirlamaKodu.Size = new Size(121, 32);
+            mtxtSifirlamaKodu.TabIndex = 3;
             // 
             // btnOk
             // 
@@ -113,25 +120,18 @@
             label1.TabIndex = 0;
             label1.Text = "Sıfırlama Kodu";
             // 
-            // mtxtSifirlamaKodu
+            // grpSifreGuncelleme
             // 
-            mtxtSifirlamaKodu.Location = new Point(182, 44);
-            mtxtSifirlamaKodu.Name = "mtxtSifirlamaKodu";
-            mtxtSifirlamaKodu.Size = new Size(121, 32);
-            mtxtSifirlamaKodu.TabIndex = 3;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(btnSifreyiGuncelle);
-            groupBox3.Controls.Add(txtYeniSifreTekrar);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(txtYeniSifre);
-            groupBox3.Controls.Add(label3);
-            groupBox3.Location = new Point(241, 305);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(384, 199);
-            groupBox3.TabIndex = 0;
-            groupBox3.TabStop = false;
+            grpSifreGuncelleme.Controls.Add(btnSifreyiGuncelle);
+            grpSifreGuncelleme.Controls.Add(txtYeniSifreTekrar);
+            grpSifreGuncelleme.Controls.Add(label4);
+            grpSifreGuncelleme.Controls.Add(txtYeniSifre);
+            grpSifreGuncelleme.Controls.Add(label3);
+            grpSifreGuncelleme.Location = new Point(241, 305);
+            grpSifreGuncelleme.Name = "grpSifreGuncelleme";
+            grpSifreGuncelleme.Size = new Size(384, 199);
+            grpSifreGuncelleme.TabIndex = 0;
+            grpSifreGuncelleme.TabStop = false;
             // 
             // btnSifreyiGuncelle
             // 
@@ -141,6 +141,22 @@
             btnSifreyiGuncelle.TabIndex = 2;
             btnSifreyiGuncelle.Text = "Şifreyi Güncelle";
             btnSifreyiGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // txtYeniSifreTekrar
+            // 
+            txtYeniSifreTekrar.Location = new Point(195, 82);
+            txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
+            txtYeniSifreTekrar.Size = new Size(166, 32);
+            txtYeniSifreTekrar.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(31, 85);
+            label4.Name = "label4";
+            label4.Size = new Size(158, 25);
+            label4.TabIndex = 0;
+            label4.Text = "Yeni Şifre (Tekrar)";
             // 
             // txtYeniSifre
             // 
@@ -158,54 +174,38 @@
             label3.TabIndex = 0;
             label3.Text = "Yeni Şifre";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(31, 85);
-            label4.Name = "label4";
-            label4.Size = new Size(158, 25);
-            label4.TabIndex = 0;
-            label4.Text = "Yeni Şifre (Tekrar)";
-            // 
-            // txtYeniSifreTekrar
-            // 
-            txtYeniSifreTekrar.Location = new Point(195, 82);
-            txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
-            txtYeniSifreTekrar.Size = new Size(166, 32);
-            txtYeniSifreTekrar.TabIndex = 1;
-            // 
             // SifremiUnuttumEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 634);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
+            Controls.Add(grpSifirlamaKodu);
+            Controls.Add(grpSifreGuncelleme);
+            Controls.Add(grpSifirlamaKoduGonder);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
             Name = "SifremiUnuttumEkrani";
             Text = "SifremiUnuttumEkrani";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            grpSifirlamaKoduGonder.ResumeLayout(false);
+            grpSifirlamaKoduGonder.PerformLayout();
+            grpSifirlamaKodu.ResumeLayout(false);
+            grpSifirlamaKodu.PerformLayout();
+            grpSifreGuncelleme.ResumeLayout(false);
+            grpSifreGuncelleme.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox grpSifirlamaKoduGonder;
         private TextBox txtEmail;
         private Label label2;
         private Button btnSifirlamaKoduGonder;
-        private GroupBox groupBox2;
+        private GroupBox grpSifirlamaKodu;
         private MaskedTextBox mtxtSifirlamaKodu;
         private Button btnOk;
         private Label label1;
-        private GroupBox groupBox3;
+        private GroupBox grpSifreGuncelleme;
         private Button btnSifreyiGuncelle;
         private TextBox txtYeniSifreTekrar;
         private Label label4;
