@@ -25,8 +25,11 @@ namespace KaloriTakipProgrami.UI.Context
         {
 
 
+
             //optionsBuilder.UseSqlServer("Server=LAPTOP-C3QHSI5J\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
             optionsBuilder.UseSqlServer("Server=AYGÜN\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true");
+
+          
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
