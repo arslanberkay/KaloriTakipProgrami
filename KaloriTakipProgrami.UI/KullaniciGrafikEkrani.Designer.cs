@@ -40,7 +40,7 @@
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(190, 25);
+            label1.Location = new Point(490, 30);
             label1.Name = "label1";
             label1.Size = new Size(197, 43);
             label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(190, 319);
+            label2.Location = new Point(520, 400);
             label2.Name = "label2";
             label2.Size = new Size(167, 41);
             label2.TabIndex = 1;
@@ -60,20 +60,20 @@
             // 
             dgvKiloGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKiloGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKiloGrafikleri.Location = new Point(46, 91);
+            dgvKiloGrafikleri.Location = new Point(46, 89);
             dgvKiloGrafikleri.Name = "dgvKiloGrafikleri";
             dgvKiloGrafikleri.RowHeadersWidth = 51;
-            dgvKiloGrafikleri.Size = new Size(469, 188);
+            dgvKiloGrafikleri.Size = new Size(1054, 279);
             dgvKiloGrafikleri.TabIndex = 2;
             // 
             // dgvBoyGrafikleri
             // 
             dgvBoyGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvBoyGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBoyGrafikleri.Location = new Point(46, 378);
+            dgvBoyGrafikleri.Location = new Point(55, 467);
             dgvBoyGrafikleri.Name = "dgvBoyGrafikleri";
             dgvBoyGrafikleri.RowHeadersWidth = 51;
-            dgvBoyGrafikleri.Size = new Size(469, 188);
+            dgvBoyGrafikleri.Size = new Size(1045, 296);
             dgvBoyGrafikleri.TabIndex = 2;
             // 
             // KullaniciGrafikEkrani
@@ -81,7 +81,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(569, 622);
+            ClientSize = new Size(1162, 792);
             Controls.Add(dgvBoyGrafikleri);
             Controls.Add(dgvKiloGrafikleri);
             Controls.Add(label2);
