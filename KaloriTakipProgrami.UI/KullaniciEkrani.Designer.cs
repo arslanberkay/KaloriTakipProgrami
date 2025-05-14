@@ -63,7 +63,7 @@
 
 
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
+            //groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -492,8 +492,8 @@
             Text = "KullaniciEkrani";
             Load += KullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            //groupBox1.ResumeLayout(false);
+            //groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
