@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
             txtMail = new TextBox();
             dtpDogumTarihi = new DateTimePicker();
             btnFotografSec = new Button();
@@ -50,7 +51,6 @@
             label1 = new Label();
             btnKayitOl = new Button();
             pbFotograf = new PictureBox();
-            checkBox1 = new CheckBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbFotograf).BeginInit();
             SuspendLayout();
@@ -84,6 +84,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Kayıt Ol";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.ForeColor = SystemColors.ButtonHighlight;
+            checkBox1.Location = new Point(348, 151);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(149, 29);
+            checkBox1.TabIndex = 7;
+            checkBox1.Text = "şifremi göster";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // txtMail
             // 
             txtMail.Location = new Point(157, 317);
@@ -100,12 +112,13 @@
             // 
             // btnFotografSec
             // 
+            btnFotografSec.BackColor = Color.FromArgb(164, 172, 134);
             btnFotografSec.Location = new Point(336, 402);
             btnFotografSec.Name = "btnFotografSec";
             btnFotografSec.Size = new Size(71, 32);
             btnFotografSec.TabIndex = 4;
             btnFotografSec.Text = "Seç";
-            btnFotografSec.UseVisualStyleBackColor = true;
+            btnFotografSec.UseVisualStyleBackColor = false;
             btnFotografSec.Click += btnFotografSec_Click;
             // 
             // cbCinsiyet
@@ -134,6 +147,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(27, 275);
             label6.Name = "label6";
             label6.Size = new Size(125, 25);
@@ -143,6 +157,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(27, 191);
             label4.Name = "label4";
             label4.Size = new Size(35, 25);
@@ -152,6 +167,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(27, 107);
             label2.Name = "label2";
             label2.Size = new Size(50, 25);
@@ -168,6 +184,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(27, 359);
             label8.Name = "label8";
             label8.Size = new Size(78, 25);
@@ -177,6 +194,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(27, 401);
             label9.Name = "label9";
             label9.Size = new Size(88, 25);
@@ -193,6 +211,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(28, 317);
             label7.Name = "label7";
             label7.Size = new Size(58, 25);
@@ -202,6 +221,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(27, 233);
             label5.Name = "label5";
             label5.Size = new Size(63, 25);
@@ -219,6 +239,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(27, 149);
             label3.Name = "label3";
             label3.Size = new Size(118, 25);
@@ -235,6 +256,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(27, 65);
             label1.Name = "label1";
             label1.Size = new Size(117, 25);
@@ -243,12 +265,13 @@
             // 
             // btnKayitOl
             // 
+            btnKayitOl.BackColor = Color.FromArgb(164, 172, 134);
             btnKayitOl.Location = new Point(136, 526);
             btnKayitOl.Name = "btnKayitOl";
             btnKayitOl.Size = new Size(379, 67);
             btnKayitOl.TabIndex = 5;
             btnKayitOl.Text = "Kayıt Ol";
-            btnKayitOl.UseVisualStyleBackColor = true;
+            btnKayitOl.UseVisualStyleBackColor = false;
             btnKayitOl.Click += btnKayitOl_Click;
             // 
             // pbFotograf
@@ -259,21 +282,11 @@
             pbFotograf.TabIndex = 6;
             pbFotograf.TabStop = false;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(348, 151);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(149, 29);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "şifremi göster";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
             // KullaniciKayitOlEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1130, 724);
             Controls.Add(pbFotograf);
             Controls.Add(btnKayitOl);
@@ -282,6 +295,7 @@
             Margin = new Padding(4);
             Name = "KullaniciKayitOlEkrani";
             Text = "KullaniciKayitOlEkrani";
+            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbFotograf).EndInit();

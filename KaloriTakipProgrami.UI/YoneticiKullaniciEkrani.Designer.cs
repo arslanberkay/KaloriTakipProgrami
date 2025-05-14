@@ -34,6 +34,7 @@
             // 
             // dgvKullanicilar
             // 
+            dgvKullanicilar.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKullanicilar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKullanicilar.Location = new Point(46, 63);
             dgvKullanicilar.Name = "dgvKullanicilar";
@@ -45,10 +46,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(800, 450);
             Controls.Add(dgvKullanicilar);
             Name = "YoneticiKullaniciEkrani";
             Text = "YoneticiKullaniciEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += YoneticiKullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).EndInit();
             ResumeLayout(false);
