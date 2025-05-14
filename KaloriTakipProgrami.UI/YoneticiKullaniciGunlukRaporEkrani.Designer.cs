@@ -50,6 +50,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(188, 46);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -68,6 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(188, 100);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -77,6 +79,7 @@
             // 
             // lstvKullaniciGunlukRapor
             // 
+            lstvKullaniciGunlukRapor.BackColor = Color.FromArgb(202, 210, 197);
             lstvKullaniciGunlukRapor.Location = new Point(188, 224);
             lstvKullaniciGunlukRapor.Margin = new Padding(4);
             lstvKullaniciGunlukRapor.Name = "lstvKullaniciGunlukRapor";
@@ -86,40 +89,44 @@
             // 
             // btnPdf
             // 
+            btnPdf.BackColor = Color.FromArgb(164, 172, 134);
             btnPdf.Location = new Point(512, 456);
             btnPdf.Margin = new Padding(4);
             btnPdf.Name = "btnPdf";
             btnPdf.Size = new Size(106, 56);
             btnPdf.TabIndex = 4;
             btnPdf.Text = "PDF";
-            btnPdf.UseVisualStyleBackColor = true;
+            btnPdf.UseVisualStyleBackColor = false;
             btnPdf.Click += btnPdf_Click;
             // 
             // btnExcel
             // 
+            btnExcel.BackColor = Color.FromArgb(164, 172, 134);
             btnExcel.Location = new Point(640, 456);
             btnExcel.Margin = new Padding(4);
             btnExcel.Name = "btnExcel";
             btnExcel.Size = new Size(106, 56);
             btnExcel.TabIndex = 4;
             btnExcel.Text = "EXCEL";
-            btnExcel.UseVisualStyleBackColor = true;
+            btnExcel.UseVisualStyleBackColor = false;
             btnExcel.Click += btnExcel_Click;
             // 
             // btnRaporGoruntule
             // 
+            btnRaporGoruntule.BackColor = Color.FromArgb(164, 172, 134);
             btnRaporGoruntule.Location = new Point(322, 151);
             btnRaporGoruntule.Name = "btnRaporGoruntule";
             btnRaporGoruntule.Size = new Size(220, 48);
             btnRaporGoruntule.TabIndex = 5;
             btnRaporGoruntule.Text = "Görüntüle";
-            btnRaporGoruntule.UseVisualStyleBackColor = true;
+            btnRaporGoruntule.UseVisualStyleBackColor = false;
             btnRaporGoruntule.Click += btnRaporGoruntule_Click;
             // 
             // YoneticiKullaniciGunlukRaporEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1000, 562);
             Controls.Add(btnRaporGoruntule);
             Controls.Add(btnExcel);
@@ -133,6 +140,7 @@
             Margin = new Padding(4);
             Name = "YoneticiKullaniciGunlukRaporEkrani";
             Text = "YoneticiKullaniciGunlukRaporEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += YoneticiKullaniciGunlukRaporEkrani_Load;
             ResumeLayout(false);
             PerformLayout();

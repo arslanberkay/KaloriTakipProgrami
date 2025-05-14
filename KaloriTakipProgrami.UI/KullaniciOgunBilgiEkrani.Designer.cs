@@ -51,6 +51,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(12, 81);
             label2.Name = "label2";
             label2.Size = new Size(85, 20);
@@ -61,6 +62,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(23, 115);
             label3.Name = "label3";
             label3.Size = new Size(54, 20);
@@ -71,6 +73,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(34, 152);
             label4.Name = "label4";
             label4.Size = new Size(43, 20);
@@ -81,6 +84,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(23, 188);
             label5.Name = "label5";
             label5.Size = new Size(54, 20);
@@ -114,60 +118,66 @@
             // 
             // btnSil
             // 
+            btnSil.BackColor = Color.FromArgb(164, 172, 134);
             btnSil.Location = new Point(213, 245);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(94, 30);
             btnSil.TabIndex = 10;
             btnSil.Text = "Sil";
-            btnSil.UseVisualStyleBackColor = true;
+            btnSil.UseVisualStyleBackColor = false;
             btnSil.Click += btnSil_Click;
             // 
             // btnGüncelle
             // 
+            btnGüncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnGüncelle.Location = new Point(363, 245);
             btnGüncelle.Name = "btnGüncelle";
             btnGüncelle.Size = new Size(94, 30);
             btnGüncelle.TabIndex = 11;
             btnGüncelle.Text = "Güncelle";
-            btnGüncelle.UseVisualStyleBackColor = true;
+            btnGüncelle.UseVisualStyleBackColor = false;
             btnGüncelle.Click += btnGüncelle_Click;
             // 
             // btnPdfOlustur
             // 
+            btnPdfOlustur.BackColor = Color.FromArgb(164, 172, 134);
             btnPdfOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnPdfOlustur.Location = new Point(134, 487);
             btnPdfOlustur.Name = "btnPdfOlustur";
             btnPdfOlustur.Size = new Size(94, 29);
             btnPdfOlustur.TabIndex = 12;
             btnPdfOlustur.Text = "PDF";
-            btnPdfOlustur.UseVisualStyleBackColor = true;
+            btnPdfOlustur.UseVisualStyleBackColor = false;
             btnPdfOlustur.Click += btnPdfOlustur_Click;
             // 
             // btnExcelOlustur
             // 
+            btnExcelOlustur.BackColor = Color.FromArgb(164, 172, 134);
             btnExcelOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnExcelOlustur.Location = new Point(296, 487);
             btnExcelOlustur.Name = "btnExcelOlustur";
             btnExcelOlustur.Size = new Size(94, 29);
             btnExcelOlustur.TabIndex = 13;
             btnExcelOlustur.Text = "EXCEL";
-            btnExcelOlustur.UseVisualStyleBackColor = true;
+            btnExcelOlustur.UseVisualStyleBackColor = false;
             btnExcelOlustur.Click += btnExcelOlustur_Click;
             // 
             // btnEkle
             // 
+            btnEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnEkle.Location = new Point(67, 245);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(94, 30);
             btnEkle.TabIndex = 14;
             btnEkle.Text = "Ekle";
-            btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.UseVisualStyleBackColor = false;
             btnEkle.Click += btnEkle_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(23, 34);
             label1.Name = "label1";
             label1.Size = new Size(65, 20);
@@ -176,6 +186,7 @@
             // 
             // lsvOgunBilgileri
             // 
+            lsvOgunBilgileri.BackColor = Color.FromArgb(202, 210, 197);
             lsvOgunBilgileri.Location = new Point(12, 281);
             lsvOgunBilgileri.Name = "lsvOgunBilgileri";
             lsvOgunBilgileri.Size = new Size(517, 200);
@@ -201,6 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(541, 525);
             Controls.Add(nudMiktar);
             Controls.Add(dtpTarih);
@@ -221,6 +233,7 @@
             Name = "KullaniciOgunBilgiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += KullaniciOgunBilgiEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)nudMiktar).EndInit();
             ResumeLayout(false);

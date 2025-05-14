@@ -42,7 +42,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.FromArgb(170, 227, 193);
             groupBox1.Controls.Add(chkSifreGoster);
             groupBox1.Controls.Add(lnkKayitOl);
             groupBox1.Controls.Add(lnkSifremiUnuttum);
@@ -51,9 +50,9 @@
             groupBox1.Controls.Add(txtKullaniciAdi);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(2, 1);
+            groupBox1.Location = new Point(214, 123);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(489, 497);
+            groupBox1.Size = new Size(428, 438);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -61,8 +60,8 @@
             // 
             chkSifreGoster.AutoSize = true;
             chkSifreGoster.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            chkSifreGoster.ForeColor = Color.FromArgb(50, 52, 79);
-            chkSifreGoster.Location = new Point(127, 235);
+            chkSifreGoster.ForeColor = SystemColors.ButtonHighlight;
+            chkSifreGoster.Location = new Point(100, 194);
             chkSifreGoster.Name = "chkSifreGoster";
             chkSifreGoster.Size = new Size(147, 29);
             chkSifreGoster.TabIndex = 5;
@@ -73,10 +72,11 @@
             // lnkKayitOl
             // 
             lnkKayitOl.AutoSize = true;
-            lnkKayitOl.BackColor = Color.FromArgb(170, 227, 193);
+            lnkKayitOl.BackColor = Color.Transparent;
             lnkKayitOl.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            lnkKayitOl.LinkColor = Color.FromArgb(50, 52, 79);
-            lnkKayitOl.Location = new Point(290, 406);
+            lnkKayitOl.ForeColor = SystemColors.ButtonHighlight;
+            lnkKayitOl.LinkColor = Color.FromArgb(233, 236, 239);
+            lnkKayitOl.Location = new Point(301, 369);
             lnkKayitOl.Name = "lnkKayitOl";
             lnkKayitOl.Size = new Size(77, 25);
             lnkKayitOl.TabIndex = 4;
@@ -87,10 +87,11 @@
             // lnkSifremiUnuttum
             // 
             lnkSifremiUnuttum.AutoSize = true;
-            lnkSifremiUnuttum.BackColor = Color.FromArgb(170, 227, 193);
+            lnkSifremiUnuttum.BackColor = Color.Transparent;
             lnkSifremiUnuttum.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            lnkSifremiUnuttum.LinkColor = Color.FromArgb(50, 52, 79);
-            lnkSifremiUnuttum.Location = new Point(43, 406);
+            lnkSifremiUnuttum.ForeColor = SystemColors.ButtonHighlight;
+            lnkSifremiUnuttum.LinkColor = Color.FromArgb(233, 236, 239);
+            lnkSifremiUnuttum.Location = new Point(37, 369);
             lnkSifremiUnuttum.Name = "lnkSifremiUnuttum";
             lnkSifremiUnuttum.Size = new Size(152, 25);
             lnkSifremiUnuttum.TabIndex = 3;
@@ -100,13 +101,13 @@
             // 
             // btnGirisYap
             // 
-            btnGirisYap.BackColor = Color.FromArgb(96, 158, 124);
+            btnGirisYap.BackColor = Color.FromArgb(164, 172, 134);
             btnGirisYap.FlatStyle = FlatStyle.Popup;
             btnGirisYap.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnGirisYap.ForeColor = Color.FromArgb(50, 52, 79);
-            btnGirisYap.Location = new Point(127, 307);
+            btnGirisYap.ForeColor = Color.Black;
+            btnGirisYap.Location = new Point(100, 254);
             btnGirisYap.Name = "btnGirisYap";
-            btnGirisYap.Size = new Size(186, 45);
+            btnGirisYap.Size = new Size(217, 45);
             btnGirisYap.TabIndex = 2;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.UseVisualStyleBackColor = false;
@@ -114,25 +115,27 @@
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(127, 197);
+            txtSifre.Location = new Point(100, 156);
             txtSifre.Name = "txtSifre";
             txtSifre.PasswordChar = '*';
-            txtSifre.Size = new Size(186, 32);
+            txtSifre.Size = new Size(217, 32);
             txtSifre.TabIndex = 1;
             // 
             // txtKullaniciAdi
             // 
-            txtKullaniciAdi.Location = new Point(127, 109);
+            txtKullaniciAdi.BackColor = Color.White;
+            txtKullaniciAdi.ForeColor = Color.FromArgb(51, 51, 51);
+            txtKullaniciAdi.Location = new Point(100, 77);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
-            txtKullaniciAdi.Size = new Size(186, 32);
+            txtKullaniciAdi.Size = new Size(217, 32);
             txtKullaniciAdi.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.ForeColor = Color.FromArgb(50, 52, 79);
-            label2.Location = new Point(127, 169);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(100, 128);
             label2.Name = "label2";
             label2.Size = new Size(50, 25);
             label2.TabIndex = 0;
@@ -141,10 +144,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(170, 227, 193);
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.ForeColor = Color.FromArgb(50, 52, 79);
-            label1.Location = new Point(127, 77);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(100, 45);
             label1.Name = "label1";
             label1.Size = new Size(120, 25);
             label1.TabIndex = 0;
@@ -154,13 +157,14 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(238, 244, 242);
-            ClientSize = new Size(491, 487);
+            BackColor = Color.FromArgb(47, 62, 70);
+            ClientSize = new Size(894, 730);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
             Name = "KullaniciGirisEkrani";
             Text = "KullaniciGirisEkrani";
+            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

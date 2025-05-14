@@ -39,6 +39,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(190, 25);
             label1.Name = "label1";
             label1.Size = new Size(197, 43);
@@ -48,6 +49,7 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(190, 319);
             label2.Name = "label2";
             label2.Size = new Size(167, 41);
@@ -56,6 +58,7 @@
             // 
             // dgvKiloGrafikleri
             // 
+            dgvKiloGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKiloGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKiloGrafikleri.Location = new Point(46, 91);
             dgvKiloGrafikleri.Name = "dgvKiloGrafikleri";
@@ -65,6 +68,7 @@
             // 
             // dgvBoyGrafikleri
             // 
+            dgvBoyGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvBoyGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBoyGrafikleri.Location = new Point(46, 378);
             dgvBoyGrafikleri.Name = "dgvBoyGrafikleri";
@@ -76,6 +80,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(569, 622);
             Controls.Add(dgvBoyGrafikleri);
             Controls.Add(dgvKiloGrafikleri);
@@ -84,6 +89,7 @@
             Name = "KullaniciGrafikEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGrafikEkrani";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvKiloGrafikleri).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvBoyGrafikleri).EndInit();
             ResumeLayout(false);

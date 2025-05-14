@@ -42,6 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(416, 40);
             label1.Name = "label1";
             label1.Size = new Size(79, 20);
@@ -52,6 +53,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(88, 40);
             label2.Name = "label2";
             label2.Size = new Size(115, 20);
@@ -74,24 +76,27 @@
             // 
             // btnEnCokYenilen
             // 
+            btnEnCokYenilen.BackColor = Color.FromArgb(164, 172, 134);
             btnEnCokYenilen.Location = new Point(416, 128);
             btnEnCokYenilen.Name = "btnEnCokYenilen";
             btnEnCokYenilen.Size = new Size(209, 29);
             btnEnCokYenilen.TabIndex = 4;
             btnEnCokYenilen.Text = "En Çok Yenilen Yemekler";
-            btnEnCokYenilen.UseVisualStyleBackColor = true;
+            btnEnCokYenilen.UseVisualStyleBackColor = false;
             // 
             // btnAzYenilenler
             // 
+            btnAzYenilenler.BackColor = Color.FromArgb(164, 172, 134);
             btnAzYenilenler.Location = new Point(129, 128);
             btnAzYenilenler.Name = "btnAzYenilenler";
             btnAzYenilenler.Size = new Size(209, 29);
             btnAzYenilenler.TabIndex = 5;
             btnAzYenilenler.Text = "En az Yenilen Yemekler";
-            btnAzYenilenler.UseVisualStyleBackColor = true;
+            btnAzYenilenler.UseVisualStyleBackColor = false;
             // 
             // dgvYemekIstatistikleri
             // 
+            dgvYemekIstatistikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvYemekIstatistikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvYemekIstatistikleri.Location = new Point(88, 179);
             dgvYemekIstatistikleri.Name = "dgvYemekIstatistikleri";
@@ -103,6 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1122, 631);
             Controls.Add(dgvYemekIstatistikleri);
             Controls.Add(btnAzYenilenler);
@@ -114,6 +120,7 @@
             Name = "KullaniciRaporEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciRaporEkrani";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvYemekIstatistikleri).EndInit();
             ResumeLayout(false);
             PerformLayout();

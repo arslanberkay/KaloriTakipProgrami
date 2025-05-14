@@ -42,6 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(40, 38);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
@@ -53,6 +54,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(24, 109);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -81,6 +83,7 @@
             // lblToplamKaloriMiktari
             // 
             lblToplamKaloriMiktari.AutoSize = true;
+            lblToplamKaloriMiktari.ForeColor = SystemColors.ButtonHighlight;
             lblToplamKaloriMiktari.Location = new Point(594, 482);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
@@ -92,6 +95,7 @@
             // 
             lblKaloriBilgilendirme.AutoSize = true;
             lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblKaloriBilgilendirme.ForeColor = SystemColors.ButtonHighlight;
             lblKaloriBilgilendirme.Location = new Point(346, 486);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
@@ -101,16 +105,18 @@
             // 
             // btnGoruntule
             // 
+            btnGoruntule.BackColor = Color.FromArgb(164, 172, 134);
             btnGoruntule.Location = new Point(122, 159);
             btnGoruntule.Name = "btnGoruntule";
             btnGoruntule.Size = new Size(312, 52);
             btnGoruntule.TabIndex = 6;
             btnGoruntule.Text = "Görüntüle";
-            btnGoruntule.UseVisualStyleBackColor = true;
+            btnGoruntule.UseVisualStyleBackColor = false;
             btnGoruntule.Click += btnGoruntule_Click;
             // 
             // lstvOgunYemekDetayliRapor
             // 
+            lstvOgunYemekDetayliRapor.BackColor = Color.FromArgb(202, 210, 197);
             lstvOgunYemekDetayliRapor.Location = new Point(47, 242);
             lstvOgunYemekDetayliRapor.Name = "lstvOgunYemekDetayliRapor";
             lstvOgunYemekDetayliRapor.Size = new Size(610, 193);
@@ -121,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(736, 565);
             Controls.Add(lstvOgunYemekDetayliRapor);
             Controls.Add(btnGoruntule);
@@ -135,6 +142,7 @@
             Name = "KullaniciGunlukRaporEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGunlukRaporEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += KullaniciGunlukRaporEkrani_Load;
             ResumeLayout(false);
             PerformLayout();
