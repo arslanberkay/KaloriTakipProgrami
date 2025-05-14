@@ -86,6 +86,29 @@ namespace KaloriTakipProgrami.UI
             kullaniciTaleplerEkrani.ShowDialog();
         }
 
+        private bool menuAcikMi = true;
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            menuAcikMi = !menuAcikMi;
+
+            // Diğer butonları göster/gizle
+            btnBilgiGuncelle.Visible = menuAcikMi;
+            btnTalepler.Visible = menuAcikMi;
+            btnGrafikler.Visible = menuAcikMi;
+            btnGunlukRapor.Visible = menuAcikMi;
+            bnOgunBilgileriGoster.Visible = menuAcikMi;
+            btnRapor.Visible = menuAcikMi;
+        }
+
+        private void KullaniciEkrani_Load(object sender, EventArgs e)
+        {
+            btnBilgiGuncelle.Visible = true;
+            btnTalepler.Visible = true;
+            btnGrafikler.Visible = true;
+            btnGunlukRapor.Visible = true;
+            bnOgunBilgileriGoster.Visible = true;
+            btnRapor.Visible = true;
+
         private void btnCikis_Click(object sender, EventArgs e)
         {
             try
@@ -112,6 +135,7 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+
 
         }
     }

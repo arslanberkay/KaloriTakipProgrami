@@ -89,14 +89,22 @@
             Margin = new Padding(3, 2, 3, 2);
 
             ClientSize = new Size(1266, 738);
+
+            MaximizeBox = false;
+
             Controls.Add(btnReddedildi);
             Controls.Add(btnEkle);
             Controls.Add(dgvTalepler);
 
+
             Name = "YoneticiTaleplerEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiTaleplerEkrani";
+
+
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).EndInit();
+
             ResumeLayout(false);
         }
 

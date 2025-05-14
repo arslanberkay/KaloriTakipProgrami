@@ -107,8 +107,13 @@
             // 
             cmbYemekler.FormattingEnabled = true;
 
+            cmbYemekler.Location = new Point(180, 136);
+            cmbYemekler.Margin = new Padding(4);
+
+
             cmbYemekler.Location = new Point(92, 80);
             cmbYemekler.Margin = new Padding(3, 2, 3, 2);
+
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(133, 23);
 
@@ -119,8 +124,13 @@
             // 
             cmbKategoriler.FormattingEnabled = true;
 
+            cmbKategoriler.Location = new Point(180, 89);
+            cmbKategoriler.Margin = new Padding(4);
+
+
             cmbKategoriler.Location = new Point(92, 55);
             cmbKategoriler.Margin = new Padding(3, 2, 3, 2);
+
             cmbKategoriler.Name = "cmbKategoriler";
             cmbKategoriler.Size = new Size(133, 23);
 
@@ -130,8 +140,13 @@
             // 
             cmbOgunler.FormattingEnabled = true;
 
+            cmbOgunler.Location = new Point(180, 42);
+            cmbOgunler.Margin = new Padding(4);
+
+
             cmbOgunler.Location = new Point(92, 26);
             cmbOgunler.Margin = new Padding(3, 2, 3, 2);
+
             cmbOgunler.Name = "cmbOgunler";
             cmbOgunler.Size = new Size(133, 23);
 
@@ -141,8 +156,15 @@
             // 
             btnSil.BackColor = Color.FromArgb(164, 172, 134);
 
+            btnSil.FlatStyle = FlatStyle.Popup;
+            btnSil.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnSil.Location = new Point(234, 356);
+            btnSil.Margin = new Padding(4);
+
+
             btnSil.Location = new Point(186, 184);
             btnSil.Margin = new Padding(3, 2, 3, 2);
+
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(82, 22);
 
@@ -155,8 +177,15 @@
             // 
             btnGüncelle.BackColor = Color.FromArgb(164, 172, 134);
 
+            btnGüncelle.FlatStyle = FlatStyle.Popup;
+            btnGüncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnGüncelle.Location = new Point(371, 356);
+            btnGüncelle.Margin = new Padding(4);
+
+
             btnGüncelle.Location = new Point(318, 184);
             btnGüncelle.Margin = new Padding(3, 2, 3, 2);
+
             btnGüncelle.Name = "btnGüncelle";
             btnGüncelle.Size = new Size(82, 22);
 
@@ -169,9 +198,16 @@
             // 
             btnPdfOlustur.BackColor = Color.FromArgb(164, 172, 134);
 
+            btnPdfOlustur.FlatStyle = FlatStyle.Popup;
+            btnPdfOlustur.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnPdfOlustur.Location = new Point(870, 805);
+            btnPdfOlustur.Margin = new Padding(4);
+
+
             btnPdfOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnPdfOlustur.Location = new Point(117, 365);
             btnPdfOlustur.Margin = new Padding(3, 2, 3, 2);
+
             btnPdfOlustur.Name = "btnPdfOlustur";
             btnPdfOlustur.Size = new Size(82, 22);
 
@@ -184,9 +220,16 @@
             // 
             btnExcelOlustur.BackColor = Color.FromArgb(164, 172, 134);
 
+            btnExcelOlustur.FlatStyle = FlatStyle.Popup;
+            btnExcelOlustur.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnExcelOlustur.Location = new Point(1008, 805);
+            btnExcelOlustur.Margin = new Padding(4);
+
+
             btnExcelOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnExcelOlustur.Location = new Point(259, 365);
             btnExcelOlustur.Margin = new Padding(3, 2, 3, 2);
+
             btnExcelOlustur.Name = "btnExcelOlustur";
             btnExcelOlustur.Size = new Size(82, 22);
 
@@ -199,8 +242,15 @@
             // 
             btnEkle.BackColor = Color.FromArgb(164, 172, 134);
 
+            btnEkle.FlatStyle = FlatStyle.Popup;
+            btnEkle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnEkle.Location = new Point(91, 356);
+            btnEkle.Margin = new Padding(4);
+
+
             btnEkle.Location = new Point(59, 184);
             btnEkle.Margin = new Padding(3, 2, 3, 2);
+
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(82, 22);
 
@@ -226,8 +276,14 @@
             // 
             lsvOgunBilgileri.BackColor = Color.FromArgb(202, 210, 197);
 
+            lsvOgunBilgileri.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            lsvOgunBilgileri.Location = new Point(54, 436);
+            lsvOgunBilgileri.Margin = new Padding(4);
+
+
             lsvOgunBilgileri.Location = new Point(10, 211);
             lsvOgunBilgileri.Margin = new Padding(3, 2, 3, 2);
+
             lsvOgunBilgileri.Name = "lsvOgunBilgileri";
             lsvOgunBilgileri.Size = new Size(453, 151);
 
@@ -238,8 +294,13 @@
             // dtpTarih
             // 
 
+            dtpTarih.Location = new Point(180, 183);
+            dtpTarih.Margin = new Padding(4);
+
+
             dtpTarih.Location = new Point(92, 110);
             dtpTarih.Margin = new Padding(3, 2, 3, 2);
+
             dtpTarih.Name = "dtpTarih";
             dtpTarih.Size = new Size(219, 23);
 
@@ -248,12 +309,39 @@
             // nudMiktar
             // 
 
+            nudMiktar.Location = new Point(180, 228);
+            nudMiktar.Margin = new Padding(5);
+
+
             nudMiktar.Location = new Point(93, 141);
             nudMiktar.Margin = new Padding(3, 2, 3, 2);
+
             nudMiktar.Name = "nudMiktar";
             nudMiktar.Size = new Size(131, 23);
             nudMiktar.TabIndex = 17;
             // 
+
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(nudMiktar);
+            groupBox1.Controls.Add(dtpTarih);
+            groupBox1.Controls.Add(cmbOgunler);
+            groupBox1.Controls.Add(cmbKategoriler);
+            groupBox1.Controls.Add(cmbYemekler);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBox1.Location = new Point(54, 48);
+            groupBox1.Margin = new Padding(4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
+            groupBox1.Size = new Size(487, 286);
+            groupBox1.TabIndex = 18;
+            groupBox1.TabStop = false;
+
             // btnGeri
             // 
             btnGeri.BackColor = Color.FromArgb(164, 172, 134);
@@ -265,22 +353,33 @@
             btnGeri.Text = "<<< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
+
             // 
             // KullaniciOgunBilgiEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
+            ClientSize = new Size(1182, 898);
+            Controls.Add(groupBox1);
+
             ClientSize = new Size(473, 394);
             Controls.Add(btnGeri);
             Controls.Add(nudMiktar);
             Controls.Add(dtpTarih);
+
             Controls.Add(lsvOgunBilgileri);
             Controls.Add(btnEkle);
             Controls.Add(btnExcelOlustur);
             Controls.Add(btnPdfOlustur);
             Controls.Add(btnGüncelle);
             Controls.Add(btnSil);
+
+            Font = new Font("Segoe UI", 11F);
+            Margin = new Padding(4);
+            MaximizeBox = false;
+
 
             Controls.Add(cmbOgunler);
             Controls.Add(cmbKategoriler);
@@ -292,10 +391,10 @@
             Controls.Add(label2);
             Margin = new Padding(3, 2, 3, 2);
 
+
             Name = "KullaniciOgunBilgiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += KullaniciOgunBilgiEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)nudMiktar).EndInit();
             groupBox1.ResumeLayout(false);
