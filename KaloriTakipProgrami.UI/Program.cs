@@ -13,7 +13,7 @@ namespace KaloriTakipProgrami.UI
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new YoneticiOgunKategoriYemekEkrani());
+            Application.Run(new KullaniciGirisEkrani());
 
          
 
