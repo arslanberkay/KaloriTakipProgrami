@@ -21,7 +21,7 @@ namespace KaloriTakipProgrami.UI.Models
 
         public DateTime KayitTarihi { get; set; } = DateTime.Now; //Otomatik o anın tarihini alır
 
-        public List<KullaniciDetay> KulllaniciDetaylari { get; set; } //1 kullanıcının BİRDEN FAZLA kullanıcıdetayi olabilir (Değişen boy kilo yeni bir kullanıcıdetay olarak kabul edilir.)
+        public List<KullaniciDetay> KullaniciDetaylari { get; set; } //1 kullanıcının BİRDEN FAZLA kullanıcıdetayi olabilir (Değişen boy kilo yeni bir kullanıcıdetay olarak kabul edilir.)
 
         public List<Talep> Talepler { get; set; } // 1 kullanıcının BİRDEN FAZLA talebi olabilir. (Ör : Ispanak yemeklerde yok) (Ör : Tam buğday ekmeğinin kalorisi yanlış)
 

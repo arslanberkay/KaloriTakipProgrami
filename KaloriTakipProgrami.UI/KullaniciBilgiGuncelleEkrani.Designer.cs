@@ -191,7 +191,7 @@
             // 
             // pbFoto
             // 
-            pbFoto.Location = new Point(164, 26);
+            pbFoto.Location = new Point(154, 26);
             pbFoto.Margin = new Padding(3, 2, 3, 2);
             pbFoto.Name = "pbFoto";
             pbFoto.Size = new Size(123, 50);
@@ -231,7 +231,7 @@
             // lblKullaniciAdi
             // 
             lblKullaniciAdi.AutoSize = true;
-            lblKullaniciAdi.Location = new Point(186, 89);
+            lblKullaniciAdi.Location = new Point(141, 89);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
             lblKullaniciAdi.Size = new Size(67, 15);
             lblKullaniciAdi.TabIndex = 0;

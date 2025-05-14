@@ -97,21 +97,21 @@ namespace KaloriTakipProgrami.UI.Context
 
 
             modelBuilder.Entity<KullaniciDetay>().HasData(
-    new KullaniciDetay { Id = 1, Boy = 198.3m, Kilo = 78.2m, Tarih = new DateTime(2022, 7, 14), KullaniciId = 1 },
-    new KullaniciDetay { Id = 2, Boy = 178.1m, Kilo = 56.5m, Tarih = new DateTime(2024, 10, 26), KullaniciId = 2 },
-    new KullaniciDetay { Id = 3, Boy = 191.1m, Kilo = 70.5m, Tarih = new DateTime(2024, 7, 2), KullaniciId = 3 },
-    new KullaniciDetay { Id = 4, Boy = 173.9m, Kilo = 54.2m, Tarih = new DateTime(2025, 3, 6), KullaniciId = 4 },
-    new KullaniciDetay { Id = 5, Boy = 180.1m, Kilo = 58.9m, Tarih = new DateTime(2021, 4, 14), KullaniciId = 5 },
-    new KullaniciDetay { Id = 6, Boy = 150.5m, Kilo = 89.3m, Tarih = new DateTime(2025, 3, 7), KullaniciId = 6 },
-    new KullaniciDetay { Id = 7, Boy = 190.0m, Kilo = 81.8m, Tarih = new DateTime(2025, 1, 9), KullaniciId = 7 },
-    new KullaniciDetay { Id = 8, Boy = 198.9m, Kilo = 71.5m, Tarih = new DateTime(2021, 11, 6), KullaniciId = 8 },
-    new KullaniciDetay { Id = 9, Boy = 178.7m, Kilo = 63.1m, Tarih = new DateTime(2023, 3, 22), KullaniciId = 9 },
-    new KullaniciDetay { Id = 10, Boy = 179.2m, Kilo = 82.7m, Tarih = new DateTime(2021, 10, 15), KullaniciId = 10 },
-    new KullaniciDetay { Id = 11, Boy = 185.2m, Kilo = 88.6m, Tarih = new DateTime(2023, 7, 27), KullaniciId = 11 },
-    new KullaniciDetay { Id = 12, Boy = 177.8m, Kilo = 90.2m, Tarih = new DateTime(2024, 12, 19), KullaniciId = 12 },
-    new KullaniciDetay { Id = 13, Boy = 198.1m, Kilo = 67.8m, Tarih = new DateTime(2022, 3, 20), KullaniciId = 13 },
-    new KullaniciDetay { Id = 14, Boy = 190.4m, Kilo = 84.7m, Tarih = new DateTime(2021, 6, 28), KullaniciId = 14 },
-    new KullaniciDetay { Id = 15, Boy = 186.2m, Kilo = 99.0m, Tarih = new DateTime(2023, 5, 21), KullaniciId = 15 }
+    new KullaniciDetay { Id = 1, Boy = 1.98m, Kilo = 78.2m, Tarih = new DateTime(2022, 7, 14), KullaniciId = 1 },
+    new KullaniciDetay { Id = 2, Boy = 1.78m, Kilo = 56.5m, Tarih = new DateTime(2024, 10, 26), KullaniciId = 2 },
+    new KullaniciDetay { Id = 3, Boy = 1.91m, Kilo = 70.5m, Tarih = new DateTime(2024, 7, 2), KullaniciId = 3 },
+    new KullaniciDetay { Id = 4, Boy = 1.73m, Kilo = 54.2m, Tarih = new DateTime(2025, 3, 6), KullaniciId = 4 },
+    new KullaniciDetay { Id = 5, Boy = 1.80m, Kilo = 58.9m, Tarih = new DateTime(2021, 4, 14), KullaniciId = 5 },
+    new KullaniciDetay { Id = 6, Boy = 1.50m, Kilo = 89.3m, Tarih = new DateTime(2025, 3, 7), KullaniciId = 6 },
+    new KullaniciDetay { Id = 7, Boy = 1.90m, Kilo = 81.8m, Tarih = new DateTime(2025, 1, 9), KullaniciId = 7 },
+    new KullaniciDetay { Id = 8, Boy = 1.98m, Kilo = 71.5m, Tarih = new DateTime(2021, 11, 6), KullaniciId = 8 },
+    new KullaniciDetay { Id = 9, Boy = 1.78m, Kilo = 63.1m, Tarih = new DateTime(2023, 3, 22), KullaniciId = 9 },
+    new KullaniciDetay { Id = 10, Boy = 1.72m, Kilo = 82.7m, Tarih = new DateTime(2021, 10, 15), KullaniciId = 10 },
+    new KullaniciDetay { Id = 11, Boy = 1.82m, Kilo = 88.6m, Tarih = new DateTime(2023, 7, 27), KullaniciId = 11 },
+    new KullaniciDetay { Id = 12, Boy = 1.77m, Kilo = 90.2m, Tarih = new DateTime(2024, 12, 19), KullaniciId = 12 },
+    new KullaniciDetay { Id = 13, Boy = 1.98m, Kilo = 67.8m, Tarih = new DateTime(2022, 3, 20), KullaniciId = 13 },
+    new KullaniciDetay { Id = 14, Boy = 1.90m, Kilo = 84.7m, Tarih = new DateTime(2021, 6, 28), KullaniciId = 14 },
+    new KullaniciDetay { Id = 15, Boy = 1.86m, Kilo = 99.0m, Tarih = new DateTime(2023, 5, 21), KullaniciId = 15 }
    
 );
             {
