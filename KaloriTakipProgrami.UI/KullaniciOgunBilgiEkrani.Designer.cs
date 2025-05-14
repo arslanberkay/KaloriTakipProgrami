@@ -94,6 +94,7 @@
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(151, 28);
             cmbYemekler.TabIndex = 5;
+            cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
             // cmbKategoriler
             // 
@@ -215,6 +216,7 @@
             Name = "KullaniciOgunBilgiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
+            Load += KullaniciOgunBilgiEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOgunBilgileri).EndInit();
             ResumeLayout(false);
             PerformLayout();
