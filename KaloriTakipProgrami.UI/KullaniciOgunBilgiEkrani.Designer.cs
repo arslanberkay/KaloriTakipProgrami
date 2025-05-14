@@ -35,8 +35,6 @@
             cmbYemekler = new ComboBox();
             cmbKategoriler = new ComboBox();
             cmbOgunler = new ComboBox();
-            txtTarih = new TextBox();
-            txtMiktar = new TextBox();
             btnSil = new Button();
             btnGüncelle = new Button();
             btnPdfOlustur = new Button();
@@ -44,7 +42,10 @@
             btnEkle = new Button();
             dgvOgunBilgileri = new DataGridView();
             label1 = new Label();
+            dtpTarih = new DateTimePicker();
+            nupdMiktar = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dgvOgunBilgileri).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nupdMiktar).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -81,11 +82,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label5.Location = new Point(23, 188);
+            label5.Location = new Point(12, 190);
             label5.Name = "label5";
-            label5.Size = new Size(54, 20);
+            label5.Size = new Size(79, 20);
             label5.TabIndex = 4;
-            label5.Text = "Miktar";
+            label5.Text = "Miktar(gr)";
             // 
             // cmbYemekler
             // 
@@ -94,7 +95,6 @@
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(151, 28);
             cmbYemekler.TabIndex = 5;
-            cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
             // cmbKategoriler
             // 
@@ -103,6 +103,7 @@
             cmbKategoriler.Name = "cmbKategoriler";
             cmbKategoriler.Size = new Size(151, 28);
             cmbKategoriler.TabIndex = 6;
+            cmbKategoriler.SelectedIndexChanged += cmbKategoriler_SelectedIndexChanged;
             // 
             // cmbOgunler
             // 
@@ -111,20 +112,6 @@
             cmbOgunler.Name = "cmbOgunler";
             cmbOgunler.Size = new Size(151, 28);
             cmbOgunler.TabIndex = 7;
-            // 
-            // txtTarih
-            // 
-            txtTarih.Location = new Point(105, 145);
-            txtTarih.Name = "txtTarih";
-            txtTarih.Size = new Size(151, 27);
-            txtTarih.TabIndex = 8;
-            // 
-            // txtMiktar
-            // 
-            txtMiktar.Location = new Point(105, 181);
-            txtMiktar.Name = "txtMiktar";
-            txtMiktar.Size = new Size(151, 27);
-            txtMiktar.TabIndex = 9;
             // 
             // btnSil
             // 
@@ -172,6 +159,7 @@
             btnEkle.TabIndex = 14;
             btnEkle.Text = "Ekle";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // dgvOgunBilgileri
             // 
@@ -192,19 +180,34 @@
             label1.TabIndex = 1;
             label1.Text = "Öğünler";
             // 
+            // dtpTarih
+            // 
+            dtpTarih.Location = new Point(105, 147);
+            dtpTarih.Name = "dtpTarih";
+            dtpTarih.Size = new Size(250, 27);
+            dtpTarih.TabIndex = 16;
+            // 
+            // nupdMiktar
+            // 
+            nupdMiktar.Location = new Point(105, 188);
+            nupdMiktar.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            nupdMiktar.Name = "nupdMiktar";
+            nupdMiktar.Size = new Size(250, 27);
+            nupdMiktar.TabIndex = 17;
+            // 
             // KullaniciOgunBilgiEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(541, 525);
+            Controls.Add(nupdMiktar);
+            Controls.Add(dtpTarih);
             Controls.Add(dgvOgunBilgileri);
             Controls.Add(btnEkle);
             Controls.Add(btnExcelOlustur);
             Controls.Add(btnPdfOlustur);
             Controls.Add(btnGüncelle);
             Controls.Add(btnSil);
-            Controls.Add(txtMiktar);
-            Controls.Add(txtTarih);
             Controls.Add(cmbOgunler);
             Controls.Add(cmbKategoriler);
             Controls.Add(cmbYemekler);
@@ -216,8 +219,10 @@
             Name = "KullaniciOgunBilgiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += KullaniciOgunBilgiEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOgunBilgileri).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nupdMiktar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -231,8 +236,6 @@
         private ComboBox cmbYemekler;
         private ComboBox cmbKategoriler;
         private ComboBox cmbOgunler;
-        private TextBox txtTarih;
-        private TextBox txtMiktar;
         private Button btnSil;
         private Button btnGüncelle;
         private Button btnPdfOlustur;
@@ -240,5 +243,7 @@
         private Button btnEkle;
         private DataGridView dgvOgunBilgileri;
         private Label label1;
+        private DateTimePicker dtpTarih;
+        private NumericUpDown nupdMiktar;
     }
 }

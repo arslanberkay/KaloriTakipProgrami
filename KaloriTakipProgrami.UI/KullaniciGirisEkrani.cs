@@ -72,7 +72,7 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.Text = "";
                 return;
             }
-            else if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+             if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre girdiniz");
                 txtKullaniciAdi.Text = "";

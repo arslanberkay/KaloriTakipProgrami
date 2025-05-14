@@ -19,7 +19,16 @@ namespace KaloriTakipProgrami.UI
         public KullaniciOgunBilgiEkrani()
         {
             InitializeComponent();
-
+             dgvOgunBilgileri.DataSource = _db.OgunYemekler
+    .              Select(oy => new
+                         {
+                         oy.Miktar,
+                         oy.Tarih,
+                         Öğun = oy.Ogun.OgunAdi,
+                         Yemek = oy.Yemek.YemekAdi,
+                         Kullanıcı = oy.Kullanici
+                         })
+                            .ToList();
 
         }
 
@@ -55,12 +64,46 @@ namespace KaloriTakipProgrami.UI
                 cmbYemekler.DisplayMember = "YemekAdi";
                 cmbYemekler.ValueMember = "Id";
 
+
             }
         }
 
-        private void cmbYemekler_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void cmbKategoriler_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //todo mefeaygn
             Filtrele();
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            OgunYemek ogunYemek = new OgunYemek()
+            {
+                OgunId=(int)cmbOgunler.SelectedValue,
+                YemekId=(int)cmbYemekler.SelectedValue,
+                Miktar=nupdMiktar.Value,
+                Tarih=dtpTarih.Value,
+            
+            
+            
+            
+            };
+            //todo mefeaygn
+            
+        }
+        public void HataKontrolleri()
+        {
+            if (dtpTarih.Value>DateTime.Now)
+            {
+                MessageBox.Show("Lütfen geçerli bir tarih giriniz");
+                return;
+
+            }
+            
+
+
+
         }
     }
 }
