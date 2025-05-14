@@ -36,9 +36,6 @@ namespace KaloriTakipProgrami.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-
-
-
             if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
@@ -47,6 +44,13 @@ namespace KaloriTakipProgrami.UI
             else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
+                if(girisYapanKullanici.Durum==false)
+                {
+                    girisYapanKullanici.Durum = true; //Hesap aktif hale getirildi
+                    _db.SaveChanges(); //Değişiklikleri kaydet
+                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)");
+                }
+               
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
