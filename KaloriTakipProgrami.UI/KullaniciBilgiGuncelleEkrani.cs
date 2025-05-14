@@ -17,7 +17,7 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciBilgiGuncelleEkrani : Form
     {
-     
+
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
         public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
@@ -41,12 +41,12 @@ namespace KaloriTakipProgrami.UI
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
             txtSifre.Text = new string('•', SifreUzunluğu);
             txtSifreTekrar.Text = new string('•', SifreUzunluğu);
-            lblKullaniciAdi.Text = "KULLANICI ADI : "+GirisYapanKullanici.KullaniciAdi;
+            lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
             txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Kilo.ToString();
             txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Boy.ToString();
             lblVki.Text = Vki().ToString();
             pbFoto.Text = GirisYapanKullanici.FotografYolu; //fotograf yolu string olarak tutulacak
-          
+
         }
 
         private float Vki()
@@ -111,7 +111,7 @@ namespace KaloriTakipProgrami.UI
                 return false;
             }
 
-            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <=0)
+            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <= 0)
             {
                 MessageBox.Show("Kilo geçersiz, kilogram cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -130,7 +130,6 @@ namespace KaloriTakipProgrami.UI
 
             return true;
         }
-       
 
         private void btnBilgileriGuncelle_Click(object sender, EventArgs e)
         {
@@ -182,11 +181,27 @@ namespace KaloriTakipProgrami.UI
 
             try
             {
-                GirisYapanKullanici.Durum = false;
-                _context.Kullanicilar.Update(GirisYapanKullanici);
-                _context.SaveChanges();
-                MessageBox.Show("Hesabınız donduruldu", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                DialogResult result = MessageBox.Show(
+        "Hesabınızı dondurmak istediğinize emin misiniz?",  // Mesaj
+        "Onay",                                            // Başlık
+        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
+        MessageBoxIcon.Question);                          // Soru simgesi
+
+                if (result == DialogResult.Yes)
+                {
+                    GirisYapanKullanici.Durum = false;
+                    _context.Kullanicilar.Update(GirisYapanKullanici);
+                    _context.SaveChanges();
+                    MessageBox.Show("Hesabınız donduruldu,Tekrar giriş yaptığınızda hesabınız aktif hale gelecektir.Tekrar Beklerizz :)", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+
+                }
+                else
+                {
+                    // Kullanıcı 'No' tıkladıysa, işlem iptal edilir
+                    MessageBox.Show("İşlem iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+              
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -196,6 +211,10 @@ namespace KaloriTakipProgrami.UI
         private void cmbCinsiyet_Click(object sender, EventArgs e)
         {
             cmbCinsiyet.DataSource = Cinsiyetler;
+        }
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }

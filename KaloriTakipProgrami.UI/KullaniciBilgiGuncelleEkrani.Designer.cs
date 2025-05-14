@@ -54,6 +54,7 @@
             cbSifre = new CheckBox();
             txtKilo = new TextBox();
             txtBoy = new TextBox();
+            btnGeri = new Button();
             ((System.ComponentModel.ISupportInitialize)pbFoto).BeginInit();
             SuspendLayout();
             // 
@@ -298,11 +299,23 @@
             txtBoy.Size = new Size(55, 23);
             txtBoy.TabIndex = 26;
             // 
+            // btnGeri
+            // 
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 27;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = true;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // KullaniciBilgiGuncelleEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(456, 502);
+            Controls.Add(btnGeri);
             Controls.Add(txtBoy);
             Controls.Add(txtKilo);
             Controls.Add(cbSifre);
@@ -366,5 +379,6 @@
         private CheckBox cbSifre;
         private TextBox txtKilo;
         private TextBox txtBoy;
+        private Button btnGeri;
     }
 }
