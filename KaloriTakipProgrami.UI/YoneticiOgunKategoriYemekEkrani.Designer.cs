@@ -88,6 +88,7 @@
             // 
             // dgvOgunler
             // 
+            dgvOgunler.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOgunler.Location = new Point(25, 141);
             dgvOgunler.Name = "dgvOgunler";
@@ -100,37 +101,41 @@
             // 
             // btnOgunGuncelle
             // 
+            btnOgunGuncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnOgunGuncelle.Location = new Point(259, 94);
             btnOgunGuncelle.Name = "btnOgunGuncelle";
             btnOgunGuncelle.Size = new Size(111, 35);
             btnOgunGuncelle.TabIndex = 1;
             btnOgunGuncelle.Text = "Güncelle";
-            btnOgunGuncelle.UseVisualStyleBackColor = true;
+            btnOgunGuncelle.UseVisualStyleBackColor = false;
             btnOgunGuncelle.Click += btnOgunGuncelle_Click;
             // 
             // btnOgunSil
             // 
+            btnOgunSil.BackColor = Color.FromArgb(164, 172, 134);
             btnOgunSil.Location = new Point(142, 94);
             btnOgunSil.Name = "btnOgunSil";
             btnOgunSil.Size = new Size(111, 35);
             btnOgunSil.TabIndex = 1;
             btnOgunSil.Text = "Sil";
-            btnOgunSil.UseVisualStyleBackColor = true;
+            btnOgunSil.UseVisualStyleBackColor = false;
             btnOgunSil.Click += btnOgunSil_Click;
             // 
             // btnOgunEkle
             // 
+            btnOgunEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnOgunEkle.Location = new Point(25, 94);
             btnOgunEkle.Name = "btnOgunEkle";
             btnOgunEkle.Size = new Size(111, 35);
             btnOgunEkle.TabIndex = 1;
             btnOgunEkle.Text = "Ekle";
-            btnOgunEkle.UseVisualStyleBackColor = true;
+            btnOgunEkle.UseVisualStyleBackColor = false;
             btnOgunEkle.Click += btnOgunEkle_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(38, 50);
             label1.Name = "label1";
             label1.Size = new Size(92, 25);
@@ -163,6 +168,7 @@
             // 
             // dgvKategoriler
             // 
+            dgvKategoriler.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKategoriler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKategoriler.Location = new Point(25, 141);
             dgvKategoriler.Name = "dgvKategoriler";
@@ -175,37 +181,41 @@
             // 
             // btnKategoriGuncelle
             // 
+            btnKategoriGuncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnKategoriGuncelle.Location = new Point(259, 94);
             btnKategoriGuncelle.Name = "btnKategoriGuncelle";
             btnKategoriGuncelle.Size = new Size(111, 35);
             btnKategoriGuncelle.TabIndex = 1;
             btnKategoriGuncelle.Text = "Güncelle";
-            btnKategoriGuncelle.UseVisualStyleBackColor = true;
+            btnKategoriGuncelle.UseVisualStyleBackColor = false;
             btnKategoriGuncelle.Click += btnKategoriGuncelle_Click;
             // 
             // btnKategoriSil
             // 
+            btnKategoriSil.BackColor = Color.FromArgb(164, 172, 134);
             btnKategoriSil.Location = new Point(142, 94);
             btnKategoriSil.Name = "btnKategoriSil";
             btnKategoriSil.Size = new Size(111, 35);
             btnKategoriSil.TabIndex = 1;
             btnKategoriSil.Text = "Sil";
-            btnKategoriSil.UseVisualStyleBackColor = true;
+            btnKategoriSil.UseVisualStyleBackColor = false;
             btnKategoriSil.Click += btnKategoriSil_Click;
             // 
             // btnKategoriEkle
             // 
+            btnKategoriEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnKategoriEkle.Location = new Point(25, 94);
             btnKategoriEkle.Name = "btnKategoriEkle";
             btnKategoriEkle.Size = new Size(111, 35);
             btnKategoriEkle.TabIndex = 1;
             btnKategoriEkle.Text = "Ekle";
-            btnKategoriEkle.UseVisualStyleBackColor = true;
+            btnKategoriEkle.UseVisualStyleBackColor = false;
             btnKategoriEkle.Click += btnKategoriEkle_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(38, 50);
             label2.Name = "label2";
             label2.Size = new Size(116, 25);
@@ -253,6 +263,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(27, 110);
             label5.Name = "label5";
             label5.Size = new Size(61, 25);
@@ -262,6 +273,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(25, 63);
             label4.Name = "label4";
             label4.Size = new Size(88, 25);
@@ -277,6 +289,7 @@
             // 
             // dgvYemekler
             // 
+            dgvYemekler.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvYemekler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvYemekler.Location = new Point(27, 209);
             dgvYemekler.Name = "dgvYemekler";
@@ -289,37 +302,41 @@
             // 
             // btnYemekGuncelle
             // 
+            btnYemekGuncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnYemekGuncelle.Location = new Point(261, 148);
             btnYemekGuncelle.Name = "btnYemekGuncelle";
             btnYemekGuncelle.Size = new Size(111, 35);
             btnYemekGuncelle.TabIndex = 1;
             btnYemekGuncelle.Text = "Güncelle";
-            btnYemekGuncelle.UseVisualStyleBackColor = true;
+            btnYemekGuncelle.UseVisualStyleBackColor = false;
             btnYemekGuncelle.Click += btnYemekGuncelle_Click;
             // 
             // btnYemekSil
             // 
+            btnYemekSil.BackColor = Color.FromArgb(164, 172, 134);
             btnYemekSil.Location = new Point(144, 148);
             btnYemekSil.Name = "btnYemekSil";
             btnYemekSil.Size = new Size(111, 35);
             btnYemekSil.TabIndex = 1;
             btnYemekSil.Text = "Sil";
-            btnYemekSil.UseVisualStyleBackColor = true;
+            btnYemekSil.UseVisualStyleBackColor = false;
             btnYemekSil.Click += btnYemekSil_Click;
             // 
             // btnYemekEkle
             // 
+            btnYemekEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnYemekEkle.Location = new Point(27, 148);
             btnYemekEkle.Name = "btnYemekEkle";
             btnYemekEkle.Size = new Size(111, 35);
             btnYemekEkle.TabIndex = 1;
             btnYemekEkle.Text = "Ekle";
-            btnYemekEkle.UseVisualStyleBackColor = true;
+            btnYemekEkle.UseVisualStyleBackColor = false;
             btnYemekEkle.Click += btnYemekEkle_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(27, 38);
             label3.Name = "label3";
             label3.Size = new Size(99, 25);
@@ -330,6 +347,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1345, 789);
             Controls.Add(grpKategoriler);
             Controls.Add(grpYemekler);
@@ -338,6 +356,7 @@
             Margin = new Padding(4);
             Name = "YoneticiOgunKategoriYemekEkrani";
             Text = "YoneticiOgunKategoriYemekEkrani";
+            WindowState = FormWindowState.Maximized;
             Load += YoneticiOgunKategoriYemekEkrani_Load;
             grpOgunler.ResumeLayout(false);
             grpOgunler.PerformLayout();

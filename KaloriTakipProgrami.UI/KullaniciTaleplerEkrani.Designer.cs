@@ -39,6 +39,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(59, 146);
             label1.Name = "label1";
             label1.Size = new Size(66, 23);
@@ -64,6 +65,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(59, 89);
             label2.Name = "label2";
             label2.Size = new Size(61, 23);
@@ -72,18 +74,20 @@
             // 
             // btnGönder
             // 
+            btnGönder.BackColor = Color.FromArgb(164, 172, 134);
             btnGönder.Location = new Point(274, 371);
             btnGönder.Name = "btnGönder";
             btnGönder.Size = new Size(94, 29);
             btnGönder.TabIndex = 3;
             btnGönder.Text = "Gönder";
-            btnGönder.UseVisualStyleBackColor = true;
+            btnGönder.UseVisualStyleBackColor = false;
             btnGönder.Click += btnGönder_Click;
             // 
             // KullaniciTaleplerEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(434, 429);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
@@ -93,6 +97,7 @@
             Name = "KullaniciTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciTaleplerEkrani";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }

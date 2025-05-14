@@ -45,7 +45,10 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+
             label1.Location = new Point(86, 88);
+
+    
             label1.Name = "label1";
             label1.Size = new Size(172, 32);
             label1.TabIndex = 0;
@@ -54,7 +57,9 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+
             label2.Location = new Point(530, 101);
+            
             label2.Name = "label2";
             label2.Size = new Size(146, 31);
             label2.TabIndex = 1;
@@ -62,6 +67,7 @@
             // 
             // cKiloG
             // 
+
             chartArea3.Name = "ChartArea1";
             cKiloG.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -75,9 +81,13 @@
             cKiloG.Size = new Size(300, 300);
             cKiloG.TabIndex = 3;
             cKiloG.Text = "chart1";
+
+          
+
             // 
             // cBoyG
             // 
+
             chartArea4.Name = "ChartArea1";
             cBoyG.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
@@ -91,23 +101,28 @@
             cBoyG.Size = new Size(300, 300);
             cBoyG.TabIndex = 4;
             cBoyG.Text = "chart2";
+
             // 
             // KullaniciGrafikEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+
             ClientSize = new Size(786, 615);
             Controls.Add(cBoyG);
             Controls.Add(cKiloG);
+
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "KullaniciGrafikEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGrafikEkrani";
+
             Load += KullaniciGrafikEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)cKiloG).EndInit();
             ((System.ComponentModel.ISupportInitialize)cBoyG).EndInit();
+
             ResumeLayout(false);
         }
 
