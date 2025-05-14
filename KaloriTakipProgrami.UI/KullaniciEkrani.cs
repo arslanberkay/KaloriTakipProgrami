@@ -108,6 +108,8 @@ namespace KaloriTakipProgrami.UI
             btnGunlukRapor.Visible = true;
             bnOgunBilgileriGoster.Visible = true;
             btnRapor.Visible = true;
+        }
+        
 
         private void btnCikis_Click(object sender, EventArgs e)
         {
