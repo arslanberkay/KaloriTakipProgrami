@@ -15,6 +15,9 @@ namespace KaloriTakipProgrami.UI
 
             Application.Run(new KullaniciOgunBilgiEkrani());
 
+         
+
+
         }
     }
 }

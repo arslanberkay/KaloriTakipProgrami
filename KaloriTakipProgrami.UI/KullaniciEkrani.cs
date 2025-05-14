@@ -15,6 +15,13 @@ namespace KaloriTakipProgrami.UI
     {
         private Kullanici _girisYapanKullanici;
 
+
+       
+        public KullaniciEkrani()
+        {
+                
+
+        }
         public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();
