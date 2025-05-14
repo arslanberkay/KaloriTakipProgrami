@@ -103,7 +103,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1122, 631);
             Controls.Add(dgvYemekIstatistikleri);
             Controls.Add(btnAzYenilenler);
             Controls.Add(btnEnCokYenilen);

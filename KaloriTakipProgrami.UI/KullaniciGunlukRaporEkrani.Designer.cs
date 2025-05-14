@@ -33,7 +33,7 @@
             dtpTarih = new DateTimePicker();
             cmbOgunler = new ComboBox();
             lblToplamKaloriMiktari = new Label();
-            lblToplamKaloriBilgilendirme = new Label();
+            lblKaloriBilgilendirme = new Label();
             btnGoruntule = new Button();
             lstvOgunYemekDetayliRapor = new ListView();
             SuspendLayout();
@@ -88,20 +88,20 @@
             lblToplamKaloriMiktari.TabIndex = 4;
             lblToplamKaloriMiktari.Text = "label3";
             // 
-            // lblToplamKaloriBilgilendirme
+            // lblKaloriBilgilendirme
             // 
-            lblToplamKaloriBilgilendirme.AutoSize = true;
-            lblToplamKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblToplamKaloriBilgilendirme.Location = new Point(346, 486);
-            lblToplamKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
-            lblToplamKaloriBilgilendirme.Name = "lblToplamKaloriBilgilendirme";
-            lblToplamKaloriBilgilendirme.Size = new Size(100, 20);
-            lblToplamKaloriBilgilendirme.TabIndex = 5;
-            lblToplamKaloriBilgilendirme.Text = "bilgilendirme";
+            lblKaloriBilgilendirme.AutoSize = true;
+            lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblKaloriBilgilendirme.Location = new Point(346, 486);
+            lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
+            lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
+            lblKaloriBilgilendirme.Size = new Size(100, 20);
+            lblKaloriBilgilendirme.TabIndex = 5;
+            lblKaloriBilgilendirme.Text = "bilgilendirme";
             // 
             // btnGoruntule
             // 
-            btnGoruntule.Location = new Point(122, 161);
+            btnGoruntule.Location = new Point(122, 159);
             btnGoruntule.Name = "btnGoruntule";
             btnGoruntule.Size = new Size(312, 52);
             btnGoruntule.TabIndex = 6;
@@ -124,7 +124,7 @@
             ClientSize = new Size(736, 565);
             Controls.Add(lstvOgunYemekDetayliRapor);
             Controls.Add(btnGoruntule);
-            Controls.Add(lblToplamKaloriBilgilendirme);
+            Controls.Add(lblKaloriBilgilendirme);
             Controls.Add(lblToplamKaloriMiktari);
             Controls.Add(cmbOgunler);
             Controls.Add(dtpTarih);
@@ -147,7 +147,7 @@
         private DateTimePicker dtpTarih;
         private ComboBox cmbOgunler;
         private Label lblToplamKaloriMiktari;
-        private Label lblToplamKaloriBilgilendirme;
+        private Label lblKaloriBilgilendirme;
         private Button btnGoruntule;
         private ListView lstvOgunYemekDetayliRapor;
     }
