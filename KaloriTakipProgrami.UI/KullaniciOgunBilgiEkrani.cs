@@ -1,5 +1,8 @@
-﻿using KaloriTakipProgrami.UI.Context;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using KaloriTakipProgrami.UI.Context;
 using KaloriTakipProgrami.UI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +65,63 @@ namespace KaloriTakipProgrami.UI
         {
             Filtrele();
         }
+        private void PdfOlustur()
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF Dosya|*.pdf";
+                saveFileDialog.Title = "Öğün Raporları";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    iTextSharp.text.Document document = new iTextSharp.text.Document();
+                    PdfWriter.GetInstance(document, new FileStream(saveFileDialog.FileName, FileMode.Create));
+                    document.Open();
+
+                    string[] columnHeaders = { "Öğünler", "Kategoriler", "Yemek", "Tarih", "Miktar" };
+                    PdfPTable table = new PdfPTable(columnHeaders.Length);
+                    table.WidthPercentage = 100;
+
+                    foreach (var column in columnHeaders)
+                    {
+                        PdfPCell pdfPCell = new PdfPCell(new Phrase(column));
+                        pdfPCell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                        table.AddCell(pdfPCell);
+                    }
+                    var ogunBilgileri = _db.OgunYemekler.Include(k => k.Ogun).Include(o => o.Yemek).ThenInclude(k => k.Kategori).Select(s => new
+                    {
+                        Ogunler = s.Ogun.OgunAdi,
+                        Kategori = s.Yemek.Kategori.KategoriAdi,
+                        Yemek = s.Yemek.YemekAdi,
+                        Tarih = s.Tarih,
+                        Miktar = s.Miktar,
+                    }).ToList();
+
+                    foreach (var item in ogunBilgileri)
+                    {
+                        table.AddCell(item.Ogunler);
+                        table.AddCell(item.Kategori);
+                        table.AddCell(item.Yemek);
+                        table.AddCell(item.Tarih.ToString("yyyy-mm-dd"));
+                        table.AddCell(item.Miktar.ToString());
+                    }
+                    document.Add(table);
+                    document.Close();
+                    MessageBox.Show("PDF başaryıla oluşturulmuştur", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata" + ex.Message);
+            }
+        }
+        
+
+        private void btnPdfOlustur_Click(object sender, EventArgs e)
+        {
+            PdfOlustur();
+        }
     }
 }
-
