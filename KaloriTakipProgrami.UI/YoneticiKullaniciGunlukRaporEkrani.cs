@@ -235,6 +235,7 @@ namespace KaloriTakipProgrami.UI
 
 
                 }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Excel oluşturulurken hata meydana geldi");
