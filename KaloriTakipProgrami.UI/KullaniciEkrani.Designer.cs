@@ -54,16 +54,11 @@
             lblKilo = new Label();
             lblBoy = new Label();
             lblVKİ = new Label();
-
             groupBox1 = new GroupBox();
             btnMenu = new Button();
-
-
             btnCikis = new Button();
-
-
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            //groupBox1.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -73,26 +68,10 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(44, 27);
             label2.Name = "label2";
-
-            label2.Size = new Size(74, 15);
-
+            label2.Size = new Size(94, 20);
             label2.TabIndex = 1;
             label2.Text = "Kullanıcı Adı";
             // 
-
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(96, 155);
-            label3.Name = "label3";
-
-            label3.Size = new Size(0, 15);
-
-            label3.TabIndex = 1;
-            // 
-
             // label4
             // 
             label4.AutoSize = true;
@@ -100,9 +79,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(44, 70);
             label4.Name = "label4";
-
-            label4.Size = new Size(22, 15);
-
+            label4.Size = new Size(28, 20);
             label4.TabIndex = 1;
             label4.Text = "Ad";
             // 
@@ -113,9 +90,7 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(44, 122);
             label5.Name = "label5";
-
-            label5.Size = new Size(40, 15);
-
+            label5.Size = new Size(51, 20);
             label5.TabIndex = 1;
             label5.Text = "Soyad";
             // 
@@ -126,9 +101,7 @@
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(44, 173);
             label6.Name = "label6";
-
-            label6.Size = new Size(50, 15);
-
+            label6.Size = new Size(62, 20);
             label6.TabIndex = 1;
             label6.Text = "Cinsiyet";
             // 
@@ -139,9 +112,7 @@
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(44, 216);
             label7.Name = "label7";
-
-            label7.Size = new Size(81, 15);
-
+            label7.Size = new Size(102, 20);
             label7.TabIndex = 1;
             label7.Text = "Doğum Tarihi";
             // 
@@ -152,9 +123,7 @@
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(44, 259);
             label8.Name = "label8";
-
-            label8.Size = new Size(48, 15);
-
+            label8.Size = new Size(59, 20);
             label8.TabIndex = 1;
             label8.Text = "E-Posta";
             // 
@@ -165,9 +134,7 @@
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(44, 305);
             label9.Name = "label9";
-
-            label9.Size = new Size(28, 15);
-
+            label9.Size = new Size(35, 20);
             label9.TabIndex = 1;
             label9.Text = "Kilo";
             // 
@@ -178,9 +145,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(44, 352);
             label1.Name = "label1";
-
-            label1.Size = new Size(28, 15);
-
+            label1.Size = new Size(35, 20);
             label1.TabIndex = 1;
             label1.Text = "Boy";
             // 
@@ -191,9 +156,7 @@
             label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(44, 404);
             label10.Name = "label10";
-
-            label10.Size = new Size(27, 15);
-
+            label10.Size = new Size(32, 20);
             label10.TabIndex = 1;
             label10.Text = "VKİ";
             // 
@@ -288,11 +251,9 @@
             lblKullaniciAdi.AutoSize = true;
             lblKullaniciAdi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKullaniciAdi.ForeColor = SystemColors.ButtonHighlight;
-            lblKullaniciAdi.Location = new Point(181, 27);
+            lblKullaniciAdi.Location = new Point(215, 27);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
-
-            lblKullaniciAdi.Size = new Size(58, 20);
-
+            lblKullaniciAdi.Size = new Size(54, 20);
             lblKullaniciAdi.TabIndex = 16;
             lblKullaniciAdi.Text = "label11";
             // 
@@ -301,11 +262,9 @@
             lblAd.AutoSize = true;
             lblAd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblAd.ForeColor = SystemColors.ButtonHighlight;
-            lblAd.Location = new Point(178, 74);
+            lblAd.Location = new Point(211, 70);
             lblAd.Name = "lblAd";
-
-            lblAd.Size = new Size(58, 20);
-
+            lblAd.Size = new Size(56, 20);
             lblAd.TabIndex = 17;
             lblAd.Text = "label12";
             // 
@@ -314,11 +273,9 @@
             lblSoyad.AutoSize = true;
             lblSoyad.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblSoyad.ForeColor = SystemColors.ButtonHighlight;
-            lblSoyad.Location = new Point(178, 121);
+            lblSoyad.Location = new Point(211, 117);
             lblSoyad.Name = "lblSoyad";
-
-            lblSoyad.Size = new Size(58, 20);
-
+            lblSoyad.Size = new Size(56, 20);
             lblSoyad.TabIndex = 18;
             lblSoyad.Text = "label13";
             // 
@@ -327,11 +284,9 @@
             lblCinsiyet.AutoSize = true;
             lblCinsiyet.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblCinsiyet.ForeColor = SystemColors.ButtonHighlight;
-            lblCinsiyet.Location = new Point(178, 168);
+            lblCinsiyet.Location = new Point(211, 164);
             lblCinsiyet.Name = "lblCinsiyet";
-
-            lblCinsiyet.Size = new Size(58, 20);
-
+            lblCinsiyet.Size = new Size(57, 20);
             lblCinsiyet.TabIndex = 19;
             lblCinsiyet.Text = "label14";
             // 
@@ -340,11 +295,9 @@
             lblDogumTarihi.AutoSize = true;
             lblDogumTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblDogumTarihi.ForeColor = SystemColors.ButtonHighlight;
-            lblDogumTarihi.Location = new Point(178, 215);
+            lblDogumTarihi.Location = new Point(211, 211);
             lblDogumTarihi.Name = "lblDogumTarihi";
-
-            lblDogumTarihi.Size = new Size(58, 20);
-
+            lblDogumTarihi.Size = new Size(56, 20);
             lblDogumTarihi.TabIndex = 20;
             lblDogumTarihi.Text = "label15";
             // 
@@ -353,11 +306,9 @@
             lblEposta.AutoSize = true;
             lblEposta.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblEposta.ForeColor = SystemColors.ButtonHighlight;
-            lblEposta.Location = new Point(178, 262);
+            lblEposta.Location = new Point(211, 258);
             lblEposta.Name = "lblEposta";
-
-            lblEposta.Size = new Size(58, 20);
-
+            lblEposta.Size = new Size(56, 20);
             lblEposta.TabIndex = 21;
             lblEposta.Text = "label16";
             // 
@@ -366,11 +317,9 @@
             lblKilo.AutoSize = true;
             lblKilo.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKilo.ForeColor = SystemColors.ButtonHighlight;
-            lblKilo.Location = new Point(178, 309);
+            lblKilo.Location = new Point(211, 305);
             lblKilo.Name = "lblKilo";
-
-            lblKilo.Size = new Size(58, 20);
-
+            lblKilo.Size = new Size(56, 20);
             lblKilo.TabIndex = 22;
             lblKilo.Text = "label17";
             // 
@@ -379,11 +328,9 @@
             lblBoy.AutoSize = true;
             lblBoy.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblBoy.ForeColor = SystemColors.ButtonHighlight;
-            lblBoy.Location = new Point(178, 356);
+            lblBoy.Location = new Point(211, 352);
             lblBoy.Name = "lblBoy";
-
-            lblBoy.Size = new Size(58, 20);
-
+            lblBoy.Size = new Size(56, 20);
             lblBoy.TabIndex = 23;
             lblBoy.Text = "label18";
             // 
@@ -392,40 +339,50 @@
             lblVKİ.AutoSize = true;
             lblVKİ.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblVKİ.ForeColor = SystemColors.ButtonHighlight;
-            lblVKİ.Location = new Point(178, 403);
+            lblVKİ.Location = new Point(211, 399);
             lblVKİ.Name = "lblVKİ";
-
-            lblVKİ.Size = new Size(58, 20);
+            lblVKİ.Size = new Size(56, 20);
             lblVKİ.TabIndex = 24;
             lblVKİ.Text = "label19";
             // 
-
             // groupBox1
             // 
-            groupBox1.Controls.Add(lblVKİ);
-            groupBox1.Controls.Add(lblBoy);
-            groupBox1.Controls.Add(lblKilo);
-            groupBox1.Controls.Add(lblEposta);
-            groupBox1.Controls.Add(lblDogumTarihi);
-            groupBox1.Controls.Add(lblCinsiyet);
-            groupBox1.Controls.Add(lblSoyad);
-            groupBox1.Controls.Add(lblAd);
-            groupBox1.Controls.Add(lblKullaniciAdi);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(lblVKİ);
             groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(lblBoy);
             groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(lblKilo);
             groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(lblEposta);
             groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(lblDogumTarihi);
             groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(lblCinsiyet);
+            groupBox1.Controls.Add(lblKullaniciAdi);
+            groupBox1.Controls.Add(lblSoyad);
+            groupBox1.Controls.Add(lblAd);
             groupBox1.Location = new Point(331, 203);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(351, 454);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
-
+            // 
+            // btnMenu
+            // 
+            btnMenu.BackgroundImage = (Image)resources.GetObject("btnMenu.BackgroundImage");
+            btnMenu.BackgroundImageLayout = ImageLayout.Stretch;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+            btnMenu.Location = new Point(12, 51);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(72, 64);
+            btnMenu.TabIndex = 0;
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
+            // 
             // btnCikis
             // 
             btnCikis.BackColor = Color.FromArgb(164, 172, 134);
@@ -437,47 +394,17 @@
             btnCikis.Text = "Çıkış Yap";
             btnCikis.UseVisualStyleBackColor = false;
             btnCikis.Click += btnCikis_Click;
-
-
-            // 
-            // btnMenu
-            // 
-            btnMenu.BackgroundImage = (Image)resources.GetObject("btnMenu.BackgroundImage");
-            btnMenu.BackgroundImageLayout = ImageLayout.Stretch;
-            btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.Location = new Point(12, 37);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(72, 64);
-            btnMenu.TabIndex = 0;
-            btnMenu.UseVisualStyleBackColor = true;
-            btnMenu.Click += btnMenu_Click;
             // 
             // KullaniciEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-
-            ClientSize = new Size(874, 686);
+            ClientSize = new Size(728, 697);
             Controls.Add(btnMenu);
             Controls.Add(groupBox1);
             Controls.Add(btnRapor);
-
-
-            ClientSize = new Size(600, 666);
             Controls.Add(btnCikis);
-            Controls.Add(lblVKİ);
-            Controls.Add(lblBoy);
-            Controls.Add(lblKilo);
-            Controls.Add(lblEposta);
-            Controls.Add(lblDogumTarihi);
-            Controls.Add(lblCinsiyet);
-            Controls.Add(lblSoyad);
-            Controls.Add(lblAd);
-            Controls.Add(lblKullaniciAdi);
-
-            Controls.Add(button1);
-
             Controls.Add(btnTalepler);
             Controls.Add(btnGrafikler);
             Controls.Add(btnGunlukRapor);
@@ -492,8 +419,8 @@
             Text = "KullaniciEkrani";
             Load += KullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            //groupBox1.ResumeLayout(false);
-            //groupBox1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
