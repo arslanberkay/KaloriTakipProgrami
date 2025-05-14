@@ -13,9 +13,17 @@ namespace KaloriTakipProgrami.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Kullanici kullanicim = new Kullanici();//kullanýcýbilgi güncellemede parametreye ihtiyacým olduðu için açtým
+
+            Kullanici kullanicim = new Kullanici();//kullanï¿½cï¿½bilgi gï¿½ncellemede parametreye ihtiyacï¿½m olduï¿½u iï¿½in aï¿½tï¿½m
             
             Application.Run(new KullaniciGirisEkrani());
+
+
+           
+
+         
+
+
 
          
 
