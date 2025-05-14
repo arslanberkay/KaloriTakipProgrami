@@ -39,7 +39,7 @@
             dgvKullanicilar.Location = new Point(46, 63);
             dgvKullanicilar.Name = "dgvKullanicilar";
             dgvKullanicilar.RowHeadersWidth = 51;
-            dgvKullanicilar.Size = new Size(686, 330);
+            dgvKullanicilar.Size = new Size(1213, 615);
             dgvKullanicilar.TabIndex = 0;
             // 
             // YoneticiKullaniciEkrani
@@ -47,7 +47,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1316, 734);
             Controls.Add(dgvKullanicilar);
             Name = "YoneticiKullaniciEkrani";
             Text = "YoneticiKullaniciEkrani";

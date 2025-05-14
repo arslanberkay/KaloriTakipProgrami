@@ -46,9 +46,14 @@
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
 
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(490, 30);
+
+
             label1.Location = new Point(86, 88);
 
     
+
             label1.Name = "label1";
             label1.Size = new Size(172, 32);
             label1.TabIndex = 0;
@@ -58,8 +63,13 @@
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
 
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(520, 400);
+
+
             label2.Location = new Point(530, 101);
             
+
             label2.Name = "label2";
             label2.Size = new Size(146, 31);
             label2.TabIndex = 1;
@@ -67,6 +77,15 @@
             // 
             // cKiloG
             // 
+
+            dgvKiloGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
+            dgvKiloGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKiloGrafikleri.Location = new Point(46, 89);
+            dgvKiloGrafikleri.Name = "dgvKiloGrafikleri";
+            dgvKiloGrafikleri.RowHeadersWidth = 51;
+            dgvKiloGrafikleri.Size = new Size(1054, 279);
+            dgvKiloGrafikleri.TabIndex = 2;
+
 
             chartArea3.Name = "ChartArea1";
             cKiloG.ChartAreas.Add(chartArea3);
@@ -84,9 +103,19 @@
 
           
 
+
             // 
             // cBoyG
             // 
+
+            dgvBoyGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
+            dgvBoyGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBoyGrafikleri.Location = new Point(55, 467);
+            dgvBoyGrafikleri.Name = "dgvBoyGrafikleri";
+            dgvBoyGrafikleri.RowHeadersWidth = 51;
+            dgvBoyGrafikleri.Size = new Size(1045, 296);
+            dgvBoyGrafikleri.TabIndex = 2;
+
 
             chartArea4.Name = "ChartArea1";
             cBoyG.ChartAreas.Add(chartArea4);
@@ -102,15 +131,23 @@
             cBoyG.TabIndex = 4;
             cBoyG.Text = "chart2";
 
+
             // 
             // KullaniciGrafikEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
 
+            BackColor = Color.FromArgb(47, 62, 70);
+            ClientSize = new Size(1162, 792);
+            Controls.Add(dgvBoyGrafikleri);
+            Controls.Add(dgvKiloGrafikleri);
+
+
             ClientSize = new Size(786, 615);
             Controls.Add(cBoyG);
             Controls.Add(cKiloG);
+
 
             Controls.Add(label2);
             Controls.Add(label1);

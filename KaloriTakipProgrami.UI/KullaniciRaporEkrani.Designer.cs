@@ -41,45 +41,48 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(416, 40);
+            label1.Location = new Point(828, 72);
             label1.Name = "label1";
-            label1.Size = new Size(79, 20);
+            label1.Size = new Size(97, 25);
             label1.TabIndex = 0;
             label1.Text = "Bitiş Tarihi";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(88, 40);
+            label2.Location = new Point(88, 72);
             label2.Name = "label2";
-            label2.Size = new Size(115, 20);
+            label2.Size = new Size(138, 25);
             label2.TabIndex = 1;
             label2.Text = "Başlangıç Tarihi";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(88, 63);
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            dateTimePicker1.Location = new Point(88, 109);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(406, 31);
             dateTimePicker1.TabIndex = 2;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(416, 63);
+            dateTimePicker2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            dateTimePicker2.Location = new Point(828, 109);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.Size = new Size(415, 31);
             dateTimePicker2.TabIndex = 3;
             // 
             // btnEnCokYenilen
             // 
             btnEnCokYenilen.BackColor = Color.FromArgb(164, 172, 134);
-            btnEnCokYenilen.Location = new Point(416, 128);
+            btnEnCokYenilen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnEnCokYenilen.Location = new Point(379, 263);
             btnEnCokYenilen.Name = "btnEnCokYenilen";
-            btnEnCokYenilen.Size = new Size(209, 29);
+            btnEnCokYenilen.Size = new Size(260, 59);
             btnEnCokYenilen.TabIndex = 4;
             btnEnCokYenilen.Text = "En Çok Yenilen Yemekler";
             btnEnCokYenilen.UseVisualStyleBackColor = false;
@@ -87,9 +90,10 @@
             // btnAzYenilenler
             // 
             btnAzYenilenler.BackColor = Color.FromArgb(164, 172, 134);
-            btnAzYenilenler.Location = new Point(129, 128);
+            btnAzYenilenler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnAzYenilenler.Location = new Point(88, 263);
             btnAzYenilenler.Name = "btnAzYenilenler";
-            btnAzYenilenler.Size = new Size(209, 29);
+            btnAzYenilenler.Size = new Size(271, 59);
             btnAzYenilenler.TabIndex = 5;
             btnAzYenilenler.Text = "En az Yenilen Yemekler";
             btnAzYenilenler.UseVisualStyleBackColor = false;
@@ -98,10 +102,10 @@
             // 
             dgvYemekIstatistikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvYemekIstatistikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvYemekIstatistikleri.Location = new Point(88, 179);
+            dgvYemekIstatistikleri.Location = new Point(88, 361);
             dgvYemekIstatistikleri.Name = "dgvYemekIstatistikleri";
             dgvYemekIstatistikleri.RowHeadersWidth = 51;
-            dgvYemekIstatistikleri.Size = new Size(578, 188);
+            dgvYemekIstatistikleri.Size = new Size(1155, 351);
             dgvYemekIstatistikleri.TabIndex = 6;
             // 
             // KullaniciRaporEkrani
@@ -109,7 +113,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1122, 631);
+            ClientSize = new Size(1327, 767);
             Controls.Add(dgvYemekIstatistikleri);
             Controls.Add(btnAzYenilenler);
             Controls.Add(btnEnCokYenilen);

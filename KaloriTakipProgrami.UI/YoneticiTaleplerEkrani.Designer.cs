@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1266, 738);
             Name = "YoneticiTaleplerEkrani";
             Text = "YoneticiTaleplerEkrani";
             WindowState = FormWindowState.Maximized;

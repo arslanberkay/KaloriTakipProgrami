@@ -38,46 +38,49 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(59, 146);
+            label1.Location = new Point(105, 151);
             label1.Name = "label1";
-            label1.Size = new Size(66, 23);
+            label1.Size = new Size(61, 25);
             label1.TabIndex = 0;
-            label1.Text = "Mesaj :";
+            label1.Text = "Mesaj";
             // 
             // txtKonu
             // 
-            txtKonu.Location = new Point(121, 89);
+            txtKonu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            txtKonu.Location = new Point(198, 95);
             txtKonu.Name = "txtKonu";
-            txtKonu.Size = new Size(247, 27);
+            txtKonu.Size = new Size(822, 31);
             txtKonu.TabIndex = 1;
             // 
             // txtMesaj
             // 
-            txtMesaj.Location = new Point(126, 145);
+            txtMesaj.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            txtMesaj.Location = new Point(203, 151);
             txtMesaj.Multiline = true;
             txtMesaj.Name = "txtMesaj";
-            txtMesaj.Size = new Size(242, 201);
+            txtMesaj.Size = new Size(817, 483);
             txtMesaj.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(59, 89);
+            label2.Location = new Point(105, 96);
             label2.Name = "label2";
-            label2.Size = new Size(61, 23);
+            label2.Size = new Size(56, 25);
             label2.TabIndex = 0;
-            label2.Text = "Konu :";
+            label2.Text = "Konu";
             // 
             // btnGönder
             // 
             btnGönder.BackColor = Color.FromArgb(164, 172, 134);
-            btnGönder.Location = new Point(274, 371);
+            btnGönder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnGönder.Location = new Point(827, 661);
             btnGönder.Name = "btnGönder";
-            btnGönder.Size = new Size(94, 29);
+            btnGönder.Size = new Size(193, 46);
             btnGönder.TabIndex = 3;
             btnGönder.Text = "Gönder";
             btnGönder.UseVisualStyleBackColor = false;
@@ -88,7 +91,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(434, 429);
+            ClientSize = new Size(1224, 770);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
             Controls.Add(txtKonu);
