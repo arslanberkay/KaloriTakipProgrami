@@ -40,6 +40,12 @@ namespace KaloriTakipProgrami.UI
             secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
 
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
         private void btnOnayla_Click(object sender, EventArgs e)
         {
             if (secilenTalep != null)
@@ -62,6 +68,7 @@ namespace KaloriTakipProgrami.UI
             secilenTalep.Durum = "Reddedildi";
             MessageBox.Show("Talebi reddettiniz");
         }
+
 
     }
 }

@@ -33,6 +33,7 @@
             btnOgunlerKategorilerYemekler = new Button();
             btnKullanicilar = new Button();
             btnTalepler = new Button();
+            btnCikis = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,12 +96,27 @@
             btnTalepler.UseVisualStyleBackColor = false;
             btnTalepler.Click += btnTalepler_Click;
             // 
+            // btnCikis
+            // 
+            btnCikis.BackColor = Color.FromArgb(164, 172, 134);
+            btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCikis.Location = new Point(12, 12);
+            btnCikis.Name = "btnCikis";
+            btnCikis.Size = new Size(75, 23);
+            btnCikis.TabIndex = 32;
+            btnCikis.Text = "Çıkış Yap";
+            btnCikis.UseVisualStyleBackColor = false;
+            btnCikis.Click += btnCikis_Click;
+            // 
             // YoneticiEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1222, 732);
+
+            ClientSize = new Size(823, 645);
+            Controls.Add(btnCikis);
+
             Controls.Add(btnTalepler);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
@@ -119,5 +135,6 @@
         private Button btnOgunlerKategorilerYemekler;
         private Button btnKullanicilar;
         private Button btnTalepler;
+        private Button btnCikis;
     }
 }

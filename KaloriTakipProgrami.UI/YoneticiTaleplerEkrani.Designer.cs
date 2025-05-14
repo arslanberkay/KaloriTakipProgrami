@@ -28,6 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            btnGeri = new Button();
+            SuspendLayout();
+            // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 29;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+
             dgvTalepler = new DataGridView();
             btnEkle = new Button();
             btnReddedildi = new Button();
@@ -60,16 +76,23 @@
             btnReddedildi.TabIndex = 1;
             btnReddedildi.Text = "Reddedildi";
             btnReddedildi.UseVisualStyleBackColor = true;
+
             // 
             // YoneticiTaleplerEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
+            ClientSize = new Size(700, 338);
+            Controls.Add(btnGeri);
+            Margin = new Padding(3, 2, 3, 2);
+
             ClientSize = new Size(1266, 738);
             Controls.Add(btnReddedildi);
             Controls.Add(btnEkle);
             Controls.Add(dgvTalepler);
+
             Name = "YoneticiTaleplerEkrani";
             Text = "YoneticiTaleplerEkrani";
             WindowState = FormWindowState.Maximized;
@@ -79,8 +102,12 @@
 
         #endregion
 
+
+        private Button btnGeri;
+
         private DataGridView dgvTalepler;
         private Button btnEkle;
         private Button btnReddedildi;
+
     }
 }

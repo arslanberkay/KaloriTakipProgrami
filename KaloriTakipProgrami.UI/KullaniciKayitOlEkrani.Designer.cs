@@ -51,6 +51,7 @@
             label1 = new Label();
             btnKayitOl = new Button();
             pbFotograf = new PictureBox();
+            btnGeri = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbFotograf).BeginInit();
             SuspendLayout();
@@ -92,7 +93,9 @@
             checkBox1.ForeColor = SystemColors.ButtonHighlight;
             checkBox1.Location = new Point(425, 117);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(90, 29);
+
+            checkBox1.Size = new Size(119, 24);
+
             checkBox1.TabIndex = 7;
             checkBox1.Text = "Göster";
             checkBox1.UseVisualStyleBackColor = true;
@@ -102,14 +105,18 @@
             // 
             txtMail.Location = new Point(157, 314);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(249, 31);
+
+            txtMail.Size = new Size(249, 27);
+
             txtMail.TabIndex = 6;
             // 
             // dtpDogumTarihi
             // 
             dtpDogumTarihi.Location = new Point(157, 272);
             dtpDogumTarihi.Name = "dtpDogumTarihi";
-            dtpDogumTarihi.Size = new Size(250, 31);
+
+            dtpDogumTarihi.Size = new Size(250, 27);
+
             dtpDogumTarihi.TabIndex = 5;
             // 
             // btnFotografSec
@@ -129,14 +136,18 @@
             cbCinsiyet.FormattingEnabled = true;
             cbCinsiyet.Location = new Point(157, 356);
             cbCinsiyet.Name = "cbCinsiyet";
-            cbCinsiyet.Size = new Size(247, 33);
+
+            cbCinsiyet.Size = new Size(180, 28);
+
             cbCinsiyet.TabIndex = 3;
             // 
             // txtAd
             // 
             txtAd.Location = new Point(157, 188);
             txtAd.Name = "txtAd";
-            txtAd.Size = new Size(246, 31);
+
+            txtAd.Size = new Size(170, 27);
+
             txtAd.TabIndex = 1;
             // 
             // txtSifre
@@ -144,7 +155,9 @@
             txtSifre.Location = new Point(157, 104);
             txtSifre.Name = "txtSifre";
             txtSifre.PasswordChar = '*';
-            txtSifre.Size = new Size(246, 31);
+
+            txtSifre.Size = new Size(170, 27);
+
             txtSifre.TabIndex = 1;
             // 
             // label6
@@ -153,7 +166,9 @@
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(27, 275);
             label6.Name = "label6";
-            label6.Size = new Size(123, 25);
+
+            label6.Size = new Size(98, 20);
+
             label6.TabIndex = 0;
             label6.Text = "Doğum Tarihi";
             // 
@@ -163,7 +178,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(27, 191);
             label4.Name = "label4";
-            label4.Size = new Size(35, 25);
+            label4.Size = new Size(28, 20);
             label4.TabIndex = 0;
             label4.Text = "Ad";
             // 
@@ -173,7 +188,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(27, 107);
             label2.Name = "label2";
-            label2.Size = new Size(50, 25);
+            label2.Size = new Size(39, 20);
             label2.TabIndex = 0;
             label2.Text = "Şifre";
             // 
@@ -181,7 +196,9 @@
             // 
             txtFotograf.Location = new Point(157, 400);
             txtFotograf.Name = "txtFotograf";
-            txtFotograf.Size = new Size(247, 31);
+
+            txtFotograf.Size = new Size(170, 27);
+
             txtFotograf.TabIndex = 1;
             // 
             // label8
@@ -190,7 +207,7 @@
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(27, 359);
             label8.Name = "label8";
-            label8.Size = new Size(78, 25);
+            label8.Size = new Size(60, 20);
             label8.TabIndex = 0;
             label8.Text = "Cinsiyet";
             // 
@@ -200,7 +217,7 @@
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(27, 403);
             label9.Name = "label9";
-            label9.Size = new Size(88, 25);
+            label9.Size = new Size(70, 20);
             label9.TabIndex = 0;
             label9.Text = "Fotoğraf ";
             // 
@@ -208,7 +225,9 @@
             // 
             txtSoyad.Location = new Point(157, 230);
             txtSoyad.Name = "txtSoyad";
-            txtSoyad.Size = new Size(246, 31);
+
+            txtSoyad.Size = new Size(170, 27);
+
             txtSoyad.TabIndex = 1;
             // 
             // label7
@@ -217,7 +236,9 @@
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(28, 317);
             label7.Name = "label7";
-            label7.Size = new Size(56, 25);
+
+            label7.Size = new Size(46, 20);
+
             label7.TabIndex = 0;
             label7.Text = "Email";
             // 
@@ -227,7 +248,9 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(27, 233);
             label5.Name = "label5";
-            label5.Size = new Size(62, 25);
+
+            label5.Size = new Size(50, 20);
+
             label5.TabIndex = 0;
             label5.Text = "Soyad";
             // 
@@ -236,7 +259,9 @@
             txtSifreTekrar.Location = new Point(157, 146);
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.PasswordChar = '*';
-            txtSifreTekrar.Size = new Size(246, 31);
+
+            txtSifreTekrar.Size = new Size(170, 27);
+
             txtSifreTekrar.TabIndex = 1;
             // 
             // label3
@@ -245,7 +270,9 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(27, 149);
             label3.Name = "label3";
-            label3.Size = new Size(117, 25);
+
+            label3.Size = new Size(93, 20);
+
             label3.TabIndex = 0;
             label3.Text = "Şifre (Tekrar)";
             // 
@@ -253,7 +280,9 @@
             // 
             txtKullaniciAdi.Location = new Point(157, 62);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
-            txtKullaniciAdi.Size = new Size(246, 31);
+
+            txtKullaniciAdi.Size = new Size(170, 27);
+
             txtKullaniciAdi.TabIndex = 1;
             // 
             // label1
@@ -262,7 +291,10 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(27, 65);
             label1.Name = "label1";
-            label1.Size = new Size(115, 25);
+
+            label1.Size = new Size(92, 20);
+
+
             label1.TabIndex = 0;
             label1.Text = "Kullanıcı Adı";
             // 
@@ -287,12 +319,27 @@
             pbFotograf.TabIndex = 6;
             pbFotograf.TabStop = false;
             // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(1043, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(75, 23);
+            btnGeri.TabIndex = 31;
+            btnGeri.Text = "<<< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // KullaniciKayitOlEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1159, 734);
+
+            ClientSize = new Size(1130, 724);
+            Controls.Add(btnGeri);
+
             Controls.Add(pbFotograf);
             Controls.Add(btnKayitOl);
             Controls.Add(groupBox1);
@@ -332,5 +379,6 @@
         private DateTimePicker dtpDogumTarihi;
         private TextBox txtMail;
         private CheckBox checkBox1;
+        private Button btnGeri;
     }
 }

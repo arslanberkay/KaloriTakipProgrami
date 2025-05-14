@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace KaloriTakipProgrami.UI
 {
@@ -39,6 +40,33 @@ namespace KaloriTakipProgrami.UI
         {
             YoneticiTaleplerEkrani yoneticiTaleplerEkrani = new YoneticiTaleplerEkrani();
             yoneticiTaleplerEkrani.Show();
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show(
+        "Çıkış yapmak istediğinize emin misiniz?",  // Mesaj
+        "Onay",                                            // Başlık
+        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
+        MessageBoxIcon.Question);                          // Soru simgesi
+
+                if (result == DialogResult.Yes)
+                {                   
+                    Application.Exit();
+                }
+                else
+                {
+                    // Kullanıcı 'No' tıkladıysa, işlem iptal edilir
+                    MessageBox.Show("İşlem iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

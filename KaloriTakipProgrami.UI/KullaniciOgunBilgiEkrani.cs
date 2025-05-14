@@ -292,10 +292,10 @@ namespace KaloriTakipProgrami.UI
 
             if (ogun != null)
             {
-                ogun.OgunId=(int)cmbOgunler.SelectedValue;
-                ogun.YemekId=(int)cmbYemekler.SelectedValue;
+                ogun.OgunId = (int)cmbOgunler.SelectedValue;
+                ogun.YemekId = (int)cmbYemekler.SelectedValue;
                 ogun.Tarih = dtpTarih.Value.Date;
-                ogun.Miktar=nudMiktar.Value;
+                ogun.Miktar = nudMiktar.Value;
 
                 _db.SaveChanges();
                 MessageBox.Show("Müşteri bilgileri başarıyla güncellendi");
@@ -313,12 +313,17 @@ namespace KaloriTakipProgrami.UI
                 if (ogun != null)
                 {
                     cmbOgunler.SelectedValue = ogun.OgunId;
-                  cmbKategoriler.SelectedValue = ogun.Yemek.KategoriId;
-                   cmbYemekler.SelectedValue = ogun.YemekId;
-                    dtpTarih.Value=ogun.Tarih.Date;
-                    nudMiktar.Value=ogun.Miktar;
+                    cmbKategoriler.SelectedValue = ogun.Yemek.KategoriId;
+                    cmbYemekler.SelectedValue = ogun.YemekId;
+                    dtpTarih.Value = ogun.Tarih.Date;
+                    nudMiktar.Value = ogun.Miktar;
                 }
             }
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }
