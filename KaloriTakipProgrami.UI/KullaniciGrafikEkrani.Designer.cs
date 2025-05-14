@@ -74,17 +74,9 @@
             label2.Size = new Size(146, 31);
             label2.TabIndex = 1;
             label2.Text = "Boy Grafiği";
-            // 
-            // cKiloG
-            // 
+           
 
-            dgvKiloGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
-            dgvKiloGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKiloGrafikleri.Location = new Point(46, 89);
-            dgvKiloGrafikleri.Name = "dgvKiloGrafikleri";
-            dgvKiloGrafikleri.RowHeadersWidth = 51;
-            dgvKiloGrafikleri.Size = new Size(1054, 279);
-            dgvKiloGrafikleri.TabIndex = 2;
+           
 
 
             chartArea3.Name = "ChartArea1";
@@ -104,17 +96,8 @@
           
 
 
-            // 
-            // cBoyG
-            // 
 
-            dgvBoyGrafikleri.BackgroundColor = Color.FromArgb(202, 210, 197);
-            dgvBoyGrafikleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBoyGrafikleri.Location = new Point(55, 467);
-            dgvBoyGrafikleri.Name = "dgvBoyGrafikleri";
-            dgvBoyGrafikleri.RowHeadersWidth = 51;
-            dgvBoyGrafikleri.Size = new Size(1045, 296);
-            dgvBoyGrafikleri.TabIndex = 2;
+           
 
 
             chartArea4.Name = "ChartArea1";
@@ -140,8 +123,7 @@
 
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1162, 792);
-            Controls.Add(dgvBoyGrafikleri);
-            Controls.Add(dgvKiloGrafikleri);
+           
 
 
             ClientSize = new Size(786, 615);
