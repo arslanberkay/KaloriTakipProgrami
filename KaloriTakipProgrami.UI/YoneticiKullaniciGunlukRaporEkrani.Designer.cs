@@ -33,8 +33,8 @@
             dtpTarih = new DateTimePicker();
             label2 = new Label();
             lstvKullaniciGunlukRapor = new ListView();
-            button1 = new Button();
-            button2 = new Button();
+            btnPdf = new Button();
+            btnExcel = new Button();
             btnRaporGoruntule = new Button();
             SuspendLayout();
             // 
@@ -84,25 +84,27 @@
             lstvKullaniciGunlukRapor.TabIndex = 3;
             lstvKullaniciGunlukRapor.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // btnPdf
             // 
-            button1.Location = new Point(512, 456);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 56);
-            button1.TabIndex = 4;
-            button1.Text = "PDF";
-            button1.UseVisualStyleBackColor = true;
+            btnPdf.Location = new Point(512, 456);
+            btnPdf.Margin = new Padding(4);
+            btnPdf.Name = "btnPdf";
+            btnPdf.Size = new Size(106, 56);
+            btnPdf.TabIndex = 4;
+            btnPdf.Text = "PDF";
+            btnPdf.UseVisualStyleBackColor = true;
+            btnPdf.Click += btnPdf_Click;
             // 
-            // button2
+            // btnExcel
             // 
-            button2.Location = new Point(640, 456);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(106, 56);
-            button2.TabIndex = 4;
-            button2.Text = "EXCEL";
-            button2.UseVisualStyleBackColor = true;
+            btnExcel.Location = new Point(640, 456);
+            btnExcel.Margin = new Padding(4);
+            btnExcel.Name = "btnExcel";
+            btnExcel.Size = new Size(106, 56);
+            btnExcel.TabIndex = 4;
+            btnExcel.Text = "EXCEL";
+            btnExcel.UseVisualStyleBackColor = true;
+            btnExcel.Click += btnExcel_Click;
             // 
             // btnRaporGoruntule
             // 
@@ -120,8 +122,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 562);
             Controls.Add(btnRaporGoruntule);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnExcel);
+            Controls.Add(btnPdf);
             Controls.Add(lstvKullaniciGunlukRapor);
             Controls.Add(dtpTarih);
             Controls.Add(label2);
@@ -143,8 +145,8 @@
         private DateTimePicker dtpTarih;
         private Label label2;
         private ListView lstvKullaniciGunlukRapor;
-        private Button button1;
-        private Button button2;
+        private Button btnPdf;
+        private Button btnExcel;
         private Button btnRaporGoruntule;
     }
 }
