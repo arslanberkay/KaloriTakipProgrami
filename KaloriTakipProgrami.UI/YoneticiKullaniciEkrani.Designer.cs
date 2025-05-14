@@ -41,7 +41,9 @@
             dgvKullanicilar.Margin = new Padding(3, 2, 3, 2);
             dgvKullanicilar.Name = "dgvKullanicilar";
             dgvKullanicilar.RowHeadersWidth = 51;
+
             dgvKullanicilar.Size = new Size(600, 248);
+
             dgvKullanicilar.TabIndex = 0;
             // 
             // btnGeri
@@ -61,8 +63,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
             ClientSize = new Size(700, 338);
             Controls.Add(btnGeri);
+
             Controls.Add(dgvKullanicilar);
             Margin = new Padding(3, 2, 3, 2);
             Name = "YoneticiKullaniciEkrani";

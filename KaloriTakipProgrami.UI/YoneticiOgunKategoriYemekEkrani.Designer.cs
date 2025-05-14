@@ -71,20 +71,26 @@
             grpOgunler.Controls.Add(btnOgunSil);
             grpOgunler.Controls.Add(btnOgunEkle);
             grpOgunler.Controls.Add(label1);
-            grpOgunler.Location = new Point(95, 38);
+
+            grpOgunler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            grpOgunler.ForeColor = SystemColors.ButtonHighlight;
+            grpOgunler.Location = new Point(79, 50);
+
             grpOgunler.Margin = new Padding(4);
             grpOgunler.Name = "grpOgunler";
             grpOgunler.Padding = new Padding(4);
-            grpOgunler.Size = new Size(420, 315);
+            grpOgunler.Size = new Size(595, 315);
             grpOgunler.TabIndex = 0;
             grpOgunler.TabStop = false;
             grpOgunler.Text = "Öğün İşlemler";
             // 
             // txtOgunAdi
             // 
-            txtOgunAdi.Location = new Point(142, 47);
+            txtOgunAdi.Location = new Point(156, 47);
             txtOgunAdi.Name = "txtOgunAdi";
+
             txtOgunAdi.Size = new Size(162, 27);
+
             txtOgunAdi.TabIndex = 3;
             // 
             // dgvOgunler
@@ -96,14 +102,15 @@
             dgvOgunler.ReadOnly = true;
             dgvOgunler.RowHeadersWidth = 51;
             dgvOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOgunler.Size = new Size(345, 149);
+            dgvOgunler.Size = new Size(532, 149);
             dgvOgunler.TabIndex = 2;
             dgvOgunler.CellClick += dgvOgunler_CellClick;
             // 
             // btnOgunGuncelle
             // 
             btnOgunGuncelle.BackColor = Color.FromArgb(164, 172, 134);
-            btnOgunGuncelle.Location = new Point(259, 94);
+            btnOgunGuncelle.ForeColor = SystemColors.ActiveCaptionText;
+            btnOgunGuncelle.Location = new Point(270, 94);
             btnOgunGuncelle.Name = "btnOgunGuncelle";
             btnOgunGuncelle.Size = new Size(111, 35);
             btnOgunGuncelle.TabIndex = 1;
@@ -114,7 +121,8 @@
             // btnOgunSil
             // 
             btnOgunSil.BackColor = Color.FromArgb(164, 172, 134);
-            btnOgunSil.Location = new Point(142, 94);
+            btnOgunSil.ForeColor = SystemColors.ActiveCaptionText;
+            btnOgunSil.Location = new Point(153, 94);
             btnOgunSil.Name = "btnOgunSil";
             btnOgunSil.Size = new Size(111, 35);
             btnOgunSil.TabIndex = 1;
@@ -125,7 +133,8 @@
             // btnOgunEkle
             // 
             btnOgunEkle.BackColor = Color.FromArgb(164, 172, 134);
-            btnOgunEkle.Location = new Point(25, 94);
+            btnOgunEkle.ForeColor = SystemColors.ActiveCaptionText;
+            btnOgunEkle.Location = new Point(38, 94);
             btnOgunEkle.Name = "btnOgunEkle";
             btnOgunEkle.Size = new Size(111, 35);
             btnOgunEkle.TabIndex = 1;
@@ -151,20 +160,26 @@
             grpKategoriler.Controls.Add(btnKategoriSil);
             grpKategoriler.Controls.Add(btnKategoriEkle);
             grpKategoriler.Controls.Add(label2);
-            grpKategoriler.Location = new Point(704, 38);
+
+            grpKategoriler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            grpKategoriler.ForeColor = SystemColors.ButtonHighlight;
+            grpKategoriler.Location = new Point(770, 50);
+
             grpKategoriler.Margin = new Padding(4);
             grpKategoriler.Name = "grpKategoriler";
             grpKategoriler.Padding = new Padding(4);
-            grpKategoriler.Size = new Size(420, 315);
+            grpKategoriler.Size = new Size(670, 315);
             grpKategoriler.TabIndex = 0;
             grpKategoriler.TabStop = false;
             grpKategoriler.Text = "Kategori İşlemleri";
             // 
             // txtKategoriAdi
             // 
-            txtKategoriAdi.Location = new Point(160, 47);
+            txtKategoriAdi.Location = new Point(178, 47);
             txtKategoriAdi.Name = "txtKategoriAdi";
+
             txtKategoriAdi.Size = new Size(162, 27);
+
             txtKategoriAdi.TabIndex = 3;
             // 
             // dgvKategoriler
@@ -176,14 +191,15 @@
             dgvKategoriler.ReadOnly = true;
             dgvKategoriler.RowHeadersWidth = 51;
             dgvKategoriler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKategoriler.Size = new Size(345, 149);
+            dgvKategoriler.Size = new Size(599, 149);
             dgvKategoriler.TabIndex = 2;
             dgvKategoriler.CellClick += dgvKategoriler_CellClick;
             // 
             // btnKategoriGuncelle
             // 
             btnKategoriGuncelle.BackColor = Color.FromArgb(164, 172, 134);
-            btnKategoriGuncelle.Location = new Point(259, 94);
+            btnKategoriGuncelle.ForeColor = SystemColors.ActiveCaptionText;
+            btnKategoriGuncelle.Location = new Point(272, 94);
             btnKategoriGuncelle.Name = "btnKategoriGuncelle";
             btnKategoriGuncelle.Size = new Size(111, 35);
             btnKategoriGuncelle.TabIndex = 1;
@@ -194,7 +210,8 @@
             // btnKategoriSil
             // 
             btnKategoriSil.BackColor = Color.FromArgb(164, 172, 134);
-            btnKategoriSil.Location = new Point(142, 94);
+            btnKategoriSil.ForeColor = SystemColors.ActiveCaptionText;
+            btnKategoriSil.Location = new Point(155, 94);
             btnKategoriSil.Name = "btnKategoriSil";
             btnKategoriSil.Size = new Size(111, 35);
             btnKategoriSil.TabIndex = 1;
@@ -205,7 +222,8 @@
             // btnKategoriEkle
             // 
             btnKategoriEkle.BackColor = Color.FromArgb(164, 172, 134);
-            btnKategoriEkle.Location = new Point(25, 94);
+            btnKategoriEkle.ForeColor = SystemColors.ActiveCaptionText;
+            btnKategoriEkle.Location = new Point(38, 94);
             btnKategoriEkle.Name = "btnKategoriEkle";
             btnKategoriEkle.Size = new Size(111, 35);
             btnKategoriEkle.TabIndex = 1;
@@ -235,11 +253,15 @@
             grpYemekler.Controls.Add(btnYemekSil);
             grpYemekler.Controls.Add(btnYemekEkle);
             grpYemekler.Controls.Add(label3);
-            grpYemekler.Location = new Point(133, 382);
+
+            grpYemekler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            grpYemekler.ForeColor = SystemColors.ButtonHighlight;
+            grpYemekler.Location = new Point(79, 389);
+
             grpYemekler.Margin = new Padding(4);
             grpYemekler.Name = "grpYemekler";
             grpYemekler.Padding = new Padding(4);
-            grpYemekler.Size = new Size(755, 365);
+            grpYemekler.Size = new Size(1376, 448);
             grpYemekler.TabIndex = 0;
             grpYemekler.TabStop = false;
             grpYemekler.Text = "Yemek İşlemleri";
@@ -248,26 +270,32 @@
             // 
             cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKategori.FormattingEnabled = true;
-            cbKategori.Location = new Point(132, 69);
+            cbKategori.Location = new Point(154, 72);
             cbKategori.Name = "cbKategori";
+
             cbKategori.Size = new Size(79, 28);
+
             cbKategori.TabIndex = 6;
             // 
             // nudKalori
             // 
-            nudKalori.Location = new Point(132, 108);
+            nudKalori.Location = new Point(154, 109);
             nudKalori.Maximum = new decimal(new int[] { 1410065407, 2, 0, 0 });
             nudKalori.Name = "nudKalori";
+
             nudKalori.Size = new Size(133, 27);
+
             nudKalori.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(27, 110);
+            label5.Location = new Point(38, 109);
             label5.Name = "label5";
+
             label5.Size = new Size(48, 20);
+
             label5.TabIndex = 4;
             label5.Text = "Kalori";
             // 
@@ -275,7 +303,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(25, 63);
+            label4.Location = new Point(36, 73);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 4;
@@ -283,9 +311,11 @@
             // 
             // txtYemekAdi
             // 
-            txtYemekAdi.Location = new Point(132, 35);
+            txtYemekAdi.Location = new Point(154, 37);
             txtYemekAdi.Name = "txtYemekAdi";
+
             txtYemekAdi.Size = new Size(162, 27);
+
             txtYemekAdi.TabIndex = 3;
             // 
             // dgvYemekler
@@ -297,14 +327,15 @@
             dgvYemekler.ReadOnly = true;
             dgvYemekler.RowHeadersWidth = 51;
             dgvYemekler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvYemekler.Size = new Size(661, 149);
+            dgvYemekler.Size = new Size(1323, 207);
             dgvYemekler.TabIndex = 2;
             dgvYemekler.CellClick += dgvYemekler_CellClick;
             // 
             // btnYemekGuncelle
             // 
             btnYemekGuncelle.BackColor = Color.FromArgb(164, 172, 134);
-            btnYemekGuncelle.Location = new Point(261, 148);
+            btnYemekGuncelle.ForeColor = SystemColors.ActiveCaptionText;
+            btnYemekGuncelle.Location = new Point(272, 157);
             btnYemekGuncelle.Name = "btnYemekGuncelle";
             btnYemekGuncelle.Size = new Size(111, 35);
             btnYemekGuncelle.TabIndex = 1;
@@ -315,7 +346,8 @@
             // btnYemekSil
             // 
             btnYemekSil.BackColor = Color.FromArgb(164, 172, 134);
-            btnYemekSil.Location = new Point(144, 148);
+            btnYemekSil.ForeColor = SystemColors.ActiveCaptionText;
+            btnYemekSil.Location = new Point(155, 157);
             btnYemekSil.Name = "btnYemekSil";
             btnYemekSil.Size = new Size(111, 35);
             btnYemekSil.TabIndex = 1;
@@ -326,7 +358,8 @@
             // btnYemekEkle
             // 
             btnYemekEkle.BackColor = Color.FromArgb(164, 172, 134);
-            btnYemekEkle.Location = new Point(27, 148);
+            btnYemekEkle.ForeColor = SystemColors.ActiveCaptionText;
+            btnYemekEkle.Location = new Point(38, 157);
             btnYemekEkle.Name = "btnYemekEkle";
             btnYemekEkle.Size = new Size(111, 35);
             btnYemekEkle.TabIndex = 1;
@@ -338,9 +371,11 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(27, 38);
+            label3.Location = new Point(38, 37);
             label3.Name = "label3";
+
             label3.Size = new Size(79, 20);
+
             label3.TabIndex = 0;
             label3.Text = "Yemek Adı";
             // 
@@ -361,8 +396,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
             ClientSize = new Size(1345, 789);
             Controls.Add(btnGeri);
+
             Controls.Add(grpKategoriler);
             Controls.Add(grpYemekler);
             Controls.Add(grpOgunler);
