@@ -42,9 +42,8 @@
             btnPdfOlustur = new Button();
             btnExcelOlustur = new Button();
             btnEkle = new Button();
-            dgvOgunBilgileri = new DataGridView();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvOgunBilgileri).BeginInit();
+            lsvOgunBilgileri = new ListView();
             SuspendLayout();
             // 
             // label2
@@ -94,6 +93,7 @@
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(151, 28);
             cmbYemekler.TabIndex = 5;
+            cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
             // cmbKategoriler
             // 
@@ -152,6 +152,7 @@
             btnPdfOlustur.TabIndex = 12;
             btnPdfOlustur.Text = "PDF";
             btnPdfOlustur.UseVisualStyleBackColor = true;
+            btnPdfOlustur.Click += btnPdfOlustur_Click;
             // 
             // btnExcelOlustur
             // 
@@ -162,6 +163,7 @@
             btnExcelOlustur.TabIndex = 13;
             btnExcelOlustur.Text = "EXCEL";
             btnExcelOlustur.UseVisualStyleBackColor = true;
+            btnExcelOlustur.Click += btnExcelOlustur_Click;
             // 
             // btnEkle
             // 
@@ -171,15 +173,6 @@
             btnEkle.TabIndex = 14;
             btnEkle.Text = "Ekle";
             btnEkle.UseVisualStyleBackColor = true;
-            // 
-            // dgvOgunBilgileri
-            // 
-            dgvOgunBilgileri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOgunBilgileri.Location = new Point(12, 293);
-            dgvOgunBilgileri.Name = "dgvOgunBilgileri";
-            dgvOgunBilgileri.RowHeadersWidth = 51;
-            dgvOgunBilgileri.Size = new Size(519, 188);
-            dgvOgunBilgileri.TabIndex = 15;
             // 
             // label1
             // 
@@ -191,12 +184,20 @@
             label1.TabIndex = 1;
             label1.Text = "Öğünler";
             // 
+            // lsvOgunBilgileri
+            // 
+            lsvOgunBilgileri.Location = new Point(12, 281);
+            lsvOgunBilgileri.Name = "lsvOgunBilgileri";
+            lsvOgunBilgileri.Size = new Size(517, 200);
+            lsvOgunBilgileri.TabIndex = 15;
+            lsvOgunBilgileri.UseCompatibleStateImageBehavior = false;
+            // 
             // KullaniciOgunBilgiEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(541, 525);
-            Controls.Add(dgvOgunBilgileri);
+            Controls.Add(lsvOgunBilgileri);
             Controls.Add(btnEkle);
             Controls.Add(btnExcelOlustur);
             Controls.Add(btnPdfOlustur);
@@ -215,7 +216,7 @@
             Name = "KullaniciOgunBilgiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciOgunBilgiEkrani";
-            ((System.ComponentModel.ISupportInitialize)dgvOgunBilgileri).EndInit();
+            Load += KullaniciOgunBilgiEkrani_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,7 +237,7 @@
         private Button btnPdfOlustur;
         private Button btnExcelOlustur;
         private Button btnEkle;
-        private DataGridView dgvOgunBilgileri;
         private Label label1;
+        private ListView lsvOgunBilgileri;
     }
 }
