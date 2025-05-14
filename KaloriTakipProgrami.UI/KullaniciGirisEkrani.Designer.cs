@@ -50,7 +50,7 @@
             groupBox1.Controls.Add(txtKullaniciAdi);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(214, 123);
+            groupBox1.Location = new Point(91, 89);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(428, 438);
             groupBox1.TabIndex = 0;
@@ -158,13 +158,14 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(894, 730);
+            ClientSize = new Size(648, 627);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "KullaniciGirisEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGirisEkrani";
-            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

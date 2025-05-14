@@ -50,12 +50,11 @@
             // 
             // grpSifirlamaKoduGonder
             // 
-            grpSifirlamaKoduGonder.Controls.Add(grpSifirlamaKodu);
             grpSifirlamaKoduGonder.Controls.Add(btnSifirlamaKoduGonder);
             grpSifirlamaKoduGonder.Controls.Add(txtEmail);
             grpSifirlamaKoduGonder.Controls.Add(label2);
             grpSifirlamaKoduGonder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKoduGonder.Location = new Point(464, 240);
+            grpSifirlamaKoduGonder.Location = new Point(125, 52);
             grpSifirlamaKoduGonder.Name = "grpSifirlamaKoduGonder";
             grpSifirlamaKoduGonder.Size = new Size(462, 210);
             grpSifirlamaKoduGonder.TabIndex = 0;
@@ -64,11 +63,12 @@
             // btnSifirlamaKoduGonder
             // 
             btnSifirlamaKoduGonder.BackColor = Color.FromArgb(164, 172, 134);
+            btnSifirlamaKoduGonder.FlatStyle = FlatStyle.Popup;
             btnSifirlamaKoduGonder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnSifirlamaKoduGonder.ForeColor = SystemColors.ActiveCaptionText;
-            btnSifirlamaKoduGonder.Location = new Point(121, 105);
+            btnSifirlamaKoduGonder.Location = new Point(121, 99);
             btnSifirlamaKoduGonder.Name = "btnSifirlamaKoduGonder";
-            btnSifirlamaKoduGonder.Size = new Size(266, 48);
+            btnSifirlamaKoduGonder.Size = new Size(266, 40);
             btnSifirlamaKoduGonder.TabIndex = 2;
             btnSifirlamaKoduGonder.Text = "Sıfırlama Kodu Gönder";
             btnSifirlamaKoduGonder.UseVisualStyleBackColor = false;
@@ -97,14 +97,13 @@
             // 
             // grpSifirlamaKodu
             // 
-            grpSifirlamaKodu.Controls.Add(grpSifreGuncelleme);
             grpSifirlamaKodu.Controls.Add(mtxtSifirlamaKodu);
             grpSifirlamaKodu.Controls.Add(btnOk);
             grpSifirlamaKodu.Controls.Add(label1);
             grpSifirlamaKodu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKodu.Location = new Point(0, 17);
+            grpSifirlamaKodu.Location = new Point(125, 268);
             grpSifirlamaKodu.Name = "grpSifirlamaKodu";
-            grpSifirlamaKodu.Size = new Size(462, 187);
+            grpSifirlamaKodu.Size = new Size(462, 121);
             grpSifirlamaKodu.TabIndex = 0;
             grpSifirlamaKodu.TabStop = false;
             // 
@@ -122,6 +121,7 @@
             // btnOk
             // 
             btnOk.BackColor = Color.FromArgb(164, 172, 134);
+            btnOk.FlatStyle = FlatStyle.Popup;
             btnOk.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnOk.ForeColor = SystemColors.ActiveCaptionText;
             btnOk.Location = new Point(251, 41);
@@ -152,7 +152,7 @@
             grpSifreGuncelleme.Controls.Add(txtYeniSifre);
             grpSifreGuncelleme.Controls.Add(label3);
             grpSifreGuncelleme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifreGuncelleme.Location = new Point(0, 0);
+            grpSifreGuncelleme.Location = new Point(125, 395);
             grpSifreGuncelleme.Name = "grpSifreGuncelleme";
             grpSifreGuncelleme.Size = new Size(462, 206);
             grpSifreGuncelleme.TabIndex = 0;
@@ -161,11 +161,12 @@
             // btnSifreyiGuncelle
             // 
             btnSifreyiGuncelle.BackColor = Color.FromArgb(164, 172, 134);
+            btnSifreyiGuncelle.FlatStyle = FlatStyle.Popup;
             btnSifreyiGuncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnSifreyiGuncelle.ForeColor = SystemColors.ActiveCaptionText;
-            btnSifreyiGuncelle.Location = new Point(209, 129);
+            btnSifreyiGuncelle.Location = new Point(209, 137);
             btnSifreyiGuncelle.Name = "btnSifreyiGuncelle";
-            btnSifreyiGuncelle.Size = new Size(178, 51);
+            btnSifreyiGuncelle.Size = new Size(240, 40);
             btnSifreyiGuncelle.TabIndex = 2;
             btnSifreyiGuncelle.Text = "Şifreyi Güncelle";
             btnSifreyiGuncelle.UseVisualStyleBackColor = false;
@@ -176,7 +177,11 @@
             txtYeniSifreTekrar.Location = new Point(209, 82);
             txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
 
+            txtYeniSifreTekrar.Size = new Size(240, 31);
+
+
             txtYeniSifreTekrar.Size = new Size(166, 27);
+
 
             txtYeniSifreTekrar.TabIndex = 1;
             // 
@@ -197,7 +202,11 @@
             txtYeniSifre.Location = new Point(209, 44);
             txtYeniSifre.Name = "txtYeniSifre";
 
+            txtYeniSifre.Size = new Size(240, 31);
+
+
             txtYeniSifre.Size = new Size(166, 27);
+
 
             txtYeniSifre.TabIndex = 1;
             // 
@@ -231,17 +240,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
 
+            ClientSize = new Size(728, 667);
+            Controls.Add(grpSifirlamaKodu);
+            Controls.Add(grpSifreGuncelleme);
+
+
             ClientSize = new Size(1008, 634);
             Controls.Add(btnGeri);
             Controls.Add(grpSifirlamaKodu);
             Controls.Add(grpSifreGuncelleme);
 
+
             Controls.Add(grpSifirlamaKoduGonder);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "SifremiUnuttumEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SifremiUnuttumEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += SifremiUnuttumEkrani_Load;
             grpSifirlamaKoduGonder.ResumeLayout(false);
             grpSifirlamaKoduGonder.PerformLayout();

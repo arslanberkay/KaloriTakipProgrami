@@ -68,10 +68,14 @@
             Controls.Add(btnGeri);
 
             Controls.Add(dgvKullanicilar);
+
+            MaximizeBox = false;
+
             Margin = new Padding(3, 2, 3, 2);
+
             Name = "YoneticiKullaniciEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiKullaniciEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += YoneticiKullaniciEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).EndInit();
             ResumeLayout(false);
