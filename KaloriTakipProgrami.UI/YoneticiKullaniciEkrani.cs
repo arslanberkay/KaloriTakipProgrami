@@ -33,5 +33,10 @@ namespace KaloriTakipProgrami.UI
             })
                 .ToList();
         }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
     }
 }

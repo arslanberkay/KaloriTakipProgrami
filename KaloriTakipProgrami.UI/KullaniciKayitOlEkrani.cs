@@ -161,7 +161,7 @@ namespace KaloriTakipProgrami.UI
             MessageBox.Show("Kullanıcı Bşarıyla eklendi");
             Temizle();
 
-          
+
 
 
 
@@ -208,6 +208,11 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.PasswordChar = '*';
                 txtSifreTekrar.PasswordChar = '*'; // veya istediğin başka bir karakter
             }
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }

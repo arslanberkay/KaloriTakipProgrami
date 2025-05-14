@@ -20,7 +20,7 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
 
-            girisyapanKullanici=_girisYapanKullanici;
+            girisyapanKullanici = _girisYapanKullanici;
 
 
 
@@ -34,16 +34,21 @@ namespace KaloriTakipProgrami.UI
                 Konu = txtKonu.Text,
                 Mesaj = txtMesaj.Text,
                 Durum = "Bekliyor",
-                KullaniciId =girisyapanKullanici
+                KullaniciId = girisyapanKullanici
                 .Id
 
             };
-            _db.Add( talep );
+            _db.Add(talep);
             _db.SaveChanges();
             MessageBox.Show("Talebiniz oluşturulmuştur");
             txtKonu.Text = "";
             txtMesaj.Text = "";
 
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }

@@ -20,29 +20,34 @@ namespace KaloriTakipProgrami.UI
     {
         private Kullanici GirisYapanKullanici;
         private readonly KaloriTakipDbContext _context;
+        string connectionString = "Server=CRNTK\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true";
         public KullaniciGrafikEkrani(Kullanici girisYapanKullanici)
         {
             _context = new KaloriTakipDbContext();
             InitializeComponent();
-            
+
             girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici;
         }
 
         private void KullaniciGrafikEkrani_Load(object sender, EventArgs e)
         {
-            string connectionString = "Server=CRNTK\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true";
+            BoyGrafigi();
+            KiloGrafigi();
+        }
+        private void KiloGrafigi()
+        {
+
             string query = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
 
             DataTable dt = new DataTable();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                // Doğru: SqlCommand kullanılıyor ve parametre ekleniyor
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@KullaniciId", GirisYapanKullanici.Id);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd); // cmd üzerinden adapter oluştur
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
 
@@ -51,23 +56,98 @@ namespace KaloriTakipProgrami.UI
             cKiloG.Titles.Clear();
             cKiloG.Titles.Add("Kilo Değişimi");
 
-            System.Windows.Forms.DataVisualization.Charting.Series seri = new System.Windows.Forms.DataVisualization.Charting.Series("Kilo");
-            seri.ChartType = SeriesChartType.Spline;
-            seri.Color = Color.SteelBlue;
-            seri.BorderWidth = 3;
+            var kiloSeri = new System.Windows.Forms.DataVisualization.Charting.Series("Kilo")
+            {
+                ChartType = SeriesChartType.Spline,
+                Color = Color.SteelBlue,
+                BorderWidth = 3,
+                XValueType = ChartValueType.DateTime
+            };
 
             foreach (DataRow row in dt.Rows)
             {
                 DateTime tarih = Convert.ToDateTime(row["Tarih"]);
                 double kilo = Convert.ToDouble(row["Kilo"]);
-                seri.Points.AddXY(tarih.ToString("dd.MM.yyyy"), kilo);
+                kiloSeri.Points.AddXY(tarih, kilo); // Direkt tarih olarak ekleniyor
             }
 
-            cKiloG.Series.Add(seri);
-            cKiloG.ChartAreas[0].AxisX.Title = "Tarih";
-            cKiloG.ChartAreas[0].AxisY.Title = "Kilo (kg)";
-            cKiloG.ChartAreas[0].AxisX.Interval = 1;
-            this.cKiloG = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            cKiloG.Series.Add(kiloSeri);
+
+            // Eksen ayarları (X ekseni)
+            var axisX = cKiloG.ChartAreas[0].AxisX;
+            axisX.Title = "Tarih";
+            axisX.LabelStyle.Format = "dd.MM.yyyy";
+            axisX.IntervalType = DateTimeIntervalType.Days;
+            axisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            axisX.LabelStyle.Angle = -45;
+            axisX.IsLabelAutoFit = true;
+
+            // Eksen ayarları (Y ekseni)
+            var axisY = cKiloG.ChartAreas[0].AxisY;
+            axisY.Title = "Kilo (kg)";
+            axisY.Minimum = 50;     // Başlangıç kilosu
+            axisY.Maximum = 120;    // En yüksek kilo sınırı
+            axisY.Interval = 5;     // Her 5 kg'de bir çizgi
+
+        }
+        private void BoyGrafigi()
+        {
+            string query2 = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
+
+            DataTable dt2 = new DataTable();
+
+            using (SqlConnection conn2 = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query2, conn2);
+                cmd.Parameters.AddWithValue("@KullaniciId", GirisYapanKullanici.Id);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt2);
+            }
+
+            // Grafik ayarları
+            cBoyG.Series.Clear();
+            cBoyG.Titles.Clear();
+            cBoyG.Titles.Add("Boy Değişimi");
+
+            var boySeri = new System.Windows.Forms.DataVisualization.Charting.Series("Boy")
+            {
+                ChartType = SeriesChartType.Spline,
+                Color = Color.SteelBlue,
+                BorderWidth = 3,
+                XValueType = ChartValueType.DateTime
+            };
+
+            // Boy verilerini ekle
+            foreach (DataRow row in dt2.Rows)
+            {
+                DateTime tarih = Convert.ToDateTime(row["Tarih"]);
+                double boy = Convert.ToDouble(row["Boy"]); // Kilo yerine Boy
+                boySeri.Points.AddXY(tarih, boy); // Boyu tarih ile ilişkilendirerek ekle
+            }
+
+            cBoyG.Series.Add(boySeri);
+
+            // Eksen ayarları (X ekseni)
+            var axisX = cBoyG.ChartAreas[0].AxisX;
+            axisX.Title = "Tarih";
+            axisX.LabelStyle.Format = "dd.MM.yyyy";
+            axisX.IntervalType = DateTimeIntervalType.Days;
+            axisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            axisX.LabelStyle.Angle = -45;
+            axisX.IsLabelAutoFit = true;
+
+            // Eksen ayarları (Y ekseni)
+            var axisY = cBoyG.ChartAreas[0].AxisY;
+            axisY.Title = "Boy (m)";
+            axisY.Minimum = 1.50;    // Boyun minimum değeri (1.5 m örneği)
+            axisY.Maximum = 2.10;    // Boyun maksimum değeri (2.1 m örneği)
+            axisY.Interval = 0.05;   // Boy aralığı 5 cm
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
     }
 }
