@@ -36,7 +36,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kategoriler");
+                    b.ToTable("Kategoriler", (string)null);
 
                     b.HasData(
                         new
@@ -123,7 +123,7 @@ namespace KaloriTakipProgrami.UI.Migrations
                     b.HasIndex("KullaniciAdi")
                         .IsUnique();
 
-                    b.ToTable("Kullanicilar");
+                    b.ToTable("Kullanicilar", (string)null);
 
                     b.HasData(
                         new
@@ -542,7 +542,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasIndex("KullaniciId");
 
-                    b.ToTable("KullaniciDetaylari");
+                    b.ToTable("KullaniciDetaylari", (string)null);
 
                     b.HasData(
                         new
@@ -681,7 +681,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ogunler");
+                    b.ToTable("Ogunler", (string)null);
 
                     b.HasData(
                         new
@@ -742,7 +742,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasIndex("YemekId");
 
-                    b.ToTable("OgunYemekler");
+                    b.ToTable("OgunYemekler", (string)null);
                 });
 
             modelBuilder.Entity("KaloriTakipProgrami.UI.Models.Talep", b =>
@@ -772,7 +772,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasIndex("KullaniciId");
 
-                    b.ToTable("Talepler");
+                    b.ToTable("Talepler", (string)null);
                 });
 
             modelBuilder.Entity("KaloriTakipProgrami.UI.Models.Yemek", b =>
@@ -797,7 +797,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasIndex("KategoriId");
 
-                    b.ToTable("Yemekler");
+                    b.ToTable("Yemekler", (string)null);
 
                     b.HasData(
                         new
@@ -2430,7 +2430,7 @@ namespace KaloriTakipProgrami.UI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Yoneticiler");
+                    b.ToTable("Yoneticiler", (string)null);
 
                     b.HasData(
                         new

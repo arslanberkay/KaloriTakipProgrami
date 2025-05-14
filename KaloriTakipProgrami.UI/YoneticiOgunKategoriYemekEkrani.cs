@@ -50,8 +50,11 @@ namespace KaloriTakipProgrami.UI
                 .Select(y => new
                 {
                     y.Id,
-                    y.Kategori.KategoriAdi,
+                    y.YemekAdi,
                     y.Kalori,
+                    y.Kategori.KategoriAdi,
+                    
+                   
                 })
                 .ToList();
 
