@@ -1,3 +1,5 @@
+using KaloriTakipProgrami.UI.Models;
+
 namespace KaloriTakipProgrami.UI
 {
     internal static class Program
@@ -11,9 +13,9 @@ namespace KaloriTakipProgrami.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-
-
-            Application.Run(new KullaniciBilgiGuncelleEkrani());
+            Kullanici kullanicim = new Kullanici();//kullanýcýbilgi güncellemede parametreye ihtiyacým olduðu için açtým
+            
+            Application.Run(new KullaniciGirisEkrani());
 
          
 
