@@ -36,47 +36,13 @@ namespace KaloriTakipProgrami.UI
                 o.Durum
             }).ToList();
         }
-       
 
 
 
 
-        
-
-
-
-        private void btnGeri_Click(object sender, EventArgs e)
+        private void dgvTalepler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
-        }
-
-        
-          private void btnReddedildi_Click(object sender, EventArgs e)
-        {
-            if (dgvTalepler.CurrentRow != null)
-            {
-                int id = (int)(dgvTalepler.CurrentRow.Cells["Id"].Value);
-                var talep = _db.Talepler.Find(id);
-
-                if (talep != null)
-                {
-                    talep.Durum = "Reddedildi";
-
-                    _db.SaveChanges();
-                    Listele();
-                    MessageBox.Show("Talebi reddettiniz");
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen Reddetmek istediğiniz talebi seçiniz");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
-                return;
-            }
+            secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
 
         private void btnOnayla_Click(object sender, EventArgs e)
@@ -102,14 +68,41 @@ namespace KaloriTakipProgrami.UI
             }
             else
             {
+
                 MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
                 return;
             }
-
-            secilenTalep.Durum = "Reddedildi";
-            MessageBox.Show("Talebi reddettiniz");
         }
 
+        private void btnReddedildi_Click(object sender, EventArgs e)
+
+        {
+            if (dgvTalepler.CurrentRow != null)
+            {
+                int id = (int)(dgvTalepler.CurrentRow.Cells["Id"].Value);
+                var talep = _db.Talepler.Find(id);
+
+                if (talep != null)
+                {
+
+                    talep.Durum = "Reddedildi";
+
+                    _db.SaveChanges();
+                    Listele();
+                    MessageBox.Show("Talebi reddettiniz");
+
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen Reddetmek istediğiniz talebi seçiniz");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
+                return;
+            }
 
 
     }
