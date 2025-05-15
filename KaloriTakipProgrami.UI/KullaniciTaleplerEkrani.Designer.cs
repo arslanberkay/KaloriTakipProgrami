@@ -35,6 +35,7 @@
             label2 = new Label();
             btnGönder = new Button();
             btnGeri = new Button();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -104,12 +105,23 @@
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI Semibold", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(215, 97);
+            label3.Name = "label3";
+            label3.Size = new Size(221, 61);
+            label3.TabIndex = 31;
+            label3.Text = "TALEPLER";
+            // 
             // KullaniciTaleplerEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1282, 753);
+            Controls.Add(label3);
             Controls.Add(btnGeri);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
@@ -132,5 +144,6 @@
         private Label label2;
         private Button btnGönder;
         private Button btnGeri;
+        private Label label3;
     }
 }

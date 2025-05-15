@@ -94,9 +94,9 @@
             checkBox1.ForeColor = SystemColors.ButtonHighlight;
             checkBox1.Location = new Point(345, 107);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(90, 29);
+            checkBox1.Size = new Size(147, 29);
             checkBox1.TabIndex = 7;
-            checkBox1.Text = "Göster";
+            checkBox1.Text = "Şifreyi Göster";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
