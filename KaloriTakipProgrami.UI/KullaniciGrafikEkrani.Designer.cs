@@ -34,6 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciGrafikEkrani));
             label1 = new Label();
             label2 = new Label();
             cKiloG = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -47,9 +48,9 @@
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.Snow;
-            label1.Location = new Point(98, 76);
+            label1.Location = new Point(260, 103);
             label1.Name = "label1";
-            label1.Size = new Size(172, 32);
+            label1.Size = new Size(234, 64);
             label1.TabIndex = 0;
             label1.Text = "Kilo Grafiği";
             // 
@@ -57,12 +58,11 @@
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.Snow;
-            label2.Location = new Point(458, 76);
+            label2.Location = new Point(786, 103);
             label2.Name = "label2";
-            label2.Size = new Size(146, 31);
+            label2.Size = new Size(204, 62);
             label2.TabIndex = 1;
             label2.Text = "Boy Grafiği";
-
             // 
             // cKiloG
             // 
@@ -70,17 +70,16 @@
             cKiloG.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             cKiloG.Legends.Add(legend1);
-            cKiloG.Location = new Point(24, 129);
-
+            cKiloG.Location = new Point(147, 176);
+            cKiloG.Margin = new Padding(3, 4, 3, 4);
             cKiloG.Name = "cKiloG";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             cKiloG.Series.Add(series1);
-            cKiloG.Size = new Size(305, 283);
+            cKiloG.Size = new Size(453, 465);
             cKiloG.TabIndex = 3;
             cKiloG.Text = "chart1";
-
             // 
             // cBoyG
             // 
@@ -88,44 +87,42 @@
             cBoyG.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             cBoyG.Legends.Add(legend2);
-            cBoyG.Location = new Point(371, 129);
+            cBoyG.Location = new Point(682, 176);
+            cBoyG.Margin = new Padding(3, 4, 3, 4);
             cBoyG.Name = "cBoyG";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             cBoyG.Series.Add(series2);
-            cBoyG.Size = new Size(298, 283);
+            cBoyG.Size = new Size(453, 465);
             cBoyG.TabIndex = 4;
             cBoyG.Text = "chart2";
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(24, 16);
-            btnGeri.Margin = new Padding(3, 2, 3, 2);
+            btnGeri.Location = new Point(2, 2);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(75, 38);
-            btnGeri.TabIndex = 28;
-            btnGeri.Text = "< GERİ";
+            btnGeri.Size = new Size(57, 41);
+            btnGeri.TabIndex = 1;
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
             // KullaniciGrafikEkrani
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-
-            ClientSize = new Size(688, 461);
+            ClientSize = new Size(1282, 753);
             Controls.Add(btnGeri);
-
             Controls.Add(cBoyG);
             Controls.Add(cKiloG);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "KullaniciGrafikEkrani";
             StartPosition = FormStartPosition.CenterScreen;
