@@ -104,6 +104,7 @@ namespace KaloriTakipProgrami.UI
 
                 MessageBox.Show("Lütfen onaylamak istediğiniz talebi seçiniz");
                 return;
+                //deneme
             }
 
         }
