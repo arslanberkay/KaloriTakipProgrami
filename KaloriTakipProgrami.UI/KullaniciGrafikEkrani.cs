@@ -12,6 +12,14 @@ using System.Windows.Forms.DataVisualization.Charting;
 using Microsoft.Data.SqlClient;
 using KaloriTakipProgrami.UI.Models;
 using KaloriTakipProgrami.UI.Context;
+using DocumentFormat.OpenXml.Drawing;
+using iTextSharp.text.pdf;
+using Path = System.IO.Path;
+using PdfSharp.Drawing;
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+
+
+
 
 
 namespace KaloriTakipProgrami.UI
@@ -20,8 +28,6 @@ namespace KaloriTakipProgrami.UI
     {
         private Kullanici GirisYapanKullanici;
         private readonly KaloriTakipDbContext _context;
-
-        string connectionString = "Server=CRNTK\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true";
 
         public KullaniciGrafikEkrani(Kullanici girisYapanKullanici)
         {
@@ -39,23 +45,11 @@ namespace KaloriTakipProgrami.UI
         }
         private void KiloGrafigi()
         {
-            //var detaylar = _context.KullaniciDetaylari
-            //        .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
-            //        .OrderBy(kd => kd.Tarih) // Grafik sıralaması için
-            //        .ToList();
+            var detaylar = _context.KullaniciDetaylari
+                    .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
+                    .OrderBy(kd => kd.Tarih) // Grafik sıralaması için
+                    .ToList();
 
-            string query = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
-
-            DataTable dt = new DataTable();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@KullaniciId", GirisYapanKullanici.Id);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-            }
 
             // Grafik ayarları
             cKiloG.Series.Clear();
@@ -70,16 +64,9 @@ namespace KaloriTakipProgrami.UI
                 XValueType = ChartValueType.DateTime
             };
 
-            //foreach (var detay in detaylar)
-            //{
-            //    kiloSeri.Points.AddXY(detay.Tarih, detay.Kilo);
-            //}
-
-            foreach (DataRow row in dt.Rows)
+            foreach (var detay in detaylar)
             {
-                DateTime tarih = Convert.ToDateTime(row["Tarih"]);
-                double kilo = Convert.ToDouble(row["Kilo"]);
-                kiloSeri.Points.AddXY(tarih, kilo); // Direkt tarih olarak ekleniyor
+                kiloSeri.Points.AddXY(detay.Tarih, detay.Kilo);
             }
 
             cKiloG.Series.Add(kiloSeri);
@@ -92,6 +79,15 @@ namespace KaloriTakipProgrami.UI
             axisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             axisX.LabelStyle.Angle = -45;
             axisX.IsLabelAutoFit = true;
+            var chartArea = cKiloG.ChartAreas[0];
+
+            // Zoom
+            chartArea.CursorX.IsUserEnabled = true;
+            chartArea.CursorX.IsUserSelectionEnabled = true;
+            chartArea.AxisX.ScaleView.Zoomable = true;
+
+            // Scroll bar
+            chartArea.AxisX.ScrollBar.Enabled = true;
 
             // Eksen ayarları (Y ekseni)
             var axisY = cKiloG.ChartAreas[0].AxisY;
@@ -103,53 +99,33 @@ namespace KaloriTakipProgrami.UI
         }
         private void BoyGrafigi()
         {
-        //    var detaylar = _context.KullaniciDetaylari
-        //.Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
-        //.OrderBy(kd => kd.Tarih)
-        //.ToList();
-
-            string query2 = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
-
-            DataTable dt2 = new DataTable();
-
-            using (SqlConnection conn2 = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query2, conn2);
-                cmd.Parameters.AddWithValue("@KullaniciId", GirisYapanKullanici.Id);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt2);
-            }
+            var detaylar = _context.KullaniciDetaylari
+      .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
+      .OrderBy(kd => kd.Tarih)
+      .ToList();
 
             // Grafik ayarları
             cBoyG.Series.Clear();
             cBoyG.Titles.Clear();
             cBoyG.Titles.Add("Boy Değişimi");
 
-            var boySeri = new System.Windows.Forms.DataVisualization.Charting.Series("Boy")
+            var boySeri = new System.Windows.Forms.DataVisualization.Charting.Series("Boy (m)")
             {
                 ChartType = SeriesChartType.Spline,
-                Color = Color.SteelBlue,
+                Color = Color.ForestGreen,
                 BorderWidth = 3,
                 XValueType = ChartValueType.DateTime
             };
 
-            //foreach (var detay in detaylar)
-            //{
-            //    boySeri.Points.AddXY(detay.Tarih, detay.Boy);
-            //}
-
-            // Boy verilerini ekle
-            foreach (DataRow row in dt2.Rows)
-            {
-                DateTime tarih = Convert.ToDateTime(row["Tarih"]);
-                double boy = Convert.ToDouble(row["Boy"]); // Kilo yerine Boy
-                boySeri.Points.AddXY(tarih, boy); // Boyu tarih ile ilişkilendirerek ekle
+            // Verileri  ekle
+            foreach (var detay in detaylar)
+            {              
+                boySeri.Points.AddXY(detay.Tarih, detay.Boy);
             }
 
             cBoyG.Series.Add(boySeri);
 
-            // Eksen ayarları (X ekseni)
+            // X Ekseni (Tarih)
             var axisX = cBoyG.ChartAreas[0].AxisX;
             axisX.Title = "Tarih";
             axisX.LabelStyle.Format = "dd.MM.yyyy";
@@ -158,17 +134,72 @@ namespace KaloriTakipProgrami.UI
             axisX.LabelStyle.Angle = -45;
             axisX.IsLabelAutoFit = true;
 
-            // Eksen ayarları (Y ekseni)
+            // Zoom ve scroll
+            var chartArea = cBoyG.ChartAreas[0];
+            chartArea.CursorX.IsUserEnabled = true;
+            chartArea.CursorX.IsUserSelectionEnabled = true;
+            chartArea.AxisX.ScaleView.Zoomable = true;
+            chartArea.AxisX.ScrollBar.Enabled = true;
+
+            // Y Ekseni (Boy)
             var axisY = cBoyG.ChartAreas[0].AxisY;
-            axisY.Title = "Boy (m)";
-            axisY.Minimum = 1.50;    // Boyun minimum değeri (1.5 m örneği)
-            axisY.Maximum = 2.10;    // Boyun maksimum değeri (2.1 m örneği)
-            axisY.Interval = 0.05;   // Boy aralığı 5 cm
+            axisY.Title = "Boy (metre)";
+            axisY.Minimum = 1.0;    // 100 cm
+            axisY.Maximum = 2.2;    // 220 cm
+            axisY.Interval = 0.05;  // Her 5 cm için 0.05 m
         }
 
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
+        private void btnKiloPdf_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "PNG Dosyası|*.png";
+                saveDialog.Title = "Grafiği Kaydet";
+                saveDialog.FileName = "KiloDegisimiGrafik.png";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Kullanıcının seçtiği dosya yoluna PNG olarak kaydet
+                        cKiloG.SaveImage(saveDialog.FileName, ChartImageFormat.Png);
+                        MessageBox.Show("Grafik başarıyla kaydedildi:\n" + saveDialog.FileName, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnBoyPdf_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "PNG Dosyası|*.png";
+                saveDialog.Title = "Boy Grafiğini Kaydet";
+                saveDialog.FileName = "BoyDegisimiGrafik.png";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Boy grafiğini PNG olarak kaydet
+                        cBoyG.SaveImage(saveDialog.FileName, ChartImageFormat.Png);
+                        MessageBox.Show("Boy grafiği başarıyla kaydedildi:\n" + saveDialog.FileName, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
