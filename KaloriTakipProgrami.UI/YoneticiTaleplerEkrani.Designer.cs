@@ -113,7 +113,6 @@
             Name = "YoneticiTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiTaleplerEkrani";
-            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).EndInit();
             ResumeLayout(false);
         }

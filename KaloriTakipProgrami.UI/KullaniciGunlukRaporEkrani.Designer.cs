@@ -165,7 +165,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1282, 703);
+            ClientSize = new Size(1282, 753);
             Controls.Add(groupBox1);
             Controls.Add(btnGeri);
             Controls.Add(lstvOgunYemekDetayliRapor);

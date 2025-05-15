@@ -146,9 +146,8 @@
             Controls.Add(label1);
             MaximizeBox = false;
             Name = "KullaniciRaporEkrani";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciRaporEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += KullaniciRaporEkrani_Load;
             ResumeLayout(false);
             PerformLayout();
