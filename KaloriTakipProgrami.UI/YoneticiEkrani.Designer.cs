@@ -40,6 +40,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnKullaniciGunlukRaporu);
+            groupBox1.Controls.Add(btnTalepler);
             groupBox1.Controls.Add(btnOgunlerKategorilerYemekler);
             groupBox1.Controls.Add(btnKullanicilar);
             groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
@@ -47,7 +48,7 @@
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(416, 388);
+            groupBox1.Size = new Size(451, 482);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -55,7 +56,7 @@
             // 
             btnKullaniciGunlukRaporu.BackColor = Color.FromArgb(164, 172, 134);
             btnKullaniciGunlukRaporu.FlatStyle = FlatStyle.Popup;
-            btnKullaniciGunlukRaporu.Location = new Point(77, 259);
+            btnKullaniciGunlukRaporu.Location = new Point(90, 261);
             btnKullaniciGunlukRaporu.Name = "btnKullaniciGunlukRaporu";
             btnKullaniciGunlukRaporu.Size = new Size(242, 76);
             btnKullaniciGunlukRaporu.TabIndex = 0;
@@ -67,7 +68,7 @@
             // 
             btnOgunlerKategorilerYemekler.BackColor = Color.FromArgb(164, 172, 134);
             btnOgunlerKategorilerYemekler.FlatStyle = FlatStyle.Popup;
-            btnOgunlerKategorilerYemekler.Location = new Point(77, 148);
+            btnOgunlerKategorilerYemekler.Location = new Point(90, 150);
             btnOgunlerKategorilerYemekler.Name = "btnOgunlerKategorilerYemekler";
             btnOgunlerKategorilerYemekler.Size = new Size(242, 88);
             btnOgunlerKategorilerYemekler.TabIndex = 0;
@@ -79,7 +80,7 @@
             // 
             btnKullanicilar.BackColor = Color.FromArgb(164, 172, 134);
             btnKullanicilar.FlatStyle = FlatStyle.Popup;
-            btnKullanicilar.Location = new Point(77, 55);
+            btnKullanicilar.Location = new Point(90, 57);
             btnKullanicilar.Name = "btnKullanicilar";
             btnKullanicilar.Size = new Size(242, 72);
             btnKullanicilar.TabIndex = 0;
@@ -92,9 +93,9 @@
             btnTalepler.BackColor = Color.FromArgb(164, 172, 134);
             btnTalepler.FlatStyle = FlatStyle.Popup;
             btnTalepler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnTalepler.Location = new Point(476, 12);
+            btnTalepler.Location = new Point(90, 365);
             btnTalepler.Name = "btnTalepler";
-            btnTalepler.Size = new Size(116, 59);
+            btnTalepler.Size = new Size(242, 59);
             btnTalepler.TabIndex = 1;
             btnTalepler.Text = "Talepler";
             btnTalepler.UseVisualStyleBackColor = false;
@@ -103,10 +104,11 @@
             // btnCikis
             // 
             btnCikis.BackColor = Color.FromArgb(164, 172, 134);
+            btnCikis.FlatStyle = FlatStyle.Popup;
             btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCikis.Location = new Point(12, 12);
             btnCikis.Name = "btnCikis";
-            btnCikis.Size = new Size(75, 23);
+            btnCikis.Size = new Size(82, 43);
             btnCikis.TabIndex = 32;
             btnCikis.Text = "Çıkış Yap";
             btnCikis.UseVisualStyleBackColor = false;
@@ -117,15 +119,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-
-            ClientSize = new Size(599, 539);
-
-
-            ClientSize = new Size(823, 645);
+            ClientSize = new Size(539, 577);
             Controls.Add(btnCikis);
-
-
-            Controls.Add(btnTalepler);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
