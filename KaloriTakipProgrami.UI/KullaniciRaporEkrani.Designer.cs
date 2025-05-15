@@ -37,6 +37,7 @@
             btnAzYenilenler = new Button();
             btnGeri = new Button();
             lstOgunYemekRaporu = new ListView();
+            btnTumYemekler = new Button();
             SuspendLayout();
             // 
             // label1
@@ -44,7 +45,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(670, 98);
+            label1.Location = new Point(864, 90);
             label1.Name = "label1";
             label1.Size = new Size(97, 25);
             label1.TabIndex = 0;
@@ -55,7 +56,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(266, 98);
+            label2.Location = new Point(56, 90);
             label2.Name = "label2";
             label2.Size = new Size(138, 25);
             label2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // dtpBaslangicTarihi
             // 
             dtpBaslangicTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dtpBaslangicTarihi.Location = new Point(266, 146);
+            dtpBaslangicTarihi.Location = new Point(56, 138);
             dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
             dtpBaslangicTarihi.Size = new Size(359, 31);
             dtpBaslangicTarihi.TabIndex = 2;
@@ -73,7 +74,7 @@
             // dtpBitisTarihi
             // 
             dtpBitisTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dtpBitisTarihi.Location = new Point(670, 146);
+            dtpBitisTarihi.Location = new Point(864, 138);
             dtpBitisTarihi.Name = "dtpBitisTarihi";
             dtpBitisTarihi.Size = new Size(359, 31);
             dtpBitisTarihi.TabIndex = 3;
@@ -84,7 +85,7 @@
             btnEnCokYenilen.BackColor = Color.FromArgb(164, 172, 134);
             btnEnCokYenilen.FlatStyle = FlatStyle.Popup;
             btnEnCokYenilen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnEnCokYenilen.Location = new Point(670, 206);
+            btnEnCokYenilen.Location = new Point(583, 231);
             btnEnCokYenilen.Name = "btnEnCokYenilen";
             btnEnCokYenilen.Size = new Size(242, 47);
             btnEnCokYenilen.TabIndex = 4;
@@ -97,7 +98,7 @@
             btnAzYenilenler.BackColor = Color.FromArgb(164, 172, 134);
             btnAzYenilenler.FlatStyle = FlatStyle.Popup;
             btnAzYenilenler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnAzYenilenler.Location = new Point(266, 206);
+            btnAzYenilenler.Location = new Point(333, 231);
             btnAzYenilenler.Name = "btnAzYenilenler";
             btnAzYenilenler.Size = new Size(227, 47);
             btnAzYenilenler.TabIndex = 5;
@@ -130,12 +131,26 @@
             lstOgunYemekRaporu.TabIndex = 31;
             lstOgunYemekRaporu.UseCompatibleStateImageBehavior = false;
             // 
+            // btnTumYemekler
+            // 
+            btnTumYemekler.BackColor = Color.FromArgb(164, 172, 134);
+            btnTumYemekler.FlatStyle = FlatStyle.Popup;
+            btnTumYemekler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnTumYemekler.Location = new Point(56, 231);
+            btnTumYemekler.Name = "btnTumYemekler";
+            btnTumYemekler.Size = new Size(258, 47);
+            btnTumYemekler.TabIndex = 32;
+            btnTumYemekler.Text = "Tüm Yemekler";
+            btnTumYemekler.UseVisualStyleBackColor = false;
+            btnTumYemekler.Click += btnTumYemekler_Click;
+            // 
             // KullaniciRaporEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1282, 753);
+            Controls.Add(btnTumYemekler);
             Controls.Add(lstOgunYemekRaporu);
             Controls.Add(btnGeri);
             Controls.Add(btnAzYenilenler);
@@ -163,5 +178,6 @@
         private Button btnAzYenilenler;
         private Button btnGeri;
         private ListView lstOgunYemekRaporu;
+        private Button btnTumYemekler;
     }
 }
