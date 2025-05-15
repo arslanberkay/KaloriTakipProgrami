@@ -20,7 +20,9 @@ namespace KaloriTakipProgrami.UI
     {
         private Kullanici GirisYapanKullanici;
         private readonly KaloriTakipDbContext _context;
+
         string connectionString = "Server=CRNTK\\SQLEXPRESS;database=KaloriTakipDb;trusted_connection=true;trustservercertificate=true";
+
         public KullaniciGrafikEkrani(Kullanici girisYapanKullanici)
         {
             _context = new KaloriTakipDbContext();
@@ -37,6 +39,10 @@ namespace KaloriTakipProgrami.UI
         }
         private void KiloGrafigi()
         {
+            //var detaylar = _context.KullaniciDetaylari
+            //        .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
+            //        .OrderBy(kd => kd.Tarih) // Grafik sıralaması için
+            //        .ToList();
 
             string query = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
 
@@ -63,6 +69,11 @@ namespace KaloriTakipProgrami.UI
                 BorderWidth = 3,
                 XValueType = ChartValueType.DateTime
             };
+
+            //foreach (var detay in detaylar)
+            //{
+            //    kiloSeri.Points.AddXY(detay.Tarih, detay.Kilo);
+            //}
 
             foreach (DataRow row in dt.Rows)
             {
@@ -92,6 +103,11 @@ namespace KaloriTakipProgrami.UI
         }
         private void BoyGrafigi()
         {
+        //    var detaylar = _context.KullaniciDetaylari
+        //.Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
+        //.OrderBy(kd => kd.Tarih)
+        //.ToList();
+
             string query2 = "SELECT * FROM KullaniciDetaylari WHERE KullaniciId = @KullaniciId";
 
             DataTable dt2 = new DataTable();
@@ -117,6 +133,11 @@ namespace KaloriTakipProgrami.UI
                 BorderWidth = 3,
                 XValueType = ChartValueType.DateTime
             };
+
+            //foreach (var detay in detaylar)
+            //{
+            //    boySeri.Points.AddXY(detay.Tarih, detay.Boy);
+            //}
 
             // Boy verilerini ekle
             foreach (DataRow row in dt2.Rows)
