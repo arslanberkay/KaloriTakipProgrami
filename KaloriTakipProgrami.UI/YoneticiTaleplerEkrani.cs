@@ -23,7 +23,6 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
             Listele();
-
         }
         public void Listele()
         {
@@ -36,16 +35,8 @@ namespace KaloriTakipProgrami.UI
                 Kullanıcı = o.Kullanici.KullaniciAdi,
                 o.Durum
             }).ToList();
-
-
-
-
         }
-        private void dgvTalepler_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
+       
 
 
 
@@ -64,7 +55,6 @@ namespace KaloriTakipProgrami.UI
                     _db.SaveChanges();
                     Listele();
                     MessageBox.Show("Talebi reddettiniz");
-
                 }
                 else
                 {
@@ -75,7 +65,7 @@ namespace KaloriTakipProgrami.UI
             else
             {
                 MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
-                return ;
+                return;
             }
         }
 
@@ -93,25 +83,19 @@ namespace KaloriTakipProgrami.UI
                     _db.SaveChanges();
                     Listele();
                     MessageBox.Show("Talebi Onayladınız");
-
                 }
                 else
                 {
                     MessageBox.Show("Lütfen Reddetmek istediğiniz talebi seçiniz");
                     return;
                 }
-
             }
             else
             {
                 MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
                 return;
             }
-
-
-
-
-        }
+        }     
     }
 }
 
