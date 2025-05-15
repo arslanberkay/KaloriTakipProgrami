@@ -136,7 +136,7 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
 
         }
