@@ -37,10 +37,6 @@ namespace KaloriTakipProgrami.UI.Context
                 entity.HasIndex(k => k.Email).IsUnique();
             });
 
-
-
-
-
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Yonetici>().HasData(
                 new Yonetici { Id = 1, KullaniciAdi = "furkydream", Sifre = "12345furky" },

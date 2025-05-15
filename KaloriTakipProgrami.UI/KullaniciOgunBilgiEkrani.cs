@@ -234,27 +234,36 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if (!GirdiDogrula()) return;
-
-            var ogunBilgileri = new OgunYemek()
+            try
             {
-                OgunId = (int)cmbOgunler.SelectedValue,
-                YemekId = (int)cmbYemekler.SelectedValue,
-                //
-                Tarih = dtpTarih.Value.Date,
-                Miktar = nudMiktar.Value,
-            };
-            _db.OgunYemekler.Add(ogunBilgileri);
-            _db.SaveChanges();
 
-            ListViewItem listItem = new ListViewItem(ogunBilgileri.Id.ToString());
-            listItem.SubItems.Add(cmbOgunler.SelectedValue.ToString());
-            listItem.SubItems.Add(cmbKategoriler.SelectedValue.ToString());
-            listItem.SubItems.Add(cmbYemekler.SelectedValue.ToString());
-            listItem.SubItems.Add(dtpTarih.Value.Date.ToString());
-            listItem.SubItems.Add(nudMiktar.Value.ToString());
-            lsvOgunBilgileri.Items.Add(listItem);
-            MessageBox.Show("Başarıyla Eklendi");
+                if (!GirdiDogrula()) return;
+
+                var ogunBilgileri = new OgunYemek
+                {
+                    OgunId = (int)cmbOgunler.SelectedValue,
+                    YemekId = (int)cmbYemekler.SelectedValue,
+                    //
+                    Tarih = dtpTarih.Value.Date,
+                    Miktar = nudMiktar.Value,
+                };
+                _db.OgunYemekler.Add(ogunBilgileri);
+                _db.SaveChanges();
+
+                ListViewItem listItem = new ListViewItem(ogunBilgileri.Id.ToString());
+                listItem.SubItems.Add(cmbOgunler.SelectedValue.ToString());
+                listItem.SubItems.Add(cmbKategoriler.SelectedValue.ToString());
+                listItem.SubItems.Add(cmbYemekler.SelectedValue.ToString());
+                listItem.SubItems.Add(dtpTarih.Value.Date.ToString());
+                listItem.SubItems.Add(nudMiktar.Value.ToString());
+                lsvOgunBilgileri.Items.Add(listItem);
+                MessageBox.Show("Başarıyla Eklendi");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata"+ex.Message);
+            }
         }
         private void btnSil_Click(object sender, EventArgs e)
         {

@@ -40,8 +40,10 @@ namespace KaloriTakipProgrami.UI
             txtEposta.Text = GirisYapanKullanici.Email;
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
-            txtSifre.Text = GirisYapanKullanici.Sifre;
-            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
+            txtSifre.Text = "";
+            //txtSifre.Text = GirisYapanKullanici.Sifre;
+            //txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
+            txtSifreTekrar.Text = "";
             lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
             txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
             txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
