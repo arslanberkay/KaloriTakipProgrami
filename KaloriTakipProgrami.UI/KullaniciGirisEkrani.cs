@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using KaloriTakipProgrami.UI.Helpers;
 
 namespace KaloriTakipProgrami.UI
 {
@@ -20,30 +21,53 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
             _db = new KaloriTakipDbContext();
+            TumSifreleriHashle();
         }
-
         private void lnkKayitOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             KullaniciKayitOlEkrani kullaniciKayitOlEkrani = new KullaniciKayitOlEkrani();
             kullaniciKayitOlEkrani.Show();
         }
-
         private void lnkSifremiUnuttum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SifremiUnuttumEkrani sifremiUnuttumEkrani = new SifremiUnuttumEkrani();
             sifremiUnuttumEkrani.Show();
         }
+        private void TumSifreleriHashle() 
+        {
+            var kullanicilar = _db.Kullanicilar.ToList();
+            foreach (var kullanici in kullanicilar)
+            {
+                if (!string.IsNullOrWhiteSpace(kullanici.Sifre) && kullanici.Sifre.Length != 64) // Boş değilse ve 64 karakter değilse hash'le
+                {
+                    string hashliSifre = SifrelemeHelper.Sha256Hash(kullanici.Sifre);
+                    kullanici.Sifre = hashliSifre;
+                }
+            }
 
+            var yoneticiler = _db.Yoneticiler.ToList();
+            foreach (var yonetici in yoneticiler)
+            {
+                if (!string.IsNullOrWhiteSpace(yonetici.Sifre) && yonetici.Sifre.Length != 64) 
+                {
+                    string hashliSifre = SifrelemeHelper.Sha256Hash(yonetici.Sifre);
+                    yonetici.Sifre = hashliSifre;
+                }
+            }
+           _db.SaveChanges(); 
+        }
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
+            string sifre = txtSifre.Text;
+            string hashliSifre = SifrelemeHelper.Sha256Hash(sifre);
+
+            if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
                 HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
                 yoneticiEkrani.Show();
-               
             }
-            else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+            else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
                 if(girisYapanKullanici.Durum==false)
@@ -59,46 +83,44 @@ namespace KaloriTakipProgrami.UI
         }
         public void HataYonetici()
         {
+            string sifre = txtSifre.Text;
+            string hashliSifre = SifrelemeHelper.Sha256Hash(sifre);
+
             if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
             {
                 MessageBox.Show("Lütfen boş alanları doldurunuz");
                 txtKullaniciAdi.Text = "";
                 txtSifre.Text = "";
                 return;
-
             }
-            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
+            if (!_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre lütfen tekrar deneyiniz.");
                 txtKullaniciAdi.Text = "";
                 txtSifre.Text = "";
                 return;
             }
-           
         }
         public void HataUye()
         {
+            string sifre = txtSifre.Text;
+            string hashliSifre = SifrelemeHelper.Sha256Hash(sifre);
+
             if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
             {
                 MessageBox.Show("Lütfen boş alanları doldurunuz");
                 txtKullaniciAdi.Text = "";
                 txtSifre.Text = "";
                 return;
-
-
-
             }
-            if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == txtSifre.Text)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
+            if (!_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
                 MessageBox.Show("Yanlış kullanıcı adı veya şifre girdiniz");
                 txtKullaniciAdi.Text = "";
                 txtSifre.Text = "";
                 return;
             }
-
-
         }
-
         private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSifreGoster.Checked)
@@ -113,8 +135,4 @@ namespace KaloriTakipProgrami.UI
             }
         }
     }
-
-
-
-
 }
