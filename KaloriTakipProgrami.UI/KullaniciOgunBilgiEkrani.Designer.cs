@@ -101,7 +101,7 @@
             cmbYemekler.Location = new Point(146, 145);
             cmbYemekler.Margin = new Padding(3, 2, 3, 2);
             cmbYemekler.Name = "cmbYemekler";
-            cmbYemekler.Size = new Size(219, 33);
+            cmbYemekler.Size = new Size(261, 33);
             cmbYemekler.TabIndex = 5;
             cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
@@ -111,7 +111,7 @@
             cmbKategoriler.Location = new Point(146, 95);
             cmbKategoriler.Margin = new Padding(3, 2, 3, 2);
             cmbKategoriler.Name = "cmbKategoriler";
-            cmbKategoriler.Size = new Size(219, 33);
+            cmbKategoriler.Size = new Size(261, 33);
             cmbKategoriler.TabIndex = 6;
             // 
             // cmbOgunler
@@ -120,7 +120,7 @@
             cmbOgunler.Location = new Point(144, 48);
             cmbOgunler.Margin = new Padding(3, 2, 3, 2);
             cmbOgunler.Name = "cmbOgunler";
-            cmbOgunler.Size = new Size(219, 33);
+            cmbOgunler.Size = new Size(261, 33);
             cmbOgunler.TabIndex = 7;
             // 
             // btnSil
@@ -221,7 +221,7 @@
             dtpTarih.Location = new Point(146, 197);
             dtpTarih.Margin = new Padding(3, 2, 3, 2);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(219, 31);
+            dtpTarih.Size = new Size(261, 31);
             dtpTarih.TabIndex = 16;
             // 
             // nudMiktar
@@ -229,7 +229,7 @@
             nudMiktar.Location = new Point(146, 248);
             nudMiktar.Margin = new Padding(3, 2, 3, 2);
             nudMiktar.Name = "nudMiktar";
-            nudMiktar.Size = new Size(217, 31);
+            nudMiktar.Size = new Size(261, 31);
             nudMiktar.TabIndex = 17;
             // 
             // btnGeri

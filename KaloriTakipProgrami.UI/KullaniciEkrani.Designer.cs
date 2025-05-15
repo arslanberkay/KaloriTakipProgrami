@@ -367,7 +367,7 @@
             groupBox1.Controls.Add(lblAd);
             groupBox1.Location = new Point(506, 264);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(367, 454);
+            groupBox1.Size = new Size(440, 454);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             // 

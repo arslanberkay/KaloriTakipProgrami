@@ -128,7 +128,7 @@
             lstvOgunYemekDetayliRapor.BackColor = Color.FromArgb(202, 210, 197);
             lstvOgunYemekDetayliRapor.Location = new Point(35, 344);
             lstvOgunYemekDetayliRapor.Name = "lstvOgunYemekDetayliRapor";
-            lstvOgunYemekDetayliRapor.Size = new Size(1217, 307);
+            lstvOgunYemekDetayliRapor.Size = new Size(1213, 307);
             lstvOgunYemekDetayliRapor.TabIndex = 7;
             lstvOgunYemekDetayliRapor.UseCompatibleStateImageBehavior = false;
             // 
@@ -158,7 +158,7 @@
             groupBox1.Size = new Size(463, 239);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Günlük Rapor";
             // 
             // KullaniciGunlukRaporEkrani
             // 
