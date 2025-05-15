@@ -45,7 +45,7 @@ namespace KaloriTakipProgrami.UI
             secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
 
-       
+
 
         private void btnReddedildi_Click(object sender, EventArgs e)
 
@@ -62,7 +62,7 @@ namespace KaloriTakipProgrami.UI
 
                     _db.SaveChanges();
                     Listele();
-                    MessageBox.Show("Talebi reddettiniz");
+                    MessageBox.Show("Talep başarıyla reddedildi");
 
                 }
                 else
@@ -91,11 +91,11 @@ namespace KaloriTakipProgrami.UI
 
                     _db.SaveChanges();
                     Listele();
-                    MessageBox.Show("Talebi Onayladınız");
+                    MessageBox.Show("Talep başarıyla onaylandı");
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
+                    MessageBox.Show("Lütfen onaylamak istediğiniz talebi seçiniz");
                     return;
                 }
             }
@@ -107,6 +107,11 @@ namespace KaloriTakipProgrami.UI
                 //deneme
             }
 
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

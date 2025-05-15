@@ -51,7 +51,7 @@
             // 
             btnOnayla.BackColor = Color.FromArgb(164, 172, 134);
             btnOnayla.FlatStyle = FlatStyle.Popup;
-            btnOnayla.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnOnayla.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnOnayla.Location = new Point(960, 664);
             btnOnayla.Margin = new Padding(3, 4, 3, 4);
             btnOnayla.Name = "btnOnayla";
@@ -65,7 +65,7 @@
             // 
             btnReddedildi.BackColor = Color.FromArgb(164, 172, 134);
             btnReddedildi.FlatStyle = FlatStyle.Popup;
-            btnReddedildi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnReddedildi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnReddedildi.Location = new Point(1080, 664);
             btnReddedildi.Margin = new Padding(3, 4, 3, 4);
             btnReddedildi.Name = "btnReddedildi";
@@ -88,6 +88,7 @@
             btnGeri.Size = new Size(57, 41);
             btnGeri.TabIndex = 29;
             btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
             // 
             // label1
             // 
