@@ -62,6 +62,7 @@
             label2.Size = new Size(146, 31);
             label2.TabIndex = 1;
             label2.Text = "Boy Grafiği";
+
             // 
             // cKiloG
             // 
@@ -70,6 +71,7 @@
             legend1.Name = "Legend1";
             cKiloG.Legends.Add(legend1);
             cKiloG.Location = new Point(24, 129);
+
             cKiloG.Name = "cKiloG";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -78,6 +80,7 @@
             cKiloG.Size = new Size(305, 283);
             cKiloG.TabIndex = 3;
             cKiloG.Text = "chart1";
+
             // 
             // cBoyG
             // 
@@ -114,8 +117,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
             ClientSize = new Size(688, 461);
             Controls.Add(btnGeri);
+
             Controls.Add(cBoyG);
             Controls.Add(cKiloG);
             Controls.Add(label2);

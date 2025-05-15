@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             dgvTalepler = new DataGridView();
-            btnEkle = new Button();
+            btnOnayla = new Button();
             btnReddedildi = new Button();
             btnGeri = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).BeginInit();
@@ -38,14 +38,17 @@
             // dgvTalepler
             // 
             dgvTalepler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             dgvTalepler.Location = new Point(93, 73);
+
             dgvTalepler.Name = "dgvTalepler";
             dgvTalepler.RowHeadersWidth = 51;
             dgvTalepler.Size = new Size(685, 226);
             dgvTalepler.TabIndex = 0;
             // 
-            // btnEkle
+            // btnOnayla
             // 
+
             btnEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnEkle.FlatStyle = FlatStyle.Popup;
             btnEkle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
@@ -55,11 +58,13 @@
             btnEkle.TabIndex = 1;
             btnEkle.Text = "Onaylandı";
             btnEkle.UseVisualStyleBackColor = false;
+
             // 
             // btnReddedildi
             // 
             btnReddedildi.BackColor = Color.FromArgb(164, 172, 134);
             btnReddedildi.FlatStyle = FlatStyle.Popup;
+
             btnReddedildi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnReddedildi.Location = new Point(555, 326);
             btnReddedildi.Name = "btnReddedildi";
@@ -80,16 +85,19 @@
             btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
+
             // 
             // YoneticiTaleplerEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
             ClientSize = new Size(806, 402);
             Controls.Add(btnGeri);
+
             Controls.Add(btnReddedildi);
-            Controls.Add(btnEkle);
+            Controls.Add(btnOnayla);
             Controls.Add(dgvTalepler);
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
@@ -104,7 +112,7 @@
         #endregion
 
         private DataGridView dgvTalepler;
-        private Button btnEkle;
+        private Button btnOnayla;
         private Button btnReddedildi;
         private Button btnGeri;
     }
