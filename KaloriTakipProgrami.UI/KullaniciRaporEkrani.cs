@@ -135,7 +135,7 @@ namespace KaloriTakipProgrami.UI
 
         private void btnEnCokYenilen_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
