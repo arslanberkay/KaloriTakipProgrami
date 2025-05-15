@@ -34,8 +34,8 @@ namespace KaloriTakipProgrami.UI
         private void KullaniciBilgileri()
         {
             var SifreUzunluğu = GirisYapanKullanici.Sifre.Length;
-            txtAd.Text = GirisYapanKullanici.Isim.ToUpper();
-            txtSoyad.Text = GirisYapanKullanici.Soyisim.ToUpper();
+            txtAd.Text = GirisYapanKullanici.Isim;
+            txtSoyad.Text = GirisYapanKullanici.Soyisim;
             txtEposta.Text = GirisYapanKullanici.Email;
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
@@ -172,6 +172,8 @@ namespace KaloriTakipProgrami.UI
             }
             else
             {
+                txtSifre.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
+                txtSifreTekrar.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
                 txtSifre.PasswordChar = '•';  // Şifreyi tekrar gizler
                 txtSifreTekrar.PasswordChar = '•';  // Şifreyi tekrar gizler
             }

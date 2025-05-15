@@ -14,18 +14,23 @@ namespace KaloriTakipProgrami.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Kullanici kullanicim = new Kullanici();//kullan�c�bilgi g�ncellemede parametreye ihtiyac�m oldu�u i�in a�t�m
+             Kullanici kullanicim = new Kullanici();//kullan�c�bilgi g�ncellemede parametreye ihtiyac�m oldu�u i�in a�t�m
 
-           // Application.Run(new KullaniciBilgiGuncelleEkrani(kullanicim));
+            // Application.Run(new KullaniciBilgiGuncelleEkrani(kullanicim));
 
-            //Application.Run(new KullaniciGirisEkrani());
+
             Application.Run(new KullaniciGirisEkrani());
 
 
+            //  Application.Run(new KullaniciGrafikEkrani(kullanicim));
+
+           // Application.Run(new KullaniciEkrani(kullanicim));
 
 
 
-          
+
+
+
 
 
 

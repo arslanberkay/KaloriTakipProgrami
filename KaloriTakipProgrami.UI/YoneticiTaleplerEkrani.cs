@@ -40,8 +40,18 @@ namespace KaloriTakipProgrami.UI
 
 
 
-        private void btnReddedildi_Click(object sender, EventArgs e)
 
+        
+
+
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
+        
+          private void btnReddedildi_Click(object sender, EventArgs e)
         {
             if (dgvTalepler.CurrentRow != null)
             {
@@ -95,7 +105,13 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
                 return;
             }
-        }     
+
+            secilenTalep.Durum = "Reddedildi";
+            MessageBox.Show("Talebi reddettiniz");
+        }
+
+
+
     }
 }
 

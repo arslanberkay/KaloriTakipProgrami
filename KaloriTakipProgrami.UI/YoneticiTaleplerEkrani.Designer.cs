@@ -31,13 +31,16 @@
             dgvTalepler = new DataGridView();
             btnOnayla = new Button();
             btnReddedildi = new Button();
+            btnGeri = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).BeginInit();
             SuspendLayout();
             // 
             // dgvTalepler
             // 
             dgvTalepler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTalepler.Location = new Point(81, 127);
+
+            dgvTalepler.Location = new Point(93, 73);
+
             dgvTalepler.Name = "dgvTalepler";
             dgvTalepler.RowHeadersWidth = 51;
             dgvTalepler.Size = new Size(685, 226);
@@ -45,40 +48,61 @@
             // 
             // btnOnayla
             // 
-            btnOnayla.BackColor = Color.FromArgb(164, 172, 134);
-            btnOnayla.FlatStyle = FlatStyle.Popup;
-            btnOnayla.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnOnayla.Location = new Point(242, 379);
-            btnOnayla.Name = "btnOnayla";
-            btnOnayla.Size = new Size(132, 54);
-            btnOnayla.TabIndex = 1;
-            btnOnayla.Text = "Onayla";
-            btnOnayla.UseVisualStyleBackColor = false;
-            btnOnayla.Click += btnOnayla_Click;
+
+            btnEkle.BackColor = Color.FromArgb(164, 172, 134);
+            btnEkle.FlatStyle = FlatStyle.Popup;
+            btnEkle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnEkle.Location = new Point(181, 326);
+            btnEkle.Name = "btnEkle";
+            btnEkle.Size = new Size(104, 42);
+            btnEkle.TabIndex = 1;
+            btnEkle.Text = "Onaylandı";
+            btnEkle.UseVisualStyleBackColor = false;
+
             // 
             // btnReddedildi
             // 
             btnReddedildi.BackColor = Color.FromArgb(164, 172, 134);
             btnReddedildi.FlatStyle = FlatStyle.Popup;
-            btnReddedildi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnReddedildi.Location = new Point(455, 379);
+
+            btnReddedildi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnReddedildi.Location = new Point(555, 326);
             btnReddedildi.Name = "btnReddedildi";
-            btnReddedildi.Size = new Size(144, 54);
+            btnReddedildi.Size = new Size(104, 42);
             btnReddedildi.TabIndex = 1;
-            btnReddedildi.Text = "Reddet";
+            btnReddedildi.Text = "Reddedildi";
             btnReddedildi.UseVisualStyleBackColor = false;
-            btnReddedildi.Click += btnReddedildi_Click;
+            // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.FlatStyle = FlatStyle.Popup;
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(77, 33);
+            btnGeri.TabIndex = 29;
+            btnGeri.Text = "< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+
             // 
             // YoneticiTaleplerEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(865, 543);
+
+            ClientSize = new Size(806, 402);
+            Controls.Add(btnGeri);
+
             Controls.Add(btnReddedildi);
             Controls.Add(btnOnayla);
             Controls.Add(dgvTalepler);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "YoneticiTaleplerEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiTaleplerEkrani";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).EndInit();
@@ -90,5 +114,6 @@
         private DataGridView dgvTalepler;
         private Button btnOnayla;
         private Button btnReddedildi;
+        private Button btnGeri;
     }
 }

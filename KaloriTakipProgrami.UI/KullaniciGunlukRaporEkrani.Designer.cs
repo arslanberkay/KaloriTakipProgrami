@@ -36,6 +36,7 @@
             lblKaloriBilgilendirme = new Label();
             btnGoruntule = new Button();
             lstvOgunYemekDetayliRapor = new ListView();
+            btnGeri = new Button();
             groupBox1 = new GroupBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -48,7 +49,7 @@
             label1.Location = new Point(16, 50);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 25);
+            label1.Size = new Size(37, 20);
             label1.TabIndex = 0;
             label1.Text = "Gün";
             // 
@@ -60,7 +61,7 @@
             label2.Location = new Point(16, 102);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(81, 25);
+            label2.Size = new Size(65, 20);
             label2.TabIndex = 0;
             label2.Text = "Öğünler";
             // 
@@ -70,7 +71,7 @@
             dtpTarih.Location = new Point(115, 43);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(277, 31);
+            dtpTarih.Size = new Size(312, 27);
             dtpTarih.TabIndex = 1;
             // 
             // cmbOgunler
@@ -81,7 +82,7 @@
             cmbOgunler.Location = new Point(115, 99);
             cmbOgunler.Margin = new Padding(4);
             cmbOgunler.Name = "cmbOgunler";
-            cmbOgunler.Size = new Size(277, 33);
+            cmbOgunler.Size = new Size(312, 27);
             cmbOgunler.TabIndex = 2;
             // 
             // lblToplamKaloriMiktari
@@ -89,10 +90,10 @@
             lblToplamKaloriMiktari.AutoSize = true;
             lblToplamKaloriMiktari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblToplamKaloriMiktari.ForeColor = SystemColors.ButtonHighlight;
-            lblToplamKaloriMiktari.Location = new Point(820, 147);
+            lblToplamKaloriMiktari.Location = new Point(946, 279);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
-            lblToplamKaloriMiktari.Size = new Size(62, 25);
+            lblToplamKaloriMiktari.Size = new Size(50, 20);
             lblToplamKaloriMiktari.TabIndex = 4;
             lblToplamKaloriMiktari.Text = "label3";
             // 
@@ -101,16 +102,17 @@
             lblKaloriBilgilendirme.AutoSize = true;
             lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKaloriBilgilendirme.ForeColor = SystemColors.ButtonHighlight;
-            lblKaloriBilgilendirme.Location = new Point(673, 147);
+            lblKaloriBilgilendirme.Location = new Point(794, 279);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
-            lblKaloriBilgilendirme.Size = new Size(125, 25);
+            lblKaloriBilgilendirme.Size = new Size(103, 20);
             lblKaloriBilgilendirme.TabIndex = 5;
             lblKaloriBilgilendirme.Text = "Toplam Kalori";
             // 
             // btnGoruntule
             // 
             btnGoruntule.BackColor = Color.FromArgb(164, 172, 134);
+            btnGoruntule.FlatStyle = FlatStyle.Popup;
             btnGoruntule.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnGoruntule.Location = new Point(115, 154);
             btnGoruntule.Name = "btnGoruntule";
@@ -123,11 +125,24 @@
             // lstvOgunYemekDetayliRapor
             // 
             lstvOgunYemekDetayliRapor.BackColor = Color.FromArgb(202, 210, 197);
-            lstvOgunYemekDetayliRapor.Location = new Point(72, 343);
+            lstvOgunYemekDetayliRapor.Location = new Point(53, 332);
             lstvOgunYemekDetayliRapor.Name = "lstvOgunYemekDetayliRapor";
-            lstvOgunYemekDetayliRapor.Size = new Size(1137, 369);
+            lstvOgunYemekDetayliRapor.Size = new Size(943, 260);
             lstvOgunYemekDetayliRapor.TabIndex = 7;
             lstvOgunYemekDetayliRapor.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.FlatStyle = FlatStyle.Popup;
+            btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(12, 12);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(76, 30);
+            btnGeri.TabIndex = 30;
+            btnGeri.Text = "< GERİ";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
             // 
             // groupBox1
             // 
@@ -136,28 +151,30 @@
             groupBox1.Controls.Add(dtpTarih);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(72, 62);
+            groupBox1.Location = new Point(53, 70);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(454, 238);
-            groupBox1.TabIndex = 8;
+            groupBox1.Size = new Size(463, 239);
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // KullaniciGunlukRaporEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1268, 761);
+            ClientSize = new Size(1027, 609);
             Controls.Add(groupBox1);
+            Controls.Add(btnGeri);
             Controls.Add(lstvOgunYemekDetayliRapor);
             Controls.Add(lblKaloriBilgilendirme);
             Controls.Add(lblToplamKaloriMiktari);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "KullaniciGunlukRaporEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciGunlukRaporEkrani";
-            WindowState = FormWindowState.Maximized;
             Load += KullaniciGunlukRaporEkrani_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -175,6 +192,8 @@
         private Label lblKaloriBilgilendirme;
         private Button btnGoruntule;
         private ListView lstvOgunYemekDetayliRapor;
+
+        private Button btnGeri;
         private GroupBox groupBox1;
     }
 }
