@@ -20,6 +20,8 @@ namespace KaloriTakipProgrami.UI
 
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
+
+        KullaniciDetay detay = new KullaniciDetay();   //yeni eklenen boy kilo değişimi görebilmek için nesne oluşturucaz 
         public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
         public KullaniciBilgiGuncelleEkrani(Kullanici girisYapanKullanici)
         {
@@ -28,27 +30,25 @@ namespace KaloriTakipProgrami.UI
             GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
             var kullanici = _context.Kullanicilar
-    .Include(k => k.KullaniciDetaylari)
-    .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.
+              .Include(k => k.KullaniciDetaylari)
+              .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.
         }
         private void KullaniciBilgileri()
         {
-            var SifreUzunluğu = GirisYapanKullanici.Sifre.Length;
             txtAd.Text = GirisYapanKullanici.Isim;
             txtSoyad.Text = GirisYapanKullanici.Soyisim;
             txtEposta.Text = GirisYapanKullanici.Email;
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
-            txtSifre.Text = new string('•', SifreUzunluğu);
-            txtSifreTekrar.Text = new string('•', SifreUzunluğu);
+            txtSifre.Text = GirisYapanKullanici.Sifre;
+            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
             lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
-            txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Kilo.ToString();
-            txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.FirstOrDefault().Boy.ToString();
-            lblVki.Text = Vki().ToString();
+            txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
+            txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
+            lblVki.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
             pbFoto.Text = GirisYapanKullanici.FotografYolu; //fotograf yolu string olarak tutulacak
 
         }
-
         private float Vki()
         {
             float.TryParse(txtKilo.Text, out float kilo);  //kg cinsinden
@@ -60,12 +60,40 @@ namespace KaloriTakipProgrami.UI
         {
             KullaniciBilgileri();
         }
-
-
         private void btnBilgilendirme_MouseEnter(object sender, EventArgs e)
         {
             // butonun üstüne geldiğinde orada vki ile ilgili bilgilendirme mesajı çıkacak
-            MessageBox.Show("18.5 kg/m2 'nin altında ise\t\tZayıf\r\n18.5 - 24.9 kg/m2 'nin arasında ise\tNormal Kilolu\r\n25 - 29.9 kg/m2 'nin arasında ise\tHafif şişman (fazla kilolu)\r\n30 - 34.9 kg/m2 'nin arasında ise\tOrta derecede şişman (I. Derece)\r\n35 - 39.9 kg/m2 'nin arasında ise\tAğır derecede şişman (II. Derece)\r\n40 kg/m2 'nin üzerinde ise\tÇok ağır derecede şişman (III.Derece)");
+            Form customMsgBox = new Form();
+            customMsgBox.Text = "VKİ Bilgilendirme";
+            customMsgBox.BackColor = Color.FromArgb(164, 172, 134); // Arka plan rengini buton renginde yaptım
+            customMsgBox.StartPosition = FormStartPosition.CenterScreen;
+            customMsgBox.FormBorderStyle = FormBorderStyle.FixedDialog;
+            customMsgBox.MaximizeBox = false;
+            customMsgBox.MinimizeBox = false;
+            customMsgBox.Size = new Size(500, 300);
+
+            Label lbl = new Label();
+            lbl.Text = 
+                       "18.5 kg/m²'nin altında ise   =>   ZAYIF\n" +
+                       "18.5 - 24.9 kg/m² arasında   =>   NORMAL KİLOLU\n" +
+                       "25 - 29.9 kg/m² arasında     =>   HAFİF ŞİŞMAN\n" +
+                       "30 - 34.9 kg/m² arasında     =>   ORTA DERECE (I)\n" +
+                       "35 - 39.9 kg/m² arasında     =>   AĞIR DERECE (II)\n" +
+                       "40 kg/m²'nin üstü            =>   ÇOK AĞIR (III)";
+            lbl.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            lbl.AutoSize = true;
+            lbl.Location = new Point(20, 20);
+
+            Button btnOK = new Button();
+            btnOK.Text = "Tamam";
+            btnOK.DialogResult = DialogResult.OK;
+            btnOK.Location = new Point(customMsgBox.Width / 2 - 40, customMsgBox.Height - 70);
+
+            customMsgBox.Controls.Add(lbl);
+            customMsgBox.Controls.Add(btnOK);
+            customMsgBox.AcceptButton = btnOK;
+
+            customMsgBox.ShowDialog();
         }
         private bool ValidateInputs()
         {
@@ -130,53 +158,42 @@ namespace KaloriTakipProgrami.UI
 
             return true;
         }
-
         private void btnBilgileriGuncelle_Click(object sender, EventArgs e)
         {
-            if (!ValidateInputs())
-            {
-                return;
-            }
-            GirisYapanKullanici.Isim = txtAd.Text;
-            GirisYapanKullanici.Soyisim = txtSoyad.Text;
-            GirisYapanKullanici.Email = txtEposta.Text;
-            GirisYapanKullanici.Cinsiyet = cmbCinsiyet.Text;
-            GirisYapanKullanici.DogumTarihi = dtpDogumTarihi.Value;
-            GirisYapanKullanici.Sifre = txtSifre.Text;
-            GirisYapanKullanici.Durum = true;
-            GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Kilo = Convert.ToDecimal(txtKilo.Text);
-            GirisYapanKullanici.KullaniciDetaylari.LastOrDefault().Boy = Convert.ToDecimal(txtBoy.Text);
-
             try
             {
+                if (!ValidateInputs())
+                {
+                    return;
+                }
+                GirisYapanKullanici.Isim = txtAd.Text;
+                GirisYapanKullanici.Soyisim = txtSoyad.Text;
+                GirisYapanKullanici.Email = txtEposta.Text;
+                GirisYapanKullanici.Cinsiyet = cmbCinsiyet.Text;
+                GirisYapanKullanici.DogumTarihi = dtpDogumTarihi.Value;
+                GirisYapanKullanici.Sifre = txtSifre.Text;
+                GirisYapanKullanici.Durum = true;
+
                 _context.Kullanicilar.Update(GirisYapanKullanici);
                 _context.SaveChanges();
+
+                if (txtKilo.Text != GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString() || txtBoy.Text != GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString())
+                {
+                    detay.Kilo = Convert.ToDecimal(txtKilo.Text);
+                    detay.Boy = Convert.ToDecimal(txtBoy.Text);
+                    detay.KullaniciId = GirisYapanKullanici.Id;
+                    _context.KullaniciDetaylari.Add(detay);
+                    _context.SaveChanges();
+                }
+
                 MessageBox.Show("Bilgileriniz güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (DbUpdateConcurrencyException ex)
             {
                 MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            KullaniciBilgileri();
+            KullaniciBilgileri(); 
 
-        }
-
-        private void cbSifre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSifre.Checked)
-            {
-                txtSifre.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
-                txtSifreTekrar.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
-                txtSifre.PasswordChar = '\0';  // Şifreyi görünür yapar
-                txtSifreTekrar.PasswordChar = '\0';  // Şifreyi görünür yapar
-            }
-            else
-            {
-                txtSifre.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
-                txtSifreTekrar.Text = GirisYapanKullanici.Sifre;  // Şifreyi eşitler
-                txtSifre.PasswordChar = '•';  // Şifreyi tekrar gizler
-                txtSifreTekrar.PasswordChar = '•';  // Şifreyi tekrar gizler
-            }
         }
         private void btnHesapDondur_Click(object sender, EventArgs e)
         {
@@ -203,7 +220,7 @@ namespace KaloriTakipProgrami.UI
                     // Kullanıcı 'No' tıkladıysa, işlem iptal edilir
                     MessageBox.Show("İşlem iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-              
+
             }
             catch (DbUpdateConcurrencyException ex)
             {
