@@ -57,7 +57,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(11, 65);
             label2.Name = "label2";
-            label2.Size = new Size(85, 20);
+            label2.Size = new Size(105, 25);
             label2.TabIndex = 1;
             label2.Text = "Kategoriler";
             // 
@@ -68,7 +68,7 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(39, 102);
             label3.Name = "label3";
-            label3.Size = new Size(54, 20);
+            label3.Size = new Size(65, 25);
             label3.TabIndex = 2;
             label3.Text = "Yemek";
             // 
@@ -79,7 +79,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(53, 143);
             label4.Name = "label4";
-            label4.Size = new Size(43, 20);
+            label4.Size = new Size(51, 25);
             label4.TabIndex = 3;
             label4.Text = "Tarih";
             // 
@@ -90,7 +90,7 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(42, 183);
             label5.Name = "label5";
-            label5.Size = new Size(54, 20);
+            label5.Size = new Size(66, 25);
             label5.TabIndex = 4;
             label5.Text = "Miktar";
             // 
@@ -100,7 +100,7 @@
             cmbYemekler.Location = new Point(127, 95);
             cmbYemekler.Margin = new Padding(3, 2, 3, 2);
             cmbYemekler.Name = "cmbYemekler";
-            cmbYemekler.Size = new Size(219, 27);
+            cmbYemekler.Size = new Size(219, 33);
             cmbYemekler.TabIndex = 5;
             cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
@@ -110,7 +110,7 @@
             cmbKategoriler.Location = new Point(127, 58);
             cmbKategoriler.Margin = new Padding(3, 2, 3, 2);
             cmbKategoriler.Name = "cmbKategoriler";
-            cmbKategoriler.Size = new Size(219, 27);
+            cmbKategoriler.Size = new Size(219, 33);
             cmbKategoriler.TabIndex = 6;
             // 
             // cmbOgunler
@@ -119,7 +119,7 @@
             cmbOgunler.Location = new Point(127, 22);
             cmbOgunler.Margin = new Padding(3, 2, 3, 2);
             cmbOgunler.Name = "cmbOgunler";
-            cmbOgunler.Size = new Size(219, 27);
+            cmbOgunler.Size = new Size(219, 33);
             cmbOgunler.TabIndex = 7;
             // 
             // btnSil
@@ -199,7 +199,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(28, 29);
             label1.Name = "label1";
-            label1.Size = new Size(65, 20);
+            label1.Size = new Size(81, 25);
             label1.TabIndex = 1;
             label1.Text = "Öğünler";
             // 
@@ -220,7 +220,7 @@
             dtpTarih.Location = new Point(127, 137);
             dtpTarih.Margin = new Padding(3, 2, 3, 2);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(219, 27);
+            dtpTarih.Size = new Size(219, 31);
             dtpTarih.TabIndex = 16;
             // 
             // nudMiktar
@@ -228,7 +228,7 @@
             nudMiktar.Location = new Point(129, 181);
             nudMiktar.Margin = new Padding(3, 2, 3, 2);
             nudMiktar.Name = "nudMiktar";
-            nudMiktar.Size = new Size(217, 27);
+            nudMiktar.Size = new Size(217, 31);
             nudMiktar.TabIndex = 17;
             // 
             // btnGeri
@@ -257,6 +257,7 @@
             groupBox1.Controls.Add(cmbKategoriler);
             groupBox1.Controls.Add(cmbOgunler);
             groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
             groupBox1.Location = new Point(59, 13);
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
@@ -268,7 +269,7 @@
             // 
             // KullaniciOgunBilgiEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(699, 549);

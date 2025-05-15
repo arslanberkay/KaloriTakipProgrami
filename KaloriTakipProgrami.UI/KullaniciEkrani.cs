@@ -69,7 +69,7 @@ namespace KaloriTakipProgrami.UI
 
         private void btnRapor_Click(object sender, EventArgs e)
         {
-            KullaniciRaporEkrani kullaniciRaporEkrani = new KullaniciRaporEkrani();
+            KullaniciRaporEkrani kullaniciRaporEkrani = new KullaniciRaporEkrani(_girisYapanKullanici);
             kullaniciRaporEkrani.ShowDialog();
         }
 
