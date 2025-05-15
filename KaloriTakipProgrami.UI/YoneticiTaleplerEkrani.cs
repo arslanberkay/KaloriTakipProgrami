@@ -62,14 +62,14 @@ namespace KaloriTakipProgrami.UI
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Reddetmek istediğiniz talebi seçiniz");
+                    MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
                     return;
                 }
             }
             else
             {
 
-                MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
+                MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
                 return;
             }
         }
@@ -94,16 +94,16 @@ namespace KaloriTakipProgrami.UI
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Reddetmek istediğiniz talebi seçiniz");
+                    MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen reddetmek istediğiniz taşebi seçiniz");
+                MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
                 return;
             }
-
+        }
 
     }
 }
