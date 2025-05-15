@@ -49,7 +49,7 @@
             label1.Location = new Point(16, 50);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(37, 20);
+            label1.Size = new Size(47, 25);
             label1.TabIndex = 0;
             label1.Text = "Gün";
             // 
@@ -61,7 +61,7 @@
             label2.Location = new Point(16, 102);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(65, 20);
+            label2.Size = new Size(81, 25);
             label2.TabIndex = 0;
             label2.Text = "Öğünler";
             // 
@@ -71,7 +71,7 @@
             dtpTarih.Location = new Point(115, 43);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(312, 27);
+            dtpTarih.Size = new Size(312, 31);
             dtpTarih.TabIndex = 1;
             // 
             // cmbOgunler
@@ -82,7 +82,7 @@
             cmbOgunler.Location = new Point(115, 99);
             cmbOgunler.Margin = new Padding(4);
             cmbOgunler.Name = "cmbOgunler";
-            cmbOgunler.Size = new Size(312, 27);
+            cmbOgunler.Size = new Size(312, 33);
             cmbOgunler.TabIndex = 2;
             // 
             // lblToplamKaloriMiktari
@@ -90,10 +90,10 @@
             lblToplamKaloriMiktari.AutoSize = true;
             lblToplamKaloriMiktari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblToplamKaloriMiktari.ForeColor = SystemColors.ButtonHighlight;
-            lblToplamKaloriMiktari.Location = new Point(946, 279);
+            lblToplamKaloriMiktari.Location = new Point(934, 284);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
-            lblToplamKaloriMiktari.Size = new Size(50, 20);
+            lblToplamKaloriMiktari.Size = new Size(62, 25);
             lblToplamKaloriMiktari.TabIndex = 4;
             lblToplamKaloriMiktari.Text = "label3";
             // 
@@ -102,10 +102,10 @@
             lblKaloriBilgilendirme.AutoSize = true;
             lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKaloriBilgilendirme.ForeColor = SystemColors.ButtonHighlight;
-            lblKaloriBilgilendirme.Location = new Point(794, 279);
+            lblKaloriBilgilendirme.Location = new Point(782, 284);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
-            lblKaloriBilgilendirme.Size = new Size(103, 20);
+            lblKaloriBilgilendirme.Size = new Size(125, 25);
             lblKaloriBilgilendirme.TabIndex = 5;
             lblKaloriBilgilendirme.Text = "Toplam Kalori";
             // 
@@ -160,7 +160,7 @@
             // 
             // KullaniciGunlukRaporEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1027, 609);
