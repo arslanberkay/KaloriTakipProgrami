@@ -45,34 +45,7 @@ namespace KaloriTakipProgrami.UI
             secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
 
-        private void btnOnayla_Click(object sender, EventArgs e)
-        {
-            if (dgvTalepler.CurrentRow != null)
-            {
-                int id = (int)(dgvTalepler.CurrentRow.Cells["Id"].Value);
-                var talep = _db.Talepler.Find(id);
-
-                if (talep != null)
-                {
-                    talep.Durum = "Onaylandı";
-
-                    _db.SaveChanges();
-                    Listele();
-                    MessageBox.Show("Talebi Onayladınız");
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
-                    return;
-                }
-            }
-            else
-            {
-
-                MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
-                return;
-            }
-        }
+       
 
         private void btnReddedildi_Click(object sender, EventArgs e)
 
@@ -105,6 +78,35 @@ namespace KaloriTakipProgrami.UI
             }
         }
 
+        private void btnOnayla_Click_1(object sender, EventArgs e)
+        {
+            if (dgvTalepler.CurrentRow != null)
+            {
+                int id = (int)(dgvTalepler.CurrentRow.Cells["Id"].Value);
+                var talep = _db.Talepler.Find(id);
+
+                if (talep != null)
+                {
+                    talep.Durum = "Onaylandı";
+
+                    _db.SaveChanges();
+                    Listele();
+                    MessageBox.Show("Talebi Onayladınız");
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen reddetmek istediğiniz talebi seçiniz");
+                    return;
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("Lütfen onaylamak istediğiniz talebi seçiniz");
+                return;
+            }
+
+        }
     }
 }
 
