@@ -251,7 +251,7 @@
             lblKullaniciAdi.AutoSize = true;
             lblKullaniciAdi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKullaniciAdi.ForeColor = SystemColors.ButtonHighlight;
-            lblKullaniciAdi.Location = new Point(215, 27);
+            lblKullaniciAdi.Location = new Point(188, 27);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
             lblKullaniciAdi.Size = new Size(54, 20);
             lblKullaniciAdi.TabIndex = 16;
@@ -262,7 +262,7 @@
             lblAd.AutoSize = true;
             lblAd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblAd.ForeColor = SystemColors.ButtonHighlight;
-            lblAd.Location = new Point(211, 70);
+            lblAd.Location = new Point(184, 70);
             lblAd.Name = "lblAd";
             lblAd.Size = new Size(56, 20);
             lblAd.TabIndex = 17;
@@ -273,7 +273,7 @@
             lblSoyad.AutoSize = true;
             lblSoyad.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblSoyad.ForeColor = SystemColors.ButtonHighlight;
-            lblSoyad.Location = new Point(211, 117);
+            lblSoyad.Location = new Point(184, 117);
             lblSoyad.Name = "lblSoyad";
             lblSoyad.Size = new Size(56, 20);
             lblSoyad.TabIndex = 18;
@@ -284,7 +284,7 @@
             lblCinsiyet.AutoSize = true;
             lblCinsiyet.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblCinsiyet.ForeColor = SystemColors.ButtonHighlight;
-            lblCinsiyet.Location = new Point(211, 164);
+            lblCinsiyet.Location = new Point(184, 164);
             lblCinsiyet.Name = "lblCinsiyet";
             lblCinsiyet.Size = new Size(57, 20);
             lblCinsiyet.TabIndex = 19;
@@ -295,7 +295,7 @@
             lblDogumTarihi.AutoSize = true;
             lblDogumTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblDogumTarihi.ForeColor = SystemColors.ButtonHighlight;
-            lblDogumTarihi.Location = new Point(211, 211);
+            lblDogumTarihi.Location = new Point(184, 211);
             lblDogumTarihi.Name = "lblDogumTarihi";
             lblDogumTarihi.Size = new Size(56, 20);
             lblDogumTarihi.TabIndex = 20;
@@ -306,7 +306,7 @@
             lblEposta.AutoSize = true;
             lblEposta.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblEposta.ForeColor = SystemColors.ButtonHighlight;
-            lblEposta.Location = new Point(211, 258);
+            lblEposta.Location = new Point(184, 258);
             lblEposta.Name = "lblEposta";
             lblEposta.Size = new Size(56, 20);
             lblEposta.TabIndex = 21;
@@ -317,7 +317,7 @@
             lblKilo.AutoSize = true;
             lblKilo.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKilo.ForeColor = SystemColors.ButtonHighlight;
-            lblKilo.Location = new Point(211, 305);
+            lblKilo.Location = new Point(184, 305);
             lblKilo.Name = "lblKilo";
             lblKilo.Size = new Size(56, 20);
             lblKilo.TabIndex = 22;
@@ -328,7 +328,7 @@
             lblBoy.AutoSize = true;
             lblBoy.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblBoy.ForeColor = SystemColors.ButtonHighlight;
-            lblBoy.Location = new Point(211, 352);
+            lblBoy.Location = new Point(184, 352);
             lblBoy.Name = "lblBoy";
             lblBoy.Size = new Size(56, 20);
             lblBoy.TabIndex = 23;
@@ -339,7 +339,7 @@
             lblVKİ.AutoSize = true;
             lblVKİ.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblVKİ.ForeColor = SystemColors.ButtonHighlight;
-            lblVKİ.Location = new Point(211, 399);
+            lblVKİ.Location = new Point(184, 399);
             lblVKİ.Name = "lblVKİ";
             lblVKİ.Size = new Size(56, 20);
             lblVKİ.TabIndex = 24;
@@ -367,7 +367,7 @@
             groupBox1.Controls.Add(lblAd);
             groupBox1.Location = new Point(331, 203);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(351, 454);
+            groupBox1.Size = new Size(367, 454);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             // 
@@ -386,6 +386,7 @@
             // btnCikis
             // 
             btnCikis.BackColor = Color.FromArgb(164, 172, 134);
+            btnCikis.FlatStyle = FlatStyle.Popup;
             btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCikis.Location = new Point(12, 17);
             btnCikis.Name = "btnCikis";

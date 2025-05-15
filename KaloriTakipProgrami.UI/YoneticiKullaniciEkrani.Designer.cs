@@ -37,24 +37,23 @@
             // 
             dgvKullanicilar.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKullanicilar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKullanicilar.Location = new Point(40, 47);
+            dgvKullanicilar.Location = new Point(44, 68);
             dgvKullanicilar.Margin = new Padding(3, 2, 3, 2);
             dgvKullanicilar.Name = "dgvKullanicilar";
             dgvKullanicilar.RowHeadersWidth = 51;
-
             dgvKullanicilar.Size = new Size(600, 248);
-
             dgvKullanicilar.TabIndex = 0;
             // 
             // btnGeri
             // 
             btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnGeri.Location = new Point(12, 12);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(75, 23);
+            btnGeri.Size = new Size(75, 32);
             btnGeri.TabIndex = 30;
-            btnGeri.Text = "<<< GERİ";
+            btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
@@ -63,16 +62,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(706, 367);
             Controls.Add(btnGeri);
-
             Controls.Add(dgvKullanicilar);
-
-            MaximizeBox = false;
-
             Margin = new Padding(3, 2, 3, 2);
-
+            MaximizeBox = false;
             Name = "YoneticiKullaniciEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiKullaniciEkrani";
