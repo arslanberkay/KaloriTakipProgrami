@@ -38,7 +38,9 @@
             // dgvTalepler
             // 
             dgvTalepler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             dgvTalepler.Location = new Point(93, 73);
+
             dgvTalepler.Name = "dgvTalepler";
             dgvTalepler.RowHeadersWidth = 51;
             dgvTalepler.Size = new Size(685, 226);
@@ -46,6 +48,7 @@
             // 
             // btnOnayla
             // 
+
             btnOnayla.BackColor = Color.FromArgb(164, 172, 134);
             btnOnayla.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnOnayla.Location = new Point(147, 326);
@@ -55,11 +58,13 @@
             btnOnayla.Text = "Onayla";
             btnOnayla.UseVisualStyleBackColor = false;
             btnOnayla.Click += btnOnayla_Click_1;
+
             // 
             // btnReddedildi
             // 
             btnReddedildi.BackColor = Color.FromArgb(164, 172, 134);
             btnReddedildi.FlatStyle = FlatStyle.Popup;
+
             btnReddedildi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnReddedildi.Location = new Point(555, 326);
             btnReddedildi.Name = "btnReddedildi";
@@ -81,14 +86,17 @@
             btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
+
             // 
             // YoneticiTaleplerEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
+
             ClientSize = new Size(806, 402);
             Controls.Add(btnGeri);
+
             Controls.Add(btnReddedildi);
             Controls.Add(btnOnayla);
             Controls.Add(dgvTalepler);
