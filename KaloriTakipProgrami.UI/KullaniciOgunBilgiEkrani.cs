@@ -43,12 +43,12 @@ namespace KaloriTakipProgrami.UI
             lsvOgunBilgileri.View = View.Details;
             lsvOgunBilgileri.GridLines = true;
             lsvOgunBilgileri.FullRowSelect = true;
-            lsvOgunBilgileri.Columns.Add("ID", 50, HorizontalAlignment.Center);
-            lsvOgunBilgileri.Columns.Add("Öğün", 100, HorizontalAlignment.Center);
-            lsvOgunBilgileri.Columns.Add("Kategori", 100, HorizontalAlignment.Center);
-            lsvOgunBilgileri.Columns.Add("Yemek", 100, HorizontalAlignment.Center);
-            lsvOgunBilgileri.Columns.Add("Tarih", 100, HorizontalAlignment.Center);
-            lsvOgunBilgileri.Columns.Add("Miktar", 100, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("ID", 60, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("Öğün", 220, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("Kategori", 220, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("Yemek", 220, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("Tarih", 220, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("Miktar", 220, HorizontalAlignment.Center);
         }
         public void Listele()
         {
@@ -324,6 +324,11 @@ namespace KaloriTakipProgrami.UI
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
+        private void cmbKategoriler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filtrele();
         }
     }
 }
