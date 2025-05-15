@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciRaporEkrani));
             label1 = new Label();
             label2 = new Label();
             dtpBaslangicTarihi = new DateTimePicker();
@@ -43,7 +44,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(1245, 72);
+            label1.Location = new Point(670, 98);
             label1.Name = "label1";
             label1.Size = new Size(97, 25);
             label1.TabIndex = 0;
@@ -54,7 +55,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(179, 72);
+            label2.Location = new Point(266, 98);
             label2.Name = "label2";
             label2.Size = new Size(138, 25);
             label2.TabIndex = 1;
@@ -63,18 +64,18 @@
             // dtpBaslangicTarihi
             // 
             dtpBaslangicTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dtpBaslangicTarihi.Location = new Point(179, 120);
+            dtpBaslangicTarihi.Location = new Point(266, 146);
             dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
-            dtpBaslangicTarihi.Size = new Size(475, 31);
+            dtpBaslangicTarihi.Size = new Size(359, 31);
             dtpBaslangicTarihi.TabIndex = 2;
             dtpBaslangicTarihi.ValueChanged += dtpBaslangicTarihi_ValueChanged;
             // 
             // dtpBitisTarihi
             // 
             dtpBitisTarihi.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dtpBitisTarihi.Location = new Point(1245, 120);
+            dtpBitisTarihi.Location = new Point(670, 146);
             dtpBitisTarihi.Name = "dtpBitisTarihi";
-            dtpBitisTarihi.Size = new Size(405, 31);
+            dtpBitisTarihi.Size = new Size(359, 31);
             dtpBitisTarihi.TabIndex = 3;
             dtpBitisTarihi.ValueChanged += dtpBitisTarihi_ValueChanged;
             // 
@@ -83,9 +84,9 @@
             btnEnCokYenilen.BackColor = Color.FromArgb(164, 172, 134);
             btnEnCokYenilen.FlatStyle = FlatStyle.Popup;
             btnEnCokYenilen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnEnCokYenilen.Location = new Point(412, 195);
+            btnEnCokYenilen.Location = new Point(670, 206);
             btnEnCokYenilen.Name = "btnEnCokYenilen";
-            btnEnCokYenilen.Size = new Size(242, 63);
+            btnEnCokYenilen.Size = new Size(242, 47);
             btnEnCokYenilen.TabIndex = 4;
             btnEnCokYenilen.Text = "En Çok Yenilen Yemekler";
             btnEnCokYenilen.UseVisualStyleBackColor = false;
@@ -96,9 +97,9 @@
             btnAzYenilenler.BackColor = Color.FromArgb(164, 172, 134);
             btnAzYenilenler.FlatStyle = FlatStyle.Popup;
             btnAzYenilenler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnAzYenilenler.Location = new Point(179, 195);
+            btnAzYenilenler.Location = new Point(266, 206);
             btnAzYenilenler.Name = "btnAzYenilenler";
-            btnAzYenilenler.Size = new Size(227, 63);
+            btnAzYenilenler.Size = new Size(227, 47);
             btnAzYenilenler.TabIndex = 5;
             btnAzYenilenler.Text = "En az Yenilen Yemekler";
             btnAzYenilenler.UseVisualStyleBackColor = false;
@@ -106,15 +107,16 @@
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(14, 16);
+            btnGeri.Location = new Point(3, 2);
             btnGeri.Margin = new Padding(3, 4, 3, 4);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(87, 39);
+            btnGeri.Size = new Size(57, 41);
             btnGeri.TabIndex = 30;
-            btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
@@ -122,9 +124,9 @@
             // 
             lstOgunYemekRaporu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lstOgunYemekRaporu.BackColor = Color.FromArgb(202, 210, 197);
-            lstOgunYemekRaporu.Location = new Point(179, 310);
+            lstOgunYemekRaporu.Location = new Point(35, 306);
             lstOgunYemekRaporu.Name = "lstOgunYemekRaporu";
-            lstOgunYemekRaporu.Size = new Size(1484, 417);
+            lstOgunYemekRaporu.Size = new Size(1208, 396);
             lstOgunYemekRaporu.TabIndex = 31;
             lstOgunYemekRaporu.UseCompatibleStateImageBehavior = false;
             // 
@@ -133,7 +135,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1785, 774);
+            ClientSize = new Size(1282, 753);
             Controls.Add(lstOgunYemekRaporu);
             Controls.Add(btnGeri);
             Controls.Add(btnAzYenilenler);

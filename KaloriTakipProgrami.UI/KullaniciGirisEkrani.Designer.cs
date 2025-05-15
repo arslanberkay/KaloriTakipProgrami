@@ -50,7 +50,7 @@
             groupBox1.Controls.Add(txtKullaniciAdi);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(91, 89);
+            groupBox1.Location = new Point(403, 137);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(428, 438);
             groupBox1.TabIndex = 0;
@@ -64,7 +64,7 @@
             chkSifreGoster.Location = new Point(100, 194);
             chkSifreGoster.Name = "chkSifreGoster";
             chkSifreGoster.Size = new Size(147, 29);
-            chkSifreGoster.TabIndex = 5;
+            chkSifreGoster.TabIndex = 3;
             chkSifreGoster.Text = "Şifreyi Göster";
             chkSifreGoster.UseVisualStyleBackColor = true;
             chkSifreGoster.CheckedChanged += chkSifreGoster_CheckedChanged;
@@ -79,7 +79,7 @@
             lnkKayitOl.Location = new Point(301, 369);
             lnkKayitOl.Name = "lnkKayitOl";
             lnkKayitOl.Size = new Size(77, 25);
-            lnkKayitOl.TabIndex = 4;
+            lnkKayitOl.TabIndex = 6;
             lnkKayitOl.TabStop = true;
             lnkKayitOl.Text = "Kayıt Ol";
             lnkKayitOl.LinkClicked += lnkKayitOl_LinkClicked;
@@ -94,7 +94,7 @@
             lnkSifremiUnuttum.Location = new Point(37, 369);
             lnkSifremiUnuttum.Name = "lnkSifremiUnuttum";
             lnkSifremiUnuttum.Size = new Size(152, 25);
-            lnkSifremiUnuttum.TabIndex = 3;
+            lnkSifremiUnuttum.TabIndex = 5;
             lnkSifremiUnuttum.TabStop = true;
             lnkSifremiUnuttum.Text = "Şifremi Unuttum";
             lnkSifremiUnuttum.LinkClicked += lnkSifremiUnuttum_LinkClicked;
@@ -108,7 +108,7 @@
             btnGirisYap.Location = new Point(100, 254);
             btnGirisYap.Name = "btnGirisYap";
             btnGirisYap.Size = new Size(217, 45);
-            btnGirisYap.TabIndex = 2;
+            btnGirisYap.TabIndex = 4;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.UseVisualStyleBackColor = false;
             btnGirisYap.Click += btnGirisYap_Click;
@@ -119,7 +119,7 @@
             txtSifre.Name = "txtSifre";
             txtSifre.PasswordChar = '*';
             txtSifre.Size = new Size(217, 32);
-            txtSifre.TabIndex = 1;
+            txtSifre.TabIndex = 2;
             // 
             // txtKullaniciAdi
             // 
@@ -158,7 +158,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(648, 627);
+            ClientSize = new Size(1282, 753);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);
             Margin = new Padding(4);

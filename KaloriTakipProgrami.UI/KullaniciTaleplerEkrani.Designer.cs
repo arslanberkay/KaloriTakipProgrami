@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciTaleplerEkrani));
             label1 = new Label();
             txtKonu = new TextBox();
             txtMesaj = new TextBox();
@@ -41,29 +42,27 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(38, 109);
+            label1.Location = new Point(137, 244);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(61, 25);
             label1.TabIndex = 0;
             label1.Text = "Mesaj";
             // 
             // txtKonu
             // 
             txtKonu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            txtKonu.Location = new Point(106, 67);
-            txtKonu.Margin = new Padding(3, 2, 3, 2);
+            txtKonu.Location = new Point(215, 188);
             txtKonu.Name = "txtKonu";
-            txtKonu.Size = new Size(287, 27);
+            txtKonu.Size = new Size(877, 31);
             txtKonu.TabIndex = 1;
             // 
             // txtMesaj
             // 
             txtMesaj.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            txtMesaj.Location = new Point(106, 109);
-            txtMesaj.Margin = new Padding(3, 2, 3, 2);
+            txtMesaj.Location = new Point(215, 244);
             txtMesaj.Multiline = true;
             txtMesaj.Name = "txtMesaj";
-            txtMesaj.Size = new Size(287, 220);
+            txtMesaj.Size = new Size(877, 293);
             txtMesaj.TabIndex = 2;
             // 
             // label2
@@ -71,9 +70,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(38, 66);
+            label2.Location = new Point(137, 187);
             label2.Name = "label2";
-            label2.Size = new Size(45, 20);
+            label2.Size = new Size(56, 25);
             label2.TabIndex = 0;
             label2.Text = "Konu";
             // 
@@ -82,10 +81,9 @@
             btnGönder.BackColor = Color.FromArgb(164, 172, 134);
             btnGönder.FlatStyle = FlatStyle.Popup;
             btnGönder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGönder.Location = new Point(317, 348);
-            btnGönder.Margin = new Padding(3, 2, 3, 2);
+            btnGönder.Location = new Point(984, 554);
             btnGönder.Name = "btnGönder";
-            btnGönder.Size = new Size(76, 39);
+            btnGönder.Size = new Size(108, 39);
             btnGönder.TabIndex = 3;
             btnGönder.Text = "Gönder";
             btnGönder.UseVisualStyleBackColor = false;
@@ -93,30 +91,31 @@
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(12, 12);
+            btnGeri.Location = new Point(2, 3);
+            btnGeri.Margin = new Padding(3, 4, 3, 4);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(75, 23);
+            btnGeri.Size = new Size(57, 41);
             btnGeri.TabIndex = 30;
-            btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
             // KullaniciTaleplerEkrani
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(443, 403);
+            ClientSize = new Size(1282, 753);
             Controls.Add(btnGeri);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
             Controls.Add(txtKonu);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "KullaniciTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;

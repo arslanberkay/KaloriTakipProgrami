@@ -68,7 +68,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(44, 27);
             label2.Name = "label2";
-            label2.Size = new Size(94, 20);
+            label2.Size = new Size(115, 25);
             label2.TabIndex = 1;
             label2.Text = "Kullanıcı Adı";
             // 
@@ -79,7 +79,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(44, 70);
             label4.Name = "label4";
-            label4.Size = new Size(28, 20);
+            label4.Size = new Size(35, 25);
             label4.TabIndex = 1;
             label4.Text = "Ad";
             // 
@@ -90,7 +90,7 @@
             label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(44, 122);
             label5.Name = "label5";
-            label5.Size = new Size(51, 20);
+            label5.Size = new Size(62, 25);
             label5.TabIndex = 1;
             label5.Text = "Soyad";
             // 
@@ -101,7 +101,7 @@
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(44, 173);
             label6.Name = "label6";
-            label6.Size = new Size(62, 20);
+            label6.Size = new Size(78, 25);
             label6.TabIndex = 1;
             label6.Text = "Cinsiyet";
             // 
@@ -112,7 +112,7 @@
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(44, 216);
             label7.Name = "label7";
-            label7.Size = new Size(102, 20);
+            label7.Size = new Size(123, 25);
             label7.TabIndex = 1;
             label7.Text = "Doğum Tarihi";
             // 
@@ -123,7 +123,7 @@
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(44, 259);
             label8.Name = "label8";
-            label8.Size = new Size(59, 20);
+            label8.Size = new Size(73, 25);
             label8.TabIndex = 1;
             label8.Text = "E-Posta";
             // 
@@ -134,7 +134,7 @@
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(44, 305);
             label9.Name = "label9";
-            label9.Size = new Size(35, 20);
+            label9.Size = new Size(44, 25);
             label9.TabIndex = 1;
             label9.Text = "Kilo";
             // 
@@ -145,7 +145,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(44, 352);
             label1.Name = "label1";
-            label1.Size = new Size(35, 20);
+            label1.Size = new Size(43, 25);
             label1.TabIndex = 1;
             label1.Text = "Boy";
             // 
@@ -156,13 +156,13 @@
             label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(44, 404);
             label10.Name = "label10";
-            label10.Size = new Size(32, 20);
+            label10.Size = new Size(40, 25);
             label10.TabIndex = 1;
             label10.Text = "VKİ";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(389, 12);
+            pictureBox1.Location = new Point(569, 53);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(229, 185);
             pictureBox1.TabIndex = 2;
@@ -173,10 +173,10 @@
             btnBilgiGuncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnBilgiGuncelle.FlatStyle = FlatStyle.Popup;
             btnBilgiGuncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnBilgiGuncelle.Location = new Point(12, 158);
+            btnBilgiGuncelle.Location = new Point(12, 104);
             btnBilgiGuncelle.Name = "btnBilgiGuncelle";
             btnBilgiGuncelle.Size = new Size(225, 50);
-            btnBilgiGuncelle.TabIndex = 13;
+            btnBilgiGuncelle.TabIndex = 2;
             btnBilgiGuncelle.Text = "Bilgilerimi Güncelle";
             btnBilgiGuncelle.UseVisualStyleBackColor = false;
             btnBilgiGuncelle.Click += btnBilgiGuncelle_Click;
@@ -186,10 +186,10 @@
             bnOgunBilgileriGoster.BackColor = Color.FromArgb(164, 172, 134);
             bnOgunBilgileriGoster.FlatStyle = FlatStyle.Popup;
             bnOgunBilgileriGoster.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            bnOgunBilgileriGoster.Location = new Point(12, 504);
+            bnOgunBilgileriGoster.Location = new Point(12, 450);
             bnOgunBilgileriGoster.Name = "bnOgunBilgileriGoster";
             bnOgunBilgileriGoster.Size = new Size(225, 50);
-            bnOgunBilgileriGoster.TabIndex = 13;
+            bnOgunBilgileriGoster.TabIndex = 7;
             bnOgunBilgileriGoster.Text = "Öğün Bilgilerimi Göster";
             bnOgunBilgileriGoster.UseVisualStyleBackColor = false;
             bnOgunBilgileriGoster.Click += bnOgunBilgileriGoster_Click;
@@ -199,10 +199,10 @@
             btnGunlukRapor.BackColor = Color.FromArgb(164, 172, 134);
             btnGunlukRapor.FlatStyle = FlatStyle.Popup;
             btnGunlukRapor.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGunlukRapor.Location = new Point(12, 436);
+            btnGunlukRapor.Location = new Point(12, 382);
             btnGunlukRapor.Name = "btnGunlukRapor";
             btnGunlukRapor.Size = new Size(225, 50);
-            btnGunlukRapor.TabIndex = 14;
+            btnGunlukRapor.TabIndex = 6;
             btnGunlukRapor.Text = "Günlük Rapor";
             btnGunlukRapor.UseVisualStyleBackColor = false;
             btnGunlukRapor.Click += btnGunlukRapor_Click;
@@ -212,10 +212,10 @@
             btnGrafikler.BackColor = Color.FromArgb(164, 172, 134);
             btnGrafikler.FlatStyle = FlatStyle.Popup;
             btnGrafikler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGrafikler.Location = new Point(12, 294);
+            btnGrafikler.Location = new Point(12, 240);
             btnGrafikler.Name = "btnGrafikler";
             btnGrafikler.Size = new Size(225, 50);
-            btnGrafikler.TabIndex = 15;
+            btnGrafikler.TabIndex = 4;
             btnGrafikler.Text = "Grafik";
             btnGrafikler.UseVisualStyleBackColor = false;
             btnGrafikler.Click += btnGrafikler_Click;
@@ -225,10 +225,10 @@
             btnRapor.BackColor = Color.FromArgb(164, 172, 134);
             btnRapor.FlatStyle = FlatStyle.Popup;
             btnRapor.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnRapor.Location = new Point(12, 367);
+            btnRapor.Location = new Point(12, 313);
             btnRapor.Name = "btnRapor";
             btnRapor.Size = new Size(225, 50);
-            btnRapor.TabIndex = 15;
+            btnRapor.TabIndex = 5;
             btnRapor.Text = "Rapor";
             btnRapor.UseVisualStyleBackColor = false;
             btnRapor.Click += btnRapor_Click;
@@ -238,10 +238,10 @@
             btnTalepler.BackColor = Color.FromArgb(164, 172, 134);
             btnTalepler.FlatStyle = FlatStyle.Popup;
             btnTalepler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnTalepler.Location = new Point(12, 224);
+            btnTalepler.Location = new Point(12, 170);
             btnTalepler.Name = "btnTalepler";
             btnTalepler.Size = new Size(225, 50);
-            btnTalepler.TabIndex = 15;
+            btnTalepler.TabIndex = 3;
             btnTalepler.Text = "Talepler";
             btnTalepler.UseVisualStyleBackColor = false;
             btnTalepler.Click += btnTalepler_Click;
@@ -253,7 +253,7 @@
             lblKullaniciAdi.ForeColor = SystemColors.ButtonHighlight;
             lblKullaniciAdi.Location = new Point(188, 27);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
-            lblKullaniciAdi.Size = new Size(54, 20);
+            lblKullaniciAdi.Size = new Size(66, 25);
             lblKullaniciAdi.TabIndex = 16;
             lblKullaniciAdi.Text = "label11";
             // 
@@ -264,7 +264,7 @@
             lblAd.ForeColor = SystemColors.ButtonHighlight;
             lblAd.Location = new Point(184, 70);
             lblAd.Name = "lblAd";
-            lblAd.Size = new Size(56, 20);
+            lblAd.Size = new Size(69, 25);
             lblAd.TabIndex = 17;
             lblAd.Text = "label12";
             // 
@@ -275,7 +275,7 @@
             lblSoyad.ForeColor = SystemColors.ButtonHighlight;
             lblSoyad.Location = new Point(184, 117);
             lblSoyad.Name = "lblSoyad";
-            lblSoyad.Size = new Size(56, 20);
+            lblSoyad.Size = new Size(69, 25);
             lblSoyad.TabIndex = 18;
             lblSoyad.Text = "label13";
             // 
@@ -286,7 +286,7 @@
             lblCinsiyet.ForeColor = SystemColors.ButtonHighlight;
             lblCinsiyet.Location = new Point(184, 164);
             lblCinsiyet.Name = "lblCinsiyet";
-            lblCinsiyet.Size = new Size(57, 20);
+            lblCinsiyet.Size = new Size(69, 25);
             lblCinsiyet.TabIndex = 19;
             lblCinsiyet.Text = "label14";
             // 
@@ -297,7 +297,7 @@
             lblDogumTarihi.ForeColor = SystemColors.ButtonHighlight;
             lblDogumTarihi.Location = new Point(184, 211);
             lblDogumTarihi.Name = "lblDogumTarihi";
-            lblDogumTarihi.Size = new Size(56, 20);
+            lblDogumTarihi.Size = new Size(69, 25);
             lblDogumTarihi.TabIndex = 20;
             lblDogumTarihi.Text = "label15";
             // 
@@ -308,7 +308,7 @@
             lblEposta.ForeColor = SystemColors.ButtonHighlight;
             lblEposta.Location = new Point(184, 258);
             lblEposta.Name = "lblEposta";
-            lblEposta.Size = new Size(56, 20);
+            lblEposta.Size = new Size(69, 25);
             lblEposta.TabIndex = 21;
             lblEposta.Text = "label16";
             // 
@@ -319,7 +319,7 @@
             lblKilo.ForeColor = SystemColors.ButtonHighlight;
             lblKilo.Location = new Point(184, 305);
             lblKilo.Name = "lblKilo";
-            lblKilo.Size = new Size(56, 20);
+            lblKilo.Size = new Size(69, 25);
             lblKilo.TabIndex = 22;
             lblKilo.Text = "label17";
             // 
@@ -330,7 +330,7 @@
             lblBoy.ForeColor = SystemColors.ButtonHighlight;
             lblBoy.Location = new Point(184, 352);
             lblBoy.Name = "lblBoy";
-            lblBoy.Size = new Size(56, 20);
+            lblBoy.Size = new Size(69, 25);
             lblBoy.TabIndex = 23;
             lblBoy.Text = "label18";
             // 
@@ -341,7 +341,7 @@
             lblVKİ.ForeColor = SystemColors.ButtonHighlight;
             lblVKİ.Location = new Point(184, 399);
             lblVKİ.Name = "lblVKİ";
-            lblVKİ.Size = new Size(56, 20);
+            lblVKİ.Size = new Size(69, 25);
             lblVKİ.TabIndex = 24;
             lblVKİ.Text = "label19";
             // 
@@ -365,7 +365,7 @@
             groupBox1.Controls.Add(lblKullaniciAdi);
             groupBox1.Controls.Add(lblSoyad);
             groupBox1.Controls.Add(lblAd);
-            groupBox1.Location = new Point(331, 203);
+            groupBox1.Location = new Point(506, 264);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(367, 454);
             groupBox1.TabIndex = 25;
@@ -376,32 +376,33 @@
             btnMenu.BackgroundImage = (Image)resources.GetObject("btnMenu.BackgroundImage");
             btnMenu.BackgroundImageLayout = ImageLayout.Stretch;
             btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.Location = new Point(12, 51);
+            btnMenu.Location = new Point(12, 12);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(72, 64);
-            btnMenu.TabIndex = 0;
+            btnMenu.TabIndex = 1;
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
             // btnCikis
             // 
-            btnCikis.BackColor = Color.FromArgb(164, 172, 134);
-            btnCikis.FlatStyle = FlatStyle.Popup;
+            btnCikis.BackColor = Color.FromArgb(47, 62, 70);
+            btnCikis.BackgroundImage = (Image)resources.GetObject("btnCikis.BackgroundImage");
+            btnCikis.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCikis.FlatStyle = FlatStyle.Flat;
             btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnCikis.Location = new Point(12, 17);
+            btnCikis.Location = new Point(1209, 12);
             btnCikis.Name = "btnCikis";
-            btnCikis.Size = new Size(75, 23);
-            btnCikis.TabIndex = 31;
-            btnCikis.Text = "Çıkış Yap";
+            btnCikis.Size = new Size(61, 50);
+            btnCikis.TabIndex = 8;
             btnCikis.UseVisualStyleBackColor = false;
             btnCikis.Click += btnCikis_Click;
             // 
             // KullaniciEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(728, 697);
+            ClientSize = new Size(1282, 753);
             Controls.Add(btnMenu);
             Controls.Add(groupBox1);
             Controls.Add(btnRapor);

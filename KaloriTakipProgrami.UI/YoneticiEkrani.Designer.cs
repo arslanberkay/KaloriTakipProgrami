@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YoneticiEkrani));
             groupBox1 = new GroupBox();
             btnKullaniciGunlukRaporu = new Button();
+            btnTalepler = new Button();
             btnOgunlerKategorilerYemekler = new Button();
             btnKullanicilar = new Button();
-            btnTalepler = new Button();
             btnCikis = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -44,7 +45,7 @@
             groupBox1.Controls.Add(btnOgunlerKategorilerYemekler);
             groupBox1.Controls.Add(btnKullanicilar);
             groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            groupBox1.Location = new Point(53, 77);
+            groupBox1.Location = new Point(405, 140);
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
@@ -63,6 +64,19 @@
             btnKullaniciGunlukRaporu.Text = "Kullanıcı Günlük Raporu";
             btnKullaniciGunlukRaporu.UseVisualStyleBackColor = false;
             btnKullaniciGunlukRaporu.Click += btnKullaniciGunlukRaporu_Click;
+            // 
+            // btnTalepler
+            // 
+            btnTalepler.BackColor = Color.FromArgb(164, 172, 134);
+            btnTalepler.FlatStyle = FlatStyle.Popup;
+            btnTalepler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnTalepler.Location = new Point(90, 365);
+            btnTalepler.Name = "btnTalepler";
+            btnTalepler.Size = new Size(242, 59);
+            btnTalepler.TabIndex = 1;
+            btnTalepler.Text = "Talepler";
+            btnTalepler.UseVisualStyleBackColor = false;
+            btnTalepler.Click += btnTalepler_Click;
             // 
             // btnOgunlerKategorilerYemekler
             // 
@@ -88,38 +102,26 @@
             btnKullanicilar.UseVisualStyleBackColor = false;
             btnKullanicilar.Click += btnKullanicilar_Click;
             // 
-            // btnTalepler
-            // 
-            btnTalepler.BackColor = Color.FromArgb(164, 172, 134);
-            btnTalepler.FlatStyle = FlatStyle.Popup;
-            btnTalepler.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnTalepler.Location = new Point(90, 365);
-            btnTalepler.Name = "btnTalepler";
-            btnTalepler.Size = new Size(242, 59);
-            btnTalepler.TabIndex = 1;
-            btnTalepler.Text = "Talepler";
-            btnTalepler.UseVisualStyleBackColor = false;
-            btnTalepler.Click += btnTalepler_Click;
-            // 
             // btnCikis
             // 
-            btnCikis.BackColor = Color.FromArgb(164, 172, 134);
+            btnCikis.BackColor = Color.FromArgb(47, 62, 70);
+            btnCikis.BackgroundImage = (Image)resources.GetObject("btnCikis.BackgroundImage");
+            btnCikis.BackgroundImageLayout = ImageLayout.Stretch;
             btnCikis.FlatStyle = FlatStyle.Popup;
             btnCikis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnCikis.Location = new Point(12, 12);
+            btnCikis.Location = new Point(1218, 12);
             btnCikis.Name = "btnCikis";
-            btnCikis.Size = new Size(82, 43);
+            btnCikis.Size = new Size(52, 48);
             btnCikis.TabIndex = 32;
-            btnCikis.Text = "Çıkış Yap";
             btnCikis.UseVisualStyleBackColor = false;
             btnCikis.Click += btnCikis_Click;
             // 
             // YoneticiEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(539, 577);
+            ClientSize = new Size(1282, 753);
             Controls.Add(btnCikis);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F);

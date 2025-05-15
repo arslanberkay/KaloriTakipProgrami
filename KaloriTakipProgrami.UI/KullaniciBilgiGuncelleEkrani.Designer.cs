@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciBilgiGuncelleEkrani));
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -141,7 +142,7 @@
             btnHesapDondur.Margin = new Padding(4);
             btnHesapDondur.Name = "btnHesapDondur";
             btnHesapDondur.Size = new Size(268, 41);
-            btnHesapDondur.TabIndex = 7;
+            btnHesapDondur.TabIndex = 12;
             btnHesapDondur.Text = "Hesabımı Dondur";
             btnHesapDondur.UseVisualStyleBackColor = false;
             btnHesapDondur.Click += btnHesapDondur_Click;
@@ -155,7 +156,7 @@
             btnBilgileriGuncelle.Margin = new Padding(4);
             btnBilgileriGuncelle.Name = "btnBilgileriGuncelle";
             btnBilgileriGuncelle.Size = new Size(268, 41);
-            btnBilgileriGuncelle.TabIndex = 8;
+            btnBilgileriGuncelle.TabIndex = 11;
             btnBilgileriGuncelle.Text = "Güncelle";
             btnBilgileriGuncelle.UseVisualStyleBackColor = false;
             btnBilgileriGuncelle.Click += btnBilgileriGuncelle_Click;
@@ -167,7 +168,7 @@
             txtAd.Margin = new Padding(4);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(268, 31);
-            txtAd.TabIndex = 9;
+            txtAd.TabIndex = 3;
             // 
             // txtSoyad
             // 
@@ -176,7 +177,7 @@
             txtSoyad.Margin = new Padding(4);
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Size = new Size(268, 31);
-            txtSoyad.TabIndex = 10;
+            txtSoyad.TabIndex = 4;
             // 
             // txtSifre
             // 
@@ -185,7 +186,7 @@
             txtSifre.Margin = new Padding(4);
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(268, 31);
-            txtSifre.TabIndex = 11;
+            txtSifre.TabIndex = 6;
             // 
             // txtSifreTekrar
             // 
@@ -194,7 +195,7 @@
             txtSifreTekrar.Margin = new Padding(4);
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.Size = new Size(268, 31);
-            txtSifreTekrar.TabIndex = 12;
+            txtSifreTekrar.TabIndex = 7;
             // 
             // txtEposta
             // 
@@ -203,17 +204,18 @@
             txtEposta.Margin = new Padding(4);
             txtEposta.Name = "txtEposta";
             txtEposta.Size = new Size(268, 31);
-            txtEposta.TabIndex = 13;
+            txtEposta.TabIndex = 9;
             // 
             // cmbCinsiyet
             // 
             cmbCinsiyet.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             cmbCinsiyet.FormattingEnabled = true;
+            cmbCinsiyet.ItemHeight = 25;
             cmbCinsiyet.Location = new Point(163, 654);
             cmbCinsiyet.Margin = new Padding(4);
             cmbCinsiyet.Name = "cmbCinsiyet";
             cmbCinsiyet.Size = new Size(268, 33);
-            cmbCinsiyet.TabIndex = 14;
+            cmbCinsiyet.TabIndex = 10;
             cmbCinsiyet.Click += cmbCinsiyet_Click;
             // 
             // pbFoto
@@ -304,19 +306,20 @@
             dtpDogumTarihi.Margin = new Padding(4, 5, 4, 5);
             dtpDogumTarihi.Name = "dtpDogumTarihi";
             dtpDogumTarihi.Size = new Size(268, 31);
-            dtpDogumTarihi.TabIndex = 21;
+            dtpDogumTarihi.TabIndex = 5;
             // 
             // btnBilgilendirme
             // 
-            btnBilgilendirme.BackColor = Color.FromArgb(164, 172, 134);
-            btnBilgilendirme.FlatStyle = FlatStyle.Popup;
+            btnBilgilendirme.BackColor = Color.FromArgb(47, 62, 70);
+            btnBilgilendirme.BackgroundImage = (Image)resources.GetObject("btnBilgilendirme.BackgroundImage");
+            btnBilgilendirme.BackgroundImageLayout = ImageLayout.Stretch;
+            btnBilgilendirme.FlatStyle = FlatStyle.Flat;
             btnBilgilendirme.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnBilgilendirme.Location = new Point(485, 224);
+            btnBilgilendirme.Location = new Point(464, 224);
             btnBilgilendirme.Margin = new Padding(4, 5, 4, 5);
             btnBilgilendirme.Name = "btnBilgilendirme";
-            btnBilgilendirme.Size = new Size(40, 46);
+            btnBilgilendirme.Size = new Size(38, 33);
             btnBilgilendirme.TabIndex = 22;
-            btnBilgilendirme.Text = "i";
             btnBilgilendirme.UseVisualStyleBackColor = false;
             btnBilgilendirme.MouseEnter += btnBilgilendirme_MouseEnter;
             // 
@@ -329,8 +332,8 @@
             cbSifre.Margin = new Padding(4, 5, 4, 5);
             cbSifre.Name = "cbSifre";
             cbSifre.Size = new Size(154, 29);
-            cbSifre.TabIndex = 23;
-            cbSifre.Text = "Sifremi Göster";
+            cbSifre.TabIndex = 8;
+            cbSifre.Text = "Şifremi Göster";
             cbSifre.TextAlign = ContentAlignment.MiddleCenter;
             cbSifre.UseVisualStyleBackColor = true;
             cbSifre.CheckedChanged += cbSifre_CheckedChanged;
@@ -342,7 +345,7 @@
             txtKilo.Margin = new Padding(4, 5, 4, 5);
             txtKilo.Name = "txtKilo";
             txtKilo.Size = new Size(76, 31);
-            txtKilo.TabIndex = 25;
+            txtKilo.TabIndex = 1;
             // 
             // txtBoy
             // 
@@ -351,19 +354,20 @@
             txtBoy.Margin = new Padding(4, 5, 4, 5);
             txtBoy.Name = "txtBoy";
             txtBoy.Size = new Size(76, 31);
-            txtBoy.TabIndex = 26;
+            txtBoy.TabIndex = 2;
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnGeri.Location = new Point(18, 20);
+            btnGeri.Location = new Point(2, 1);
             btnGeri.Margin = new Padding(4, 5, 4, 5);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(110, 39);
-            btnGeri.TabIndex = 27;
-            btnGeri.Text = "< GERİ";
+            btnGeri.Size = new Size(57, 41);
+            btnGeri.TabIndex = 13;
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
@@ -393,7 +397,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(lblVki);
             groupBox1.Controls.Add(lblKullaniciAdi);
-            groupBox1.Location = new Point(135, 67);
+            groupBox1.Location = new Point(346, 30);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(609, 711);
             groupBox1.TabIndex = 28;
@@ -404,7 +408,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(921, 903);
+            ClientSize = new Size(1282, 753);
             Controls.Add(groupBox1);
             Controls.Add(btnGeri);
             Controls.Add(btnHesapDondur);

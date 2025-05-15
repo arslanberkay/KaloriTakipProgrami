@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciGunlukRaporEkrani));
             label1 = new Label();
             label2 = new Label();
             dtpTarih = new DateTimePicker();
@@ -90,7 +91,7 @@
             lblToplamKaloriMiktari.AutoSize = true;
             lblToplamKaloriMiktari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblToplamKaloriMiktari.ForeColor = SystemColors.ButtonHighlight;
-            lblToplamKaloriMiktari.Location = new Point(934, 284);
+            lblToplamKaloriMiktari.Location = new Point(1186, 298);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
             lblToplamKaloriMiktari.Size = new Size(62, 25);
@@ -102,7 +103,7 @@
             lblKaloriBilgilendirme.AutoSize = true;
             lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             lblKaloriBilgilendirme.ForeColor = SystemColors.ButtonHighlight;
-            lblKaloriBilgilendirme.Location = new Point(782, 284);
+            lblKaloriBilgilendirme.Location = new Point(1034, 298);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
             lblKaloriBilgilendirme.Size = new Size(125, 25);
@@ -116,8 +117,8 @@
             btnGoruntule.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnGoruntule.Location = new Point(115, 154);
             btnGoruntule.Name = "btnGoruntule";
-            btnGoruntule.Size = new Size(277, 52);
-            btnGoruntule.TabIndex = 6;
+            btnGoruntule.Size = new Size(312, 52);
+            btnGoruntule.TabIndex = 3;
             btnGoruntule.Text = "Görüntüle";
             btnGoruntule.UseVisualStyleBackColor = false;
             btnGoruntule.Click += btnGoruntule_Click;
@@ -125,22 +126,23 @@
             // lstvOgunYemekDetayliRapor
             // 
             lstvOgunYemekDetayliRapor.BackColor = Color.FromArgb(202, 210, 197);
-            lstvOgunYemekDetayliRapor.Location = new Point(53, 332);
+            lstvOgunYemekDetayliRapor.Location = new Point(35, 344);
             lstvOgunYemekDetayliRapor.Name = "lstvOgunYemekDetayliRapor";
-            lstvOgunYemekDetayliRapor.Size = new Size(943, 260);
+            lstvOgunYemekDetayliRapor.Size = new Size(1217, 307);
             lstvOgunYemekDetayliRapor.TabIndex = 7;
             lstvOgunYemekDetayliRapor.UseCompatibleStateImageBehavior = false;
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(12, 12);
+            btnGeri.Location = new Point(2, 1);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(76, 30);
-            btnGeri.TabIndex = 30;
-            btnGeri.Text = "< GERİ";
+            btnGeri.Size = new Size(57, 41);
+            btnGeri.TabIndex = 4;
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
@@ -151,7 +153,7 @@
             groupBox1.Controls.Add(dtpTarih);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(53, 70);
+            groupBox1.Location = new Point(35, 84);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(463, 239);
             groupBox1.TabIndex = 0;
@@ -163,7 +165,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1027, 609);
+            ClientSize = new Size(1282, 703);
             Controls.Add(groupBox1);
             Controls.Add(btnGeri);
             Controls.Add(lstvOgunYemekDetayliRapor);

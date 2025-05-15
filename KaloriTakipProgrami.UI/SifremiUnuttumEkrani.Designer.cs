@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SifremiUnuttumEkrani));
             grpSifirlamaKoduGonder = new GroupBox();
             btnSifirlamaKoduGonder = new Button();
             txtEmail = new TextBox();
@@ -54,9 +55,9 @@
             grpSifirlamaKoduGonder.Controls.Add(txtEmail);
             grpSifirlamaKoduGonder.Controls.Add(label2);
             grpSifirlamaKoduGonder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKoduGonder.Location = new Point(93, 54);
+            grpSifirlamaKoduGonder.Location = new Point(380, 106);
             grpSifirlamaKoduGonder.Name = "grpSifirlamaKoduGonder";
-            grpSifirlamaKoduGonder.Size = new Size(462, 176);
+            grpSifirlamaKoduGonder.Size = new Size(503, 176);
             grpSifirlamaKoduGonder.TabIndex = 0;
             grpSifirlamaKoduGonder.TabStop = false;
             // 
@@ -78,7 +79,7 @@
             // 
             txtEmail.Location = new Point(121, 53);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(266, 27);
+            txtEmail.Size = new Size(266, 31);
             txtEmail.TabIndex = 1;
             // 
             // label2
@@ -87,7 +88,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(58, 56);
             label2.Name = "label2";
-            label2.Size = new Size(46, 20);
+            label2.Size = new Size(56, 25);
             label2.TabIndex = 0;
             label2.Text = "Email";
             // 
@@ -97,9 +98,9 @@
             grpSifirlamaKodu.Controls.Add(btnOk);
             grpSifirlamaKodu.Controls.Add(label1);
             grpSifirlamaKodu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKodu.Location = new Point(93, 253);
+            grpSifirlamaKodu.Location = new Point(380, 305);
             grpSifirlamaKodu.Name = "grpSifirlamaKodu";
-            grpSifirlamaKodu.Size = new Size(462, 121);
+            grpSifirlamaKodu.Size = new Size(503, 121);
             grpSifirlamaKodu.TabIndex = 0;
             grpSifirlamaKodu.TabStop = false;
             // 
@@ -108,7 +109,7 @@
             mtxtSifirlamaKodu.Location = new Point(171, 49);
             mtxtSifirlamaKodu.Mask = "0000";
             mtxtSifirlamaKodu.Name = "mtxtSifirlamaKodu";
-            mtxtSifirlamaKodu.Size = new Size(121, 27);
+            mtxtSifirlamaKodu.Size = new Size(121, 31);
             mtxtSifirlamaKodu.TabIndex = 3;
             mtxtSifirlamaKodu.ValidatingType = typeof(int);
             // 
@@ -132,7 +133,7 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(22, 52);
             label1.Name = "label1";
-            label1.Size = new Size(109, 20);
+            label1.Size = new Size(133, 25);
             label1.TabIndex = 0;
             label1.Text = "Sıfırlama Kodu";
             // 
@@ -144,9 +145,9 @@
             grpSifreGuncelleme.Controls.Add(txtYeniSifre);
             grpSifreGuncelleme.Controls.Add(label3);
             grpSifreGuncelleme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifreGuncelleme.Location = new Point(93, 395);
+            grpSifreGuncelleme.Location = new Point(380, 447);
             grpSifreGuncelleme.Name = "grpSifreGuncelleme";
-            grpSifreGuncelleme.Size = new Size(462, 206);
+            grpSifreGuncelleme.Size = new Size(503, 206);
             grpSifreGuncelleme.TabIndex = 0;
             grpSifreGuncelleme.TabStop = false;
             // 
@@ -168,7 +169,7 @@
             // 
             txtYeniSifreTekrar.Location = new Point(209, 82);
             txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
-            txtYeniSifreTekrar.Size = new Size(166, 27);
+            txtYeniSifreTekrar.Size = new Size(166, 31);
             txtYeniSifreTekrar.TabIndex = 1;
             // 
             // label4
@@ -177,7 +178,7 @@
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(31, 85);
             label4.Name = "label4";
-            label4.Size = new Size(130, 20);
+            label4.Size = new Size(156, 25);
             label4.TabIndex = 0;
             label4.Text = "Yeni Şifre (Tekrar)";
             // 
@@ -185,7 +186,7 @@
             // 
             txtYeniSifre.Location = new Point(209, 44);
             txtYeniSifre.Name = "txtYeniSifre";
-            txtYeniSifre.Size = new Size(166, 27);
+            txtYeniSifre.Size = new Size(166, 31);
             txtYeniSifre.TabIndex = 1;
             // 
             // label3
@@ -194,29 +195,30 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(31, 47);
             label3.Name = "label3";
-            label3.Size = new Size(73, 20);
+            label3.Size = new Size(89, 25);
             label3.TabIndex = 0;
             label3.Text = "Yeni Şifre";
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.FromArgb(164, 172, 134);
+            btnGeri.BackColor = Color.FromArgb(47, 62, 70);
+            btnGeri.BackgroundImage = (Image)resources.GetObject("btnGeri.BackgroundImage");
+            btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(12, 12);
+            btnGeri.Location = new Point(2, 3);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(76, 34);
+            btnGeri.Size = new Size(57, 41);
             btnGeri.TabIndex = 30;
-            btnGeri.Text = "< GERİ";
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
             // SifremiUnuttumEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(572, 626);
+            ClientSize = new Size(1282, 753);
             Controls.Add(btnGeri);
             Controls.Add(grpSifirlamaKodu);
             Controls.Add(grpSifreGuncelleme);
