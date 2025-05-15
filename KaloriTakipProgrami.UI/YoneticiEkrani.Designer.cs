@@ -130,7 +130,6 @@
             Name = "YoneticiEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiEkrani";
-            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
