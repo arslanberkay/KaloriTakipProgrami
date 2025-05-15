@@ -220,6 +220,12 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
 
+            if (_db.Yemekler.Any(y=>y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
+            {
+                MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
+                return;
+            }
+
             _db.Remove(secilenKategori);
             _db.SaveChanges();
 

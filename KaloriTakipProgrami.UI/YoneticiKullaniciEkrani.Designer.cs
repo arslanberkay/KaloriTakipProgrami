@@ -42,6 +42,7 @@
             dgvKullanicilar.Location = new Point(37, 209);
             dgvKullanicilar.Name = "dgvKullanicilar";
             dgvKullanicilar.RowHeadersWidth = 51;
+            dgvKullanicilar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvKullanicilar.Size = new Size(1206, 472);
             dgvKullanicilar.TabIndex = 0;
             // 

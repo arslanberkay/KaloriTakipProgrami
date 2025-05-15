@@ -47,7 +47,7 @@
             cbKullaniciAdlari.Location = new Point(191, 75);
             cbKullaniciAdlari.Margin = new Padding(4);
             cbKullaniciAdlari.Name = "cbKullaniciAdlari";
-            cbKullaniciAdlari.Size = new Size(256, 33);
+            cbKullaniciAdlari.Size = new Size(296, 33);
             cbKullaniciAdlari.TabIndex = 0;
             // 
             // label1
@@ -68,7 +68,7 @@
             dtpTarih.Location = new Point(191, 124);
             dtpTarih.Margin = new Padding(4);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(256, 31);
+            dtpTarih.Size = new Size(296, 31);
             dtpTarih.TabIndex = 2;
             // 
             // label2
@@ -129,7 +129,7 @@
             btnRaporGoruntule.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             btnRaporGoruntule.Location = new Point(191, 174);
             btnRaporGoruntule.Name = "btnRaporGoruntule";
-            btnRaporGoruntule.Size = new Size(256, 50);
+            btnRaporGoruntule.Size = new Size(296, 50);
             btnRaporGoruntule.TabIndex = 5;
             btnRaporGoruntule.Text = "Görüntüle";
             btnRaporGoruntule.UseVisualStyleBackColor = false;

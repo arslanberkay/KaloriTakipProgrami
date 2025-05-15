@@ -85,9 +85,9 @@
             // 
             // txtOgunAdi
             // 
-            txtOgunAdi.Location = new Point(119, 47);
+            txtOgunAdi.Location = new Point(125, 47);
             txtOgunAdi.Name = "txtOgunAdi";
-            txtOgunAdi.Size = new Size(253, 31);
+            txtOgunAdi.Size = new Size(247, 31);
             txtOgunAdi.TabIndex = 3;
             // 
             // dgvOgunler
@@ -173,9 +173,9 @@
             // 
             // txtKategoriAdi
             // 
-            txtKategoriAdi.Location = new Point(142, 47);
+            txtKategoriAdi.Location = new Point(147, 47);
             txtKategoriAdi.Name = "txtKategoriAdi";
-            txtKategoriAdi.Size = new Size(228, 31);
+            txtKategoriAdi.Size = new Size(223, 31);
             txtKategoriAdi.TabIndex = 3;
             // 
             // dgvKategoriler

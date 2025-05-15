@@ -45,7 +45,7 @@ namespace KaloriTakipProgrami.UI.Context
             modelBuilder.Entity<Yonetici>().HasData(
                 new Yonetici { Id = 1, KullaniciAdi = "furkydream", Sifre = "12345furky" },
                 new Yonetici { Id = 2, KullaniciAdi = "efe31", Sifre = "efe3131" },
-                new Yonetici { Id = 3, KullaniciAdi = "berkay62", Sifre = "berko6262" },
+                new Yonetici { Id = 3, KullaniciAdi = "berkay", Sifre = "0606" },
                 new Yonetici { Id = 4, KullaniciAdi = "ceren", Sifre = "cero1234" },
                 new Yonetici { Id = 5, KullaniciAdi = "burakAsker", Sifre = "vatanmilletsakarya" });
 

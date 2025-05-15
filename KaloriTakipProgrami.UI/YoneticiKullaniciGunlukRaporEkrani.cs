@@ -66,8 +66,13 @@ namespace KaloriTakipProgrami.UI
         {
             lstvKullaniciGunlukRapor.View = View.Details;
             lstvKullaniciGunlukRapor.GridLines = true;
-            lstvKullaniciGunlukRapor.Columns.Add("Yemek");
-            lstvKullaniciGunlukRapor.Columns.Add("Öğün");
+            lstvKullaniciGunlukRapor.Columns.Add("Yemek",200);
+            lstvKullaniciGunlukRapor.Columns.Add("Kalori(100gr)",200);
+            lstvKullaniciGunlukRapor.Columns.Add("Kategori", 200);
+            lstvKullaniciGunlukRapor.Columns.Add("Öğün", 200);   
+            lstvKullaniciGunlukRapor.Columns.Add("Yediği Miktar", 200);
+            lstvKullaniciGunlukRapor.Columns.Add("Toplam Kalori", 200);
+
         }
 
 
@@ -81,7 +86,7 @@ namespace KaloriTakipProgrami.UI
             var raporlanacakKullanici = _db.Kullanicilar.FirstOrDefault(k => k.Id == (int)cbKullaniciAdlari.SelectedValue);
 
             var raporlanacakKullaniciGuneGoreOgunYemekleri = _db.OgunYemekler
-                .Include(oy => oy.Yemek)
+                .Include(oy => oy.Yemek.Kategori)
                 .Include(oy => oy.Ogun)
                 .Where(oy => oy.KullaniciId == raporlanacakKullanici.Id && oy.Tarih.Date == dtpTarih.Value.Date).ToList();
 
@@ -91,7 +96,11 @@ namespace KaloriTakipProgrami.UI
             {
                 ListViewItem listViewItem = new ListViewItem();
                 listViewItem.Text = raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.YemekAdi.ToString();
+                listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.Kalori.ToString() + " kcal");
+                listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.Kategori.KategoriAdi);
                 listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Ogun.OgunAdi.ToString());
+                listViewItem.SubItems.Add(raporlanacakKullaniciGuneGoreOgunYemegi.Miktar.ToString()+ " gr");
+                listViewItem.SubItems.Add(((raporlanacakKullaniciGuneGoreOgunYemegi.Miktar/100)*raporlanacakKullaniciGuneGoreOgunYemegi.Yemek.Kalori).ToString() + " kcal");
 
                 lstvKullaniciGunlukRapor.Items.Add(listViewItem);
             }
@@ -105,7 +114,7 @@ namespace KaloriTakipProgrami.UI
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            ExcelOlustur();
         }
 
         private void PDFOlustur()
@@ -231,9 +240,6 @@ namespace KaloriTakipProgrami.UI
                         }
 
                     }
-
-
-
                 }
             }
             catch (Exception ex)
