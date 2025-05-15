@@ -240,7 +240,7 @@ namespace KaloriTakipProgrami.UI
             {
                 OgunId = (int)cmbOgunler.SelectedValue,
                 YemekId = (int)cmbYemekler.SelectedValue,
-                //kullanıcıId gelecek
+                //
                 Tarih = dtpTarih.Value.Date,
                 Miktar = nudMiktar.Value,
             };

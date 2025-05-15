@@ -59,6 +59,7 @@
             btnOnayla.TabIndex = 30;
             btnOnayla.Text = "Onayla";
             btnOnayla.UseVisualStyleBackColor = false;
+            btnOnayla.Click += btnOnayla_Click_1;
             // 
             // btnReddedildi
             // 
