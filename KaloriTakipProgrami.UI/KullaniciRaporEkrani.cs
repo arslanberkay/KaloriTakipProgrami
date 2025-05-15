@@ -24,18 +24,15 @@ namespace KaloriTakipProgrami.UI
             _girisYapanKullanici = girisYapanKullanici;
             _db = new KaloriTakipDbContext();
         }
-
         public KullaniciRaporEkrani()
         {
 
         }
-
         private void KullaniciRaporEkrani_Load(object sender, EventArgs e)
         {
             TabloOlustur();
             OgunYemekListele();
         }
-
         private void OgunYemekListele()
         {
             lstOgunYemekRaporu.Clear();
@@ -49,19 +46,17 @@ namespace KaloriTakipProgrami.UI
 
             TabloGuncelle(tarihAraliginaGoreOgunYemek);
         }
-
         private void TabloOlustur()
         {
             lstOgunYemekRaporu.View = View.Details;
             lstOgunYemekRaporu.GridLines = true;
-            lstOgunYemekRaporu.Columns.Add("Tarih", 150);
-            lstOgunYemekRaporu.Columns.Add("Öğün", 150);
-            lstOgunYemekRaporu.Columns.Add("Kategori", 150);
-            lstOgunYemekRaporu.Columns.Add("Yemek", 150);
-            lstOgunYemekRaporu.Columns.Add("Miktar", 150);
-            lstOgunYemekRaporu.Columns.Add("Kalori", 150);
+            lstOgunYemekRaporu.Columns.Add("Tarih", 190);
+            lstOgunYemekRaporu.Columns.Add("Öğün", 190);
+            lstOgunYemekRaporu.Columns.Add("Kategori", 190);
+            lstOgunYemekRaporu.Columns.Add("Yemek", 190);
+            lstOgunYemekRaporu.Columns.Add("Miktar", 190);
+            lstOgunYemekRaporu.Columns.Add("Kalori", 190);
         }
-
         private void TabloGuncelle(List<OgunYemek> ogunyemekler)
         {
             foreach (var ogunYemek in ogunyemekler)
@@ -77,28 +72,26 @@ namespace KaloriTakipProgrami.UI
                 lstOgunYemekRaporu.Items.Add(listViewItem);
             }
         }
-
         private void dtpBaslangicTarihi_ValueChanged(object sender, EventArgs e)
         {
             OgunYemekListele();
         }
-
         private void dtpBitisTarihi_ValueChanged(object sender, EventArgs e)
         {
             OgunYemekListele();
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
-
-        private void btnAzYenilenler_Click(object sender, EventArgs e)
+        private void YemekTuketimRaporuGoster(bool enCokMu)
         {
             var tariheGoreYemekMiktarlari = _db.OgunYemekler
                 .Include(oy => oy.Ogun)
                 .Include(oy => oy.Yemek.Kategori)
-                .Where(oy => oy.Tarih.Date >= dtpBaslangicTarihi.Value.Date && oy.Tarih.Date <= dtpBitisTarihi.Value.Date && oy.KullaniciId == _girisYapanKullanici.Id)
+                .Where(oy => oy.Tarih.Date >= dtpBaslangicTarihi.Value.Date &&
+                             oy.Tarih.Date <= dtpBitisTarihi.Value.Date &&
+                             oy.KullaniciId == _girisYapanKullanici.Id)
                 .GroupBy(oy => oy.Yemek.YemekAdi)
                 .Select(g => new
                 {
@@ -107,35 +100,40 @@ namespace KaloriTakipProgrami.UI
                 })
                 .ToList();
 
-            var tariheGoreEnAzYenenYemekMiktari = tariheGoreYemekMiktarlari.Min(y => y.ToplamYenilenMiktar);
+            if (tariheGoreYemekMiktarlari.Count == 0)
+            {
+                MessageBox.Show("Belirtilen tarihler arasında veri bulunamadı.");
+                return;
+            }
 
-            var tariheGoreEnAzYenilenYemekler = tariheGoreYemekMiktarlari
-                .Where(y => y.ToplamYenilenMiktar == tariheGoreEnAzYenenYemekMiktari)
+            decimal hedefMiktar = enCokMu
+                ? tariheGoreYemekMiktarlari.Max(y => y.ToplamYenilenMiktar)
+                : tariheGoreYemekMiktarlari.Min(y => y.ToplamYenilenMiktar);
+
+            var secilenYemekler = tariheGoreYemekMiktarlari
+                .Where(y => y.ToplamYenilenMiktar == hedefMiktar)
                 .ToList();
 
-
             lstOgunYemekRaporu.Clear();
-
             lstOgunYemekRaporu.View = View.Details;
             lstOgunYemekRaporu.GridLines = true;
             lstOgunYemekRaporu.Columns.Add("Yemek Adı", 150);
             lstOgunYemekRaporu.Columns.Add("Toplam Yenilen Miktar", 150);
 
-            foreach (var tariheGoreEnAzYenilenYemek in tariheGoreEnAzYenilenYemekler)
+            foreach (var yemek in secilenYemekler)
             {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = tariheGoreEnAzYenilenYemek.Key;
-                listViewItem.SubItems.Add(tariheGoreEnAzYenilenYemek.ToplamYenilenMiktar.ToString());
-
-                lstOgunYemekRaporu.Items.Add(listViewItem);
+                ListViewItem item = new ListViewItem(yemek.Key);
+                item.SubItems.Add(yemek.ToplamYenilenMiktar.ToString());
+                lstOgunYemekRaporu.Items.Add(item);
             }
         }
-
-
-
+        private void btnAzYenilenler_Click(object sender, EventArgs e)
+        {
+            YemekTuketimRaporuGoster(false);
+        }
         private void btnEnCokYenilen_Click(object sender, EventArgs e)
         {
-            
+            YemekTuketimRaporuGoster(true);
         }
     }
 }

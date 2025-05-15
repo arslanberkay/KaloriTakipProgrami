@@ -138,7 +138,7 @@
             btnHesapDondur.BackColor = Color.FromArgb(164, 172, 134);
             btnHesapDondur.FlatStyle = FlatStyle.Popup;
             btnHesapDondur.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnHesapDondur.Location = new Point(298, 839);
+            btnHesapDondur.Location = new Point(509, 795);
             btnHesapDondur.Margin = new Padding(4);
             btnHesapDondur.Name = "btnHesapDondur";
             btnHesapDondur.Size = new Size(268, 41);
@@ -152,7 +152,7 @@
             btnBilgileriGuncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnBilgileriGuncelle.FlatStyle = FlatStyle.Popup;
             btnBilgileriGuncelle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btnBilgileriGuncelle.Location = new Point(298, 790);
+            btnBilgileriGuncelle.Location = new Point(509, 746);
             btnBilgileriGuncelle.Margin = new Padding(4);
             btnBilgileriGuncelle.Name = "btnBilgileriGuncelle";
             btnBilgileriGuncelle.Size = new Size(268, 41);
@@ -408,7 +408,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
-            ClientSize = new Size(1282, 753);
+            ClientSize = new Size(1282, 849);
             Controls.Add(groupBox1);
             Controls.Add(btnGeri);
             Controls.Add(btnHesapDondur);

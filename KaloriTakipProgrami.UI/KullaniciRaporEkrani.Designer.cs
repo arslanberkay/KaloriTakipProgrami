@@ -124,9 +124,9 @@
             // 
             lstOgunYemekRaporu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lstOgunYemekRaporu.BackColor = Color.FromArgb(202, 210, 197);
-            lstOgunYemekRaporu.Location = new Point(35, 306);
+            lstOgunYemekRaporu.Location = new Point(56, 305);
             lstOgunYemekRaporu.Name = "lstOgunYemekRaporu";
-            lstOgunYemekRaporu.Size = new Size(1208, 396);
+            lstOgunYemekRaporu.Size = new Size(1167, 406);
             lstOgunYemekRaporu.TabIndex = 31;
             lstOgunYemekRaporu.UseCompatibleStateImageBehavior = false;
             // 

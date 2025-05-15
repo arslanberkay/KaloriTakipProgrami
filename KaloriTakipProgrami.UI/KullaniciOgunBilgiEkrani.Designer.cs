@@ -113,6 +113,7 @@
             cmbKategoriler.Name = "cmbKategoriler";
             cmbKategoriler.Size = new Size(261, 33);
             cmbKategoriler.TabIndex = 6;
+            cmbKategoriler.SelectedIndexChanged += cmbKategoriler_SelectedIndexChanged;
             // 
             // cmbOgunler
             // 
