@@ -21,7 +21,7 @@ namespace KaloriTakipProgrami.UI
         public KullaniciRaporEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();
-            _girisYapanKullanici = girisYapanKullanici;
+            _girisYapanKullanici = girisYapanKullanici; //Programa giriş yapan kullanıcıyı bu formda kullanacağım için aktardım
             _db = new KaloriTakipDbContext();
         }
         public KullaniciRaporEkrani()
@@ -33,6 +33,10 @@ namespace KaloriTakipProgrami.UI
             TabloOlustur();
             OgunYemekListele();
         }
+
+        /// <summary>
+        /// Kullanıcının seçtiği iki tarih arasındaki yemekleri listeler
+        /// </summary>
         private void OgunYemekListele()
         {
             lstOgunYemekRaporu.Clear();
@@ -46,6 +50,8 @@ namespace KaloriTakipProgrami.UI
 
             TabloGuncelle(tarihAraliginaGoreOgunYemek);
         }
+
+        //Yemek listelemek için gerekli olan kolonlarla birlikte ListView oluşturur
         private void TabloOlustur()
         {
             lstOgunYemekRaporu.View = View.Details;
@@ -57,6 +63,11 @@ namespace KaloriTakipProgrami.UI
             lstOgunYemekRaporu.Columns.Add("Miktar", 190);
             lstOgunYemekRaporu.Columns.Add("Kalori", 190);
         }
+
+        /// <summary>
+        /// İçine gönderilen OgunYemek tipindeki listeyi ListViewe aktarır
+        /// </summary>
+        /// <param name="ogunyemekler"></param>
         private void TabloGuncelle(List<OgunYemek> ogunyemekler)
         {
             foreach (var ogunYemek in ogunyemekler)
@@ -72,18 +83,21 @@ namespace KaloriTakipProgrami.UI
                 lstOgunYemekRaporu.Items.Add(listViewItem);
             }
         }
+
         private void dtpBaslangicTarihi_ValueChanged(object sender, EventArgs e)
         {
-            OgunYemekListele();
+            OgunYemekListele(); //Başlangıç tarihi değiştiğinde yemek kayıtları güncellenir
         }
+
         private void dtpBitisTarihi_ValueChanged(object sender, EventArgs e)
         {
-            OgunYemekListele();
+            OgunYemekListele();  //Bitiş tarihi değiştiğinde yemek kayıtları güncellenir
         }
-        private void btnGeri_Click(object sender, EventArgs e)
-        {
-            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
-        }
+
+        /// <summary>
+        /// İçine gönderilen en çok veya en az durumuna göre raporlama yapar
+        /// </summary>
+        /// <param name="enCokMu"></param>
         private void YemekTuketimRaporuGoster(bool enCokMu)
         {
             var tariheGoreYemekMiktarlari = _db.OgunYemekler
@@ -92,11 +106,20 @@ namespace KaloriTakipProgrami.UI
                 .Where(oy => oy.Tarih.Date >= dtpBaslangicTarihi.Value.Date &&
                              oy.Tarih.Date <= dtpBitisTarihi.Value.Date &&
                              oy.KullaniciId == _girisYapanKullanici.Id)
-                .GroupBy(oy => oy.Yemek.YemekAdi)
+                .GroupBy(oy =>
+                new
+                {
+                    oy.Yemek.YemekAdi,
+                    oy.Ogun.OgunAdi,
+                    oy.Yemek.Kategori.KategoriAdi
+
+                }) //Yemeklere göre gruplama yapar
                 .Select(g => new
                 {
-                    g.Key,
-                    ToplamYenilenMiktar = g.Sum(x => x.Miktar)
+                    g.Key.YemekAdi,
+                    g.Key.OgunAdi,
+                    g.Key.KategoriAdi,
+                    ToplamYenilenMiktar = g.Sum(x => x.Miktar) //Aynı yemeklerin miktarlarını toplar
                 })
                 .ToList();
 
@@ -106,23 +129,32 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
 
+            //Gönderilen parametre true ise maximum yenilen miktarı bulur false ise minimum yenilen miktarı bulur
             decimal hedefMiktar = enCokMu
                 ? tariheGoreYemekMiktarlari.Max(y => y.ToplamYenilenMiktar)
                 : tariheGoreYemekMiktarlari.Min(y => y.ToplamYenilenMiktar);
 
+            //İstenilen hedef miktara eşit olan tüm yemek kayıtlarını getirir.
             var secilenYemekler = tariheGoreYemekMiktarlari
                 .Where(y => y.ToplamYenilenMiktar == hedefMiktar)
                 .ToList();
 
-            lstOgunYemekRaporu.Clear();
+            lstOgunYemekRaporu.Clear(); //Eski tabloyu ve kayıtları siler
+
+            //Yeni listview oluşturur.
             lstOgunYemekRaporu.View = View.Details;
             lstOgunYemekRaporu.GridLines = true;
             lstOgunYemekRaporu.Columns.Add("Yemek Adı", 150);
+            lstOgunYemekRaporu.Columns.Add("Öğün Adı", 150);
+            lstOgunYemekRaporu.Columns.Add("Kategori Adı", 150);
             lstOgunYemekRaporu.Columns.Add("Toplam Yenilen Miktar", 150);
 
+            //ListView içine kayıtları getirir.
             foreach (var yemek in secilenYemekler)
             {
-                ListViewItem item = new ListViewItem(yemek.Key);
+                ListViewItem item = new ListViewItem(yemek.YemekAdi);
+                item.SubItems.Add(yemek.OgunAdi);
+                item.SubItems.Add(yemek.KategoriAdi);
                 item.SubItems.Add(yemek.ToplamYenilenMiktar.ToString());
                 lstOgunYemekRaporu.Items.Add(item);
             }
@@ -134,6 +166,21 @@ namespace KaloriTakipProgrami.UI
         private void btnEnCokYenilen_Click(object sender, EventArgs e)
         {
             YemekTuketimRaporuGoster(true);
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
+        private void btnTumYemekler_Click(object sender, EventArgs e)
+        {
+            OgunYemekListele();
+            if (lstOgunYemekRaporu.Items.Count == 0)
+            {
+                MessageBox.Show("Belirtilen tarihler arasında veri bulunamadı.");
+                return;
+            }
         }
     }
 }
