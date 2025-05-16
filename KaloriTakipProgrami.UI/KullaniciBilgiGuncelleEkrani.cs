@@ -25,7 +25,7 @@ namespace KaloriTakipProgrami.UI
         public KullaniciBilgiGuncelleEkrani(Kullanici girisYapanKullanici)
         {
             _context = new KaloriTakipDbContext();
-            girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
+            // girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
             var kullanici = _context.Kullanicilar
@@ -40,16 +40,34 @@ namespace KaloriTakipProgrami.UI
             cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
             dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
             txtSifre.Text = "";
-            //txtSifre.Text = GirisYapanKullanici.Sifre;
-            //txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
+            txtSifre.Text = GirisYapanKullanici.Sifre;
+            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
             txtSifreTekrar.Text = "";
             lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
-            txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
-            txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
-            lblVki.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
             pbFoto.Text = GirisYapanKullanici.FotografYolu; //fotograf yolu string olarak tutulacak
 
+            var detay = GirisYapanKullanici?.KullaniciDetaylari?
+                .OrderBy(k => k.Tarih)
+                .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
+
+            if (detay?.Kilo == null)
+            {
+                txtKilo.Text = "--";
+                lblVki.Text = "--";
+            }
+            if (detay?.Boy == null)
+            {
+                txtBoy.Text = "--";
+                lblVki.Text = "--";
+            }
+            else
+            {
+                txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
+                txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
+                lblVki.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
+            }
         }
+        
         private float Vki()
         {
             float.TryParse(txtKilo.Text, out float kilo);  //kg cinsinden
@@ -74,7 +92,7 @@ namespace KaloriTakipProgrami.UI
             customMsgBox.Size = new Size(500, 300);
 
             Label lbl = new Label();
-            lbl.Text = 
+            lbl.Text =
                        "18.5 kg/m²'nin altında ise   =>   ZAYIF\n" +
                        "18.5 - 24.9 kg/m² arasında   =>   NORMAL KİLOLU\n" +
                        "25 - 29.9 kg/m² arasında     =>   HAFİF ŞİŞMAN\n" +
@@ -190,7 +208,7 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            KullaniciBilgileri(); 
+            KullaniciBilgileri();
         }
         private void btnHesapDondur_Click(object sender, EventArgs e)
         {
@@ -229,6 +247,11 @@ namespace KaloriTakipProgrami.UI
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
