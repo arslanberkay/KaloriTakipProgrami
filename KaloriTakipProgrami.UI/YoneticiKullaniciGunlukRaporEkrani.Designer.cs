@@ -42,6 +42,7 @@
             // 
             // cbKullaniciAdlari
             // 
+            cbKullaniciAdlari.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKullaniciAdlari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             cbKullaniciAdlari.FormattingEnabled = true;
             cbKullaniciAdlari.Location = new Point(191, 75);

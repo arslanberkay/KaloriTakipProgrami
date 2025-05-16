@@ -129,6 +129,7 @@
             // 
             // cbCinsiyet
             // 
+            cbCinsiyet.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCinsiyet.FormattingEnabled = true;
             cbCinsiyet.Location = new Point(157, 356);
             cbCinsiyet.Name = "cbCinsiyet";

@@ -61,8 +61,8 @@ namespace KaloriTakipProgrami.UI
             lsvOgunBilgileri.Items.Clear();
 
             var ogunBilgileri = _db.OgunYemekler
-                .Where(oy=>oy.KullaniciId==_girisYapanKullanici.Id)
-                .Include(k=>k.Kullanici)
+                .Where(oy => oy.KullaniciId == _girisYapanKullanici.Id)
+                .Include(k => k.Kullanici)
                 .Include(k => k.Ogun)
                 .Include(o => o.Yemek)
                 .ThenInclude(k => k.Kategori).ToList();
@@ -238,19 +238,18 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
-           
-                if (!GirdiDogrula()) return;
+            if (!GirdiDogrula()) return;
 
-                var ogunBilgileri = new OgunYemek
-                {
-                    OgunId = (int)cmbOgunler.SelectedValue,
-                    YemekId = (int)cmbYemekler.SelectedValue,
-                    KullaniciId=_girisYapanKullanici.Id,
-                    Tarih = dtpTarih.Value.Date,
-                    Miktar = nudMiktar.Value,
-                };
-                _db.OgunYemekler.Add(ogunBilgileri);
-                _db.SaveChanges();
+            var ogunBilgileri = new OgunYemek
+            {
+                OgunId = (int)cmbOgunler.SelectedValue,
+                YemekId = (int)cmbYemekler.SelectedValue,
+                KullaniciId = _girisYapanKullanici.Id,
+                Tarih = dtpTarih.Value.Date,
+                Miktar = nudMiktar.Value,
+            };
+            _db.OgunYemekler.Add(ogunBilgileri);
+            _db.SaveChanges();
 
             var eklenenOgun = _db.OgunYemekler
             .Include(o => o.Ogun)
@@ -268,15 +267,15 @@ namespace KaloriTakipProgrami.UI
                 listItem.SubItems.Add(eklenenOgun.Miktar.ToString());
                 lsvOgunBilgileri.Items.Add(listItem);
             }
-            
-            MessageBox.Show("Öğünler Başarıyla Eklendi","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
-           
+
+            MessageBox.Show("Öğünler Başarıyla Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Temizle();
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz","Hata", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ListViewItem seciliItem = lsvOgunBilgileri.SelectedItems[0];
@@ -288,14 +287,14 @@ namespace KaloriTakipProgrami.UI
                 _db.OgunYemekler.Remove(ogun);
                 _db.SaveChanges();
                 lsvOgunBilgileri.Items.Remove(seciliItem);
-                MessageBox.Show("Öğün Bilgisi Başarıyla Silindi","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Öğün Bilgisi Başarıyla Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void btnGüncelle_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -314,7 +313,7 @@ namespace KaloriTakipProgrami.UI
                 ogun.Miktar = nudMiktar.Value;
 
                 _db.SaveChanges();
-                MessageBox.Show("Kullanıcı Öğün Bilgileri Başarıyla Güncellendi.","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Kullanıcı Öğün Bilgileri Başarıyla Güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Listele();
                 Temizle();
             }
