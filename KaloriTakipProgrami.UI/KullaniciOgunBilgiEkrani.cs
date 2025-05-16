@@ -43,7 +43,6 @@ namespace KaloriTakipProgrami.UI
 
             cmbYemekler.SelectedIndex = -1;
             Listele();
-            
         }
         private void ListViewSutunEkle()
         {
@@ -270,14 +269,14 @@ namespace KaloriTakipProgrami.UI
                 lsvOgunBilgileri.Items.Add(listItem);
             }
             
-            MessageBox.Show("Başarıyla Eklendi");
+            MessageBox.Show("Öğünler Başarıyla Eklendi","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
            
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz");
+                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz","Hata", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             ListViewItem seciliItem = lsvOgunBilgileri.SelectedItems[0];
@@ -289,14 +288,14 @@ namespace KaloriTakipProgrami.UI
                 _db.OgunYemekler.Remove(ogun);
                 _db.SaveChanges();
                 lsvOgunBilgileri.Items.Remove(seciliItem);
-                MessageBox.Show("Müşteri başarıyla silindi");
+                MessageBox.Show("Öğün Bilgisi Başarıyla Silindi","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void btnGüncelle_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz");
+                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -315,7 +314,7 @@ namespace KaloriTakipProgrami.UI
                 ogun.Miktar = nudMiktar.Value;
 
                 _db.SaveChanges();
-                MessageBox.Show("Kullanıcı Öğün Bilgileri Başarıyla Güncellendi.");
+                MessageBox.Show("Kullanıcı Öğün Bilgileri Başarıyla Güncellendi.","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Listele();
                 Temizle();
             }
