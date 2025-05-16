@@ -82,6 +82,7 @@ namespace KaloriTakipProgrami.UI
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
+            Temizle();
         }
         public void HataYonetici()
         {
@@ -122,6 +123,10 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.Text = "";
                 return;
             }
+        }
+        private void Temizle() 
+        {
+            txtKullaniciAdi.Text=txtSifre.Text=string.Empty;
         }
         private void ButonlarTrue()
         {

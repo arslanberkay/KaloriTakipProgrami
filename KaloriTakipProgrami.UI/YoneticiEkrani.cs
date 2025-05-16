@@ -55,7 +55,7 @@ namespace KaloriTakipProgrami.UI
                 if (result == DialogResult.Yes)
                 {                   
                     KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
-                    kullaniciGirisEkrani.Show();
+                    this.Close();
                 }
                 else
                 {
