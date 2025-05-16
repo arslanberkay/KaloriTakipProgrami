@@ -31,11 +31,21 @@ namespace KaloriTakipProgrami.UI
 
         private void btnSifirlamaKoduGonder_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Lütfen sistemde kayıtlı email adresinizi giriniz.");
+                return;
+            }
+
             if (_db.Kullanicilar.Any(k => k.Email == txtEmail.Text))
             {
                 sifresiniUnutanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.Email == txtEmail.Text);
                 sifirlamaKodu = rnd.Next(1000, 9999);
                 MailGonder(sifirlamaKodu);
+            }
+            else
+            {
+                MessageBox.Show("Programa kayıtlı mail hesabı bulunamadı");
             }
         }
 
@@ -68,15 +78,32 @@ namespace KaloriTakipProgrami.UI
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(mtxtSifirlamaKodu.Text))
+            {
+                MessageBox.Show("Lütfen mailinize gelen sıfırlama kodunu giriniz");
+            }
             if (mtxtSifirlamaKodu.Text == sifirlamaKodu.ToString())
             {
                 grpSifirlamaKodu.Visible = false;
                 grpSifreGuncelleme.Visible = true;
             }
+            else
+            {
+                MessageBox.Show("Lütfen sıfırlama kodunu kontrol ederek tekrar giriniz!");
+                mtxtSifirlamaKodu.Text = string.Empty;
+                return;
+            }
+            lblKullaniciAdi.Text = sifresiniUnutanKullanici.KullaniciAdi;
         }
 
         private void btnSifreyiGuncelle_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtYeniSifre.Text))
+            {
+                MessageBox.Show("Yeni şifre alanları boş bırakılamaz");
+                return;
+            }
+
             if (txtYeniSifre.Text == txtYeniSifreTekrar.Text)
             {
                 sifresiniUnutanKullanici.Sifre = txtYeniSifre.Text;
