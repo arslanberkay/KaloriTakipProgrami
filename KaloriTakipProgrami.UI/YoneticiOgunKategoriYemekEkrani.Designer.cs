@@ -37,8 +37,8 @@
             btnOgunEkle = new Button();
             label1 = new Label();
             grpKategoriler = new GroupBox();
-            txtKategoriAdi = new TextBox();
             dgvKategoriler = new DataGridView();
+            txtKategoriAdi = new TextBox();
             btnKategoriGuncelle = new Button();
             btnKategoriSil = new Button();
             btnKategoriEkle = new Button();
@@ -99,7 +99,7 @@
             dgvOgunler.ReadOnly = true;
             dgvOgunler.RowHeadersWidth = 51;
             dgvOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOgunler.Size = new Size(504, 159);
+            dgvOgunler.Size = new Size(488, 147);
             dgvOgunler.TabIndex = 2;
             dgvOgunler.CellClick += dgvOgunler_CellClick;
             // 
@@ -154,8 +154,8 @@
             // 
             // grpKategoriler
             // 
-            grpKategoriler.Controls.Add(txtKategoriAdi);
             grpKategoriler.Controls.Add(dgvKategoriler);
+            grpKategoriler.Controls.Add(txtKategoriAdi);
             grpKategoriler.Controls.Add(btnKategoriGuncelle);
             grpKategoriler.Controls.Add(btnKategoriSil);
             grpKategoriler.Controls.Add(btnKategoriEkle);
@@ -171,25 +171,24 @@
             grpKategoriler.TabStop = false;
             grpKategoriler.Text = "Kategori İşlemleri";
             // 
-            // txtKategoriAdi
-            // 
-            txtKategoriAdi.Location = new Point(147, 47);
-            txtKategoriAdi.Name = "txtKategoriAdi";
-            txtKategoriAdi.Size = new Size(223, 31);
-            txtKategoriAdi.TabIndex = 3;
-            // 
             // dgvKategoriler
             // 
             dgvKategoriler.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKategoriler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKategoriler.Location = new Point(25, 141);
             dgvKategoriler.Name = "dgvKategoriler";
-            dgvKategoriler.ReadOnly = true;
             dgvKategoriler.RowHeadersWidth = 51;
             dgvKategoriler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKategoriler.Size = new Size(541, 159);
-            dgvKategoriler.TabIndex = 2;
-            dgvKategoriler.CellClick += dgvKategoriler_CellClick;
+            dgvKategoriler.Size = new Size(523, 147);
+            dgvKategoriler.TabIndex = 4;
+            dgvKategoriler.CellClick += dgvKategoriler_CellClick_1;
+            // 
+            // txtKategoriAdi
+            // 
+            txtKategoriAdi.Location = new Point(147, 47);
+            txtKategoriAdi.Name = "txtKategoriAdi";
+            txtKategoriAdi.Size = new Size(223, 31);
+            txtKategoriAdi.TabIndex = 3;
             // 
             // btnKategoriGuncelle
             // 
@@ -316,7 +315,7 @@
             dgvYemekler.ReadOnly = true;
             dgvYemekler.RowHeadersWidth = 51;
             dgvYemekler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvYemekler.Size = new Size(1080, 177);
+            dgvYemekler.Size = new Size(1062, 166);
             dgvYemekler.TabIndex = 2;
             dgvYemekler.CellClick += dgvYemekler_CellClick;
             // 
@@ -424,7 +423,6 @@
         private Label label1;
         private GroupBox grpKategoriler;
         private TextBox txtKategoriAdi;
-        private DataGridView dgvKategoriler;
         private Button btnKategoriGuncelle;
         private Button btnKategoriSil;
         private Button btnKategoriEkle;
@@ -441,5 +439,6 @@
         private ComboBox cbKategori;
         private NumericUpDown nudKalori;
         private Button btnGeri;
+        private DataGridView dgvKategoriler;
     }
 }

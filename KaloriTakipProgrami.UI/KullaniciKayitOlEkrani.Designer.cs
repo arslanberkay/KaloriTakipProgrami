@@ -122,7 +122,7 @@
             btnFotografSec.Location = new Point(345, 400);
             btnFotografSec.Name = "btnFotografSec";
             btnFotografSec.Size = new Size(90, 35);
-            btnFotografSec.TabIndex = 4;
+            btnFotografSec.TabIndex = 9;
             btnFotografSec.Text = "Seç";
             btnFotografSec.UseVisualStyleBackColor = false;
             btnFotografSec.Click += btnFotografSec_Click;
@@ -133,14 +133,14 @@
             cbCinsiyet.Location = new Point(157, 356);
             cbCinsiyet.Name = "cbCinsiyet";
             cbCinsiyet.Size = new Size(170, 33);
-            cbCinsiyet.TabIndex = 3;
+            cbCinsiyet.TabIndex = 7;
             // 
             // txtAd
             // 
             txtAd.Location = new Point(157, 188);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(170, 31);
-            txtAd.TabIndex = 1;
+            txtAd.TabIndex = 3;
             // 
             // txtSifre
             // 
@@ -185,7 +185,7 @@
             txtFotograf.Location = new Point(157, 400);
             txtFotograf.Name = "txtFotograf";
             txtFotograf.Size = new Size(170, 31);
-            txtFotograf.TabIndex = 1;
+            txtFotograf.TabIndex = 8;
             // 
             // label8
             // 
@@ -212,7 +212,7 @@
             txtSoyad.Location = new Point(157, 230);
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Size = new Size(170, 31);
-            txtSoyad.TabIndex = 1;
+            txtSoyad.TabIndex = 4;
             // 
             // label7
             // 
@@ -240,7 +240,7 @@
             txtSifreTekrar.Name = "txtSifreTekrar";
             txtSifreTekrar.PasswordChar = '*';
             txtSifreTekrar.Size = new Size(170, 31);
-            txtSifreTekrar.TabIndex = 1;
+            txtSifreTekrar.TabIndex = 2;
             // 
             // label3
             // 
@@ -257,7 +257,7 @@
             txtKullaniciAdi.Location = new Point(157, 62);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Size = new Size(170, 31);
-            txtKullaniciAdi.TabIndex = 1;
+            txtKullaniciAdi.TabIndex = 0;
             // 
             // label1
             // 
@@ -278,16 +278,16 @@
             btnKayitOl.Location = new Point(531, 590);
             btnKayitOl.Name = "btnKayitOl";
             btnKayitOl.Size = new Size(250, 48);
-            btnKayitOl.TabIndex = 5;
+            btnKayitOl.TabIndex = 1;
             btnKayitOl.Text = "Kayıt Ol";
             btnKayitOl.UseVisualStyleBackColor = false;
             btnKayitOl.Click += btnKayitOl_Click;
             // 
             // pbFotograf
             // 
-            pbFotograf.Location = new Point(932, 100);
+            pbFotograf.Location = new Point(931, 112);
             pbFotograf.Name = "pbFotograf";
-            pbFotograf.Size = new Size(182, 216);
+            pbFotograf.Size = new Size(238, 246);
             pbFotograf.TabIndex = 6;
             pbFotograf.TabStop = false;
             // 
