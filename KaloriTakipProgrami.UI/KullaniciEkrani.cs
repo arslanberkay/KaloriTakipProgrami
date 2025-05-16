@@ -37,10 +37,35 @@ namespace KaloriTakipProgrami.UI
                 lblCinsiyet.Text = _girisYapanKullanici.Cinsiyet;
                 lblDogumTarihi.Text = _girisYapanKullanici.DogumTarihi.ToString();
                 lblEposta.Text = _girisYapanKullanici.Email;
-                lblKilo.Text = "--";
-                lblBoy.Text = "--";
-                lblVKİ.Text = "--";
+
+                var detay = _girisYapanKullanici?.KullaniciDetaylari?
+               .OrderBy(k => k.Tarih)
+               .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
+
+                if (detay?.Kilo == null)
+                {
+                    lblKilo.Text = "--";
+                    lblVKİ.Text = "--";
+                }
+                if (detay?.Boy == null)
+                {
+                    lblBoy.Text = "--";
+                    lblVKİ.Text = "--";
+                }
+                else
+                {
+                    lblKilo.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
+                    lblBoy.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
+                    lblVKİ.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
+                }
             }
+        }
+        private float Vki()
+        {
+            float.TryParse(lblKilo.Text, out float kilo);  //kg cinsinden
+            float.TryParse(lblBoy.Text, out float boy);  //m cinsinden
+
+            return kilo / (boy * boy);
         }
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
         {
