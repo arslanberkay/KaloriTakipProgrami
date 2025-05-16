@@ -103,7 +103,6 @@
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(261, 33);
             cmbYemekler.TabIndex = 5;
-            cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
             // cmbKategoriler
             // 
