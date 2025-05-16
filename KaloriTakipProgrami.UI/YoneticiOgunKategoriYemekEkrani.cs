@@ -20,9 +20,7 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
             _db = new KaloriTakipDbContext();
-
         }
-
         private void YoneticiOgunKategoriYemekEkrani_Load(object sender, EventArgs e)
         {
             OgunListele();
@@ -34,19 +32,16 @@ namespace KaloriTakipProgrami.UI
             dgvOgunler.ForeColor = Color.Black;
             dgvYemekler.ForeColor = Color.Black;
         }
-
         private void OgunListele()
         {
             dgvOgunler.DataSource = _db.Ogunler.ToList();
             dgvOgunler.ClearSelection();
         }
-
         private void KategoriListele()
         {
             dgvKategoriler.DataSource = _db.Kategoriler.ToList();
             dgvKategoriler.ClearSelection();
         }
-
         private void YemekListele()
         {
             dgvYemekler.DataSource = _db.Yemekler
@@ -63,7 +58,6 @@ namespace KaloriTakipProgrami.UI
 
             dgvYemekler.ClearSelection();
         }
-
         private bool ValidateInputsOgunler()
         {
             if (string.IsNullOrEmpty(txtOgunAdi.Text))
@@ -73,7 +67,6 @@ namespace KaloriTakipProgrami.UI
             }
             return true;
         }
-
         private void btnOgunEkle_Click(object sender, EventArgs e)
         {
             if (!ValidateInputsOgunler())
@@ -92,10 +85,7 @@ namespace KaloriTakipProgrami.UI
             MessageBox.Show("Öğün başarıyla eklendi.");
             OgunListele();
             OgunBilgileriTemizle();
-
-
         }
-
         private void OgunBilgileriTemizle()
         {
             foreach (var controls in grpOgunler.Controls) //Group box içinde dön
@@ -106,7 +96,6 @@ namespace KaloriTakipProgrami.UI
                 }
             }
         }
-
         Ogun secilenOgun;
         private void dgvOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,7 +109,6 @@ namespace KaloriTakipProgrami.UI
 
             txtOgunAdi.Text = secilenOgun.OgunAdi;
         }
-
         private void btnOgunSil_Click(object sender, EventArgs e)
         {
             if (dgvOgunler.SelectedRows.Count == 0)
@@ -137,7 +125,6 @@ namespace KaloriTakipProgrami.UI
             OgunListele();
             OgunBilgileriTemizle();
         }
-
         private void btnOgunGuncelle_Click(object sender, EventArgs e)
         {
             if (dgvOgunler.SelectedRows.Count == 0)
@@ -159,9 +146,6 @@ namespace KaloriTakipProgrami.UI
             OgunListele();
             OgunBilgileriTemizle();
         }
-
-
-
         private bool ValidateInputsKategoriler()
         {
             if (string.IsNullOrEmpty(txtKategoriAdi.Text))
@@ -171,26 +155,6 @@ namespace KaloriTakipProgrami.UI
             }
             return true;
         }
-
-
-        private void btnKategoriEkle_Click(object sender, EventArgs e)
-        {
-            if (!ValidateInputsKategoriler()) { return; }
-
-            Kategori kategori = new Kategori()
-            {
-                KategoriAdi = txtKategoriAdi.Text,
-            };
-
-            _db.Kategoriler.Add(kategori);
-            _db.SaveChanges();
-
-            MessageBox.Show("Kategori başarıyla eklendi");
-            KategoriListele();
-            KategoriBilgileriTemizle();
-            KategorileriGetir();
-        }
-
         private void KategoriBilgileriTemizle()
         {
             foreach (var control in grpKategoriler.Controls)
@@ -201,9 +165,8 @@ namespace KaloriTakipProgrami.UI
                 }
             }
         }
-
         Kategori secilenKategori;
-        private void dgvKategoriler_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvKategoriler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
             {
@@ -215,8 +178,41 @@ namespace KaloriTakipProgrami.UI
 
             txtKategoriAdi.Text = secilenKategori.KategoriAdi;
         }
+        //private void dgvKategoriler_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (dgvKategoriler.SelectedRows.Count == 0)
+        //    {
+        //        return;
+        //    }
 
-        private void btnKategoriSil_Click(object sender, EventArgs e)
+        //    int secilenKategoriId = (int)dgvKategoriler.SelectedRows[0].Cells["Id"].Value;
+        //    secilenKategori = _db.Kategoriler.Find(secilenKategoriId);
+
+        //    txtKategoriAdi.Text = secilenKategori.KategoriAdi;
+        //}
+        //private void btnKategoriSil_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvKategoriler.SelectedRows.Count == 0)
+        //    {
+        //        MessageBox.Show("Lütfen silmek istediğiniz kategoriyi seçiniz!");
+        //        return;
+        //    }
+
+        //    if (_db.Yemekler.Any(y => y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
+        //    {
+        //        MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
+        //        return;
+        //    }
+
+        //    _db.Remove(secilenKategori);
+        //    _db.SaveChanges();
+
+        //    MessageBox.Show("Kategori başarıyla silindi");
+        //    secilenKategori = null;
+        //    KategoriListele();
+        //    KategoriBilgileriTemizle();
+        //}
+        private void btnKategoriSil_Click_1(object sender, EventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
             {
@@ -238,8 +234,7 @@ namespace KaloriTakipProgrami.UI
             KategoriListele();
             KategoriBilgileriTemizle();
         }
-
-        private void btnKategoriGuncelle_Click(object sender, EventArgs e)
+        private void btnKategoriGuncelle_Click_1(object sender, EventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
             {
@@ -256,7 +251,6 @@ namespace KaloriTakipProgrami.UI
             KategoriListele();
             KategoriBilgileriTemizle();
         }
-
         private bool ValidateInputsYemekler()
         {
             if (string.IsNullOrEmpty(txtYemekAdi.Text) || nudKalori.Value == 0 || cbKategori.SelectedItem == null)
@@ -266,7 +260,6 @@ namespace KaloriTakipProgrami.UI
             }
             return true;
         }
-
         private void KategorileriGetir()
         {
             cbKategori.DataSource = _db.Kategoriler.ToList();
@@ -275,8 +268,7 @@ namespace KaloriTakipProgrami.UI
             cbKategori.SelectedIndex = -1; //Başlangıçta kategori seçili gelmesin.
 
         }
-
-        private void btnYemekEkle_Click(object sender, EventArgs e)
+        private void btnYemekEkle_Click_1(object sender, EventArgs e)
         {
             if (!ValidateInputsYemekler()) { return; }
 
@@ -292,7 +284,6 @@ namespace KaloriTakipProgrami.UI
             YemekListele();
             YemekBilgileriTemizle();
         }
-
         private void YemekBilgileriTemizle()
         {
             foreach (var controls in grpYemekler.Controls)
@@ -311,9 +302,8 @@ namespace KaloriTakipProgrami.UI
                 }
             }
         }
-
         Yemek secilenYemek;
-        private void dgvYemekler_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvYemekler_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvYemekler.SelectedRows.Count == 0)
             {
@@ -326,10 +316,8 @@ namespace KaloriTakipProgrami.UI
             txtYemekAdi.Text = secilenYemek.YemekAdi;
             cbKategori.SelectedValue = secilenYemek.KategoriId;
             nudKalori.Value = secilenYemek.Kalori;
-
         }
-
-        private void btnYemekSil_Click(object sender, EventArgs e)
+        private void btnYemekSil_Click_1(object sender, EventArgs e)
         {
             if (dgvYemekler.SelectedRows.Count == 0)
             {
@@ -345,8 +333,7 @@ namespace KaloriTakipProgrami.UI
             YemekListele();
             YemekBilgileriTemizle();
         }
-
-        private void btnYemekGuncelle_Click(object sender, EventArgs e)
+        private void btnYemekGuncelle_Click_1(object sender, EventArgs e)
         {
             if (dgvYemekler.SelectedRows.Count == 0)
             {
@@ -367,12 +354,29 @@ namespace KaloriTakipProgrami.UI
             YemekListele();
             YemekBilgileriTemizle();
         }
-
-        private void btnGeri_Click(object sender, EventArgs e)
+        private void btnGeri_Click_1(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
 
+        private void btnKategoriEkle_Click_1(object sender, EventArgs e)
+        {
+            if (!ValidateInputsKategoriler()) { return; }
 
+            Kategori kategori = new Kategori()
+            {
+                KategoriAdi = txtKategoriAdi.Text,
+            };
+
+            _db.Kategoriler.Add(kategori);
+            _db.SaveChanges();
+
+            MessageBox.Show("Kategori başarıyla eklendi");
+            KategoriListele();
+            KategoriBilgileriTemizle();
+            KategorileriGetir();
+        }
+
+        
     }
 }
