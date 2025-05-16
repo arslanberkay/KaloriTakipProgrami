@@ -62,7 +62,7 @@ namespace KaloriTakipProgrami.UI
                     {
                         MessageBox.Show("Resim dosyası bulunamadı.");
                     }
-
+                }
 
                 var detay = _girisYapanKullanici?.KullaniciDetaylari?
                .OrderBy(k => k.Tarih)
