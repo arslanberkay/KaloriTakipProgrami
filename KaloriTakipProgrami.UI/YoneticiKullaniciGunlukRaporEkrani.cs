@@ -26,7 +26,6 @@ namespace KaloriTakipProgrami.UI
             InitializeComponent();
             _db = new KaloriTakipDbContext();
         }
-
         private void KullaniciGetir()
         {
             cbKullaniciAdlari.DisplayMember = "KullaniciAdi";
@@ -40,13 +39,11 @@ namespace KaloriTakipProgrami.UI
 
             cbKullaniciAdlari.SelectedIndex = -1;
         }
-
         private void YoneticiKullaniciGunlukRaporEkrani_Load(object sender, EventArgs e)
         {
             KullaniciGetir();
             TabloOlustur();
         }
-
         private bool ValidateInputs()
         {
             if (cbKullaniciAdlari.SelectedItem == null)
@@ -61,7 +58,6 @@ namespace KaloriTakipProgrami.UI
             }
             return true;
         }
-
         private void TabloOlustur()
         {
             lstvKullaniciGunlukRapor.View = View.Details;
@@ -74,8 +70,6 @@ namespace KaloriTakipProgrami.UI
             lstvKullaniciGunlukRapor.Columns.Add("Toplam Kalori", 200);
 
         }
-
-
         private void btnRaporGoruntule_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
@@ -104,19 +98,15 @@ namespace KaloriTakipProgrami.UI
 
                 lstvKullaniciGunlukRapor.Items.Add(listViewItem);
             }
-
         }
-
         private void btnPdf_Click(object sender, EventArgs e)
         {
             PDFOlustur();
         }
-
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExcelOlustur();
         }
-
         private void PDFOlustur()
         {
             try
@@ -190,7 +180,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("PDF dosyası oluşturulurken hata oluştu");
             }
         }
-
         private void ExcelOlustur()
         {
             try
@@ -247,7 +236,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Excel oluşturulurken hata meydana geldi");
             }
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor

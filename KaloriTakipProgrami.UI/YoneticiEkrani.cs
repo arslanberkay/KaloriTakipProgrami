@@ -17,40 +17,35 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
         }
-
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
             YoneticiKullaniciEkrani yoneticiKullaniciEkrani = new YoneticiKullaniciEkrani();
             yoneticiKullaniciEkrani.Show();
         }
-
         private void btnOgunlerKategorilerYemekler_Click(object sender, EventArgs e)
         {
             YoneticiOgunKategoriYemekEkrani yoneticiOgunKategoriYemekEkrani = new YoneticiOgunKategoriYemekEkrani();
             yoneticiOgunKategoriYemekEkrani.Show();
         }
-
         private void btnKullaniciGunlukRaporu_Click(object sender, EventArgs e)
         {
             YoneticiKullaniciGunlukRaporEkrani yoneticiKullaniciGunlukRaporEkrani = new YoneticiKullaniciGunlukRaporEkrani();
             yoneticiKullaniciGunlukRaporEkrani.Show();
         }
-
         private void btnTalepler_Click(object sender, EventArgs e)
         {
             YoneticiTaleplerEkrani yoneticiTaleplerEkrani = new YoneticiTaleplerEkrani();
             yoneticiTaleplerEkrani.Show();
         }
-
         private void btnCikis_Click(object sender, EventArgs e)
         {
             try
             {
                 DialogResult result = MessageBox.Show(
-        "Çıkış yapmak istediğinize emin misiniz?",  // Mesaj
-        "Onay",                                            // Başlık
-        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
-        MessageBoxIcon.Question);                          // Soru simgesi
+                "Çıkış yapmak istediğinize emin misiniz?",  // Mesaj
+                "Onay",                                     // Başlık
+                MessageBoxButtons.YesNo,                    // Yes/No seçenekleri
+                MessageBoxIcon.Question);                   // Soru simgesi
 
                 if (result == DialogResult.Yes)
                 {                   
@@ -67,7 +62,6 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

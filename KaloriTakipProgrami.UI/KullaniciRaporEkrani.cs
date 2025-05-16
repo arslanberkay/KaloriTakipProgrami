@@ -17,7 +17,6 @@ namespace KaloriTakipProgrami.UI
     {
         KaloriTakipDbContext _db;
         Kullanici _girisYapanKullanici;
-
         public KullaniciRaporEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();
@@ -26,14 +25,12 @@ namespace KaloriTakipProgrami.UI
         }
         public KullaniciRaporEkrani()
         {
-
         }
         private void KullaniciRaporEkrani_Load(object sender, EventArgs e)
         {
             TabloOlustur();
             OgunYemekListele();
         }
-
         /// <summary>
         /// Kullanıcının seçtiği iki tarih arasındaki yemekleri listeler
         /// </summary>
@@ -63,7 +60,6 @@ namespace KaloriTakipProgrami.UI
             lstOgunYemekRaporu.Columns.Add("Miktar", 190);
             lstOgunYemekRaporu.Columns.Add("Kalori", 190);
         }
-
         /// <summary>
         /// İçine gönderilen OgunYemek tipindeki listeyi ListViewe aktarır
         /// </summary>
@@ -83,17 +79,14 @@ namespace KaloriTakipProgrami.UI
                 lstOgunYemekRaporu.Items.Add(listViewItem);
             }
         }
-
         private void dtpBaslangicTarihi_ValueChanged(object sender, EventArgs e)
         {
             OgunYemekListele(); //Başlangıç tarihi değiştiğinde yemek kayıtları güncellenir
         }
-
         private void dtpBitisTarihi_ValueChanged(object sender, EventArgs e)
         {
             OgunYemekListele();  //Bitiş tarihi değiştiğinde yemek kayıtları güncellenir
         }
-
         /// <summary>
         /// İçine gönderilen en çok veya en az durumuna göre raporlama yapar
         /// </summary>
@@ -128,7 +121,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Belirtilen tarihler arasında veri bulunamadı.");
                 return;
             }
-
             //Gönderilen parametre true ise maximum yenilen miktarı bulur false ise minimum yenilen miktarı bulur
             decimal hedefMiktar = enCokMu
                 ? tariheGoreYemekMiktarlari.Max(y => y.ToplamYenilenMiktar)
@@ -167,12 +159,10 @@ namespace KaloriTakipProgrami.UI
         {
             YemekTuketimRaporuGoster(true);
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
-
         private void btnTumYemekler_Click(object sender, EventArgs e)
         {
             OgunYemekListele();

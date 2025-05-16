@@ -17,7 +17,6 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciBilgiGuncelleEkrani : Form
     {
-
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
 
@@ -140,7 +139,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Şifre 4-12 karakter arasında olmalıdır", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <= 0)
             {
                 MessageBox.Show("Kilo geçersiz, kilogram cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -156,8 +154,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show(" E-posta adresinizi kontrol ediniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-
             return true;
         }
         private void btnBilgileriGuncelle_Click(object sender, EventArgs e)
@@ -195,18 +191,16 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             KullaniciBilgileri(); 
-
         }
         private void btnHesapDondur_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DialogResult result = MessageBox.Show(
-        "Hesabınızı dondurmak istediğinize emin misiniz?",  // Mesaj
-        "Onay",                                            // Başlık
-        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
-        MessageBoxIcon.Question);                          // Soru simgesi
+                "Hesabınızı dondurmak istediğinize emin misiniz?", // Mesaj
+                "Onay",                                            // Başlık
+                MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
+                MessageBoxIcon.Question);                          // Soru simgesi
 
                 if (result == DialogResult.Yes)
                 {
@@ -216,14 +210,12 @@ namespace KaloriTakipProgrami.UI
                     MessageBox.Show("Hesabınız donduruldu,Tekrar giriş yaptığınızda hesabınız aktif hale gelecektir.Tekrar Beklerizz :)", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
                     kullaniciGirisEkrani.Show();
-
                 }
                 else
                 {
                     // Kullanıcı 'No' tıkladıysa, işlem iptal edilir
                     MessageBox.Show("İşlem iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             catch (DbUpdateConcurrencyException ex)
             {
