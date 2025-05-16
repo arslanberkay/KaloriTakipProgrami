@@ -98,6 +98,7 @@ namespace KaloriTakipProgrami.UI
             btnGunlukRapor.Visible = menuAcikMi;
             bnOgunBilgileriGoster.Visible = menuAcikMi;
             btnRapor.Visible = menuAcikMi;
+            pnlMenu.Visible = menuAcikMi;
         }
 
         private void KullaniciEkrani_Load(object sender, EventArgs e)
@@ -108,9 +109,8 @@ namespace KaloriTakipProgrami.UI
             btnGunlukRapor.Visible = true;
             bnOgunBilgileriGoster.Visible = true;
             btnRapor.Visible = true;
+            pnlMenu.Visible= true;
         }
-
-
         private void btnCikis_Click(object sender, EventArgs e)
         {
             try
@@ -141,5 +141,7 @@ namespace KaloriTakipProgrami.UI
 
 
         }
+
+        
     }
 }
