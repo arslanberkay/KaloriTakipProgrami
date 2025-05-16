@@ -37,15 +37,10 @@ namespace KaloriTakipProgrami.UI
             }).ToList();
         }
 
-
-
-
         private void dgvTalepler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
-
-
 
         private void btnReddedildi_Click(object sender, EventArgs e)
 
@@ -61,8 +56,8 @@ namespace KaloriTakipProgrami.UI
                     talep.Durum = "Reddedildi";
 
                     _db.SaveChanges();
-                    Listele();
                     MessageBox.Show("Talep başarıyla reddedildi");
+                    Listele();
 
                 }
                 else
@@ -90,8 +85,8 @@ namespace KaloriTakipProgrami.UI
                     talep.Durum = "Onaylandı";
 
                     _db.SaveChanges();
-                    Listele();
                     MessageBox.Show("Talep başarıyla onaylandı");
+                    Listele();
                 }
                 else
                 {
@@ -101,10 +96,8 @@ namespace KaloriTakipProgrami.UI
             }
             else
             {
-
                 MessageBox.Show("Lütfen onaylamak istediğiniz talebi seçiniz");
                 return;
-                //deneme
             }
 
         }
@@ -112,6 +105,47 @@ namespace KaloriTakipProgrami.UI
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTümü_Click(object sender, EventArgs e)
+        {
+            Listele();
+        }
+
+        /// <summary>
+        /// Talep durumuna göre filtreleme için içine gönderilen paramatreye göre Onay red veya bekliyor olan talepleri getirmeye yarayan metod
+        /// </summary>
+        /// <param name="onaylandiMi"></param>
+        private void TalepFiltrele(string durumBilgisi)
+        {
+            dgvTalepler.DataSource = _db.Talepler
+          .Include(t => t.Kullanici)
+          .Where(t => t.Durum == durumBilgisi)
+          .Select(t => new
+          {
+              t.Id,
+              t.Konu,
+              t.Mesaj,
+              t.Kullanici.KullaniciAdi,
+              t.Durum
+          })
+          .ToList();
+        }
+
+
+        private void btnOnaylanmis_Click(object sender, EventArgs e)
+        {
+            TalepFiltrele("Onaylandı");
+        }
+
+        private void btnReddedilmis_Click(object sender, EventArgs e)
+        {
+            TalepFiltrele("Reddedildi");
+        }
+
+        private void btnOkunmamis_Click(object sender, EventArgs e)
+        {
+            TalepFiltrele("Bekliyor");
         }
     }
 }

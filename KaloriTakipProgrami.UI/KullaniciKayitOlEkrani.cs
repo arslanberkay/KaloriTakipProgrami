@@ -31,10 +31,6 @@ namespace KaloriTakipProgrami.UI
             InitializeComponent();
             cbCinsiyet.Items.Add("Erkek");
             cbCinsiyet.Items.Add("Kız");
-
-
-
-
         }
 
         private void btnKayitOl_Click(object sender, EventArgs e)
@@ -158,12 +154,10 @@ namespace KaloriTakipProgrami.UI
 
             _db.Add(kullanici);
             _db.SaveChanges();
-            MessageBox.Show("Kullanıcı Bşarıyla eklendi");
+            MessageBox.Show("Kayıt işleminiz başarıyla gerçekleşti");
             Temizle();
-
-
-
-
+            KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
+            kullaniciGirisEkrani.Show();
 
         }
 
