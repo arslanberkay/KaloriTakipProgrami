@@ -56,6 +56,17 @@ namespace KaloriTakipProgrami.UI
                         MessageBox.Show("Resim dosyası bulunamadı.");
                     }
                 }
+                if (!string.IsNullOrEmpty(_girisYapanKullanici.FotografYolu))
+                {
+                    if (File.Exists(_girisYapanKullanici.FotografYolu))
+                    {
+                        pictureBox1.Image = Image.FromFile(_girisYapanKullanici.FotografYolu);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Resim dosyası bulunamadı.");
+                    }
+                }
             }
         }
 
