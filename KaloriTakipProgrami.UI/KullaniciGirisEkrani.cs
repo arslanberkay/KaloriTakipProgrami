@@ -62,9 +62,16 @@ namespace KaloriTakipProgrami.UI
             string sifre = txtSifre.Text;
             string hashliSifre = SifrelemeHelper.Sha256Hash(sifre);
 
+            //burası yeni eklendi BERKAY !!!!!
+            if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            {
+                MessageBox.Show("Lütfen boş alanları doldurunuz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
-                HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
+                //HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
                 yoneticiEkrani.Show();
             }
@@ -75,13 +82,18 @@ namespace KaloriTakipProgrami.UI
                 {
                     girisYapanKullanici.Durum = true; //Hesap aktif hale getirildi
                     _db.SaveChanges(); //Değişiklikleri kaydet
-                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)");
+                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
-                HataUye();
+                //HataUye();
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
-            Temizle();
+            else
+            {
+                ///yeni eklendi BERKAY!!
+                MessageBox.Show("Yanlış kullanıcı adı veya şifre. Lütfen tekrar deneyiniz.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+                Temizle();
         }
         public void HataYonetici()
         {

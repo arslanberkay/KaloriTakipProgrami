@@ -65,7 +65,7 @@
             btnSifreGizle.BackgroundImageLayout = ImageLayout.Stretch;
             btnSifreGizle.Location = new Point(323, 187);
             btnSifreGizle.Name = "btnSifreGizle";
-            btnSifreGizle.Size = new Size(41, 27);
+            btnSifreGizle.Size = new Size(28, 27);
             btnSifreGizle.TabIndex = 1;
             btnSifreGizle.UseVisualStyleBackColor = true;
             btnSifreGizle.Click += btnSifreGizle_Click;
@@ -77,7 +77,7 @@
             btnSifreGoster.ForeColor = SystemColors.ControlText;
             btnSifreGoster.Location = new Point(323, 187);
             btnSifreGoster.Name = "btnSifreGoster";
-            btnSifreGoster.Size = new Size(41, 27);
+            btnSifreGoster.Size = new Size(28, 27);
             btnSifreGoster.TabIndex = 1;
             btnSifreGoster.UseVisualStyleBackColor = true;
             btnSifreGoster.Click += btnSifreGoster_Click;
