@@ -15,13 +15,8 @@ namespace KaloriTakipProgrami.UI
     public partial class KullaniciEkrani : Form
     {
         private Kullanici _girisYapanKullanici;
-
-
-
         public KullaniciEkrani()
         {
-
-
         }
         public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
@@ -42,6 +37,7 @@ namespace KaloriTakipProgrami.UI
                 lblCinsiyet.Text = _girisYapanKullanici.Cinsiyet;
                 lblDogumTarihi.Text = _girisYapanKullanici.DogumTarihi.ToString();
                 lblEposta.Text = _girisYapanKullanici.Email;
+
                 lblKilo.Text = "--";
                 lblBoy.Text = "--";
                 lblVKİ.Text = "--";
@@ -66,48 +62,69 @@ namespace KaloriTakipProgrami.UI
                     {
                         MessageBox.Show("Resim dosyası bulunamadı.");
                     }
+
+
+                var detay = _girisYapanKullanici?.KullaniciDetaylari?
+               .OrderBy(k => k.Tarih)
+               .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
+
+                if (detay?.Kilo == null)
+                {
+                    lblKilo.Text = "--";
+                    lblVKİ.Text = "--";
+                }
+                if (detay?.Boy == null)
+                {
+                    lblBoy.Text = "--";
+                    lblVKİ.Text = "--";
+                }
+                else
+                {
+                    lblKilo.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
+                    lblBoy.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
+                    lblVKİ.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
+
                 }
             }
         }
+        private float Vki()
+        {
+            float.TryParse(lblKilo.Text, out float kilo);  //kg cinsinden
+            float.TryParse(lblBoy.Text, out float boy);  //m cinsinden
 
+            return kilo / (boy * boy);
+        }
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
         {
             //bilgi büncellemeye parametre atadık
             KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani(_girisYapanKullanici);
             kullaniciBilgiGuncelleEkrani.ShowDialog();
         }
-
         private void bnOgunBilgileriGoster_Click(object sender, EventArgs e)
         {
             KullaniciOgunBilgiEkrani kullaniciOgunBilgiEkrani = new KullaniciOgunBilgiEkrani(_girisYapanKullanici);
             kullaniciOgunBilgiEkrani.ShowDialog();
         }
-
         private void btnGunlukRapor_Click(object sender, EventArgs e)
         {
             KullaniciGunlukRaporEkrani kullaniciGunlukRaporEkrani = new KullaniciGunlukRaporEkrani(_girisYapanKullanici);
             kullaniciGunlukRaporEkrani.ShowDialog();
         }
-
         private void btnRapor_Click(object sender, EventArgs e)
         {
             KullaniciRaporEkrani kullaniciRaporEkrani = new KullaniciRaporEkrani(_girisYapanKullanici);
             kullaniciRaporEkrani.ShowDialog();
         }
-
         private void btnGrafikler_Click(object sender, EventArgs e)
         {
             KullaniciGrafikEkrani kullaniciGrafikEkrani = new KullaniciGrafikEkrani(_girisYapanKullanici);
             kullaniciGrafikEkrani.ShowDialog();
         }
-
         private void btnTalepler_Click(object sender, EventArgs e)
         {
-
             KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
             kullaniciTaleplerEkrani.ShowDialog();
         }
-
         private bool menuAcikMi = true;
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -122,7 +139,6 @@ namespace KaloriTakipProgrami.UI
             btnRapor.Visible = menuAcikMi;
             pnlMenu.Visible = menuAcikMi;
         }
-
         private void KullaniciEkrani_Load(object sender, EventArgs e)
         {
             btnBilgiGuncelle.Visible = true;
@@ -138,16 +154,16 @@ namespace KaloriTakipProgrami.UI
             try
             {
                 DialogResult result = MessageBox.Show(
-        "Çıkış yapmak istediğinize emin misiniz?",  // Mesaj
-        "Onay",                                            // Başlık
-        MessageBoxButtons.YesNo,                           // Yes/No seçenekleri
-        MessageBoxIcon.Question);                          // Soru simgesi
+                "Çıkış yapmak istediğinize emin misiniz?",  // Mesaj
+                "Onay",                                     // Başlık
+                MessageBoxButtons.YesNo,                    // Yes/No seçenekleri
+                MessageBoxIcon.Question);                   // Soru simgesi
 
                 if (result == DialogResult.Yes)
                 {
                     _girisYapanKullanici = null;  //kişiyi sıfırlıyoruz.
                     KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
-                    kullaniciGirisEkrani.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -159,11 +175,6 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
-
-        
     }
 }

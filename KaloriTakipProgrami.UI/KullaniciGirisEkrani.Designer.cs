@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciGirisEkrani));
             groupBox1 = new GroupBox();
-            chkSifreGoster = new CheckBox();
+            btnSifreGizle = new Button();
+            btnSifreGoster = new Button();
             lnkKayitOl = new LinkLabel();
             lnkSifremiUnuttum = new LinkLabel();
             btnGirisYap = new Button();
@@ -42,7 +44,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chkSifreGoster);
+            groupBox1.Controls.Add(btnSifreGizle);
+            groupBox1.Controls.Add(btnSifreGoster);
             groupBox1.Controls.Add(lnkKayitOl);
             groupBox1.Controls.Add(lnkSifremiUnuttum);
             groupBox1.Controls.Add(btnGirisYap);
@@ -56,18 +59,28 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // chkSifreGoster
+            // btnSifreGizle
             // 
-            chkSifreGoster.AutoSize = true;
-            chkSifreGoster.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            chkSifreGoster.ForeColor = SystemColors.ButtonHighlight;
-            chkSifreGoster.Location = new Point(100, 194);
-            chkSifreGoster.Name = "chkSifreGoster";
-            chkSifreGoster.Size = new Size(147, 29);
-            chkSifreGoster.TabIndex = 3;
-            chkSifreGoster.Text = "Şifreyi Göster";
-            chkSifreGoster.UseVisualStyleBackColor = true;
-            chkSifreGoster.CheckedChanged += chkSifreGoster_CheckedChanged;
+            btnSifreGizle.BackgroundImage = (Image)resources.GetObject("btnSifreGizle.BackgroundImage");
+            btnSifreGizle.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSifreGizle.Location = new Point(323, 187);
+            btnSifreGizle.Name = "btnSifreGizle";
+            btnSifreGizle.Size = new Size(41, 27);
+            btnSifreGizle.TabIndex = 1;
+            btnSifreGizle.UseVisualStyleBackColor = true;
+            btnSifreGizle.Click += btnSifreGizle_Click;
+            // 
+            // btnSifreGoster
+            // 
+            btnSifreGoster.BackgroundImage = (Image)resources.GetObject("btnSifreGoster.BackgroundImage");
+            btnSifreGoster.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSifreGoster.ForeColor = SystemColors.ControlText;
+            btnSifreGoster.Location = new Point(323, 187);
+            btnSifreGoster.Name = "btnSifreGoster";
+            btnSifreGoster.Size = new Size(41, 27);
+            btnSifreGoster.TabIndex = 1;
+            btnSifreGoster.UseVisualStyleBackColor = true;
+            btnSifreGoster.Click += btnSifreGoster_Click;
             // 
             // lnkKayitOl
             // 
@@ -105,7 +118,7 @@
             btnGirisYap.FlatStyle = FlatStyle.Popup;
             btnGirisYap.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnGirisYap.ForeColor = Color.Black;
-            btnGirisYap.Location = new Point(100, 254);
+            btnGirisYap.Location = new Point(100, 244);
             btnGirisYap.Name = "btnGirisYap";
             btnGirisYap.Size = new Size(217, 45);
             btnGirisYap.TabIndex = 4;
@@ -115,7 +128,7 @@
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(100, 156);
+            txtSifre.Location = new Point(100, 185);
             txtSifre.Name = "txtSifre";
             txtSifre.PasswordChar = '*';
             txtSifre.Size = new Size(217, 32);
@@ -125,7 +138,7 @@
             // 
             txtKullaniciAdi.BackColor = Color.White;
             txtKullaniciAdi.ForeColor = Color.FromArgb(51, 51, 51);
-            txtKullaniciAdi.Location = new Point(100, 77);
+            txtKullaniciAdi.Location = new Point(100, 89);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Size = new Size(217, 32);
             txtKullaniciAdi.TabIndex = 1;
@@ -135,7 +148,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(100, 128);
+            label2.Location = new Point(100, 157);
             label2.Name = "label2";
             label2.Size = new Size(50, 25);
             label2.TabIndex = 0;
@@ -147,7 +160,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(100, 45);
+            label1.Location = new Point(100, 57);
             label1.Name = "label1";
             label1.Size = new Size(120, 25);
             label1.TabIndex = 0;
@@ -174,7 +187,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private CheckBox chkSifreGoster;
         private LinkLabel lnkKayitOl;
         private LinkLabel lnkSifremiUnuttum;
         private Button btnGirisYap;
@@ -182,5 +194,7 @@
         private TextBox txtKullaniciAdi;
         private Label label2;
         private Label label1;
+        private Button btnSifreGizle;
+        private Button btnSifreGoster;
     }
 }

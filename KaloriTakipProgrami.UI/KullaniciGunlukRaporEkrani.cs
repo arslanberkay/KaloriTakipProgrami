@@ -25,18 +25,14 @@ namespace KaloriTakipProgrami.UI
             _db = new KaloriTakipDbContext();
             _girisYapanKullanici = girisYapanKullanici;
         }
-
         public KullaniciGunlukRaporEkrani()
         {
-
         }
-
         private void KullaniciGunlukRaporEkrani_Load(object sender, EventArgs e)
         {
             OgunleriGetir();
             TabloOlustur();
         }
-
         private void OgunleriGetir()
         {
             var ogunler = _db.Ogunler.ToList();
@@ -57,7 +53,6 @@ namespace KaloriTakipProgrami.UI
             cmbOgunler.ValueMember = "Id";
             cmbOgunler.SelectedIndex = -1;
         }
-
         private bool ValidateInputs()
         {
             if (dtpTarih.Value > DateTime.Now)
@@ -71,9 +66,7 @@ namespace KaloriTakipProgrami.UI
                 return false;
             }
             return true;
-
         }
-
         private void btnGoruntule_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs()) { return; }
@@ -94,7 +87,6 @@ namespace KaloriTakipProgrami.UI
                 lblKaloriBilgilendirme.Text = $"Gün İçinde Alınan Toplam Kalori : {Math.Round(tariheGoreToplamKalori)} kcal";
 
                 ListViewdeGoster(tariheGoreYemekler);
-
             }
             else
             {
@@ -112,10 +104,8 @@ namespace KaloriTakipProgrami.UI
                 lblKaloriBilgilendirme.Text = $"{(cmbOgunler.SelectedItem as Ogun).OgunAdi} İçin Alınan Toplam Kalori : {Math.Round(tariheVeOguneGoreToplamKalori)} kcal";
 
                 ListViewdeGoster(tariheVeOguneGoreYemekler);
-
             }
         }
-
         private void TabloOlustur()
         {
             lstvOgunYemekDetayliRapor.View = System.Windows.Forms.View.Details;
@@ -149,12 +139,10 @@ namespace KaloriTakipProgrami.UI
                 lstvOgunYemekDetayliRapor.Items.Add(listViewItem);
             }
         }
-
         private void TabloTemizle()
         {
             lstvOgunYemekDetayliRapor.Items.Clear();
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor

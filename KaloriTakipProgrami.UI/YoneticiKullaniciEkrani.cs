@@ -19,7 +19,6 @@ namespace KaloriTakipProgrami.UI
             InitializeComponent();
             _db = new KaloriTakipDbContext();
         }
-
         private void YoneticiKullaniciEkrani_Load(object sender, EventArgs e)
         {
             dgvKullanicilar.DataSource = _db.Kullanicilar.Select(k => new
@@ -33,7 +32,6 @@ namespace KaloriTakipProgrami.UI
             })
                 .ToList();
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor

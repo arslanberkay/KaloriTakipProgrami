@@ -46,7 +46,6 @@ namespace KaloriTakipProgrami.UI
                     kullanici.Sifre = hashliSifre;
                 }
             }
-
             var yoneticiler = _db.Yoneticiler.ToList();
             foreach (var yonetici in yoneticiler)
             {
@@ -82,6 +81,7 @@ namespace KaloriTakipProgrami.UI
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
+            Temizle();
         }
         public void HataYonetici()
         {
@@ -123,18 +123,29 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
         }
-        private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
+        private void Temizle() 
         {
-            if (chkSifreGoster.Checked)
-            {
-                // Şifreyi göster
-                txtSifre.PasswordChar = '\0';
-            }
-            else
-            {
-                // Şifreyi gizle
-                txtSifre.PasswordChar = '*'; // veya istediğin başka bir karakter
-            }
+            txtKullaniciAdi.Text=txtSifre.Text=string.Empty;
+        }
+        private void ButonlarTrue()
+        {
+            btnSifreGoster.Visible = false;
+            btnSifreGizle.Visible = true;
+        }
+        private void Butonlarfalse()
+        {
+            btnSifreGoster.Visible = true;
+            btnSifreGizle.Visible = false;
+        }
+        private void btnSifreGizle_Click(object sender, EventArgs e)
+        {
+            Butonlarfalse();
+            txtSifre.PasswordChar = '\0';
+        }
+        private void btnSifreGoster_Click(object sender, EventArgs e)
+        {
+            ButonlarTrue();
+            txtSifre.PasswordChar = '*';
         }
     }
 }

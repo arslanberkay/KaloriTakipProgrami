@@ -18,10 +18,6 @@ using Path = System.IO.Path;
 using PdfSharp.Drawing;
 using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 
-
-
-
-
 namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciGrafikEkrani : Form
@@ -37,12 +33,10 @@ namespace KaloriTakipProgrami.UI
             girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 2);
             GirisYapanKullanici = girisYapanKullanici;
         }
-
         private void KullaniciGrafikEkrani_Load(object sender, EventArgs e)
         {
             BoyGrafigi();
             KiloGrafigi();
-
         }
         private void KiloGrafigi()
         {
@@ -148,7 +142,6 @@ namespace KaloriTakipProgrami.UI
                 axisX.Minimum = tarih.AddDays(-1).ToOADate();
                 axisX.Maximum = tarih.AddDays(1).ToOADate();
             }
-
             // Zoom / Scroll
             var chartArea = cKiloG.ChartAreas[0];
             chartArea.CursorX.IsUserEnabled = true;
@@ -163,13 +156,12 @@ namespace KaloriTakipProgrami.UI
             axisY.Maximum = Double.NaN;
             axisY.IntervalAutoMode = IntervalAutoMode.VariableCount;
         }
-
         private void BoyGrafigi()
         {
             var detaylar = _context.KullaniciDetaylari
-        .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
-        .OrderBy(kd => kd.Tarih)
-        .ToList();
+           .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
+           .OrderBy(kd => kd.Tarih)
+           .ToList();
 
             if (!detaylar.Any())
             {
@@ -230,12 +222,10 @@ namespace KaloriTakipProgrami.UI
             axisY.Maximum = 2.2;    // Max 2.2 metre
             axisY.Interval = 0.05;  // Her 5 cm'de bir çizgi
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
-
         private void btnKiloPdf_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveDialog = new SaveFileDialog())
@@ -259,7 +249,6 @@ namespace KaloriTakipProgrami.UI
                 }
             }
         }
-
         private void btnBoyPdf_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveDialog = new SaveFileDialog())
