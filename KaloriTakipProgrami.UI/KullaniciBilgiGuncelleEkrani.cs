@@ -214,7 +214,8 @@ namespace KaloriTakipProgrami.UI
                     _context.Kullanicilar.Update(GirisYapanKullanici);
                     _context.SaveChanges();
                     MessageBox.Show("Hesabınız donduruldu,Tekrar giriş yaptığınızda hesabınız aktif hale gelecektir.Tekrar Beklerizz :)", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
+                    KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
+                    kullaniciGirisEkrani.Show();
 
                 }
                 else

@@ -129,10 +129,10 @@
             btnSil.BackColor = Color.FromArgb(164, 172, 134);
             btnSil.FlatStyle = FlatStyle.Popup;
             btnSil.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnSil.Location = new Point(799, 345);
+            btnSil.Location = new Point(827, 329);
             btnSil.Margin = new Padding(3, 2, 3, 2);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(100, 35);
+            btnSil.Size = new Size(111, 39);
             btnSil.TabIndex = 10;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = false;
@@ -143,10 +143,10 @@
             btnGüncelle.BackColor = Color.FromArgb(164, 172, 134);
             btnGüncelle.FlatStyle = FlatStyle.Popup;
             btnGüncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGüncelle.Location = new Point(905, 345);
+            btnGüncelle.Location = new Point(953, 329);
             btnGüncelle.Margin = new Padding(3, 2, 3, 2);
             btnGüncelle.Name = "btnGüncelle";
-            btnGüncelle.Size = new Size(100, 34);
+            btnGüncelle.Size = new Size(109, 39);
             btnGüncelle.TabIndex = 11;
             btnGüncelle.Text = "Güncelle";
             btnGüncelle.UseVisualStyleBackColor = false;
@@ -156,11 +156,11 @@
             // 
             btnPdfOlustur.BackColor = Color.FromArgb(164, 172, 134);
             btnPdfOlustur.FlatStyle = FlatStyle.Popup;
-            btnPdfOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnPdfOlustur.Location = new Point(1023, 680);
+            btnPdfOlustur.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnPdfOlustur.Location = new Point(985, 674);
             btnPdfOlustur.Margin = new Padding(3, 2, 3, 2);
             btnPdfOlustur.Name = "btnPdfOlustur";
-            btnPdfOlustur.Size = new Size(91, 35);
+            btnPdfOlustur.Size = new Size(110, 41);
             btnPdfOlustur.TabIndex = 12;
             btnPdfOlustur.Text = "PDF";
             btnPdfOlustur.UseVisualStyleBackColor = false;
@@ -170,11 +170,11 @@
             // 
             btnExcelOlustur.BackColor = Color.FromArgb(164, 172, 134);
             btnExcelOlustur.FlatStyle = FlatStyle.Popup;
-            btnExcelOlustur.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnExcelOlustur.Location = new Point(1141, 680);
+            btnExcelOlustur.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnExcelOlustur.Location = new Point(1121, 674);
             btnExcelOlustur.Margin = new Padding(3, 2, 3, 2);
             btnExcelOlustur.Name = "btnExcelOlustur";
-            btnExcelOlustur.Size = new Size(91, 35);
+            btnExcelOlustur.Size = new Size(111, 41);
             btnExcelOlustur.TabIndex = 13;
             btnExcelOlustur.Text = "EXCEL";
             btnExcelOlustur.UseVisualStyleBackColor = false;
@@ -185,10 +185,10 @@
             btnEkle.BackColor = Color.FromArgb(164, 172, 134);
             btnEkle.FlatStyle = FlatStyle.Popup;
             btnEkle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnEkle.Location = new Point(693, 345);
+            btnEkle.Location = new Point(693, 329);
             btnEkle.Margin = new Padding(3, 2, 3, 2);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(100, 34);
+            btnEkle.Size = new Size(109, 38);
             btnEkle.TabIndex = 14;
             btnEkle.Text = "Ekle";
             btnEkle.UseVisualStyleBackColor = false;
@@ -209,10 +209,10 @@
             // 
             lsvOgunBilgileri.BackColor = Color.FromArgb(202, 210, 197);
             lsvOgunBilgileri.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            lsvOgunBilgileri.Location = new Point(65, 397);
+            lsvOgunBilgileri.Location = new Point(65, 384);
             lsvOgunBilgileri.Margin = new Padding(3, 2, 3, 2);
             lsvOgunBilgileri.Name = "lsvOgunBilgileri";
-            lsvOgunBilgileri.Size = new Size(1167, 265);
+            lsvOgunBilgileri.Size = new Size(1167, 274);
             lsvOgunBilgileri.TabIndex = 15;
             lsvOgunBilgileri.UseCompatibleStateImageBehavior = false;
             lsvOgunBilgileri.DoubleClick += lsvOgunBilgileri_DoubleClick;
@@ -265,7 +265,7 @@
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(610, 321);
+            groupBox1.Size = new Size(610, 308);
             groupBox1.TabIndex = 31;
             groupBox1.TabStop = false;
             groupBox1.Text = "ÖĞÜN BİLGİLERİ";

@@ -89,32 +89,31 @@
             // lblToplamKaloriMiktari
             // 
             lblToplamKaloriMiktari.AutoSize = true;
-            lblToplamKaloriMiktari.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            lblToplamKaloriMiktari.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold);
             lblToplamKaloriMiktari.ForeColor = SystemColors.ButtonHighlight;
-            lblToplamKaloriMiktari.Location = new Point(1186, 298);
+            lblToplamKaloriMiktari.Location = new Point(850, 166);
             lblToplamKaloriMiktari.Margin = new Padding(4, 0, 4, 0);
             lblToplamKaloriMiktari.Name = "lblToplamKaloriMiktari";
-            lblToplamKaloriMiktari.Size = new Size(62, 25);
+            lblToplamKaloriMiktari.Size = new Size(0, 31);
             lblToplamKaloriMiktari.TabIndex = 4;
-            lblToplamKaloriMiktari.Text = "label3";
             // 
             // lblKaloriBilgilendirme
             // 
             lblKaloriBilgilendirme.AutoSize = true;
-            lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            lblKaloriBilgilendirme.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold);
             lblKaloriBilgilendirme.ForeColor = SystemColors.ButtonHighlight;
-            lblKaloriBilgilendirme.Location = new Point(1034, 298);
+            lblKaloriBilgilendirme.Location = new Point(698, 166);
             lblKaloriBilgilendirme.Margin = new Padding(4, 0, 4, 0);
             lblKaloriBilgilendirme.Name = "lblKaloriBilgilendirme";
-            lblKaloriBilgilendirme.Size = new Size(125, 25);
+            lblKaloriBilgilendirme.Size = new Size(0, 31);
             lblKaloriBilgilendirme.TabIndex = 5;
-            lblKaloriBilgilendirme.Text = "Toplam Kalori";
             // 
             // btnGoruntule
             // 
             btnGoruntule.BackColor = Color.FromArgb(164, 172, 134);
             btnGoruntule.FlatStyle = FlatStyle.Popup;
             btnGoruntule.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnGoruntule.ForeColor = SystemColors.ActiveCaptionText;
             btnGoruntule.Location = new Point(115, 154);
             btnGoruntule.Name = "btnGoruntule";
             btnGoruntule.Size = new Size(312, 52);
@@ -126,9 +125,9 @@
             // lstvOgunYemekDetayliRapor
             // 
             lstvOgunYemekDetayliRapor.BackColor = Color.FromArgb(202, 210, 197);
-            lstvOgunYemekDetayliRapor.Location = new Point(35, 344);
+            lstvOgunYemekDetayliRapor.Location = new Point(51, 344);
             lstvOgunYemekDetayliRapor.Name = "lstvOgunYemekDetayliRapor";
-            lstvOgunYemekDetayliRapor.Size = new Size(1213, 307);
+            lstvOgunYemekDetayliRapor.Size = new Size(1185, 345);
             lstvOgunYemekDetayliRapor.TabIndex = 7;
             lstvOgunYemekDetayliRapor.UseCompatibleStateImageBehavior = false;
             // 
@@ -153,7 +152,8 @@
             groupBox1.Controls.Add(dtpTarih);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(35, 84);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            groupBox1.Location = new Point(51, 85);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(463, 239);
             groupBox1.TabIndex = 0;
