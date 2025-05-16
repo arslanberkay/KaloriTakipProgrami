@@ -29,6 +29,10 @@ namespace KaloriTakipProgrami.UI
             KategoriListele();
             YemekListele();
             KategorileriGetir();
+
+            dgvKategoriler.ForeColor = Color.Black;
+            dgvOgunler.ForeColor = Color.Black;
+            dgvYemekler.ForeColor = Color.Black;
         }
 
         private void OgunListele()
@@ -53,9 +57,8 @@ namespace KaloriTakipProgrami.UI
                     y.YemekAdi,
                     y.Kalori,
                     y.Kategori.KategoriAdi,
-
-
                 })
+                .OrderBy(y => y.Id)
                 .ToList();
 
             dgvYemekler.ClearSelection();
@@ -185,6 +188,7 @@ namespace KaloriTakipProgrami.UI
             MessageBox.Show("Kategori başarıyla eklendi");
             KategoriListele();
             KategoriBilgileriTemizle();
+            KategorileriGetir();
         }
 
         private void KategoriBilgileriTemizle()
@@ -199,7 +203,7 @@ namespace KaloriTakipProgrami.UI
         }
 
         Kategori secilenKategori;
-        private void dgvKategoriler_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvKategoriler_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
             {
@@ -220,7 +224,7 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
 
-            if (_db.Yemekler.Any(y=>y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
+            if (_db.Yemekler.Any(y => y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
             {
                 MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
                 return;
@@ -368,5 +372,7 @@ namespace KaloriTakipProgrami.UI
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
+
+
     }
 }
