@@ -29,14 +29,17 @@ namespace KaloriTakipProgrami.UI
         }
         private void KullaniciOgunBilgiEkrani_Load(object sender, EventArgs e)
         {
-            //todo 
             cmbKategoriler.DataSource = _db.Kategoriler.ToList();
             cmbKategoriler.DisplayMember = "KategoriAdi";   // Kullanıcıya görünen
             cmbKategoriler.ValueMember = "Id";
+            cmbKategoriler.SelectedIndex = -1;
 
             cmbOgunler.DataSource = _db.Ogunler.ToList();
             cmbOgunler.DisplayMember = "OgunAdi";
             cmbOgunler.ValueMember = "Id";
+            cmbOgunler.SelectedIndex = -1;
+
+            cmbYemekler.SelectedIndex = -1;
         }
         private void ListViewSutunEkle()
         {
@@ -243,7 +246,6 @@ namespace KaloriTakipProgrami.UI
                 {
                     OgunId = (int)cmbOgunler.SelectedValue,
                     YemekId = (int)cmbYemekler.SelectedValue,
-                    //
                     Tarih = dtpTarih.Value.Date,
                     Miktar = nudMiktar.Value,
                 };

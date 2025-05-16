@@ -91,7 +91,7 @@ namespace KaloriTakipProgrami.UI
                     .Where(oy => oy.Tarih.Date == dtpTarih.Value.Date && oy.KullaniciId == _girisYapanKullanici.Id)
                     .Sum(oy => (oy.Miktar / 100) * oy.Yemek.Kalori);
 
-                lblKaloriBilgilendirme.Text = $"Gün içinde alınan toplam kalori miktari : {Math.Round(tariheGoreToplamKalori, 2)}kcal";
+                lblKaloriBilgilendirme.Text = $"Gün İçinde Alınan Toplam Kalori : {Math.Round(tariheGoreToplamKalori)} kcal";
 
                 ListViewdeGoster(tariheGoreYemekler);
 
@@ -109,7 +109,7 @@ namespace KaloriTakipProgrami.UI
                     .Where(oy => oy.Tarih.Date == dtpTarih.Value.Date && oy.KullaniciId == _girisYapanKullanici.Id && oy.OgunId == (int)cmbOgunler.SelectedValue)
                     .Sum(oy => (oy.Miktar / 100) * oy.Yemek.Kalori);
 
-                lblKaloriBilgilendirme.Text = $"{cmbOgunler.SelectedText} öğününde alınan toplam kalori miktari : {Math.Round(tariheVeOguneGoreToplamKalori, 2)}kcal";
+                lblKaloriBilgilendirme.Text = $"{(cmbOgunler.SelectedItem as Ogun).OgunAdi} İçin Alınan Toplam Kalori : {Math.Round(tariheVeOguneGoreToplamKalori)} kcal";
 
                 ListViewdeGoster(tariheVeOguneGoreYemekler);
 
@@ -143,8 +143,8 @@ namespace KaloriTakipProgrami.UI
                 listViewItem.SubItems.Add(filtrelenmisYemek.Ogun.OgunAdi);
                 listViewItem.SubItems.Add(filtrelenmisYemek.Yemek.Kategori.KategoriAdi);
                 listViewItem.SubItems.Add(filtrelenmisYemek.Yemek.YemekAdi);
-                listViewItem.SubItems.Add(filtrelenmisYemek.Miktar.ToString());
-                listViewItem.SubItems.Add(((filtrelenmisYemek.Miktar / 100) * filtrelenmisYemek.Yemek.Kalori).ToString());
+                listViewItem.SubItems.Add(Math.Round(filtrelenmisYemek.Miktar).ToString() + " gr");
+                listViewItem.SubItems.Add(Math.Round(((filtrelenmisYemek.Miktar / 100) * filtrelenmisYemek.Yemek.Kalori)).ToString() + " kcal");
 
                 lstvOgunYemekDetayliRapor.Items.Add(listViewItem);
             }
