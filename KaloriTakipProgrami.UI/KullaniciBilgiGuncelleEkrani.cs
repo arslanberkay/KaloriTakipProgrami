@@ -30,7 +30,7 @@ namespace KaloriTakipProgrami.UI
             InitializeComponent();
             var kullanici = _context.Kullanicilar
               .Include(k => k.KullaniciDetaylari)
-              .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.
+              .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.            
         }
         private void KullaniciBilgileri()
         {

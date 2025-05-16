@@ -146,6 +146,7 @@ namespace KaloriTakipProgrami.UI
         {
             ButonlarTrue();
             txtSifre.PasswordChar = '*';
-        }
-    }
+        }      
+    }  
+
 }

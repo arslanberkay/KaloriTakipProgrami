@@ -17,10 +17,17 @@ namespace KaloriTakipProgrami.UI
              Kullanici kullanicim = new Kullanici();//kullan�c�bilgi g�ncellemede parametreye ihtiyac�m oldu�u i�in a�t�m
 
             // Application.Run(new KullaniciBilgiGuncelleEkrani(kullanicim));
+            GeciciEkran splash = new GeciciEkran();
+            splash.Show();
+            splash.Refresh(); // Ekranı dondurmamak için
+
+            // 3 saniye bekle
+            System.Threading.Thread.Sleep(1500);
+
+            splash.Close(); // Splash ekranı kapat
 
 
-
-          //  Application.Run(new KullaniciGirisEkrani());
+            //  Application.Run(new KullaniciGirisEkrani());
 
 
             //Application.Run(new KullaniciGrafikEkrani(kullanicim));
@@ -32,6 +39,7 @@ namespace KaloriTakipProgrami.UI
 
 
             // Application.Run(new KullaniciEkrani(kullanicim));
+            
 
 
 
