@@ -123,18 +123,27 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
         }
-        private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
+        private void ButonlarTrue()
         {
-            if (chkSifreGoster.Checked)
-            {
-                // Şifreyi göster
-                txtSifre.PasswordChar = '\0';
-            }
-            else
-            {
-                // Şifreyi gizle
-                txtSifre.PasswordChar = '*'; // veya istediğin başka bir karakter
-            }
+            btnSifreGoster.Visible = false;
+            btnSifreGizle.Visible = true;
+        }
+        private void Butonlarfalse()
+        {
+            btnSifreGoster.Visible = true;
+            btnSifreGizle.Visible = false;
+        }
+        private void btnSifreGizle_Click(object sender, EventArgs e)
+        {
+            
+            Butonlarfalse();
+            txtSifre.PasswordChar = '\0';
+        }
+        private void btnSifreGoster_Click(object sender, EventArgs e)
+        {
+           
+            ButonlarTrue();
+            txtSifre.PasswordChar = '*';
         }
     }
 }
