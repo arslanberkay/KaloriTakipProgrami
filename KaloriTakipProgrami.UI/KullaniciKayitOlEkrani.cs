@@ -18,13 +18,6 @@ namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciKayitOlEkrani : Form
     {
-
-        //todo: şifre hash olacak yapılmadı
-
-
-
-
-
         KaloriTakipDbContext _db = new KaloriTakipDbContext();
         public KullaniciKayitOlEkrani()
         {
@@ -32,7 +25,6 @@ namespace KaloriTakipProgrami.UI
             cbCinsiyet.Items.Add("Erkek");
             cbCinsiyet.Items.Add("Kız");
         }
-
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text))
@@ -53,13 +45,7 @@ namespace KaloriTakipProgrami.UI
                 }
             }//üst satırlarda databaseimizde kullanıcı adları aynı olan var mı onun kontrolü yapıldı.
 
-
-
-
-
             //burada ise kullaniciyi kaydettik
-
-
 
             /* ************************şifre kısmı ****************************** */
 
@@ -69,8 +55,6 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.Text = "";
                 txtSifreTekrar.Text = "";
                 return;
-
-
             }
             if (!Regex.IsMatch(txtSifre.Text, @"^(?=.*\d).+$"))
             {
@@ -78,7 +62,6 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.Text = "";
                 txtSifreTekrar.Text = "";
                 return;
-
             }
             if (txtSifre.Text != txtSifreTekrar.Text)
             {
@@ -86,18 +69,14 @@ namespace KaloriTakipProgrami.UI
                 txtSifre.Text = "";
                 txtSifreTekrar.Text = "";
                 return;
-
             }
             /////////////////////////////  Ad ,Soyad kısmı//////////////////////////////
-
             if (string.IsNullOrWhiteSpace(txtAd.Text) || string.IsNullOrWhiteSpace(txtSoyad.Text))
             {
                 MessageBox.Show("Ad ve Soyad kısmını boş geçmeyiniz");
                 txtAd.Text = "";
                 txtSoyad.Text = "";
-
                 return;
-
             }
             if (Regex.IsMatch(txtAd.Text, @"\d") || Regex.IsMatch(txtSoyad.Text, @"\d"))
             {
@@ -107,12 +86,10 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
             ///////////////////////doğum tarihi kısmı/////////////////////
-
             if (dtpDogumTarihi.Value > DateTime.Now)
             {
                 MessageBox.Show("Girdiğiniz tarih geçersiz");
                 return;
-
             }
             ///////e mail kısmı/////
             if (!txtMail.Text.Contains("@gmail.com"))
@@ -122,7 +99,6 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
             /////////cinsiyet kısmı////////  
-
             if (cbCinsiyet.SelectedIndex == null)
             {
                 MessageBox.Show("Lütfen cinsiyet seçiniz");
@@ -148,25 +124,17 @@ namespace KaloriTakipProgrami.UI
                 txtMail.Text = "";
                 return;
             }
-
-
-
-
             _db.Add(kullanici);
             _db.SaveChanges();
             MessageBox.Show("Kayıt işleminiz başarıyla gerçekleşti");
             Temizle();
             KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
             kullaniciGirisEkrani.Show();
-
         }
-
         private void btnFotografSec_Click(object sender, EventArgs e)
         {
-
             FotografEkle();
         }
-
         private void FotografEkle()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -183,10 +151,7 @@ namespace KaloriTakipProgrami.UI
         {
             txtAd.Text = txtFotograf.Text = txtKullaniciAdi.Text = txtMail.Text =
                 txtSifre.Text = txtSifreTekrar.Text = txtSoyad.Text = string.Empty;
-
-
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -194,7 +159,6 @@ namespace KaloriTakipProgrami.UI
                 // Şifreyi göster
                 txtSifre.PasswordChar = '\0';
                 txtSifreTekrar.PasswordChar = '\0';
-
             }
             else
             {
@@ -203,7 +167,6 @@ namespace KaloriTakipProgrami.UI
                 txtSifreTekrar.PasswordChar = '*'; // veya istediğin başka bir karakter
             }
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor

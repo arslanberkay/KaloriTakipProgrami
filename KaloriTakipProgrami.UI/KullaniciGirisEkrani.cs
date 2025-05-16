@@ -46,7 +46,6 @@ namespace KaloriTakipProgrami.UI
                     kullanici.Sifre = hashliSifre;
                 }
             }
-
             var yoneticiler = _db.Yoneticiler.ToList();
             foreach (var yonetici in yoneticiler)
             {
@@ -140,13 +139,11 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnSifreGizle_Click(object sender, EventArgs e)
         {
-            
             Butonlarfalse();
             txtSifre.PasswordChar = '\0';
         }
         private void btnSifreGoster_Click(object sender, EventArgs e)
         {
-           
             ButonlarTrue();
             txtSifre.PasswordChar = '*';
         }

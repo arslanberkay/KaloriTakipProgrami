@@ -73,12 +73,10 @@ namespace KaloriTakipProgrami.UI
             {
                 return;
             }
-
             Ogun ogun = new Ogun()
             {
                 OgunAdi = txtOgunAdi.Text,
             };
-
             _db.Ogunler.Add(ogun);
             _db.SaveChanges();
 
@@ -103,7 +101,6 @@ namespace KaloriTakipProgrami.UI
             {
                 return;
             }
-
             int secilenOgunId = (int)dgvOgunler.SelectedRows[0].Cells[0].Value;
             secilenOgun = _db.Ogunler.Find(secilenOgunId);
 
@@ -116,7 +113,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen silmek istediğiniz öğünü seçiniz!");
                 return;
             }
-
             _db.Remove(secilenOgun);
             _db.SaveChanges();
 
@@ -132,12 +128,10 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen güncellemek istediğiniz öğünü seçiniz!");
                 return;
             }
-
             if (!ValidateInputsOgunler())
             {
                 return;
             }
-
             secilenOgun.OgunAdi = txtOgunAdi.Text;
             _db.SaveChanges();
 
@@ -219,13 +213,11 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen silmek istediğiniz kategoriyi seçiniz!");
                 return;
             }
-
             if (_db.Yemekler.Any(y => y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
             {
                 MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
                 return;
             }
-
             _db.Remove(secilenKategori);
             _db.SaveChanges();
 
@@ -241,7 +233,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen güncellemek istediğiniz kategoriyi seçiniz!");
                 return;
             }
-
             secilenKategori.KategoriAdi = txtKategoriAdi.Text;
 
             _db.SaveChanges();
@@ -266,7 +257,6 @@ namespace KaloriTakipProgrami.UI
             cbKategori.DisplayMember = "KategoriAdi";
             cbKategori.ValueMember = "Id";
             cbKategori.SelectedIndex = -1; //Başlangıçta kategori seçili gelmesin.
-
         }
         private void btnYemekEkle_Click_1(object sender, EventArgs e)
         {
@@ -358,7 +348,6 @@ namespace KaloriTakipProgrami.UI
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
-
         private void btnKategoriEkle_Click_1(object sender, EventArgs e)
         {
             if (!ValidateInputsKategoriler()) { return; }
@@ -376,7 +365,5 @@ namespace KaloriTakipProgrami.UI
             KategoriBilgileriTemizle();
             KategorileriGetir();
         }
-
-        
     }
 }
