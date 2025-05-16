@@ -11,12 +11,14 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using KaloriTakipProgrami.UI.Helpers;
+using KaloriTakipProgrami.UI.Models;
 
 namespace KaloriTakipProgrami.UI
 {
     public partial class KullaniciGirisEkrani : Form
     {
         KaloriTakipDbContext _db = new KaloriTakipDbContext();
+        Kullanici girisYapanKullanici;
         public KullaniciGirisEkrani()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace KaloriTakipProgrami.UI
             SifremiUnuttumEkrani sifremiUnuttumEkrani = new SifremiUnuttumEkrani();
             sifremiUnuttumEkrani.Show();
         }
-        private void TumSifreleriHashle() 
+        private void TumSifreleriHashle()
         {
             var kullanicilar = _db.Kullanicilar.ToList();
             foreach (var kullanici in kullanicilar)
@@ -48,13 +50,13 @@ namespace KaloriTakipProgrami.UI
             var yoneticiler = _db.Yoneticiler.ToList();
             foreach (var yonetici in yoneticiler)
             {
-                if (!string.IsNullOrWhiteSpace(yonetici.Sifre) && yonetici.Sifre.Length != 64) 
+                if (!string.IsNullOrWhiteSpace(yonetici.Sifre) && yonetici.Sifre.Length != 64)
                 {
                     string hashliSifre = SifrelemeHelper.Sha256Hash(yonetici.Sifre);
                     yonetici.Sifre = hashliSifre;
                 }
             }
-           _db.SaveChanges(); 
+            _db.SaveChanges();
         }
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
@@ -69,8 +71,8 @@ namespace KaloriTakipProgrami.UI
             }
             else if (_db.Kullanicilar.Any(k => k.KullaniciAdi == txtKullaniciAdi.Text && k.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı şifreye ait bir kullanıcı kaydı varsa 
             {
-                var girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
-                if(girisYapanKullanici.Durum==false)
+                girisYapanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == txtKullaniciAdi.Text);
+                if (girisYapanKullanici.Durum == false)
                 {
                     girisYapanKullanici.Durum = true; //Hesap aktif hale getirildi
                     _db.SaveChanges(); //Değişiklikleri kaydet

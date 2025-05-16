@@ -33,20 +33,22 @@
             btnSifirlamaKoduGonder = new Button();
             txtEmail = new TextBox();
             label2 = new Label();
-            grpSifirlamaKodu = new GroupBox();
-            mtxtSifirlamaKodu = new MaskedTextBox();
-            btnOk = new Button();
-            label1 = new Label();
             grpSifreGuncelleme = new GroupBox();
+            lblKullaniciAdi = new Label();
+            label5 = new Label();
             btnSifreyiGuncelle = new Button();
             txtYeniSifreTekrar = new TextBox();
             label4 = new Label();
             txtYeniSifre = new TextBox();
             label3 = new Label();
+            grpSifirlamaKodu = new GroupBox();
+            mtxtSifirlamaKodu = new MaskedTextBox();
+            btnOk = new Button();
+            label1 = new Label();
             btnGeri = new Button();
             grpSifirlamaKoduGonder.SuspendLayout();
-            grpSifirlamaKodu.SuspendLayout();
             grpSifreGuncelleme.SuspendLayout();
+            grpSifirlamaKodu.SuspendLayout();
             SuspendLayout();
             // 
             // grpSifirlamaKoduGonder
@@ -55,7 +57,7 @@
             grpSifirlamaKoduGonder.Controls.Add(txtEmail);
             grpSifirlamaKoduGonder.Controls.Add(label2);
             grpSifirlamaKoduGonder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKoduGonder.Location = new Point(380, 106);
+            grpSifirlamaKoduGonder.Location = new Point(381, 44);
             grpSifirlamaKoduGonder.Name = "grpSifirlamaKoduGonder";
             grpSifirlamaKoduGonder.Size = new Size(503, 176);
             grpSifirlamaKoduGonder.TabIndex = 0;
@@ -92,13 +94,96 @@
             label2.TabIndex = 0;
             label2.Text = "Email";
             // 
+            // grpSifreGuncelleme
+            // 
+            grpSifreGuncelleme.Controls.Add(lblKullaniciAdi);
+            grpSifreGuncelleme.Controls.Add(label5);
+            grpSifreGuncelleme.Controls.Add(btnSifreyiGuncelle);
+            grpSifreGuncelleme.Controls.Add(txtYeniSifreTekrar);
+            grpSifreGuncelleme.Controls.Add(label4);
+            grpSifreGuncelleme.Controls.Add(txtYeniSifre);
+            grpSifreGuncelleme.Controls.Add(label3);
+            grpSifreGuncelleme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            grpSifreGuncelleme.Location = new Point(381, 353);
+            grpSifreGuncelleme.Name = "grpSifreGuncelleme";
+            grpSifreGuncelleme.Size = new Size(503, 239);
+            grpSifreGuncelleme.TabIndex = 0;
+            grpSifreGuncelleme.TabStop = false;
+            // 
+            // lblKullaniciAdi
+            // 
+            lblKullaniciAdi.AutoSize = true;
+            lblKullaniciAdi.ForeColor = SystemColors.ButtonHighlight;
+            lblKullaniciAdi.Location = new Point(226, 38);
+            lblKullaniciAdi.Name = "lblKullaniciAdi";
+            lblKullaniciAdi.Size = new Size(0, 25);
+            lblKullaniciAdi.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(52, 38);
+            label5.Name = "label5";
+            label5.Size = new Size(115, 25);
+            label5.TabIndex = 3;
+            label5.Text = "Kullanıcı Adı";
+            // 
+            // btnSifreyiGuncelle
+            // 
+            btnSifreyiGuncelle.BackColor = Color.FromArgb(164, 172, 134);
+            btnSifreyiGuncelle.FlatStyle = FlatStyle.Popup;
+            btnSifreyiGuncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnSifreyiGuncelle.ForeColor = SystemColors.ActiveCaptionText;
+            btnSifreyiGuncelle.Location = new Point(226, 167);
+            btnSifreyiGuncelle.Name = "btnSifreyiGuncelle";
+            btnSifreyiGuncelle.Size = new Size(166, 40);
+            btnSifreyiGuncelle.TabIndex = 2;
+            btnSifreyiGuncelle.Text = "Şifreyi Güncelle";
+            btnSifreyiGuncelle.UseVisualStyleBackColor = false;
+            btnSifreyiGuncelle.Click += btnSifreyiGuncelle_Click;
+            // 
+            // txtYeniSifreTekrar
+            // 
+            txtYeniSifreTekrar.Location = new Point(226, 112);
+            txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
+            txtYeniSifreTekrar.Size = new Size(166, 31);
+            txtYeniSifreTekrar.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Location = new Point(52, 114);
+            label4.Name = "label4";
+            label4.Size = new Size(156, 25);
+            label4.TabIndex = 0;
+            label4.Text = "Yeni Şifre (Tekrar)";
+            // 
+            // txtYeniSifre
+            // 
+            txtYeniSifre.Location = new Point(226, 72);
+            txtYeniSifre.Name = "txtYeniSifre";
+            txtYeniSifre.Size = new Size(166, 31);
+            txtYeniSifre.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(52, 76);
+            label3.Name = "label3";
+            label3.Size = new Size(89, 25);
+            label3.TabIndex = 0;
+            label3.Text = "Yeni Şifre";
+            // 
             // grpSifirlamaKodu
             // 
             grpSifirlamaKodu.Controls.Add(mtxtSifirlamaKodu);
             grpSifirlamaKodu.Controls.Add(btnOk);
             grpSifirlamaKodu.Controls.Add(label1);
             grpSifirlamaKodu.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifirlamaKodu.Location = new Point(380, 305);
+            grpSifirlamaKodu.Location = new Point(381, 226);
             grpSifirlamaKodu.Name = "grpSifirlamaKodu";
             grpSifirlamaKodu.Size = new Size(503, 121);
             grpSifirlamaKodu.TabIndex = 0;
@@ -137,68 +222,6 @@
             label1.TabIndex = 0;
             label1.Text = "Sıfırlama Kodu";
             // 
-            // grpSifreGuncelleme
-            // 
-            grpSifreGuncelleme.Controls.Add(btnSifreyiGuncelle);
-            grpSifreGuncelleme.Controls.Add(txtYeniSifreTekrar);
-            grpSifreGuncelleme.Controls.Add(label4);
-            grpSifreGuncelleme.Controls.Add(txtYeniSifre);
-            grpSifreGuncelleme.Controls.Add(label3);
-            grpSifreGuncelleme.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            grpSifreGuncelleme.Location = new Point(380, 447);
-            grpSifreGuncelleme.Name = "grpSifreGuncelleme";
-            grpSifreGuncelleme.Size = new Size(503, 206);
-            grpSifreGuncelleme.TabIndex = 0;
-            grpSifreGuncelleme.TabStop = false;
-            // 
-            // btnSifreyiGuncelle
-            // 
-            btnSifreyiGuncelle.BackColor = Color.FromArgb(164, 172, 134);
-            btnSifreyiGuncelle.FlatStyle = FlatStyle.Popup;
-            btnSifreyiGuncelle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnSifreyiGuncelle.ForeColor = SystemColors.ActiveCaptionText;
-            btnSifreyiGuncelle.Location = new Point(209, 137);
-            btnSifreyiGuncelle.Name = "btnSifreyiGuncelle";
-            btnSifreyiGuncelle.Size = new Size(166, 40);
-            btnSifreyiGuncelle.TabIndex = 2;
-            btnSifreyiGuncelle.Text = "Şifreyi Güncelle";
-            btnSifreyiGuncelle.UseVisualStyleBackColor = false;
-            btnSifreyiGuncelle.Click += btnSifreyiGuncelle_Click;
-            // 
-            // txtYeniSifreTekrar
-            // 
-            txtYeniSifreTekrar.Location = new Point(209, 82);
-            txtYeniSifreTekrar.Name = "txtYeniSifreTekrar";
-            txtYeniSifreTekrar.Size = new Size(166, 31);
-            txtYeniSifreTekrar.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(31, 85);
-            label4.Name = "label4";
-            label4.Size = new Size(156, 25);
-            label4.TabIndex = 0;
-            label4.Text = "Yeni Şifre (Tekrar)";
-            // 
-            // txtYeniSifre
-            // 
-            txtYeniSifre.Location = new Point(209, 44);
-            txtYeniSifre.Name = "txtYeniSifre";
-            txtYeniSifre.Size = new Size(166, 31);
-            txtYeniSifre.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(31, 47);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Yeni Şifre";
-            // 
             // btnGeri
             // 
             btnGeri.BackColor = Color.FromArgb(47, 62, 70);
@@ -232,10 +255,10 @@
             Load += SifremiUnuttumEkrani_Load;
             grpSifirlamaKoduGonder.ResumeLayout(false);
             grpSifirlamaKoduGonder.PerformLayout();
-            grpSifirlamaKodu.ResumeLayout(false);
-            grpSifirlamaKodu.PerformLayout();
             grpSifreGuncelleme.ResumeLayout(false);
             grpSifreGuncelleme.PerformLayout();
+            grpSifirlamaKodu.ResumeLayout(false);
+            grpSifirlamaKodu.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -256,5 +279,7 @@
         private TextBox txtYeniSifre;
         private Label label3;
         private Button btnGeri;
+        private Label lblKullaniciAdi;
+        private Label label5;
     }
 }
