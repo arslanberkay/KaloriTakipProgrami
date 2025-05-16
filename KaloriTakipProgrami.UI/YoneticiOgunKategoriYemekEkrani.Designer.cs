@@ -175,6 +175,7 @@
             btnGeri.Size = new Size(57, 41);
             btnGeri.TabIndex = 31;
             btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click_1;
             // 
             // grpKategoriler
             // 
@@ -206,6 +207,7 @@
             dgvKategoriler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvKategoriler.Size = new Size(902, 201);
             dgvKategoriler.TabIndex = 4;
+            dgvKategoriler.CellClick += dgvKategoriler_CellClick;
             // 
             // txtKategoriAdi
             // 
@@ -225,6 +227,7 @@
             btnKategoriGuncelle.TabIndex = 1;
             btnKategoriGuncelle.Text = "Güncelle";
             btnKategoriGuncelle.UseVisualStyleBackColor = false;
+            btnKategoriGuncelle.Click += btnKategoriGuncelle_Click_1;
             // 
             // btnKategoriSil
             // 
@@ -237,6 +240,7 @@
             btnKategoriSil.TabIndex = 1;
             btnKategoriSil.Text = "Sil";
             btnKategoriSil.UseVisualStyleBackColor = false;
+            btnKategoriSil.Click += btnKategoriSil_Click_1;
             // 
             // btnKategoriEkle
             // 
@@ -249,6 +253,7 @@
             btnKategoriEkle.TabIndex = 1;
             btnKategoriEkle.Text = "Ekle";
             btnKategoriEkle.UseVisualStyleBackColor = false;
+            btnKategoriEkle.Click += btnKategoriEkle_Click_1;
             // 
             // label2
             // 
@@ -283,10 +288,10 @@
             // 
             tabPage2.BackColor = Color.FromArgb(47, 62, 70);
             tabPage2.Controls.Add(grpYemekler);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1271, 722);
+            tabPage2.Size = new Size(1271, 717);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Yemek İşlemleri";
             // 
@@ -369,6 +374,7 @@
             dgvYemekler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvYemekler.Size = new Size(1216, 466);
             dgvYemekler.TabIndex = 2;
+            dgvYemekler.CellClick += dgvYemekler_CellClick_1;
             // 
             // btnYemekGuncelle
             // 
@@ -381,6 +387,7 @@
             btnYemekGuncelle.TabIndex = 1;
             btnYemekGuncelle.Text = "Güncelle";
             btnYemekGuncelle.UseVisualStyleBackColor = false;
+            btnYemekGuncelle.Click += btnYemekGuncelle_Click_1;
             // 
             // btnYemekSil
             // 
@@ -393,6 +400,7 @@
             btnYemekSil.TabIndex = 1;
             btnYemekSil.Text = "Sil";
             btnYemekSil.UseVisualStyleBackColor = false;
+            btnYemekSil.Click += btnYemekSil_Click_1;
             // 
             // btnYemekEkle
             // 
@@ -405,6 +413,7 @@
             btnYemekEkle.TabIndex = 1;
             btnYemekEkle.Text = "Ekle";
             btnYemekEkle.UseVisualStyleBackColor = false;
+            btnYemekEkle.Click += btnYemekEkle_Click_1;
             // 
             // label3
             // 

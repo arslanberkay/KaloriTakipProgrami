@@ -37,6 +37,7 @@
             // 
             // dgvKullanicilar
             // 
+            dgvKullanicilar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKullanicilar.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvKullanicilar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKullanicilar.Location = new Point(37, 209);
