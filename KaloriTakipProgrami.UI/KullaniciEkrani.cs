@@ -52,18 +52,6 @@ namespace KaloriTakipProgrami.UI
                         MessageBox.Show("Resim dosyası bulunamadı.");
                     }
                 }
-                if (!string.IsNullOrEmpty(_girisYapanKullanici.FotografYolu))
-                {
-                    if (File.Exists(_girisYapanKullanici.FotografYolu))
-                    {
-                        pictureBox1.Image = Image.FromFile(_girisYapanKullanici.FotografYolu);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Resim dosyası bulunamadı.");
-                    }
-                }
-
                 var detay = _girisYapanKullanici?.KullaniciDetaylari?
                .OrderBy(k => k.Tarih)
                .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
