@@ -36,6 +36,8 @@
             btnGönder = new Button();
             btnGeri = new Button();
             label3 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -108,12 +110,21 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI Semibold", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(215, 97);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(215, 1);
             label3.Name = "label3";
             label3.Size = new Size(221, 61);
             label3.TabIndex = 31;
             label3.Text = "TALEPLER";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(186, 199, 167);
+            panel1.Controls.Add(label3);
+            panel1.Location = new Point(0, 96);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1285, 65);
+            panel1.TabIndex = 32;
             // 
             // KullaniciTaleplerEkrani
             // 
@@ -121,7 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1282, 753);
-            Controls.Add(label3);
+            Controls.Add(panel1);
             Controls.Add(btnGeri);
             Controls.Add(btnGönder);
             Controls.Add(txtMesaj);
@@ -132,6 +143,7 @@
             Name = "KullaniciTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KullaniciTaleplerEkrani";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,5 +157,6 @@
         private Button btnGönder;
         private Button btnGeri;
         private Label label3;
+        private Panel panel1;
     }
 }

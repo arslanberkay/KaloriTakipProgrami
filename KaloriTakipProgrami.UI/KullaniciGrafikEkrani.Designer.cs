@@ -42,27 +42,29 @@
             btnGeri = new Button();
             btnKiloPdf = new Button();
             btnBoyPdf = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)cKiloG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cBoyG).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.ForeColor = Color.Snow;
-            label1.Location = new Point(211, 100);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(187, 9);
             label1.Name = "label1";
-            label1.Size = new Size(234, 64);
+            label1.Size = new Size(169, 42);
             label1.TabIndex = 0;
             label1.Text = "Kilo Grafiği";
             // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.ForeColor = Color.Snow;
-            label2.Location = new Point(889, 100);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(867, 12);
             label2.Name = "label2";
-            label2.Size = new Size(203, 61);
+            label2.Size = new Size(166, 39);
             label2.TabIndex = 1;
             label2.Text = "Boy Grafiği";
             // 
@@ -107,6 +109,7 @@
             btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGeri.ForeColor = Color.FromArgb(47, 62, 70);
             btnGeri.Location = new Point(2, 3);
             btnGeri.Name = "btnGeri";
             btnGeri.Size = new Size(57, 41);
@@ -142,19 +145,28 @@
             btnBoyPdf.UseVisualStyleBackColor = false;
             btnBoyPdf.Click += btnBoyPdf_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(186, 199, 167);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(-7, 87);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1289, 61);
+            panel1.TabIndex = 7;
+            // 
             // KullaniciGrafikEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1282, 753);
+            Controls.Add(panel1);
             Controls.Add(btnBoyPdf);
             Controls.Add(btnKiloPdf);
             Controls.Add(btnGeri);
             Controls.Add(cBoyG);
             Controls.Add(cKiloG);
-            Controls.Add(label2);
-            Controls.Add(label1);
             MaximizeBox = false;
             Name = "KullaniciGrafikEkrani";
             StartPosition = FormStartPosition.CenterScreen;
@@ -162,6 +174,7 @@
             Load += KullaniciGrafikEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)cKiloG).EndInit();
             ((System.ComponentModel.ISupportInitialize)cBoyG).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -174,5 +187,6 @@
         private Button btnGeri;
         private Button btnKiloPdf;
         private Button btnBoyPdf;
+        private Panel panel1;
     }
 }

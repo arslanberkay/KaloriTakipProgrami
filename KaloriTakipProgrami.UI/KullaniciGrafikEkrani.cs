@@ -162,7 +162,7 @@ namespace KaloriTakipProgrami.UI
             axisY.Minimum = Double.NaN;
             axisY.Maximum = Double.NaN;
             axisY.IntervalAutoMode = IntervalAutoMode.VariableCount;
-        }      
+        }
 
         private void BoyGrafigi()
         {
