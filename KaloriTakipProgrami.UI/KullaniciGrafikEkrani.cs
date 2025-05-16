@@ -29,67 +29,22 @@ namespace KaloriTakipProgrami.UI
         {
             _context = new KaloriTakipDbContext();
             InitializeComponent();
-
-            girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 2);
             GirisYapanKullanici = girisYapanKullanici;
         }
         private void KullaniciGrafikEkrani_Load(object sender, EventArgs e)
         {
+            var detay = GirisYapanKullanici?.KullaniciDetaylari?
+                .OrderBy(k => k.Tarih)
+                .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
+            if (detay?.Kilo==null && detay?.Boy==null)
+            {
+                MessageBox.Show("Sistemde kayıtlı kilo veya boy bilgisi bulunmamaktadır.\n İsterseniz Bilgilerimi Güncelle Ekranından bilgi ekleyebilirsiniz.");
+            }
             BoyGrafigi();
             KiloGrafigi();
         }
         private void KiloGrafigi()
         {
-            //var detaylar = _context.KullaniciDetaylari
-            //        .Where(kd => kd.KullaniciId == GirisYapanKullanici.Id)
-            //        .OrderBy(kd => kd.Tarih) // Grafik sıralaması için
-            //        .ToList();
-
-
-            //// Grafik ayarları
-            //cKiloG.Series.Clear();
-            //cKiloG.Titles.Clear();
-            //cKiloG.Titles.Add("Kilo Değişimi");
-
-            //var kiloSeri = new System.Windows.Forms.DataVisualization.Charting.Series("Kilo")
-            //{
-            //    ChartType = SeriesChartType.Spline,
-            //    Color = Color.SteelBlue,
-            //    BorderWidth = 3,
-            //    XValueType = ChartValueType.DateTime
-            //};
-
-            //foreach (var detay in detaylar)
-            //{
-            //    kiloSeri.Points.AddXY(detay.Tarih, detay.Kilo);
-            //} 
-
-            //cKiloG.Series.Add(kiloSeri);
-
-            //// Eksen ayarları (X ekseni)
-            //var axisX = cKiloG.ChartAreas[0].AxisX;
-            //axisX.Title = "Tarih";
-            //axisX.LabelStyle.Format = "dd.MM.yyyy";
-            //axisX.IntervalType = DateTimeIntervalType.Days;
-            //axisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-            //axisX.LabelStyle.Angle = -45;
-            //axisX.IsLabelAutoFit = true;
-            //var chartArea = cKiloG.ChartAreas[0];
-
-            //// Zoom
-            //chartArea.CursorX.IsUserEnabled = true;
-            //chartArea.CursorX.IsUserSelectionEnabled = true;
-            //chartArea.AxisX.ScaleView.Zoomable = true;
-
-            //// Scroll bar
-            //chartArea.AxisX.ScrollBar.Enabled = true;
-
-            //// Eksen ayarları (Y ekseni)
-            //var axisY = cKiloG.ChartAreas[0].AxisY;
-            //axisY.Title = "Kilo (kg)";
-            //axisY.Minimum = 50;     // Başlangıç kilosu
-            //axisY.Maximum = 120;    // En yüksek kilo sınırı
-            //axisY.Interval = 5;     // Her 5 kg'de bir çizgi
 
             // Verileri al
             var detaylar = _context.KullaniciDetaylari
@@ -100,7 +55,6 @@ namespace KaloriTakipProgrami.UI
             if (!detaylar.Any())
             {
                 MessageBox.Show("Grafikte gösterilecek kilo verisi bulunamadı.");
-                return;
             }
 
             // Grafik temizliği
@@ -166,7 +120,6 @@ namespace KaloriTakipProgrami.UI
             if (!detaylar.Any())
             {
                 MessageBox.Show("Grafikte gösterilecek boy verisi bulunamadı.");
-                return;
             }
 
             // Grafik ayarları

@@ -23,7 +23,7 @@ namespace KaloriTakipProgrami.UI
         {
             InitializeComponent();
             cbCinsiyet.Items.Add("Erkek");
-            cbCinsiyet.Items.Add("Kız");
+            cbCinsiyet.Items.Add("Kadın");
         }
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
