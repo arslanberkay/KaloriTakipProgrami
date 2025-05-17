@@ -20,51 +20,66 @@ namespace KaloriTakipProgrami.UI
         private readonly KaloriTakipDbContext _context;
         private Kullanici GirisYapanKullanici;
 
+        private KullaniciEkrani ekran;
         KullaniciDetay detay = new KullaniciDetay();   //yeni eklenen boy kilo değişimi görebilmek için nesne oluşturucaz 
         public List<string> Cinsiyetler { get; set; } = new List<string> { "Erkek", "Kadın" };
-        public KullaniciBilgiGuncelleEkrani(Kullanici girisYapanKullanici)
+        public KullaniciBilgiGuncelleEkrani(KullaniciEkrani Ekran, Kullanici girisYapanKullanici)
         {
+            ekran = Ekran;//geriye basınca diğer form doldurabilmek için 
             _context = new KaloriTakipDbContext();
-            // girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
+            girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
-            var kullanici = _context.Kullanicilar
-              .Include(k => k.KullaniciDetaylari)
-              .FirstOrDefault(k => k.Id == girisYapanKullanici.Id);// kullanıcı detaylarını ekleyebilmek için bu metot syntax yapıldı.
+           
         }
         private void KullaniciBilgileri()
         {
-            txtAd.Text = GirisYapanKullanici.Isim;
-            txtSoyad.Text = GirisYapanKullanici.Soyisim;
-            txtEposta.Text = GirisYapanKullanici.Email;
-            cmbCinsiyet.Text = GirisYapanKullanici.Cinsiyet;
-            dtpDogumTarihi.Value = GirisYapanKullanici.DogumTarihi;
+          
+            var kullanici = _context.Kullanicilar
+       .Include(k => k.KullaniciDetaylari)
+       .FirstOrDefault(k => k.Id == GirisYapanKullanici.Id);
+
+            if (kullanici == null) return;
+
+            // Ana kullanıcı bilgileri
+            txtAd.Text = kullanici.Isim;
+            txtSoyad.Text = kullanici.Soyisim;
+            txtEposta.Text = kullanici.Email;
+            cmbCinsiyet.Text = kullanici.Cinsiyet;
+            dtpDogumTarihi.Value = kullanici.DogumTarihi;
             txtSifre.Text = "";
-            txtSifre.Text = GirisYapanKullanici.Sifre;
-            txtSifreTekrar.Text = GirisYapanKullanici.Sifre;
             txtSifreTekrar.Text = "";
-            lblKullaniciAdi.Text = "KULLANICI ADI : " + GirisYapanKullanici.KullaniciAdi;
-            pbFoto.Text = GirisYapanKullanici.FotografYolu; //fotograf yolu string olarak tutulacak
+            lblKullaniciAdi.Text = "KULLANICI ADI : " + kullanici.KullaniciAdi;
+            pbFoto.Text = kullanici.FotografYolu;
 
-            var detay = GirisYapanKullanici?.KullaniciDetaylari?
+            // Son kullanıcı detayı
+            var detay = kullanici.KullaniciDetaylari?
                 .OrderBy(k => k.Tarih)
-                .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
+                .LastOrDefault();
 
-            if (detay?.Kilo == null)
+            if (detay?.Kilo == null && detay?.Boy != null)
             {
                 txtKilo.Text = "--";
                 lblVki.Text = "--";
+                txtBoy.Text = detay.Boy.ToString();
             }
-            if (detay?.Boy == null)
+            else if (detay?.Boy == null && detay?.Kilo != null)
             {
                 txtBoy.Text = "--";
                 lblVki.Text = "--";
+                txtKilo.Text = detay.Kilo.ToString();
+            }
+            else if (detay?.Boy == null && detay?.Kilo == null)
+            {
+                txtKilo.Text = "--";
+                lblVki.Text = "--";
+                txtBoy.Text = "--";
             }
             else
             {
-                txtKilo.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
-                txtBoy.Text = GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
-                lblVki.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
+                txtKilo.Text = detay.Kilo.ToString();
+                txtBoy.Text = detay.Boy.ToString();
+                lblVki.Text = Vki().ToString("0.00");
             }
         }
         
@@ -157,12 +172,12 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Şifre 4-12 karakter arasında olmalıdır", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (!float.TryParse(txtKilo.Text, out float kilo) && kilo <= 0)
+            if (!float.TryParse(txtKilo.Text, out float kilo) || kilo < 0)
             {
                 MessageBox.Show("Kilo geçersiz, kilogram cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (!float.TryParse(txtBoy.Text, out float boy) && boy <= 0 && boy > 3)
+            if (!float.TryParse(txtBoy.Text, out float boy) || boy < 0 || boy > 3)
             {
                 MessageBox.Show("Boy geçersiz,metre cinsinden yazdığınıza emin olun", "Geçersiz Giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -178,10 +193,15 @@ namespace KaloriTakipProgrami.UI
         {
             try
             {
+               
                 if (!ValidateInputs())
-                {
                     return;
-                }
+
+                // Giriş yapan kullanıcıyı context'ten çek (yeni context'e ait hale getir)
+                GirisYapanKullanici = _context.Kullanicilar
+                    .Include(k => k.KullaniciDetaylari)
+                    .FirstOrDefault(k => k.Id == GirisYapanKullanici.Id);
+
                 GirisYapanKullanici.Isim = txtAd.Text;
                 GirisYapanKullanici.Soyisim = txtSoyad.Text;
                 GirisYapanKullanici.Email = txtEposta.Text;
@@ -190,17 +210,23 @@ namespace KaloriTakipProgrami.UI
                 GirisYapanKullanici.Sifre = txtSifre.Text;
                 GirisYapanKullanici.Durum = true;
 
-                _context.Kullanicilar.Update(GirisYapanKullanici);
-                _context.SaveChanges();
-
-                if (txtKilo.Text != GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString() || txtBoy.Text != GirisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString())
-                {
-                    detay.Kilo = Convert.ToDecimal(txtKilo.Text);
-                    detay.Boy = Convert.ToDecimal(txtBoy.Text);
-                    detay.KullaniciId = GirisYapanKullanici.Id;
-                    _context.KullaniciDetaylari.Add(detay);
-                    _context.SaveChanges();
+              
+             
+                if (!decimal.TryParse(txtKilo.Text, out decimal kilo))
+                { MessageBox.Show("Lütfen kilonuzu kontrol ediniz");
+                    return;
                 }
+                if(!decimal.TryParse(txtBoy.Text, out decimal boy))
+                { MessageBox.Show("Lütfen boyunuzu kontrol ediniz");
+                    return;
+                }
+                detay.Kilo = kilo;
+                detay.Boy = boy;
+
+                detay.KullaniciId = GirisYapanKullanici.Id;
+
+                _context.KullaniciDetaylari.Add(detay);
+                _context.SaveChanges(); // GirisYapanKullanici değişikliklerini de otomatik yakalar
 
                 MessageBox.Show("Bilgileriniz güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -208,6 +234,7 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Güncelleme sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             KullaniciBilgileri();
         }
         private void btnHesapDondur_Click(object sender, EventArgs e)
@@ -246,6 +273,9 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnGeri_Click(object sender, EventArgs e)
         {
+            
+            ekran.GeriDonunceYenile();// bu sayede yenilenen bilgi diğer sayfaya geçişte yansıyor
+            ekran.Show();
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
 

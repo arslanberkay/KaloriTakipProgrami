@@ -81,6 +81,14 @@ namespace KaloriTakipProgrami.UI
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
+            else if(_db.Yoneticiler.Any(y => y.KullaniciAdi != txtKullaniciAdi.Text))
+                {
+                MessageBox.Show("Böyle bir üyemiz bulunmamaktadır");
+                }
+            else
+            {
+                MessageBox.Show("Kullanıcı adınız ve şifreniz uyuşmuyor ! \n TEKRAR DENEYİNİZ ");
+            }
             Temizle();
         }
         public void HataYonetici()

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.InkML;
+using KaloriTakipProgrami.UI.Context;
 using KaloriTakipProgrami.UI.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +17,7 @@ namespace KaloriTakipProgrami.UI
     public partial class KullaniciEkrani : Form
     {
         private Kullanici _girisYapanKullanici;
+         KaloriTakipDbContext context = new KaloriTakipDbContext();
         public KullaniciEkrani()
         {
         }
@@ -23,11 +26,16 @@ namespace KaloriTakipProgrami.UI
             InitializeComponent();
             // giriş yapan kullanıcın tüm bilgileri 
             _girisYapanKullanici = girisYapanKullanici;
+
             BilgileriYukle();
         }
         private void BilgileriYukle()
         {
             //kayıt olan kullanıcının bilgilerini profilde göstermek için
+            // yeni verileri çekebilmek için ınclude ettik 
+            _girisYapanKullanici = context.Kullanicilar
+                   .Include(k => k.KullaniciDetaylari)
+                   .FirstOrDefault(k => k.Id == _girisYapanKullanici.Id);
 
             if (_girisYapanKullanici != null)
             {
@@ -56,7 +64,7 @@ namespace KaloriTakipProgrami.UI
                 {
                     lblKilo.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
                     lblBoy.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
-                    lblVKİ.Text = Vki().ToString("0.0");// bu sayede virgülden sonra bir basamak gösterecek
+                    lblVKİ.Text = Vki().ToString("0.00");// bu sayede virgülden sonra bir basamak gösterecek
                 }
             }
         }
@@ -70,8 +78,9 @@ namespace KaloriTakipProgrami.UI
         private void btnBilgiGuncelle_Click(object sender, EventArgs e)
         {
             //bilgi büncellemeye parametre atadık
-            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani(_girisYapanKullanici);
-            kullaniciBilgiGuncelleEkrani.ShowDialog();
+            KullaniciBilgiGuncelleEkrani kullaniciBilgiGuncelleEkrani = new KullaniciBilgiGuncelleEkrani(this,_girisYapanKullanici);
+            kullaniciBilgiGuncelleEkrani.Show();
+            this.Hide();
         }
         private void bnOgunBilgileriGoster_Click(object sender, EventArgs e)
         {
@@ -148,6 +157,10 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show("Kapatma sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public void GeriDonunceYenile()
+        {
+            BilgileriYukle();
         }
     }
 }
