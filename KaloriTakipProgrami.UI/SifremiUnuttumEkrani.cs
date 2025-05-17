@@ -1,4 +1,5 @@
 ﻿using KaloriTakipProgrami.UI.Context;
+using KaloriTakipProgrami.UI.Helpers;
 using KaloriTakipProgrami.UI.Models;
 using Microsoft.VisualBasic.Devices;
 using System;
@@ -100,8 +101,11 @@ namespace KaloriTakipProgrami.UI
             }
             if (txtYeniSifre.Text == txtYeniSifreTekrar.Text)
             {
-                sifresiniUnutanKullanici.Sifre = txtYeniSifre.Text;
+                sifresiniUnutanKullanici.Sifre = SifrelemeHelper.Sha256Hash(txtYeniSifre.Text);
                 _db.SaveChanges();
+                MessageBox.Show("Şifre güncellemesi başarıyla gerçekleşti");
+                KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
+                kullaniciGirisEkrani.Show();
             }
             else
             {
