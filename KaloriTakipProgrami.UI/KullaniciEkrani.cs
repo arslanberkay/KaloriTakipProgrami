@@ -81,9 +81,8 @@ namespace KaloriTakipProgrami.UI
 
         private void btnTalepler_Click(object sender, EventArgs e)
         {
-
-            KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
-            kullaniciTaleplerEkrani.ShowDialog();
+            KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(_girisYapanKullanici);
+            kullaniciTaleplerimEkrani.ShowDialog();
         }
 
         private bool menuAcikMi = true;
