@@ -14,7 +14,6 @@ using System.Windows.Forms;
 
 namespace KaloriTakipProgrami.UI
 {
-
     public partial class YoneticiTaleplerEkrani : Form
     {
         KaloriTakipDbContext _db = new KaloriTakipDbContext();
@@ -36,14 +35,11 @@ namespace KaloriTakipProgrami.UI
                 o.Durum
             }).ToList();
         }
-
         private void dgvTalepler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             secilenTalep = dgvTalepler.SelectedRows[0].DataBoundItem as Talep;
         }
-
         private void btnReddedildi_Click(object sender, EventArgs e)
-
         {
             if (dgvTalepler.CurrentRow != null)
             {
@@ -58,7 +54,6 @@ namespace KaloriTakipProgrami.UI
                     _db.SaveChanges();
                     MessageBox.Show("Talep başarıyla reddedildi");
                     Listele();
-
                 }
                 else
                 {
@@ -72,7 +67,6 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
         }
-
         private void btnOnayla_Click_1(object sender, EventArgs e)
         {
             if (dgvTalepler.CurrentRow != null)
@@ -99,19 +93,15 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen onaylamak istediğiniz talebi seçiniz");
                 return;
             }
-
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnTümü_Click(object sender, EventArgs e)
         {
             Listele();
         }
-
         /// <summary>
         /// Talep durumuna göre filtreleme için içine gönderilen paramatreye göre Onay red veya bekliyor olan talepleri getirmeye yarayan metod
         /// </summary>
@@ -131,18 +121,14 @@ namespace KaloriTakipProgrami.UI
           })
           .ToList();
         }
-
-
         private void btnOnaylanmis_Click(object sender, EventArgs e)
         {
             TalepFiltrele("Onaylandı");
         }
-
         private void btnReddedilmis_Click(object sender, EventArgs e)
         {
             TalepFiltrele("Reddedildi");
         }
-
         private void btnOkunmamis_Click(object sender, EventArgs e)
         {
             TalepFiltrele("Bekliyor");

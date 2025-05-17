@@ -97,16 +97,17 @@
             // 
             // cmbYemekler
             // 
+            cmbYemekler.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbYemekler.FormattingEnabled = true;
             cmbYemekler.Location = new Point(146, 145);
             cmbYemekler.Margin = new Padding(3, 2, 3, 2);
             cmbYemekler.Name = "cmbYemekler";
             cmbYemekler.Size = new Size(261, 33);
             cmbYemekler.TabIndex = 5;
-            cmbYemekler.SelectedIndexChanged += cmbYemekler_SelectedIndexChanged;
             // 
             // cmbKategoriler
             // 
+            cmbKategoriler.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategoriler.FormattingEnabled = true;
             cmbKategoriler.Location = new Point(146, 95);
             cmbKategoriler.Margin = new Padding(3, 2, 3, 2);
@@ -117,6 +118,7 @@
             // 
             // cmbOgunler
             // 
+            cmbOgunler.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOgunler.FormattingEnabled = true;
             cmbOgunler.Location = new Point(144, 48);
             cmbOgunler.Margin = new Padding(3, 2, 3, 2);

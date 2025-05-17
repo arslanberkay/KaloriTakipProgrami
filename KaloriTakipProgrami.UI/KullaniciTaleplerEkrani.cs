@@ -22,7 +22,6 @@ namespace KaloriTakipProgrami.UI
 
             girisyapanKullanici = _girisYapanKullanici;
         }
-
         private void btnGönder_Click(object sender, EventArgs e)
         {
             Talep talep = new Talep()
@@ -32,16 +31,13 @@ namespace KaloriTakipProgrami.UI
                 Durum = "Bekliyor",
                 KullaniciId = girisyapanKullanici
                 .Id
-
             };
             _db.Add(talep);
             _db.SaveChanges();
             MessageBox.Show("Talebiniz oluşturulmuştur");
             txtKonu.Text = "";
             txtMesaj.Text = "";
-
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(girisyapanKullanici);

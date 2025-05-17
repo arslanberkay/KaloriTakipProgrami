@@ -43,6 +43,7 @@
             // 
             // dgvTalepler
             // 
+            dgvTalepler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTalepler.BackgroundColor = Color.FromArgb(202, 210, 197);
             dgvTalepler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTalepler.Location = new Point(80, 192);

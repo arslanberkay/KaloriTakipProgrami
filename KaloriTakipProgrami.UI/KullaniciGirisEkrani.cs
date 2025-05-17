@@ -46,7 +46,6 @@ namespace KaloriTakipProgrami.UI
                     kullanici.Sifre = hashliSifre;
                 }
             }
-
             var yoneticiler = _db.Yoneticiler.ToList();
             foreach (var yonetici in yoneticiler)
             {
@@ -63,9 +62,16 @@ namespace KaloriTakipProgrami.UI
             string sifre = txtSifre.Text;
             string hashliSifre = SifrelemeHelper.Sha256Hash(sifre);
 
+            //burası yeni eklendi BERKAY !!!!!
+            if (string.IsNullOrWhiteSpace(txtKullaniciAdi.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            {
+                MessageBox.Show("Lütfen boş alanları doldurunuz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (_db.Yoneticiler.Any(y => y.KullaniciAdi == txtKullaniciAdi.Text && y.Sifre == hashliSifre)) //Databasede girilen kullanıcı adı ve şifreye ait bir yönetici kaydı varsa
             {
-                HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
+                //HataYonetici();  //Yanlış giriş yapıldığında hata mesajı gösterilecek form açılmadan önce yapımalı
                 YoneticiEkrani yoneticiEkrani = new YoneticiEkrani();
                 yoneticiEkrani.Show();
             }
@@ -76,12 +82,18 @@ namespace KaloriTakipProgrami.UI
                 {
                     girisYapanKullanici.Durum = true; //Hesap aktif hale getirildi
                     _db.SaveChanges(); //Değişiklikleri kaydet
-                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)");
+                    MessageBox.Show("Hesabınız aktif hale gelmiştir ,Tekrar hoşgeldiniz sizi görmek güzel :)","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
-                HataUye();
+                //HataUye();
                 KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisYapanKullanici);
                 kullaniciEkrani.Show(); //Kullanıcı ekranına geç
             }
+            else
+            {
+                ///yeni eklendi BERKAY!!
+                MessageBox.Show("Yanlış kullanıcı adı veya şifre. Lütfen tekrar deneyiniz.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+                Temizle();
         }
         public void HataYonetici()
         {
@@ -123,18 +135,30 @@ namespace KaloriTakipProgrami.UI
                 return;
             }
         }
-        private void chkSifreGoster_CheckedChanged(object sender, EventArgs e)
+        private void Temizle() 
         {
-            if (chkSifreGoster.Checked)
-            {
-                // Şifreyi göster
-                txtSifre.PasswordChar = '\0';
-            }
-            else
-            {
-                // Şifreyi gizle
-                txtSifre.PasswordChar = '*'; // veya istediğin başka bir karakter
-            }
+            txtKullaniciAdi.Text=txtSifre.Text=string.Empty;
         }
-    }
+        private void ButonlarTrue()
+        {
+            btnSifreGoster.Visible = false;
+            btnSifreGizle.Visible = true;
+        }
+        private void Butonlarfalse()
+        {
+            btnSifreGoster.Visible = true;
+            btnSifreGizle.Visible = false;
+        }
+        private void btnSifreGizle_Click(object sender, EventArgs e)
+        {
+            Butonlarfalse();
+            txtSifre.PasswordChar = '\0';
+        }
+        private void btnSifreGoster_Click(object sender, EventArgs e)
+        {
+            ButonlarTrue();
+            txtSifre.PasswordChar = '*';
+        }      
+    }  
+
 }

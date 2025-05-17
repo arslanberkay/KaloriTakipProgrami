@@ -22,9 +22,11 @@ namespace KaloriTakipProgrami.UI
     public partial class KullaniciOgunBilgiEkrani : Form
     {
         KaloriTakipDbContext _db = new KaloriTakipDbContext();
-        public KullaniciOgunBilgiEkrani()
+        private Kullanici _girisYapanKullanici;
+        public KullaniciOgunBilgiEkrani(Kullanici kullanici)
         {
             InitializeComponent();
+            _girisYapanKullanici = kullanici;
             ListViewSutunEkle();
         }
         private void KullaniciOgunBilgiEkrani_Load(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace KaloriTakipProgrami.UI
             cmbOgunler.SelectedIndex = -1;
 
             cmbYemekler.SelectedIndex = -1;
+            Listele();
         }
         private void ListViewSutunEkle()
         {
@@ -58,6 +61,8 @@ namespace KaloriTakipProgrami.UI
             lsvOgunBilgileri.Items.Clear();
 
             var ogunBilgileri = _db.OgunYemekler
+                .Where(oy => oy.KullaniciId == _girisYapanKullanici.Id)
+                .Include(k => k.Kullanici)
                 .Include(k => k.Ogun)
                 .Include(o => o.Yemek)
                 .ThenInclude(k => k.Kategori).ToList();
@@ -122,10 +127,6 @@ namespace KaloriTakipProgrami.UI
                 cmbYemekler.DisplayMember = "YemekAdi";
                 cmbYemekler.ValueMember = "Id";
             }
-        }
-        private void cmbYemekler_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Filtrele();
         }
         private void PdfOlustur()
         {
@@ -237,41 +238,44 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            try
+            if (!GirdiDogrula()) return;
+
+            var ogunBilgileri = new OgunYemek
             {
+                OgunId = (int)cmbOgunler.SelectedValue,
+                YemekId = (int)cmbYemekler.SelectedValue,
+                KullaniciId = _girisYapanKullanici.Id,
+                Tarih = dtpTarih.Value.Date,
+                Miktar = nudMiktar.Value,
+            };
+            _db.OgunYemekler.Add(ogunBilgileri);
+            _db.SaveChanges();
 
-                if (!GirdiDogrula()) return;
+            var eklenenOgun = _db.OgunYemekler
+            .Include(o => o.Ogun)
+            .Include(y => y.Yemek)
+            .ThenInclude(k => k.Kategori)
+            .FirstOrDefault(o => o.Id == ogunBilgileri.Id);
 
-                var ogunBilgileri = new OgunYemek
-                {
-                    OgunId = (int)cmbOgunler.SelectedValue,
-                    YemekId = (int)cmbYemekler.SelectedValue,
-                    Tarih = dtpTarih.Value.Date,
-                    Miktar = nudMiktar.Value,
-                };
-                _db.OgunYemekler.Add(ogunBilgileri);
-                _db.SaveChanges();
-
-                ListViewItem listItem = new ListViewItem(ogunBilgileri.Id.ToString());
-                listItem.SubItems.Add(cmbOgunler.SelectedValue.ToString());
-                listItem.SubItems.Add(cmbKategoriler.SelectedValue.ToString());
-                listItem.SubItems.Add(cmbYemekler.SelectedValue.ToString());
-                listItem.SubItems.Add(dtpTarih.Value.Date.ToString());
-                listItem.SubItems.Add(nudMiktar.Value.ToString());
+            if (eklenenOgun != null)
+            {
+                ListViewItem listItem = new ListViewItem(eklenenOgun.Id.ToString());
+                listItem.SubItems.Add(eklenenOgun.Ogun.OgunAdi);
+                listItem.SubItems.Add(eklenenOgun.Yemek.Kategori.KategoriAdi);
+                listItem.SubItems.Add(eklenenOgun.Yemek.YemekAdi);
+                listItem.SubItems.Add(eklenenOgun.Tarih.ToString("dd/MM/yyyy"));
+                listItem.SubItems.Add(eklenenOgun.Miktar.ToString());
                 lsvOgunBilgileri.Items.Add(listItem);
-                MessageBox.Show("Başarıyla Eklendi");
             }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show("Hata"+ex.Message);
-            }
+            MessageBox.Show("Öğünler Başarıyla Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Temizle();
         }
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz");
+                MessageBox.Show("Silmek İstediğiniz Satırı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ListViewItem seciliItem = lsvOgunBilgileri.SelectedItems[0];
@@ -283,14 +287,14 @@ namespace KaloriTakipProgrami.UI
                 _db.OgunYemekler.Remove(ogun);
                 _db.SaveChanges();
                 lsvOgunBilgileri.Items.Remove(seciliItem);
-                MessageBox.Show("Müşteri başarıyla silindi");
+                MessageBox.Show("Öğün Bilgisi Başarıyla Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void btnGüncelle_Click(object sender, EventArgs e)
         {
             if (lsvOgunBilgileri.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz");
+                MessageBox.Show("Güncellemek İstediğiniz Satırı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -309,7 +313,7 @@ namespace KaloriTakipProgrami.UI
                 ogun.Miktar = nudMiktar.Value;
 
                 _db.SaveChanges();
-                MessageBox.Show("Müşteri bilgileri başarıyla güncellendi");
+                MessageBox.Show("Kullanıcı Öğün Bilgileri Başarıyla Güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Listele();
                 Temizle();
             }
@@ -331,12 +335,10 @@ namespace KaloriTakipProgrami.UI
                 }
             }
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
         }
-
         private void cmbKategoriler_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filtrele();

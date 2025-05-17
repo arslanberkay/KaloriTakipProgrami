@@ -28,7 +28,6 @@ namespace KaloriTakipProgrami.UI
         int sifirlamaKodu;
 
         Kullanici sifresiniUnutanKullanici;
-
         private void btnSifirlamaKoduGonder_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtEmail.Text))
@@ -36,7 +35,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Lütfen sistemde kayıtlı email adresinizi giriniz.");
                 return;
             }
-
             if (_db.Kullanicilar.Any(k => k.Email == txtEmail.Text))
             {
                 sifresiniUnutanKullanici = _db.Kullanicilar.FirstOrDefault(k => k.Email == txtEmail.Text);
@@ -48,7 +46,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Programa kayıtlı mail hesabı bulunamadı");
             }
         }
-
         private void MailGonder(int sifirlamaKodu)
         {
             try
@@ -73,7 +70,6 @@ namespace KaloriTakipProgrami.UI
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -95,7 +91,6 @@ namespace KaloriTakipProgrami.UI
             }
             lblKullaniciAdi.Text = sifresiniUnutanKullanici.KullaniciAdi;
         }
-
         private void btnSifreyiGuncelle_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtYeniSifre.Text))
@@ -103,7 +98,6 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Yeni şifre alanları boş bırakılamaz");
                 return;
             }
-
             if (txtYeniSifre.Text == txtYeniSifreTekrar.Text)
             {
                 sifresiniUnutanKullanici.Sifre = txtYeniSifre.Text;
@@ -114,13 +108,11 @@ namespace KaloriTakipProgrami.UI
                 MessageBox.Show("Yeni şifre ile yeni şifre tekrar uyuşmazlığı oluştu.");
             }
         }
-
         private void SifremiUnuttumEkrani_Load(object sender, EventArgs e)
         {
             grpSifirlamaKodu.Visible = false;
             grpSifreGuncelleme.Visible = false;
         }
-
         private void btnGeri_Click(object sender, EventArgs e)
         {
             this.Close();//geri tuşu bir önceki sayfaya gönderiyor
