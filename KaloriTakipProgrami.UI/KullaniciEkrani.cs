@@ -17,10 +17,12 @@ namespace KaloriTakipProgrami.UI
     public partial class KullaniciEkrani : Form
     {
         private Kullanici _girisYapanKullanici;
+
          KaloriTakipDbContext context = new KaloriTakipDbContext();
         public KullaniciEkrani()
         {
         }
+
         public KullaniciEkrani(Kullanici girisYapanKullanici)
         {
             InitializeComponent();
@@ -46,6 +48,20 @@ namespace KaloriTakipProgrami.UI
                 lblDogumTarihi.Text = _girisYapanKullanici.DogumTarihi.ToString();
                 lblEposta.Text = _girisYapanKullanici.Email;
 
+                lblKilo.Text = "--";
+                lblBoy.Text = "--";
+                lblVKİ.Text = "--";
+                if (!string.IsNullOrEmpty(_girisYapanKullanici.FotografYolu))
+                {
+                    if (File.Exists(_girisYapanKullanici.FotografYolu))
+                    {
+                        pictureBox1.Image = Image.FromFile(_girisYapanKullanici.FotografYolu);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Resim dosyası bulunamadı.");
+                    }
+                }
                 var detay = _girisYapanKullanici?.KullaniciDetaylari?
                .OrderBy(k => k.Tarih)
                .LastOrDefault();     //giriş yapanın kilo boy değeri var mı diye kontrol amaçlı linq kullandık
@@ -64,7 +80,9 @@ namespace KaloriTakipProgrami.UI
                 {
                     lblKilo.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Kilo.ToString();
                     lblBoy.Text = _girisYapanKullanici.KullaniciDetaylari.OrderBy(k => k.Tarih).LastOrDefault().Boy.ToString();
+
                     lblVKİ.Text = Vki().ToString("0.00");// bu sayede virgülden sonra bir basamak gösterecek
+
                 }
             }
         }
@@ -104,8 +122,10 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnTalepler_Click(object sender, EventArgs e)
         {
-            KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(_girisYapanKullanici);
-            kullaniciTaleplerEkrani.ShowDialog();
+
+            KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(_girisYapanKullanici);
+            kullaniciTaleplerimEkrani.ShowDialog();
+
         }
         private bool menuAcikMi = true;
         private void btnMenu_Click(object sender, EventArgs e)

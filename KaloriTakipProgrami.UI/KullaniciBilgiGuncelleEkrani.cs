@@ -30,7 +30,7 @@ namespace KaloriTakipProgrami.UI
             girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
-           
+
         }
         private void KullaniciBilgileri()
         {
