@@ -84,9 +84,9 @@
             btnGönder.BackColor = Color.FromArgb(164, 172, 134);
             btnGönder.FlatStyle = FlatStyle.Popup;
             btnGönder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnGönder.Location = new Point(984, 554);
+            btnGönder.Location = new Point(972, 554);
             btnGönder.Name = "btnGönder";
-            btnGönder.Size = new Size(108, 39);
+            btnGönder.Size = new Size(120, 43);
             btnGönder.TabIndex = 3;
             btnGönder.Text = "Gönder";
             btnGönder.UseVisualStyleBackColor = false;

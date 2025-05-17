@@ -40,7 +40,10 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            this.Close();//geri tuşu bir önceki sayfaya gönderiyor
+            KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(girisyapanKullanici);
+            kullaniciTaleplerimEkrani.Show();
+            this.Hide();
+
         }
     }
 }
