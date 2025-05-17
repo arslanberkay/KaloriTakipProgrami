@@ -22,8 +22,21 @@ namespace KaloriTakipProgrami.UI
 
             girisyapanKullanici = _girisYapanKullanici;
         }
+
+        private bool ValidateInputs()
+        {
+            if (string.IsNullOrWhiteSpace(txtKonu.Text) || string.IsNullOrWhiteSpace(txtMesaj.Text))
+            {
+                MessageBox.Show("İlgili alanlar doldurulmalıdır!");
+                return false;
+            }
+            return true;
+        }
+
         private void btnGönder_Click(object sender, EventArgs e)
         {
+            if (!ValidateInputs()) { return; }
+
             Talep talep = new Talep()
             {
                 Konu = txtKonu.Text,
