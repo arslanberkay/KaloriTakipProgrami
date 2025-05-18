@@ -151,7 +151,7 @@ namespace KaloriTakipProgrami.UI
                 {
                     _girisYapanKullanici = null;  //kişiyi sıfırlıyoruz.
                     KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
-                    this.Close();
+                    kullaniciGirisEkrani.Show();
                 }
                 else
                 {
