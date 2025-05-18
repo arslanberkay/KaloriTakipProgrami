@@ -288,10 +288,10 @@
             // 
             tabPage2.BackColor = Color.FromArgb(47, 62, 70);
             tabPage2.Controls.Add(grpYemekler);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1271, 717);
+            tabPage2.Size = new Size(1271, 722);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Yemek İşlemleri";
             // 
