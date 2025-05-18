@@ -73,18 +73,49 @@ namespace KaloriTakipProgrami.UI
                 listViewItem.SubItems.Add(ogunYemek.Ogun.OgunAdi);
                 listViewItem.SubItems.Add(ogunYemek.Yemek.Kategori.KategoriAdi);
                 listViewItem.SubItems.Add(ogunYemek.Yemek.YemekAdi);
-                listViewItem.SubItems.Add(ogunYemek.Miktar.ToString());
-                listViewItem.SubItems.Add(((ogunYemek.Miktar / 100) * ogunYemek.Yemek.Kalori).ToString());
+                listViewItem.SubItems.Add(ogunYemek.Miktar.ToString() + " gr");
+                listViewItem.SubItems.Add(((ogunYemek.Miktar / 100) * ogunYemek.Yemek.Kalori).ToString() + " kcal");
 
                 lstOgunYemekRaporu.Items.Add(listViewItem);
             }
         }
+
+        private bool ValidateInputs()
+        {
+            if (dtpBaslangicTarihi.Value.Date > DateTime.Now.Date || dtpBitisTarihi.Value.Date > DateTime.Now.Date)
+            {
+                MessageBox.Show("Bugünden ileri tarih filtrelenemez!");
+                TarihGuncelle();
+                return false;
+            }
+            else if (dtpBaslangicTarihi.Value.Date > dtpBitisTarihi.Value.Date)
+            {
+                MessageBox.Show("Alt aralık üst aralıktan ileri tarih olamaz!");
+                TarihGuncelle();
+                return false;
+            }
+            return true;
+        }
+
+        private void TarihGuncelle()
+        {
+            dtpBaslangicTarihi.Value = dtpBitisTarihi.Value = DateTime.Now;
+        }
+
         private void dtpBaslangicTarihi_ValueChanged(object sender, EventArgs e)
         {
+            if (!ValidateInputs())
+            {
+                return;
+            }
             OgunYemekListele(); //Başlangıç tarihi değiştiğinde yemek kayıtları güncellenir
         }
         private void dtpBitisTarihi_ValueChanged(object sender, EventArgs e)
         {
+            if (!ValidateInputs())
+            {
+                return;
+            }
             OgunYemekListele();  //Bitiş tarihi değiştiğinde yemek kayıtları güncellenir
         }
         /// <summary>

@@ -126,6 +126,7 @@ namespace KaloriTakipProgrami.UI
                 cmbYemekler.DataSource = yemekler;
                 cmbYemekler.DisplayMember = "YemekAdi";
                 cmbYemekler.ValueMember = "Id";
+                cmbYemekler.SelectedIndex = -1;
             }
         }
         private void PdfOlustur()

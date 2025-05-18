@@ -139,6 +139,7 @@ namespace KaloriTakipProgrami.UI
             secilenOgun = null;
             OgunListele();
             OgunBilgileriTemizle();
+            YemekListele();
         }
         private bool ValidateInputsKategoriler()
         {
@@ -172,40 +173,7 @@ namespace KaloriTakipProgrami.UI
 
             txtKategoriAdi.Text = secilenKategori.KategoriAdi;
         }
-        //private void dgvKategoriler_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (dgvKategoriler.SelectedRows.Count == 0)
-        //    {
-        //        return;
-        //    }
-
-        //    int secilenKategoriId = (int)dgvKategoriler.SelectedRows[0].Cells["Id"].Value;
-        //    secilenKategori = _db.Kategoriler.Find(secilenKategoriId);
-
-        //    txtKategoriAdi.Text = secilenKategori.KategoriAdi;
-        //}
-        //private void btnKategoriSil_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvKategoriler.SelectedRows.Count == 0)
-        //    {
-        //        MessageBox.Show("Lütfen silmek istediğiniz kategoriyi seçiniz!");
-        //        return;
-        //    }
-
-        //    if (_db.Yemekler.Any(y => y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
-        //    {
-        //        MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
-        //        return;
-        //    }
-
-        //    _db.Remove(secilenKategori);
-        //    _db.SaveChanges();
-
-        //    MessageBox.Show("Kategori başarıyla silindi");
-        //    secilenKategori = null;
-        //    KategoriListele();
-        //    KategoriBilgileriTemizle();
-        //}
+        
         private void btnKategoriSil_Click_1(object sender, EventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
@@ -215,7 +183,7 @@ namespace KaloriTakipProgrami.UI
             }
             if (_db.Yemekler.Any(y => y.Kategori.KategoriAdi == secilenKategori.KategoriAdi)) //Seçilen kategori , yemekler tablosunda varsa
             {
-                MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
+                MessageBox.Show("Silmek istediğiniz kategoriye ait yemek kayıtları bulundu! Lütfen önce silmek istediğiniz kategoriye ait yemek kayıtlarını siliniz!");
                 return;
             }
             _db.Remove(secilenKategori);
@@ -241,6 +209,7 @@ namespace KaloriTakipProgrami.UI
             secilenKategori = null;
             KategoriListele();
             KategoriBilgileriTemizle();
+            YemekListele();
         }
         private bool ValidateInputsYemekler()
         {
