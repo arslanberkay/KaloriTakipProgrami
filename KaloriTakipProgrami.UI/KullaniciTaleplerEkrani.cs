@@ -53,10 +53,10 @@ namespace KaloriTakipProgrami.UI
         }
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            //KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(girisyapanKullanici);
-            //kullaniciTaleplerimEkrani.Show();
-            this.Close();
-
+            KullaniciTaleplerimEkrani kullaniciTaleplerimEkrani = new KullaniciTaleplerimEkrani(girisyapanKullanici);
+            kullaniciTaleplerimEkrani.Show();
+            this.Hide();
+  
         }
     }
 }

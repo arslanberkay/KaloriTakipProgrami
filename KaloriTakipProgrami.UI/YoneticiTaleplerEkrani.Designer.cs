@@ -177,6 +177,7 @@
             Name = "YoneticiTaleplerEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiTaleplerEkrani";
+            Load += YoneticiTaleplerEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTalepler).EndInit();
             ResumeLayout(false);
         }

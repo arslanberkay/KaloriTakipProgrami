@@ -29,23 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YoneticiKullaniciEkrani));
-            dgvKullanicilar = new DataGridView();
             btnGeri = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).BeginInit();
+            lstvKullanicilar = new ListView();
             SuspendLayout();
-            // 
-            // dgvKullanicilar
-            // 
-            dgvKullanicilar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvKullanicilar.BackgroundColor = Color.FromArgb(202, 210, 197);
-            dgvKullanicilar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKullanicilar.Location = new Point(37, 209);
-            dgvKullanicilar.Name = "dgvKullanicilar";
-            dgvKullanicilar.RowHeadersWidth = 51;
-            dgvKullanicilar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKullanicilar.Size = new Size(1206, 472);
-            dgvKullanicilar.TabIndex = 0;
             // 
             // btnGeri
             // 
@@ -54,10 +41,10 @@
             btnGeri.BackgroundImageLayout = ImageLayout.Stretch;
             btnGeri.FlatStyle = FlatStyle.Popup;
             btnGeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(2, 2);
-            btnGeri.Margin = new Padding(3, 4, 3, 4);
+            btnGeri.Location = new Point(3, 3);
+            btnGeri.Margin = new Padding(4, 6, 4, 6);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(57, 41);
+            btnGeri.Size = new Size(78, 57);
             btnGeri.TabIndex = 30;
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
@@ -66,34 +53,44 @@
             // 
             label1.Font = new Font("Segoe UI Semibold", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(37, 114);
+            label1.Location = new Point(61, 89);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(480, 72);
+            label1.Size = new Size(660, 76);
             label1.TabIndex = 31;
             label1.Text = "KULLANICI BİLGİLERİ";
             // 
+            // lstvKullanicilar
+            // 
+            lstvKullanicilar.BackColor = Color.FromArgb(202, 210, 197);
+            lstvKullanicilar.Location = new Point(79, 182);
+            lstvKullanicilar.Name = "lstvKullanicilar";
+            lstvKullanicilar.Size = new Size(1122, 487);
+            lstvKullanicilar.TabIndex = 32;
+            lstvKullanicilar.UseCompatibleStateImageBehavior = false;
+            // 
             // YoneticiKullaniciEkrani
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(47, 62, 70);
             ClientSize = new Size(1282, 753);
+            Controls.Add(lstvKullanicilar);
             Controls.Add(label1);
             Controls.Add(btnGeri);
-            Controls.Add(dgvKullanicilar);
+            Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Margin = new Padding(4);
             MaximizeBox = false;
             Name = "YoneticiKullaniciEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YoneticiKullaniciEkrani";
             Load += YoneticiKullaniciEkrani_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvKullanicilar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dgvKullanicilar;
         private Button btnGeri;
         private Label label1;
+        private ListView lstvKullanicilar;
     }
 }

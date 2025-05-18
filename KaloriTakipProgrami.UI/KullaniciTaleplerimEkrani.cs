@@ -52,23 +52,22 @@ namespace KaloriTakipProgrami.UI
                 listViewItem.SubItems.Add(talep.Mesaj);
                 listViewItem.SubItems.Add(talep.Durum);
 
-                lstvTalepler.Items.Add(listViewItem);   
+                lstvTalepler.Items.Add(listViewItem);
             }
         }
 
         private void btnYeniTalep_Click(object sender, EventArgs e)
         {
-            
             KullaniciTaleplerEkrani kullaniciTaleplerEkrani = new KullaniciTaleplerEkrani(girisyapanKullanici);
             kullaniciTaleplerEkrani.Show();
-        
+
         }
 
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            //KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisyapanKullanici);
-            //kullaniciEkrani.Show();
-            this.Close();
+            KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisyapanKullanici);
+            kullaniciEkrani.Show();
+       
 
         }
 

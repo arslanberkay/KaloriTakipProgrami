@@ -34,6 +34,8 @@ namespace KaloriTakipProgrami.UI
                 Kullanıcı = o.Kullanici.KullaniciAdi,
                 o.Durum
             }).ToList();
+
+            dgvTalepler.ClearSelection();
         }
         private void dgvTalepler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -132,6 +134,11 @@ namespace KaloriTakipProgrami.UI
         private void btnOkunmamis_Click(object sender, EventArgs e)
         {
             TalepFiltrele("Bekliyor");
+        }
+
+        private void YoneticiTaleplerEkrani_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

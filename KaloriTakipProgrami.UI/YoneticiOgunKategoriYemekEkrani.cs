@@ -27,20 +27,32 @@ namespace KaloriTakipProgrami.UI
             KategoriListele();
             YemekListele();
             KategorileriGetir();
+            DataGridDuzenle();
 
             dgvKategoriler.ForeColor = Color.Black;
             dgvOgunler.ForeColor = Color.Black;
             dgvYemekler.ForeColor = Color.Black;
         }
+
+        private void DataGridDuzenle()
+        {
+            dgvKategoriler.Columns["KategoriAdi"].HeaderText = "Kategori Adı";
+            dgvOgunler.Columns["OgunAdi"].HeaderText = "Öğün Adı";
+            dgvYemekler.Columns["YemekAdi"].HeaderText = "Yemek Adı";
+            dgvYemekler.Columns["KategoriAdi"].HeaderText = "Kategori Adı";
+        }
+
         private void OgunListele()
         {
             dgvOgunler.DataSource = _db.Ogunler.ToList();
             dgvOgunler.ClearSelection();
+          
         }
         private void KategoriListele()
         {
             dgvKategoriler.DataSource = _db.Kategoriler.ToList();
             dgvKategoriler.ClearSelection();
+         
         }
         private void YemekListele()
         {
@@ -57,6 +69,7 @@ namespace KaloriTakipProgrami.UI
                 .ToList();
 
             dgvYemekler.ClearSelection();
+            
         }
         private bool ValidateInputsOgunler()
         {
@@ -173,7 +186,7 @@ namespace KaloriTakipProgrami.UI
 
             txtKategoriAdi.Text = secilenKategori.KategoriAdi;
         }
-        
+
         private void btnKategoriSil_Click_1(object sender, EventArgs e)
         {
             if (dgvKategoriler.SelectedRows.Count == 0)
