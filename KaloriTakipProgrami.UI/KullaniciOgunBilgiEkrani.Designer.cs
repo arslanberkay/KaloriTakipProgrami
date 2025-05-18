@@ -231,6 +231,7 @@
             // 
             nudMiktar.Location = new Point(146, 248);
             nudMiktar.Margin = new Padding(3, 2, 3, 2);
+            nudMiktar.Maximum = new decimal(new int[] { -1486618625, 232830643, 0, 0 });
             nudMiktar.Name = "nudMiktar";
             nudMiktar.Size = new Size(261, 31);
             nudMiktar.TabIndex = 17;

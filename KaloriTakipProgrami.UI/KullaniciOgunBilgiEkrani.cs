@@ -49,7 +49,7 @@ namespace KaloriTakipProgrami.UI
             lsvOgunBilgileri.View = View.Details;
             lsvOgunBilgileri.GridLines = true;
             lsvOgunBilgileri.FullRowSelect = true;
-            lsvOgunBilgileri.Columns.Add("ID", 60, HorizontalAlignment.Center);
+            lsvOgunBilgileri.Columns.Add("ID",0, HorizontalAlignment.Center);
             lsvOgunBilgileri.Columns.Add("Öğün", 220, HorizontalAlignment.Center);
             lsvOgunBilgileri.Columns.Add("Kategori", 220, HorizontalAlignment.Center);
             lsvOgunBilgileri.Columns.Add("Yemek", 220, HorizontalAlignment.Center);
@@ -73,8 +73,8 @@ namespace KaloriTakipProgrami.UI
                 listViewItem.SubItems.Add(ogun.Ogun.OgunAdi);
                 listViewItem.SubItems.Add(ogun.Yemek.Kategori.KategoriAdi);
                 listViewItem.SubItems.Add(ogun.Yemek.YemekAdi);
-                listViewItem.SubItems.Add(ogun.Tarih.ToString());
-                listViewItem.SubItems.Add(ogun.Miktar.ToString());
+                listViewItem.SubItems.Add(ogun.Tarih.ToString("dd.MM.yyyy"));
+                listViewItem.SubItems.Add(ogun.Miktar+ " gr");
 
                 lsvOgunBilgileri.Items.Add(listViewItem);
             }
@@ -91,22 +91,27 @@ namespace KaloriTakipProgrami.UI
         {
             if (cmbOgunler.SelectedItem == null)
             {
-                MessageBox.Show("Lütfen Öğün bilgisini Giriniz");
+                MessageBox.Show("Lütfen Öğün bilgisini Giriniz","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
             if (cmbKategoriler.SelectedItem == null)
             {
-                MessageBox.Show("Lütfen Kategori bilgisini Giriniz");
+                MessageBox.Show("Lütfen Kategori bilgisini Giriniz","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (cmbYemekler.SelectedItem == null)
             {
-                MessageBox.Show("Lütfen Yemek bilgisini Giriniz");
+                MessageBox.Show("Lütfen Yemek bilgisini Giriniz","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (nudMiktar.Value == 0)
             {
-                MessageBox.Show("Lütfen Miktar bilgisini Giriniz");
+                MessageBox.Show("Lütfen Miktar bilgisini Giriniz","Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(dtpTarih.Value>DateTime.Now)
+            {
+                MessageBox.Show("Bu günden ileri tarihe öğün eklenemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -264,8 +269,8 @@ namespace KaloriTakipProgrami.UI
                 listItem.SubItems.Add(eklenenOgun.Ogun.OgunAdi);
                 listItem.SubItems.Add(eklenenOgun.Yemek.Kategori.KategoriAdi);
                 listItem.SubItems.Add(eklenenOgun.Yemek.YemekAdi);
-                listItem.SubItems.Add(eklenenOgun.Tarih.ToString("dd/MM/yyyy"));
-                listItem.SubItems.Add(eklenenOgun.Miktar.ToString());
+                listItem.SubItems.Add(eklenenOgun.Tarih.ToString("dd.MM.yyyy"));
+                listItem.SubItems.Add(eklenenOgun.Miktar+" gr");
                 lsvOgunBilgileri.Items.Add(listItem);
             }
 
@@ -318,6 +323,7 @@ namespace KaloriTakipProgrami.UI
                 Listele();
                 Temizle();
             }
+
         }
         private void lsvOgunBilgileri_DoubleClick(object sender, EventArgs e)
         {
