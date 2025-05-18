@@ -27,7 +27,7 @@ namespace KaloriTakipProgrami.UI
         {
             ekran = Ekran;//geriye basınca diğer form doldurabilmek için 
             _context = new KaloriTakipDbContext();
-            girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
+           // girisYapanKullanici = _context.Kullanicilar.FirstOrDefault(aaa => aaa.Id == 1);
             GirisYapanKullanici = girisYapanKullanici; //kullanıcı eşlemesi yapacak
             InitializeComponent();
 
@@ -195,7 +195,8 @@ namespace KaloriTakipProgrami.UI
             {
                
                 if (!ValidateInputs())
-                    return;
+                { return; }
+                    
 
                 // Giriş yapan kullanıcıyı context'ten çek (yeni context'e ait hale getir)
                 GirisYapanKullanici = _context.Kullanicilar
