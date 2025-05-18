@@ -164,8 +164,7 @@ namespace KaloriTakipProgrami.UI
                 if (result == DialogResult.Yes)
                 {
                     _girisYapanKullanici = null;  //kişiyi sıfırlıyoruz.
-                    KullaniciGirisEkrani kullaniciGirisEkrani = new KullaniciGirisEkrani();
-                    kullaniciGirisEkrani.Show();
+                    this.Close();
                 }
                 else
                 {

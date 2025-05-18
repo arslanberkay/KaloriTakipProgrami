@@ -66,8 +66,9 @@ namespace KaloriTakipProgrami.UI
 
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisyapanKullanici);
-            kullaniciEkrani.Show();
+            //KullaniciEkrani kullaniciEkrani = new KullaniciEkrani(girisyapanKullanici);
+            //kullaniciEkrani.Show();
+            this.Close();
 
         }
 
